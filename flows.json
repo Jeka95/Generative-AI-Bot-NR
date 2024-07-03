@@ -266,9 +266,7 @@
             "ad6642159ff08086"
         ],
         "x": 14,
-        "y": 739,
-        "w": 672,
-        "h": 642
+        "y": 739
     },
     {
         "id": "7382602cc2b54357",
@@ -305,9 +303,7 @@
             "bfee4f87b9784649"
         ],
         "x": 714,
-        "y": 759,
-        "w": 1172,
-        "h": 402
+        "y": 759
     },
     {
         "id": "628c8aecc019f08b",
@@ -356,9 +352,7 @@
             "64fc4993e145d169"
         ],
         "x": 14,
-        "y": 1379,
-        "w": 812,
-        "h": 642
+        "y": 1379
     },
     {
         "id": "b2e9a721546c936c",
@@ -405,10 +399,18 @@
             "d85d31f6e5e71638",
             "f42471de14bb6f8e",
             "3422465e9d16734b",
-            "df857a5b9d447498"
+            "df857a5b9d447498",
+            "59535f5cbc4b1d3b",
+            "31fb7ba7a766b518",
+            "507777e87447f645",
+            "d993e5e17089348b",
+            "6e830a4e0b56e124",
+            "08f178e1996a7ee5"
         ],
         "x": 34,
-        "y": 19
+        "y": 39,
+        "w": 1072,
+        "h": 602
     },
     {
         "id": "d5f776f7723294b2",
@@ -1502,9 +1504,7 @@
             "176d449a45ff9d2c"
         ],
         "x": 754,
-        "y": 1239,
-        "w": 692,
-        "h": 82
+        "y": 1239
     },
     {
         "id": "77d78cdc0e69fb3a",
@@ -1537,9 +1537,7 @@
             "37afe4ad2c1b2362"
         ],
         "x": 34,
-        "y": 2659,
-        "w": 1592,
-        "h": 342
+        "y": 2659
     },
     {
         "id": "dcc25df538a6b74b",
@@ -1578,9 +1576,7 @@
             "c37a0f8a359a6fb0"
         ],
         "x": 854,
-        "y": 1379,
-        "w": 1272,
-        "h": 642
+        "y": 1379
     },
     {
         "id": "7304f8bea16d2f84",
@@ -1658,9 +1654,7 @@
             "15b1b23a8bfb0e2c"
         ],
         "x": 14,
-        "y": 2059,
-        "w": 4092,
-        "h": 562
+        "y": 2059
     },
     {
         "id": "2e6e4e61c61cc1ec",
@@ -1720,9 +1714,7 @@
             "893dff2ad4952be1"
         ],
         "x": 14,
-        "y": 59,
-        "w": 2072,
-        "h": 622
+        "y": 59
     },
     {
         "id": "e392fa51d0cb4f2b",
@@ -1769,9 +1761,7 @@
             "c5f76cd213d84f50"
         ],
         "x": 34,
-        "y": 3019,
-        "w": 1592,
-        "h": 522
+        "y": 3019
     },
     {
         "id": "204e41e815b84721",
@@ -19156,7 +19146,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "b3d43f616cf6e7ff"
@@ -19174,7 +19164,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 170,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "28386ebbba4f23d6"
@@ -19190,7 +19180,7 @@
         "statusCode": "",
         "headers": {},
         "x": 830,
-        "y": 60,
+        "y": 80,
         "wires": []
     },
     {
@@ -19205,7 +19195,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 660,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "8fb3372daa20d427"
@@ -19225,7 +19215,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "d4c18e772acc0976"
@@ -19243,7 +19233,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "587b8f94477468a5"
@@ -19259,7 +19249,7 @@
         "statusCode": "",
         "headers": {},
         "x": 730,
-        "y": 120,
+        "y": 140,
         "wires": []
     },
     {
@@ -19274,7 +19264,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 540,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "340855a9b9aea6d1"
@@ -19299,7 +19289,7 @@
             }
         ],
         "x": 370,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "a794c6c64b829004"
@@ -19318,7 +19308,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 550,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "a39c04b1a194abb2"
@@ -19334,7 +19324,7 @@
         "statusCode": "",
         "headers": {},
         "x": 890,
-        "y": 180,
+        "y": 200,
         "wires": []
     },
     {
@@ -19350,7 +19340,7 @@
         "finalize": "",
         "libs": [],
         "x": 720,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "c2a7428121363615"
@@ -19368,7 +19358,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 170,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "5c288469049e446f"
@@ -19384,7 +19374,7 @@
         "statusCode": "",
         "headers": {},
         "x": 610,
-        "y": 440,
+        "y": 540,
         "wires": []
     },
     {
@@ -19400,7 +19390,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 440,
+        "y": 540,
         "wires": [
             [
                 "9c4b61a5066b93c2",
@@ -19422,7 +19412,7 @@
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 260,
+        "y": 360,
         "wires": [
             [
                 "e370a5d5f2146b8e"
@@ -19441,7 +19431,7 @@
         "linkType": "static",
         "timeout": "70",
         "x": 570,
-        "y": 260,
+        "y": 360,
         "wires": [
             [
                 "f13caa9f1432e301"
@@ -19461,7 +19451,7 @@
         "finalize": "",
         "libs": [],
         "x": 740,
-        "y": 260,
+        "y": 360,
         "wires": [
             []
         ]
@@ -19477,7 +19467,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 440,
+        "y": 540,
         "wires": [
             [
                 "607c806941f44991",
@@ -19509,7 +19499,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 280,
+        "y": 380,
         "wires": [
             [
                 "4439c34b24b37c0f"
@@ -19527,7 +19517,7 @@
         ],
         "uncaught": false,
         "x": 130,
-        "y": 240,
+        "y": 340,
         "wires": [
             [
                 "4439c34b24b37c0f"
@@ -19547,7 +19537,7 @@
         "finalize": "",
         "libs": [],
         "x": 400,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "7153e00d61eeb857"
@@ -19566,7 +19556,7 @@
         "linkType": "static",
         "timeout": "70",
         "x": 590,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "60e9c820f516cfc1"
@@ -19586,7 +19576,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 360,
+        "y": 460,
         "wires": [
             []
         ]
@@ -19614,7 +19604,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 380,
+        "y": 480,
         "wires": [
             [
                 "607c806941f44991"
@@ -19632,7 +19622,7 @@
         ],
         "uncaught": false,
         "x": 130,
-        "y": 340,
+        "y": 440,
         "wires": [
             [
                 "607c806941f44991"
@@ -19650,7 +19640,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 120,
-        "y": 500,
+        "y": 600,
         "wires": [
             [
                 "ac28fa444438740d"
@@ -19670,7 +19660,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 500,
+        "y": 600,
         "wires": [
             [
                 "d85d31f6e5e71638"
@@ -19690,7 +19680,7 @@
         "finalize": "",
         "libs": [],
         "x": 280,
-        "y": 500,
+        "y": 600,
         "wires": [
             [
                 "29e8cc38a78022ce"
@@ -19709,7 +19699,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 450,
-        "y": 500,
+        "y": 600,
         "wires": [
             [
                 "2710be5a8526ba3e"
@@ -19729,7 +19719,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 500,
+        "y": 600,
         "wires": [
             [
                 "aeaaab8a80debb93"
@@ -19745,7 +19735,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1030,
-        "y": 500,
+        "y": 600,
         "wires": []
     },
     {
@@ -19761,7 +19751,7 @@
         "finalize": "",
         "libs": [],
         "x": 575,
-        "y": 400,
+        "y": 500,
         "wires": [
             [
                 "f42471de14bb6f8e"
@@ -19787,7 +19777,7 @@
         "senderr": false,
         "headers": [],
         "x": 645,
-        "y": 400,
+        "y": 500,
         "wires": [
             []
         ],
@@ -19808,7 +19798,120 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 460,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "59535f5cbc4b1d3b",
+        "type": "function",
+        "z": "d41b21524ec70b11",
+        "g": "b2e9a721546c936c",
+        "name": "to mongoDB",
+        "func": "msg.collection = \"knowlegebase\";\n\nmsg.payload = {\n    deleted: false\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "507777e87447f645",
+                "08f178e1996a7ee5"
+            ]
+        ]
+    },
+    {
+        "id": "507777e87447f645",
+        "type": "link call",
+        "z": "d41b21524ec70b11",
+        "g": "b2e9a721546c936c",
+        "name": "",
+        "links": [
+            "4af50c02f9967b49"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 570,
+        "y": 260,
+        "wires": [
+            [
+                "d993e5e17089348b"
+            ]
+        ]
+    },
+    {
+        "id": "6e830a4e0b56e124",
+        "type": "http response",
+        "z": "d41b21524ec70b11",
+        "g": "b2e9a721546c936c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 910,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d993e5e17089348b",
+        "type": "function",
+        "z": "d41b21524ec70b11",
+        "g": "b2e9a721546c936c",
+        "name": "sort result",
+        "func": "\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 260,
+        "wires": [
+            [
+                "6e830a4e0b56e124"
+            ]
+        ]
+    },
+    {
+        "id": "31fb7ba7a766b518",
+        "type": "http in",
+        "z": "d41b21524ec70b11",
+        "g": "b2e9a721546c936c",
+        "name": "",
+        "url": "/getKnowlegeDBAnalytic",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "59535f5cbc4b1d3b"
+            ]
+        ]
+    },
+    {
+        "id": "08f178e1996a7ee5",
+        "type": "debug",
+        "z": "d41b21524ec70b11",
+        "g": "b2e9a721546c936c",
+        "name": "debug 782",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 300,
         "wires": []
     },
     {
