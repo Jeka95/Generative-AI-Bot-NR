@@ -461,9 +461,7 @@
             "baf242e1628c5d9a"
         ],
         "x": 14,
-        "y": -1,
-        "w": 812,
-        "h": 482
+        "y": -1
     },
     {
         "id": "a8e8ad9c2d506fe5",
@@ -1237,7 +1235,9 @@
             "65e276e4f0bef3de"
         ],
         "x": 2334,
-        "y": 459
+        "y": 459,
+        "w": 1322,
+        "h": 482
     },
     {
         "id": "eb4abb7b2f5c0523",
@@ -1285,7 +1285,9 @@
             "74b6d66f43651a96"
         ],
         "x": 2334,
-        "y": 19
+        "y": 19,
+        "w": 1332,
+        "h": 402
     },
     {
         "id": "3ef26e0f011e805c",
@@ -1390,7 +1392,9 @@
             "1634304a75405118"
         ],
         "x": 14,
-        "y": 1259
+        "y": 1259,
+        "w": 1452,
+        "h": 1542
     },
     {
         "id": "c69aa1b248cd4669",
@@ -1477,7 +1481,9 @@
             "36933c06d5b89fa9"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 2312,
+        "h": 1222
     },
     {
         "id": "ac485fe26b1dd713",
@@ -1494,7 +1500,9 @@
             "289ed173526598c8"
         ],
         "x": 14,
-        "y": 2819
+        "y": 2819,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "e4abdee8d1ca0f86",
@@ -1850,7 +1858,9 @@
             "22773c80dfd33b32"
         ],
         "x": 34,
-        "y": 1299
+        "y": 1299,
+        "w": 1372,
+        "h": 422
     },
     {
         "id": "31840b65589a204f",
@@ -11850,12 +11860,17 @@
         "z": "667df0d3d7ebe2b8",
         "g": "3ef26e0f011e805c",
         "name": "Scrape",
-        "func": "// const { JSDOM } = jsdom;\n\n// const html = msg.payload;\n\n// const dom = new JSDOM(`${html}`);\n// dom.window.document.querySelectorAll('style').forEach(link => {\n//     link.remove();\n// });\n// dom.window.document.querySelectorAll('script').forEach(link => {\n//     link.remove();\n// });\n// const document = dom.window.document;\n// const pageText = document.body.textContent;\n// msg.text = pageText;\n\n\n// let table = dom.window.document.querySelector('table');\n\n// let ckeckTable = table?.textContent ? true : false;\n\n\n// if (ckeckTable) {\n//     const headers = Array.from(table.querySelectorAll('tr:first-child th, tr:first-child td')).map(td => {\n//         const text = td.textContent.trim();\n//         return text !== \"\" ? text : undefined;\n//     }).filter(Boolean);\n\n//     const rows = Array.from(table.querySelectorAll('tr:not(:first-child)'));\n//     const tableData = rows.map(row => {\n//         const rowData = Array.from(row.querySelectorAll('td')).map(td => td.textContent.trim());\n//         return Object.fromEntries(headers.map((header, index) => [header, rowData[index]]));\n//     });\n\n//     let tables = JSON.stringify(tableData);\n\n//     msg.pageContent = pageText + '\\n\\n' + tables;\n// } else {\n//     msg.pageContent = pageText;\n// }\n\n\n// const MAX_LENGTH = 500;\n\n// msg.result = [];\n// let currentParagraph = '';\n\n// const sentences = msg.pageContent.replace(/\\s+/g, ' ').split(/([.?!])+/).filter(sentence => sentence.trim() !== '');\n\n// for (const sentence of sentences) {\n//     if (currentParagraph.length + sentence.length <= MAX_LENGTH) {\n//         currentParagraph += sentence;\n//     } else {\n//         msg.result.push(currentParagraph.trim());\n//         currentParagraph = sentence;\n//     }\n// }\n\n// if (currentParagraph.trim() !== '') {\n//     msg.result.push(currentParagraph.trim());\n// }\n\n\n\n// msg.payload = {\n//     ...msg.old,\n//     text: msg.result\n// }\n\n\n\n// msg.url = env.get(\"nodered\") + `/createVector`\n// return msg;\n",
+        "func": "const { JSDOM } = jsdom;\n\nconst html = msg.payload;\n\nconst dom = new JSDOM(`${html}`);\ndom.window.document.querySelectorAll('style').forEach(link => {\n    link.remove();\n});\ndom.window.document.querySelectorAll('script').forEach(link => {\n    link.remove();\n});\nconst document = dom.window.document;\nconst pageText = document.body.textContent;\nmsg.text = pageText;\n\n\nlet table = dom.window.document.querySelector('table');\n\nlet ckeckTable = table?.textContent ? true : false;\n\n\nif (ckeckTable) {\n    const headers = Array.from(table.querySelectorAll('tr:first-child th, tr:first-child td')).map(td => {\n        const text = td.textContent.trim();\n        return text !== \"\" ? text : undefined;\n    }).filter(Boolean);\n\n    const rows = Array.from(table.querySelectorAll('tr:not(:first-child)'));\n    const tableData = rows.map(row => {\n        const rowData = Array.from(row.querySelectorAll('td')).map(td => td.textContent.trim());\n        return Object.fromEntries(headers.map((header, index) => [header, rowData[index]]));\n    });\n\n    let tables = JSON.stringify(tableData);\n\n    msg.pageContent = pageText + '\\n\\n' + tables;\n} else {\n    msg.pageContent = pageText;\n}\n\n\nconst MAX_LENGTH = 500;\n\nmsg.result = [];\nlet currentParagraph = '';\n\nconst sentences = msg.pageContent.replace(/\\s+/g, ' ').split(/([.?!])+/).filter(sentence => sentence.trim() !== '');\n\nfor (const sentence of sentences) {\n    if (currentParagraph.length + sentence.length <= MAX_LENGTH) {\n        currentParagraph += sentence;\n    } else {\n        msg.result.push(currentParagraph.trim());\n        currentParagraph = sentence;\n    }\n}\n\nif (currentParagraph.trim() !== '') {\n    msg.result.push(currentParagraph.trim());\n}\n\n\n\nmsg.payload = {\n    ...msg.old,\n    text: msg.result\n}\n\n\n\nmsg.url = env.get(\"nodered\") + `/createVector`\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [],
+        "libs": [
+            {
+                "var": "jsdom",
+                "module": "jsdom"
+            }
+        ],
         "x": 680,
         "y": 1460,
         "wires": [
