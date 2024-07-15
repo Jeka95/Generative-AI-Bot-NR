@@ -3,12 +3,6 @@
         "user": "${AIBOTDB-MONGO-USER-NAME}",
         "password": "${AIBOTDB-MONGO-PASSWORD}"
     },
-    "4b07803a52e468f5": {
-        "token": "{global.get('telegram').BOT_TOKEN}"
-    },
-    "a32b312f472ff9d3": {
-        "token": "6851144846:AAFN9436UTwqQRcevfxhLM-nVHoo8gvk_Sg"
-    },
     "082be0cb81df45d0": {},
     "7c04e7208bd841eb": {}
 }
