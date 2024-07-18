@@ -589,7 +589,9 @@
             "575bccec0f817310"
         ],
         "x": 44,
-        "y": 2499
+        "y": 2499,
+        "w": 922,
+        "h": 82
     },
     {
         "id": "9ee3c7a16596176a",
@@ -815,7 +817,9 @@
             "0e9f4e792428e370"
         ],
         "x": 44,
-        "y": 39
+        "y": 39,
+        "w": 1882,
+        "h": 1168
     },
     {
         "id": "55362cc354403671",
@@ -864,7 +868,9 @@
             "d473ebb44ebb12de"
         ],
         "x": 2594,
-        "y": 779
+        "y": 779,
+        "w": 1322,
+        "h": 502
     },
     {
         "id": "8425363be2a70e9b",
@@ -911,7 +917,9 @@
             "2b26d4efe813193b"
         ],
         "x": 2574,
-        "y": 39
+        "y": 39,
+        "w": 1332,
+        "h": 402
     },
     {
         "id": "4db24a0144dc3eb9",
@@ -1034,7 +1042,9 @@
             "24b24953fcdeef3b"
         ],
         "x": 14,
-        "y": 1319
+        "y": 1319,
+        "w": 1452,
+        "h": 1582
     },
     {
         "id": "c8ec3d17a2ed17d8",
@@ -1152,7 +1162,9 @@
             "6c9751fe702b22ef"
         ],
         "x": 14,
-        "y": 39
+        "y": 39,
+        "w": 2412,
+        "h": 1222
     },
     {
         "id": "4cd1a185df90750d",
@@ -1169,7 +1181,9 @@
             "323685cebc900496"
         ],
         "x": 14,
-        "y": 2919
+        "y": 2919,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "48a758605058e482",
@@ -1205,9 +1219,7 @@
             "c3e0fb4ad753ba78"
         ],
         "x": 34,
-        "y": 239,
-        "w": 592,
-        "h": 482
+        "y": 239
     },
     {
         "id": "c3caa496fda7524e",
@@ -1639,7 +1651,9 @@
             "a7180304f5a34846"
         ],
         "x": 74,
-        "y": 959
+        "y": 959,
+        "w": 852,
+        "h": 222
     },
     {
         "id": "11067b4245df96f8",
@@ -10894,7 +10908,7 @@
         "type": "function",
         "z": "b8d3406b43d38e4b",
         "name": "create chroma db",
-        "func": "msg.fromUI = msg.payload\n\nmsg.nameBase = msg.payload.name;\nmsg.typeBase = 'chroma';\nmsg.baseID = objectid()\nmsg.systemName = msg.fromUI.name + msg.baseID\n\nmsg.payload = {\n    _id: msg.baseID,\n    type: msg.typeBase,\n    name: msg.fromUI.name,\n    systemName: msg.fromUI.name + msg.baseID,\n    deleted: false,\n    ownerID: msg.payload.ownerID,\n    behaviour: {\n        prompt: msg.fromUI.prompt,\n        model: msg.fromUI.model,\n        answer_length: msg.fromUI.answer_length_onboarding,\n        answer_as: msg.fromUI.answer_as,\n        tone: msg.fromUI.tone,\n        language: msg.fromUI.language,\n    }\n};\n\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\n\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nconst collection = await client.createCollection({ name: msg.systemName });\n\nmsg.collection = \"knowlegebase\";\n\nreturn msg;\n\n\n",
+        "func": "msg.fromUI = msg.payload\n\nmsg.nameBase = msg.payload.name;\nmsg.typeBase = 'chroma';\nmsg.baseID = objectid()\nmsg.systemName = msg.fromUI.name + msg.baseID\n\nmsg.payload = {\n    _id: msg.baseID,\n    type: msg.typeBase,\n    name: msg.fromUI.name,\n    updatedAt: Date.now(),\n    systemName: msg.fromUI.name + msg.baseID,\n    deleted: false,\n    ownerID: msg.payload.ownerID,\n    behaviour: {\n        prompt: msg.fromUI.prompt,\n        model: msg.fromUI.model,\n        answer_length: msg.fromUI.answer_length_onboarding,\n        answer_as: msg.fromUI.answer_as,\n        tone: msg.fromUI.tone,\n        language: msg.fromUI.language,\n    }\n};\n\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\n\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nconst collection = await client.createCollection({ name: msg.systemName });\n\nmsg.collection = \"knowlegebase\";\n\nreturn msg;\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11404,7 +11418,7 @@
         "type": "function",
         "z": "b8d3406b43d38e4b",
         "name": "function 591",
-        "func": "if (msg.payload.length === 0) {\n    msg.fromDB = msg.payload\n    msg.payload = {\n        name: \"demo\"\n    }\n    msg.collection = \"admin_roles\"\n\n    return [msg, null]\n\n} else {\n    msg.user = msg.payload[0]\n    msg.payload = {\n        ownerID: objectid(msg.payload[0]._id),\n\n    }\n    msg.collection = \"knowlegebase\";\n\n    return [null, msg];\n}",
+        "func": "if (msg.payload.length === 0) {\n    msg.fromDB = msg.payload\n    msg.payload = {\n        name: \"demo\"\n    }\n    msg.collection = \"admin_roles\"\n\n    return [msg, null]\n\n} else {\n    msg.user = msg.payload[0]\n    msg.payload = {\n        ownerID: msg.payload[0]._id.toString(),\n    }\n    msg.collection = \"knowlegebase\"\n    return [null, msg];\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -11423,7 +11437,8 @@
             ],
             [
                 "08a91f2691a70e33",
-                "5914fd4b77cf4309"
+                "5914fd4b77cf4309",
+                "89665146bb0e46bb"
             ]
         ],
         "l": false
@@ -11752,7 +11767,8 @@
         "y": 1920,
         "wires": [
             [
-                "1d39263626651dd0"
+                "1d39263626651dd0",
+                "89665146bb0e46bb"
             ]
         ]
     },
@@ -11792,7 +11808,7 @@
         "type": "function",
         "z": "b8d3406b43d38e4b",
         "name": "create chroma collection",
-        "func": "//create collection\nglobal.set(\"otherTechVars\", { isPromptDefault: true });\n\nmsg.nameBase = 'BooksChat';\nmsg.typeBase = 'chroma';\n\nmsg.userId= msg.payload.userId\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nmsg.knowlegebaseId = objectid();\nmsg.systemName = msg.nameBase + msg.knowlegebaseId\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nconst collection = await client.createCollection({ name: msg.systemName });\n\n\nmsg.collection = \"knowlegebase\";\nmsg.payload = {\n    _id: msg.knowlegebaseId,\n    select: true,\n    type: msg.typeBase,\n    name: msg.nameBase,\n    systemName: msg.systemName,\n    deleted: false,\n    ownerID:msg.userId,\n    behaviour: {\n        model: \"gpt-4o\",\n        \"answer_length\": \"Medium\",\n        \"answer_as\": \"Assistant\",\n        \"tone\": \"Informal\",\n        \"language\": \"English\",\n        \"prompt\": `You work at a bookshop. Your goal is to recommend books that we currently have in stock or answer customers' questions. If we don't have something they are looking for, you can recommend alternative titles. Additionally, in all your messages, please recommend the following three bestsellers:\n\nThe Women: A Novel Hardcover - A #1 bestseller on The New York Times, USA Today, Washington Post, and Los Angeles Times! From the celebrated author of The Nightingale and The Four Winds, Kristin Hannah's The Women is at once an intimate portrait of coming of age in a dangerous time and an epic tale of a nation divided. When twenty-year-old nursing student Frances “Frankie” McGrath hears the words \"Women can be heroes,\" it is a revelation. Raised in the sun-drenched, idyllic world of Southern California and sheltered by her conservative parents, she has always prided herself on doing the right thing. But in 1965, the world is changing, and she suddenly dares to imagine a different future for herself. When her brother ships out to serve in Vietnam, she joins the Army Nurse Corps and follows his path.\n\nThe Housemaid Is Watching Paperback - A twisting, pulse-pounding thriller from Freida McFadden, the New York Times bestselling author of The Housemaid and The Coworker. \"You must be our new neighbors!\" Mrs. Lowell gushes and waves across the picket fence. I clutch my daughter's hand and smile back, but the second Mrs. Lowell sees my husband, a strange expression crosses her face. In that moment, I make a promise. We finally have a family home. My past is far, far behind us. And I'll do anything to keep it that way.\n\nLies I Taught in Medical School: How Conventional Medicine Is Making You Sicker and What You Can Do to Save Your Own Life - Modern medicine is lying to you. Discover the true science behind chronic diseases and implement an actionable plan to take control of your health and longevity once and for all. For the first time in history, chronic diseases like diabetes, hypertension, and obesity plague our population on a global scale. From seasoned physician Robert Lufkin, MD, this paradigm-shifting book comprehensively explains the linked cause and exposes the misconceptions prevalent in modern medicine. In Lies I Taught in Medical School, Dr. Lufkin explains that metabolic dysfunction is the common underlying cause of most chronic diseases that has been overlooked for decades, providing the tools needed to address these diseases in ourselves. He draws on expansive, peer-reviewed evidence, proving that standard medical recommendations are killing us.\n\nBooks we currently have in stock:`,\n    }\n};\n\nreturn msg;\n",
+        "func": "//create collection\nglobal.set(\"otherTechVars\", { isPromptDefault: true });\n\nmsg.nameBase = 'BooksChat';\nmsg.typeBase = 'chroma';\n\nmsg.userId= msg.payload.userId\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nmsg.knowlegebaseId = objectid();\nmsg.systemName = msg.nameBase + msg.knowlegebaseId\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nconst collection = await client.createCollection({ name: msg.systemName });\n\n\nmsg.collection = \"knowlegebase\";\nmsg.payload = {\n    _id: msg.knowlegebaseId,\n    select: true,\n    type: msg.typeBase,\n    name: msg.nameBase,\n    systemName: msg.systemName,\n    deleted: false,\n    updatedAt: Date.now(),\n    ownerID:msg.userId,\n    behaviour: {\n        model: \"gpt-4o\",\n        \"answer_length\": \"Medium\",\n        \"answer_as\": \"Assistant\",\n        \"tone\": \"Informal\",\n        \"language\": \"English\",\n        \"prompt\": `You work at a bookshop. Your goal is to recommend books that we currently have in stock or answer customers' questions. If we don't have something they are looking for, you can recommend alternative titles. Additionally, in all your messages, please recommend the following three bestsellers:\n\nThe Women: A Novel Hardcover - A #1 bestseller on The New York Times, USA Today, Washington Post, and Los Angeles Times! From the celebrated author of The Nightingale and The Four Winds, Kristin Hannah's The Women is at once an intimate portrait of coming of age in a dangerous time and an epic tale of a nation divided. When twenty-year-old nursing student Frances “Frankie” McGrath hears the words \"Women can be heroes,\" it is a revelation. Raised in the sun-drenched, idyllic world of Southern California and sheltered by her conservative parents, she has always prided herself on doing the right thing. But in 1965, the world is changing, and she suddenly dares to imagine a different future for herself. When her brother ships out to serve in Vietnam, she joins the Army Nurse Corps and follows his path.\n\nThe Housemaid Is Watching Paperback - A twisting, pulse-pounding thriller from Freida McFadden, the New York Times bestselling author of The Housemaid and The Coworker. \"You must be our new neighbors!\" Mrs. Lowell gushes and waves across the picket fence. I clutch my daughter's hand and smile back, but the second Mrs. Lowell sees my husband, a strange expression crosses her face. In that moment, I make a promise. We finally have a family home. My past is far, far behind us. And I'll do anything to keep it that way.\n\nLies I Taught in Medical School: How Conventional Medicine Is Making You Sicker and What You Can Do to Save Your Own Life - Modern medicine is lying to you. Discover the true science behind chronic diseases and implement an actionable plan to take control of your health and longevity once and for all. For the first time in history, chronic diseases like diabetes, hypertension, and obesity plague our population on a global scale. From seasoned physician Robert Lufkin, MD, this paradigm-shifting book comprehensively explains the linked cause and exposes the misconceptions prevalent in modern medicine. In Lies I Taught in Medical School, Dr. Lufkin explains that metabolic dysfunction is the common underlying cause of most chronic diseases that has been overlooked for decades, providing the tools needed to address these diseases in ourselves. He draws on expansive, peer-reviewed evidence, proving that standard medical recommendations are killing us.\n\nBooks we currently have in stock:`,\n    }\n};\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12559,6 +12575,22 @@
         "statusType": "auto",
         "x": 250,
         "y": 2780,
+        "wires": []
+    },
+    {
+        "id": "89665146bb0e46bb",
+        "type": "debug",
+        "z": "b8d3406b43d38e4b",
+        "name": "debug 954",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 1960,
         "wires": []
     },
     {
@@ -14356,7 +14388,7 @@
         "z": "bc6d46771c048138",
         "g": "8425363be2a70e9b",
         "name": ">",
-        "func": "msg.baseID = objectid()\nmsg.payload = {\n    _id: msg.baseID,\n    type: msg.payload.type,\n    name: msg.payload.name,\n    systemName: msg.payload.name + msg.baseID,\n    deleted: false,\n    ownerID: msg.payload.ownerID,\n    behaviour: {\n        prompt: msg.payload.prompt,\n        model: msg.payload.model,\n        answer_length: msg.payload.answer_length_onboarding,\n        answer_as: msg.payload.answer_as,\n        tone: msg.payload.tone,\n        language: msg.payload.language,\n    }\n}\nmsg.systemName = msg.payload.systemName\nif (msg.payload.type === 'chroma') {\n\n    return [msg, msg]\n} else {\n\n    return [msg, null]\n}\n",
+        "func": "msg.baseID = objectid()\nmsg.payload = {\n    _id: msg.baseID,\n    type: msg.payload.type,\n    name: msg.payload.name,\n    systemName: msg.payload.name + msg.baseID,\n    deleted: false,\n    updatedAt: Date.now(),\n    ownerID: msg.payload.ownerID,\n    behaviour: {\n        prompt: msg.payload.prompt,\n        model: msg.payload.model,\n        answer_length: msg.payload.answer_length_onboarding,\n        answer_as: msg.payload.answer_as,\n        tone: msg.payload.tone,\n        language: msg.payload.language,\n    }\n}\nmsg.systemName = msg.payload.systemName\nif (msg.payload.type === 'chroma') {\n\n    return [msg, msg]\n} else {\n\n    return [msg, null]\n}\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -17361,7 +17393,7 @@
         "z": "bc6d46771c048138",
         "g": "8425363be2a70e9b",
         "name": "debug 814",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
