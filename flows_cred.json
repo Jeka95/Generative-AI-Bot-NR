@@ -2,9 +2,5 @@
     "7908a755f1520aa7": {
         "user": "${AIBOTDB-MONGO-USER-NAME}",
         "password": "${AIBOTDB-MONGO-PASSWORD}"
-    },
-    "656648bcd6a3222a": {},
-    "e9a244ffa0f69c60": {},
-    "90b2468992061129": {},
-    "636350fc65e51901": {}
+    }
 }
