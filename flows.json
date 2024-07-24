@@ -329,6 +329,39 @@
         "color": "#DDAA99"
     },
     {
+        "id": "6f81704611a8ba6b",
+        "type": "subflow",
+        "name": "check token",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "cee8da8fb14e7133"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 820,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7d56be3a42bf1e4b",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "ee4e974df42173e7",
         "type": "group",
         "z": "6c6f5bad4ab12247",
@@ -370,9 +403,7 @@
             "63db758b8e6c09c0"
         ],
         "x": 14,
-        "y": 739,
-        "w": 672,
-        "h": 642
+        "y": 739
     },
     {
         "id": "3f1be027eb6f68bc",
@@ -409,9 +440,7 @@
             "7f11bcc3a59fef44"
         ],
         "x": 714,
-        "y": 759,
-        "w": 1172,
-        "h": 402
+        "y": 739
     },
     {
         "id": "0b6f7b5c7595e2bd",
@@ -460,9 +489,7 @@
             "9fb60dc8c991b24b"
         ],
         "x": 14,
-        "y": 1379,
-        "w": 812,
-        "h": 642
+        "y": 1379
     },
     {
         "id": "57abbb420706e4ea",
@@ -521,9 +548,7 @@
             "988126df77f071f7"
         ],
         "x": 34,
-        "y": 39,
-        "w": 1312,
-        "h": 602
+        "y": 39
     },
     {
         "id": "c285dd2952090082",
@@ -556,9 +581,7 @@
             "e4d402e0460bf26f"
         ],
         "x": 34,
-        "y": 99,
-        "w": 812,
-        "h": 422
+        "y": 99
     },
     {
         "id": "cd413aa91bb6e49a",
@@ -611,9 +634,7 @@
             "53a7d7520326e264"
         ],
         "x": 34,
-        "y": 19,
-        "w": 952,
-        "h": 562
+        "y": 19
     },
     {
         "id": "8fde9fecb7873a89",
@@ -708,7 +729,8 @@
             "25f3fb16f5c197b9",
             "6431249c50be0e6f",
             "05c9ca5aef7e02f9",
-            "171c228cccfb84de"
+            "171c228cccfb84de",
+            "be4fccfe0819718e"
         ],
         "x": 54,
         "y": 599,
@@ -960,12 +982,14 @@
             "293bcccb7b677f9d",
             "4b5a5c345ea421db",
             "ecb2946f1a335371",
-            "ddf9b2445e997916"
+            "ddf9b2445e997916",
+            "c912b804b0b1c007",
+            "728cb944b9cab273",
+            "323d8622a89d6668",
+            "84d83c740add0d61"
         ],
         "x": 2594,
-        "y": 779,
-        "w": 1322,
-        "h": 502
+        "y": 779
     },
     {
         "id": "4d72303f53cb6faf",
@@ -1012,9 +1036,7 @@
             "3cb0455a74a291e9"
         ],
         "x": 2574,
-        "y": 39,
-        "w": 1332,
-        "h": 402
+        "y": 39
     },
     {
         "id": "a20cde1047b80c5d",
@@ -1137,9 +1159,7 @@
             "91993f911140eb2f"
         ],
         "x": 14,
-        "y": 1319,
-        "w": 1452,
-        "h": 1582
+        "y": 1319
     },
     {
         "id": "1ab0f003b0f5f6e2",
@@ -1257,9 +1277,7 @@
             "b4c7d216e6fbf8be"
         ],
         "x": 14,
-        "y": 39,
-        "w": 2412,
-        "h": 1222
+        "y": 39
     },
     {
         "id": "6094b56e492f4c17",
@@ -1276,9 +1294,7 @@
             "4d395e824a57d01e"
         ],
         "x": 14,
-        "y": 2919,
-        "w": 592,
-        "h": 82
+        "y": 2919
     },
     {
         "id": "27658e1c2520088b",
@@ -1335,9 +1351,7 @@
             "8433fd18b3d144e6"
         ],
         "x": 754,
-        "y": 1239,
-        "w": 692,
-        "h": 82
+        "y": 1239
     },
     {
         "id": "2a1ca9ea3a6568c7",
@@ -1376,9 +1390,7 @@
             "8c04c191a507f7ca"
         ],
         "x": 854,
-        "y": 1419,
-        "w": 1282,
-        "h": 602
+        "y": 1419
     },
     {
         "id": "f6b7d19f85f7188b",
@@ -1461,9 +1473,7 @@
             "bcead2b01b0b7796"
         ],
         "x": 54,
-        "y": 2059,
-        "w": 4112,
-        "h": 622
+        "y": 2059
     },
     {
         "id": "2781fd37492a9871",
@@ -1523,12 +1533,10 @@
             "532acdbea7c43e9b",
             "51f0553434d3c53c",
             "19e544bca16053de",
-            "2564f35d3d21c384"
+            "4b68154e4d35afa6"
         ],
         "x": 14,
-        "y": 59,
-        "w": 2172,
-        "h": 622
+        "y": 59
     },
     {
         "id": "b102b47afda9be3e",
@@ -1575,9 +1583,7 @@
             "423cab3b1c495ca7"
         ],
         "x": 54,
-        "y": 2699,
-        "w": 1592,
-        "h": 522
+        "y": 2699
     },
     {
         "id": "b4d022f264c821eb",
@@ -1617,9 +1623,7 @@
             "2afe3f87bf3bae6d"
         ],
         "x": 14,
-        "y": 39,
-        "w": 1972,
-        "h": 482
+        "y": 39
     },
     {
         "id": "d30f2d186071f6f0",
@@ -1741,9 +1745,7 @@
             "e94058c5e58691b7"
         ],
         "x": 34,
-        "y": 899,
-        "w": 1372,
-        "h": 422
+        "y": 899
     },
     {
         "id": "25b66e2ba557b6d1",
@@ -1797,9 +1799,7 @@
             "e03739e762cebc57"
         ],
         "x": 34,
-        "y": 19,
-        "w": 1812,
-        "h": 662
+        "y": 19
     },
     {
         "id": "88600b1f75de09c5",
@@ -2917,7 +2917,7 @@
         "type": "function",
         "z": "c203404cbcdeb991",
         "name": "Input Data Unification",
-        "func": "const UNIFIED_DATA = {\n    BOT_NAME: msg.payload.BOT_NAME || null,\n    DATABASE: {\n        'TYPE_BASE': msg.payload.DATABASE?.TYPE_BASE || null,\n        'NAME_BASE': msg.payload.DATABASE?.NAME_BASE || null,\n    },\n    NUMBER_OF_ANSWERS_VDB: msg.payload.NUMBER_OF_ANSWERS_VDB ? msg.payload.NUMBER_OF_ANSWERS_VDB : 2, \n    PINECONE: {\n        INDEX: msg.payload.PINECONE?.INDEX || null,\n        API_KEY: msg.payload.PINECONE?.API_KEY || null,\n        ENVIRONMENT: msg.payload.PINECONE?.ENVIRONMENT || null,\n        BASE_URL: msg.payload.PINECONE?.BASE_URL || null,\n    },\n    CHROMA_LINK: msg.payload.CHROMA_LINK,\n    OPENAI_KEY: msg.payload.OPENAI_KEY,\n    BASE_URL: msg.payload.BASE_URL,\n    PREPARED_MESSAGES: {\n        WELCOME: msg.payload.PREPARED_MESSAGES?.WELCOME ? msg.payload.PREPARED_MESSAGES.WELCOME : 'HELLO! 🙂',\n        ERROR: msg.payload.PREPARED_MESSAGES?.ERROR ? msg.payload.PREPARED_MESSAGES.ERROR : 'Oops something went wrong 😔',\n    },\n    AI_SETTINGS: {\n        ANSWER_AS: msg.payload.AI_SETTINGS?.ANSWER_AS || 'Friend',\n        TONE: msg.payload.AI_SETTINGS?.TONE || 'Formal',\n        LANGUAGE: msg.payload.AI_SETTINGS?.LANGUAGE || 'English',\n        ANSWER_LENGTH: msg.payload.AI_SETTINGS?.ANSWER_LENGTH || 'Small',\n        PROMPT_CUSTOM: msg.payload.AI_SETTINGS?.PROMPT_CUSTOM || 'You are a polite assistant',\n        OPENAI_MODEL: msg.payload.AI_SETTINGS?.OPENAI_MODEL || 'gpt-3.5-turbo',\n    },\n    chat: {\n        type: msg.payload.chat?.type,\n        id: msg.payload.chat?.id && msg.payload.chat?.id.toString(),\n        username: msg.payload.chat?.username,\n        content: msg.payload.chat?.content,\n    },\n    startDate: Date.now(),\n};\n\n\n\nmsg.OPENAI_API_KEY = UNIFIED_DATA.OPENAI_KEY;\nmsg.UNIFIED_DATA = UNIFIED_DATA;\nmsg.history = {\n    BOT_NAME: UNIFIED_DATA.BOT_NAME,\n    DATABASE: UNIFIED_DATA.DATABASE,\n    AI_SETTINGS: UNIFIED_DATA.AI_SETTINGS,\n    question: UNIFIED_DATA.chat.content,\n    startDate: UNIFIED_DATA.startDate,\n    ownerId: msg.userId\n};\n\nreturn msg;\n",
+        "func": "const UNIFIED_DATA = {\n    BOT_NAME: msg.payload.BOT_NAME || null,\n    DATABASE: {\n        'TYPE_BASE': msg.payload.DATABASE?.TYPE_BASE || null,\n        'NAME_BASE': msg.payload.DATABASE?.NAME_BASE || null,\n    },\n    NUMBER_OF_ANSWERS_VDB: msg.payload.NUMBER_OF_ANSWERS_VDB ? msg.payload.NUMBER_OF_ANSWERS_VDB : 2, \n    PINECONE: {\n        INDEX: msg.payload.PINECONE?.INDEX || null,\n        API_KEY: msg.payload.PINECONE?.API_KEY || null,\n        ENVIRONMENT: msg.payload.PINECONE?.ENVIRONMENT || null,\n        BASE_URL: msg.payload.PINECONE?.BASE_URL || null,\n    },\n    CHROMA_LINK: msg.payload.CHROMA_LINK,\n    OPENAI_KEY: msg.payload.OPENAI_KEY,\n    BASE_URL: msg.payload.BASE_URL,\n    PREPARED_MESSAGES: {\n        WELCOME: msg.allCred?.cenario?.welcomeMessage ? msg.allCred?.cenario?.welcomeMessage : 'HELLO! 🙂',\n        ERROR: msg.allCred?.cenario?.errorMessage ? msg.allCred?.cenario?.errorMessage: 'Oops something went wrong 😔',\n    },\n    AI_SETTINGS: {\n        ANSWER_AS: msg.payload.AI_SETTINGS?.ANSWER_AS || 'Friend',\n        TONE: msg.payload.AI_SETTINGS?.TONE || 'Formal',\n        LANGUAGE: msg.payload.AI_SETTINGS?.LANGUAGE || 'English',\n        ANSWER_LENGTH: msg.payload.AI_SETTINGS?.ANSWER_LENGTH || 'Small',\n        PROMPT_CUSTOM: msg.payload.AI_SETTINGS?.PROMPT_CUSTOM || 'You are a polite assistant',\n        OPENAI_MODEL: msg.payload.AI_SETTINGS?.OPENAI_MODEL || 'gpt-3.5-turbo',\n    },\n    chat: {\n        type: msg.payload.chat?.type,\n        id: msg.payload.chat?.id && msg.payload.chat?.id.toString(),\n        username: msg.payload.chat?.username,\n        content: msg.payload.chat?.content,\n    },\n    startDate: Date.now(),\n};\n\n\n\nmsg.OPENAI_API_KEY = UNIFIED_DATA.OPENAI_KEY;\nmsg.UNIFIED_DATA = UNIFIED_DATA;\nmsg.history = {\n    BOT_NAME: UNIFIED_DATA.BOT_NAME,\n    DATABASE: UNIFIED_DATA.DATABASE,\n    AI_SETTINGS: UNIFIED_DATA.AI_SETTINGS,\n    question: UNIFIED_DATA.chat.content,\n    startDate: UNIFIED_DATA.startDate,\n    ownerId: msg.userId\n};\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2938,7 +2938,6 @@
         "name": ">",
         "func": "const typeBase = msg.UNIFIED_DATA.DATABASE.TYPE_BASE;\n\nswitch (true) {\n\n        case (msg.statusCode > 201 || msg.payload === \"Enter OPENAI_API_KEY\"): {\n        msg.type = 'custom message';\n\n        return [null, null, null, msg];\n    }\n\n    case (typeBase === \"pinecone\" &&\n        msg.UNIFIED_DATA.PINECONE.API_KEY !== null // in case we lost data in global\n    ): {\n            msg.type = 'pinecone';\n\n            return [msg, null, null,null];\n        }\n\n    case (typeBase === \"chroma\"): {\n        msg.type = 'chroma';\n\n        return [null, msg, null, null];\n    }\n\n    case (typeBase === null): {\n            msg.type = 'onlyGPT';\n\n            return [null, null, msg, null];\n        }\n\n\n    default:\n        msg.payload = '⚙️ Please, check all settings including openAI key and Knowledge base. ⚙️';\n        msg.type = 'custom message';\n\n        return [null, null, null, msg];\n}\n",
         "outputs": 4,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2987,7 +2986,6 @@
         "name": "Chroma",
         "func": "// const vector = Array(1536).fill(0);\nconst vector = msg.payload.data[0].embedding;\n\nmsg.collection = msg.UNIFIED_DATA.DATABASE.NAME_BASE;\nmsg.payload = {\n    queryEmbeddings: vector,\n    nResults: msg.UNIFIED_DATA.NUMBER_OF_ANSWERS_VDB,\n    query_text: [msg.UNIFIED_DATA.chat.content],\n};\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3017,7 +3015,6 @@
         "name": "send to user from chat",
         "func": "let responseChatGPT;\n\n// Перевірка, чи статус-код менший за 201 або вказаний API ключ неправильний\nif (msg.statusCode < 201 || msg.payload !== \"Enter OPENAI_API_KEY\") {\n\n    // Встановлення значення відповіді з першого повідомлення від OpenAI API (якщо воно існує)\n    responseChatGPT = (msg.type !== 'custom message') ? msg.payload?.choices[0]?.message?.content : msg.payload;\n} else {\n\n    // Отримання повідомлення про помилку або вивід статус-коду та відповіді\n    const errorMessage = typeof msg.payload === 'string'\n        ? msg.payload\n        : msg.payload?.error.message;\n\n    // Встановлення значення відповіді з глобального повідомлення (якщо воно існує), або виведення деталей помилки\n    responseChatGPT = msg.UNIFIED_DATA.PREPARED_MESSAGES\n        ? msg.UNIFIED_DATA.PREPARED_MESSAGES.ERROR\n        : `statusCode: ${msg.statusCode} \\npayload: ${errorMessage}`;\n}\n\nlet history = global.get(`history${msg.UNIFIED_DATA.chat.chatId}`) || [];\n\nmsg.history.answer = responseChatGPT;\nmsg.history.usage = msg.payload.usage\nmsg.payload = responseChatGPT;\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3037,7 +3034,6 @@
         "name": "save history ",
         "func": "msg.collection = \"users_messages\";\nmsg.history = {\n    ...msg.history,\n    endDate: Date.now(),\n    chat_id: msg.UNIFIED_DATA.chat.id,\n    user_name: msg.UNIFIED_DATA.chat.username,\n    type: msg.UNIFIED_DATA.chat.type\n};\nmsg.payload = msg.history;\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3585,7 +3581,6 @@
         "name": "check token",
         "func": "\nmsg.cookies = {\n    access_token: msg.access_token\n}\nmsg.url =`http://nodered-svc.nodered:1880/checkUserToken`\n\nreturn msg;",
         "outputs": 1,
-        "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3631,7 +3626,6 @@
         "name": "response check",
         "func": "if (msg.statusCode === 200) {\nmsg.userInfo = msg.payload\n    return [msg, null]\n} else {\n    \n    return [null, msg]\n}\n",
         "outputs": 2,
-        "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3672,6 +3666,100 @@
         "statusType": "auto",
         "x": 670,
         "y": 160,
+        "wires": []
+    },
+    {
+        "id": "cee8da8fb14e7133",
+        "type": "function",
+        "z": "6f81704611a8ba6b",
+        "name": "check token",
+        "func": "\nmsg.cookies = {\n    access_token: msg.access_token\n}\nmsg.url =`http://nodered-svc.nodered:1880/checkUserToken`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "b54120de97bd8e4c",
+                "a2a6139b209f92b0"
+            ]
+        ]
+    },
+    {
+        "id": "b54120de97bd8e4c",
+        "type": "http request",
+        "z": "6f81704611a8ba6b",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "7d56be3a42bf1e4b",
+                "a2a6139b209f92b0"
+            ]
+        ]
+    },
+    {
+        "id": "7d56be3a42bf1e4b",
+        "type": "function",
+        "z": "6f81704611a8ba6b",
+        "name": "response check",
+        "func": "if (msg.statusCode === 200) {\nmsg.userInfo = msg.payload\n    return [msg, null]\n} else {\n    msg.payload = {\n        auth: \"Unautorizate\",\n        code: 401,\n        login_id: 'Login',\n        app_id: msg.check.app_id\n    }\n    return [null, msg]\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [],
+            [
+                "a3c254d6f13a6cba",
+                "a2a6139b209f92b0"
+            ]
+        ]
+    },
+    {
+        "id": "a3c254d6f13a6cba",
+        "type": "http response",
+        "z": "6f81704611a8ba6b",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 980,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a2a6139b209f92b0",
+        "type": "debug",
+        "z": "6f81704611a8ba6b",
+        "name": "debug 977",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 180,
         "wires": []
     },
     {
@@ -4218,7 +4306,7 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 130,
+        "x": 110,
         "y": 120,
         "wires": [
             [
@@ -4233,7 +4321,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 490,
+        "x": 470,
         "y": 120,
         "wires": []
     },
@@ -4253,7 +4341,7 @@
                 "module": "objectid"
             }
         ],
-        "x": 330,
+        "x": 310,
         "y": 120,
         "wires": [
             [
@@ -7264,7 +7352,6 @@
         "name": "check_",
         "func": "if (msg.userInfo.email != 'null') {\n  msg.collection = \"admins\";\n  msg.email = msg.userInfo.email\n  msg.fromApp = msg.userInfo\n  msg.payload = {\n    email: msg.userInfo.email,\n    deleted: false\n  }\n\n  return [msg, null];\n\n} else {\n\n  msg.payload = {\n    email: false\n  }\n\n  return [null, msg]\n\n}\n",
         "outputs": 2,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -7316,7 +7403,6 @@
         "name": "function 591",
         "func": "if (msg.payload.length === 0) {\n    msg.fromDB = msg.payload\n    msg.payload = {\n        name: \"demo\"\n    }\n    msg.collection = \"admin_roles\"\n\n    return [msg, null]\n\n} else {\n    msg.user = msg.payload[0]\n    msg.payload = {\n        ownerID: msg.payload[0]._id.toString(),\n    }\n    msg.collection = \"knowlegebase\"\n    return [null, msg];\n}",
         "outputs": 2,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -7333,8 +7419,8 @@
                 "358f61e680448881"
             ],
             [
-                "93a8e98962bd35ef",
-                "f123867c6602682c"
+                "f123867c6602682c",
+                "93a8e98962bd35ef"
             ]
         ],
         "l": false
@@ -7364,7 +7450,6 @@
         "name": "to Lark",
         "func": "if (env.get(\"nodered\") === 'https://aibotnr-7160-656f07128ab32b12000001b8.ubos.tech') {\n    return null\n} else {\n    msg.payload = { \"email\": msg.email }\n\n    return msg;\n}",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -7384,7 +7469,6 @@
         "name": "admins",
         "func": "// if (msg.payload.length > 0){\nlet bcrypt = global.get('bcrypt')\nlet result = '';\nconst characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\nconst charactersLength = characters.length;\nfor (let i = 0; i < 8; i++) {\n    result += characters.charAt(Math.floor(Math.random() * charactersLength));\n}\n\nlet encryptedPassword = await bcrypt.hash(msg.fromApp.email, 10);\nmsg.id = objectid()\nmsg.password = result\nmsg.payload = {\n    _id: msg.id,\n    \"deleted\": false,\n    \"avatarColor\": \"#80f124\",\n    \"createdAt\": Date.now(),\n    \"roles\": [msg.payload[0]._id],\n    \"role\": \"demo\",\n    \"active\": true,\n    \"firstname\": msg.fromApp.email,\n    \"lastname\": msg.fromApp.email,\n    \"email\": msg.fromApp.email,\n    \"password\": encryptedPassword,\n    \"verifyToken\": null,\n    \"resetPassToken\": \"\",\n    \"resetPassExpireToken\": null,\n    \"subscriptionType\":\"Free Trial\"\n}\nmsg.collection = \"admins\";\n\nreturn msg",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -7460,9 +7544,8 @@
         "type": "function",
         "z": "4f93abb205f77da5",
         "name": "function 592",
-        "func": "let jwt = global.get('jsonwebtoken')\n\nconst token = jwt.sign(\n    { user_id: msg.id, email: msg.fromApp.email },\n    \"test\",\n    {\n        expiresIn: \"1400m\",\n    }\n);\n\nmsg.cookies = {};\nmsg.cookies[\"user_token\"] = token;\nmsg.cookies[\"lang\"] = 'en';\nmsg.cookies[\"access_user_token\"]= msg.access_token\n\nmsg.payload={\n    page: 'Create Chatbot',\n    email:true\n}\nreturn msg",
+        "func": "let jwt = global.get('jsonwebtoken')\n\nconst token = jwt.sign(\n    { user_id: msg.id, email: msg.fromApp.email },\n    \"test\",\n    {\n        expiresIn: \"1400m\",\n    }\n);\n\nmsg.cookies = {};\nmsg.cookies[\"user_token\"] = token;\nmsg.cookies[\"lang\"] = 'en';\n// msg.cookies[\"platform_user_token\"]= msg.access_token\n\nmsg.payload={\n    page: 'Create Chatbot',\n    email:true\n}\nreturn msg",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -7472,9 +7555,9 @@
         "wires": [
             [
                 "e787e1814d515bef",
-                "e3e2ac9d33193c0a",
                 "f7791ee1be174fd1",
-                "bfddeb43cbc895b7"
+                "bfddeb43cbc895b7",
+                "e3e2ac9d33193c0a"
             ]
         ],
         "l": false
@@ -7609,9 +7692,8 @@
         "type": "function",
         "z": "4f93abb205f77da5",
         "name": "function 674",
-        "func": "if (msg.payload.length > 1) {\n    msg.payload = {\n        page: 'Home',\n        email: true\n    }\n} else {\n\n    msg.payload = {\n        page: 'Create Chatbot',\n        email: true\n    }\n}\nlet jwt = global.get('jsonwebtoken')\n\nconst token = jwt.sign(\n    { user_id: msg.user._id, email: msg.user.email },\n    \"test\",\n    {\n        expiresIn: \"1400m\",\n    }\n);\n\nmsg.cookies = {};\nmsg.cookies[\"user_token\"] = token;\nmsg.cookies[\"lang\"] = 'en';\nmsg.cookies[\"access_user_token\"]= msg.access_token\nreturn msg\n",
+        "func": "if (msg.payload.length > 1) {\n    msg.payload = {\n        page: 'Home',\n        email: true\n    }\n} else {\n\n    msg.payload = {\n        page: 'Create Chatbot',\n        email: true\n    }\n}\nlet jwt = global.get('jsonwebtoken')\n\nconst token = jwt.sign(\n    { user_id: msg.user._id, email: msg.user.email },\n    \"test\",\n    {\n        expiresIn: \"1400m\",\n    }\n);\n\nmsg.cookies = {};\nmsg.cookies[\"user_token\"] = token;\nmsg.cookies[\"lang\"] = 'en';\n// msg.cookies[\"platform_user_token\"]= msg.access_token\nreturn msg\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -8259,9 +8341,8 @@
         "type": "function",
         "z": "4f93abb205f77da5",
         "name": "set token",
-        "func": "if (msg.payload.access_token !== 'null'){\nmsg.req.cookies.access_token = msg.payload.access_token\nmsg.access_token = msg.payload.access_token \n\nreturn msg;\n}",
+        "func": "if (msg.payload.access_token !== 'null') {\n    msg.req.cookies.access_token = msg.payload.access_token\n    msg.access_token = msg.payload.access_token\n\n    return msg;\n}",
         "outputs": 1,
-        "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -12669,8 +12750,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 3560,
-        "y": 1020,
+        "x": 3730,
+        "y": 1060,
         "wires": [
             [
                 "7c52c86ce0f39d48"
@@ -12742,7 +12823,8 @@
         "y": 1220,
         "wires": [
             [
-                "0ffb24b207a52cdd"
+                "0ffb24b207a52cdd",
+                "c912b804b0b1c007"
             ]
         ]
     },
@@ -12752,7 +12834,7 @@
         "z": "880decdf56f5b6dd",
         "g": "985e3a9abc54dbf3",
         "name": "delete",
-        "func": "\n\nconst process_env = global.get(\"pinecone\")\nmsg.PINECONE_URL = process_env.PINECONE_URL\nmsg.PINECONE_API = process_env.PINECONE_API\n\nmsg.headers = {\n    'Api-Key': msg.PINECONE_API,\n    'Content-Type': 'application/json'\n};\n\nmsg.url = `${msg.PINECONE_URL}/vectors/delete`;\nmsg.payload = { ids: msg.ids };\n\n\n\nreturn msg;\n\n\n\n",
+        "func": "\nmsg.headers = {\n    'Api-Key': msg.payload[0].pinecone.apiKey,\n    'Content-Type': 'application/json'\n};\n\nmsg.url = `${msg.payload[0].pinecone.url}/vectors/delete`;\nmsg.payload = { ids: msg.ids };\n\n\n\nreturn msg;\n\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12763,8 +12845,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 3070,
-        "y": 1180,
+        "x": 3210,
+        "y": 1160,
         "wires": [
             [
                 "24df717e95b68884"
@@ -12779,8 +12861,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 3610,
-        "y": 1160,
+        "x": 3650,
+        "y": 1200,
         "wires": []
     },
     {
@@ -12800,8 +12882,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 3400,
-        "y": 1180,
+        "x": 3500,
+        "y": 1200,
         "wires": [
             [
                 "6e4ea6d566f804cf"
@@ -12825,8 +12907,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 3230,
-        "y": 1180,
+        "x": 3350,
+        "y": 1160,
         "wires": [
             [
                 "266590c96c644e11"
@@ -12861,8 +12943,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 3560,
-        "y": 1200,
+        "x": 3580,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -12897,7 +12979,7 @@
         "z": "880decdf56f5b6dd",
         "g": "985e3a9abc54dbf3",
         "name": "pinecone",
-        "func": "msg.PINECONE_API_KEY = global.get(\"pinecone\").PINECONE_API\nmsg.PINECONE_ENVIRONMENT = global.get(\"pinecone\").PINECONE_ENV\nmsg.PINECONE_BASE_URL = global.get(\"pinecone\").PINECONE_URL\n\nconst vector = msg.payload.data[0].embedding\nconst question = msg.fromApp.question;\nconst result = msg.fromApp.result;\nconst id = msg.fromApp.id;\n// const url = msg.fromApp.url;\n\nmsg.url = `${global.get(\"pinecone\").PINECONE_URL}/vectors/update`;\n\nmsg.headers = {\n    'Api-Key': global.get(\"pinecone\").PINECONE_API,\n    'Content-Type': 'application/json'\n}\n\nmsg.payload = {\n    id: id,\n    namespace: global.get(\"pinecone\").PINECONE_INDEX,\n    // setMetadata: { url: url, question: question, result: result },\n    setMetadata: { question, result },\n    values: vector,\n    // namespase:''\n};\n\nreturn msg;",
+        "func": "\n\nconst vector = msg.embeding.data[0].embedding\nconst question = msg.fromApp.question;\nconst result = msg.fromApp.result;\nconst id = msg.fromApp.id;\n// const url = msg.fromApp.url;\n\nmsg.url = `${msg.payload[0].pinecone.url}/vectors/update`;\n\nmsg.headers = {\n    'Api-Key': msg.payload[0].pinecone.apiKey,\n    'Content-Type': 'application/json'\n}\n\nmsg.payload = {\n    id: id,\n    namespace: msg.payload[0].pinecone.index,\n    // setMetadata: { url: url, question: question, result: result },\n    setMetadata: { question, result },\n    values: vector,\n    // namespase:''\n};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12908,7 +12990,7 @@
                 "module": "objectid"
             }
         ],
-        "x": 3250,
+        "x": 3400,
         "y": 1000,
         "wires": [
             [
@@ -14878,7 +14960,7 @@
         "y": 1220,
         "wires": [
             [
-                "bae674b71ff6f7c2"
+                "84d83c740add0d61"
             ],
             [
                 "51beb66fce8384ad"
@@ -14891,7 +14973,7 @@
         "z": "880decdf56f5b6dd",
         "g": "985e3a9abc54dbf3",
         "name": "delete chroma vector",
-        "func": "\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nconst embedder = new OpenAIEmbeddingFunction({ openai_api_key: global.get(\"openai\").OPENAI_API })\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\n\n\nlet collection = await client.getCollection({ name: msg.req.query.nameBase})\nconst deleted = await collection.delete({\n    ids: [msg.ids]\n})\n\nmsg.payload = deleted;\n\n\nreturn msg\n\n\n\n",
+        "func": "\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\n// const embedder = new OpenAIEmbeddingFunction({ openai_api_key: global.get(\"openai\").OPENAI_API })\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\n\n\nlet collection = await client.getCollection({ name: msg.req.query.nameBase})\nconst deleted = await collection.delete({\n    ids: [msg.ids]\n})\n\nmsg.payload = deleted;\n\n\nreturn msg\n\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14906,11 +14988,12 @@
                 "module": "openai"
             }
         ],
-        "x": 3120,
+        "x": 3220,
         "y": 1240,
         "wires": [
             [
-                "266590c96c644e11"
+                "266590c96c644e11",
+                "728cb944b9cab273"
             ]
         ]
     },
@@ -17142,11 +17225,11 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 3100,
+        "x": 3050,
         "y": 1000,
         "wires": [
             [
-                "c3e43bda979d4b6a"
+                "57d41e1b78263f83"
             ]
         ]
     },
@@ -17320,7 +17403,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 3420,
+        "x": 3570,
         "y": 1000,
         "wires": [
             [
@@ -17664,7 +17747,8 @@
         "y": 660,
         "wires": [
             [
-                "1d97c06b1041aebe"
+                "1d97c06b1041aebe",
+                "0cc560bcc6e0fa5f"
             ]
         ]
     },
@@ -17750,7 +17834,8 @@
         "y": 560,
         "wires": [
             [
-                "e9f9c6049d159c79"
+                "e9f9c6049d159c79",
+                "e0b680e5194aa361"
             ]
         ]
     },
@@ -17775,7 +17860,8 @@
         "wires": [
             [
                 "2fb1fc1a927a6541",
-                "29f0eeaa3842ab0a"
+                "29f0eeaa3842ab0a",
+                "e0b680e5194aa361"
             ]
         ]
     },
@@ -18798,6 +18884,232 @@
         "wires": []
     },
     {
+        "id": "e0b680e5194aa361",
+        "type": "debug",
+        "z": "880decdf56f5b6dd",
+        "name": "debug 978",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2890,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "0cc560bcc6e0fa5f",
+        "type": "debug",
+        "z": "880decdf56f5b6dd",
+        "name": "debug 979",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2850,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c912b804b0b1c007",
+        "type": "debug",
+        "z": "880decdf56f5b6dd",
+        "g": "985e3a9abc54dbf3",
+        "name": "debug 980",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2750,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "728cb944b9cab273",
+        "type": "debug",
+        "z": "880decdf56f5b6dd",
+        "g": "985e3a9abc54dbf3",
+        "name": "debug 981",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3290,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "57d41e1b78263f83",
+        "type": "function",
+        "z": "880decdf56f5b6dd",
+        "name": "Key",
+        "func": "msg.embeding = msg.payload\nmsg.payload={\n    ownerId: msg.fromApp.ownerId\n}\nmsg.collection = 'credantials'\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 3210,
+        "y": 1000,
+        "wires": [
+            [
+                "df8f51048b4a6081"
+            ]
+        ]
+    },
+    {
+        "id": "df8f51048b4a6081",
+        "type": "link call",
+        "z": "880decdf56f5b6dd",
+        "name": "",
+        "links": [
+            "b887641964a5657c"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3295,
+        "y": 1000,
+        "wires": [
+            [
+                "c3e43bda979d4b6a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "84d83c740add0d61",
+        "type": "function",
+        "z": "880decdf56f5b6dd",
+        "g": "985e3a9abc54dbf3",
+        "name": "Key",
+        "func": "msg.fromApp = msg.payload\nmsg.payload={\n    ownerId: msg.fromApp.ownerId\n}\nmsg.collection = 'credantials'\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 3030,
+        "y": 1160,
+        "wires": [
+            [
+                "323d8622a89d6668"
+            ]
+        ]
+    },
+    {
+        "id": "323d8622a89d6668",
+        "type": "link call",
+        "z": "880decdf56f5b6dd",
+        "g": "985e3a9abc54dbf3",
+        "name": "",
+        "links": [
+            "b887641964a5657c"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 3125,
+        "y": 1160,
+        "wires": [
+            [
+                "bae674b71ff6f7c2"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "958f67317701b6bb",
+        "type": "inject",
+        "z": "880decdf56f5b6dd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 3240,
+        "wires": [
+            [
+                "58adb08cc1030247"
+            ]
+        ]
+    },
+    {
+        "id": "58adb08cc1030247",
+        "type": "function",
+        "z": "880decdf56f5b6dd",
+        "name": "function 715",
+        "func": "msg.payload={\n    _id: objectid('669fe3f39bcc391100000275')\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 350,
+        "y": 3200,
+        "wires": [
+            [
+                "18b702bf2d987e78"
+            ]
+        ]
+    },
+    {
+        "id": "18b702bf2d987e78",
+        "type": "mongodb out",
+        "z": "880decdf56f5b6dd",
+        "mongodb": "7908a755f1520aa7",
+        "name": "",
+        "collection": "knowledgeObjects",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "delete",
+        "x": 800,
+        "y": 3180,
+        "wires": []
+    },
+    {
         "id": "5111c615ced943f2",
         "type": "http in",
         "z": "a734700a3a303c31",
@@ -18849,7 +19161,9 @@
         "x": 1570,
         "y": 760,
         "wires": [
-            []
+            [
+                "be4fccfe0819718e"
+            ]
         ]
     },
     {
@@ -18939,7 +19253,8 @@
         "y": 760,
         "wires": [
             [
-                "a30b7b0b2e9df350"
+                "a30b7b0b2e9df350",
+                "be4fccfe0819718e"
             ]
         ]
     },
@@ -19573,7 +19888,7 @@
         "z": "a734700a3a303c31",
         "g": "d30f2d186071f6f0",
         "name": "check command",
-        "func": "const message = msg.message\nmsg.allCred = {\n    behaviour: msg.payload[0].behaviour,\n    base: msg.payload[0].systemName,\n    type: msg.payload[0].type,\n    tokenTG: msg.cred.telegram.bot_token,\n    openAIkey: msg.cred.openAIkey,\n    pinecone: msg.cred?.pinecone\n}\n\ndelete msg.cred\n\nmsg.fromTG = {\n    chatId: message.from.id,\n    messageId: message.message_id,\n    type: 'message',\n    content: message.text,\n    date: message.date,\n    username: msg.originalMessage.from.username,\n};\n\nmsg.history = {\n    requestText: message.text,\n    startDate: Date.now(),\n    type: 'telegram',\n    ownerId: msg.userId\n}\n\nif (message.text === '/start') {\n    return [msg, null] \n}\n\nelse {\n    return  [null, msg]\n}\n",
+        "func": "const message = msg.message\nmsg.allCred = {\n    behaviour: msg.payload[0].behaviour,\n    base: msg.payload[0].systemName,\n    type: msg.payload[0].type,\n    tokenTG: msg.cred.telegram.bot_token,\n    openAIkey: msg.cred.openAIkey,\n    pinecone: msg.cred?.pinecone,\n    scenario: msg.payload[0]?.scenario\n}\n\ndelete msg.cred\n\nmsg.fromTG = {\n    chatId: message.from.id,\n    messageId: message.message_id,\n    type: 'message',\n    content: message.text,\n    date: message.date,\n    username: msg.originalMessage.from.username,\n};\n\nmsg.history = {\n    requestText: message.text,\n    startDate: Date.now(),\n    type: 'telegram',\n    ownerId: msg.userId\n}\n\nif (message.text === '/start') {\n    return [msg, null] \n}\n\nelse {\n    return  [null, msg]\n}\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -19598,7 +19913,7 @@
         "z": "a734700a3a303c31",
         "g": "d30f2d186071f6f0",
         "name": "/start",
-        "func": "const text = \"Hello\";\nconst TOKEN = msg.allCred.tokenTG\n\nmsg.payload = {\n    chat_id: msg.chatId,\n    text\n};\n\nmsg.url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;\n\nreturn msg;",
+        "func": "const text = msg.allCred.scenario.welcomeMessage ? msg.allCred.scenario.welcomeMessage: 'HELLO! 🙂'\nconst TOKEN = msg.allCred.tokenTG\n\nmsg.payload = {\n    chat_id: msg.chatId,\n    text\n};\n\nmsg.url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -19620,7 +19935,7 @@
         "z": "a734700a3a303c31",
         "g": "d30f2d186071f6f0",
         "name": "Prepare Data",
-        "func": "\nmsg.payload = {\n    OPENAI_KEY: msg.allCred.openAIkey,\n    CHROMA_LINK: env.get('VECTORDB-CHROMA-HOST-NAME'),\n    BASE_URL: env.get(\"nodered\"),\n    AI_SETTINGS: {\n        ANSWER_AS: msg.allCred.behaviour.answer_as,\n        TONE: msg.allCred.behaviour.tone,\n        LANGUAGE: msg.allCred.behaviour.language,\n        ANSWER_LENGTH: msg.allCred.behaviour.answer_length,\n        PROMPT_CUSTOM: msg.allCred.behaviour.prompt,\n        OPENAI_MODEL: msg.allCred.behaviour.model,\n    },\n    DATABASE: {\n        TYPE_BASE: msg.allCred.type,\n        NAME_BASE: msg.allCred.base,\n    },\n    chat: {\n        id: msg.fromTG.chatId,\n        username: msg.fromTG.username ? msg.fromTG.username : msg.originalMessage.from.first_name,\n        type: 'telegram',\n        content: msg.fromTG.content,\n    },\n    PINECONE: {\n        INDEX: msg.allCred.pinecone?.index,\n        API_KEY: msg.allCred.pinecone?.apiKey,\n        ENVIRONMENT: msg.allCred.pinecone?.region,\n        BASE_URL: msg.allCred.pinecone?.url,\n    },\n    NUMBER_OF_ANSWERS_VDB: 2,\n};\n\nreturn msg;\n",
+        "func": "\nmsg.payload = {\n    OPENAI_KEY: msg.allCred.openAIkey,\n    CHROMA_LINK: env.get('VECTORDB-CHROMA-HOST-NAME'),\n    BASE_URL: env.get(\"nodered\"),\n    AI_SETTINGS: {\n        ANSWER_AS: msg.allCred.behaviour.answer_as,\n        TONE: msg.allCred.behaviour.tone,\n        LANGUAGE: msg.allCred.behaviour.language,\n        ANSWER_LENGTH: msg.allCred.behaviour.answer_length,\n        PROMPT_CUSTOM: msg.allCred.behaviour.prompt,\n        OPENAI_MODEL: msg.allCred.behaviour.model,\n    },\n    DATABASE: {\n        TYPE_BASE: msg.allCred.type,\n        NAME_BASE: msg.allCred.base,\n    },\n    chat: {\n        id: msg.fromTG.chatId,\n        username: msg.fromTG.username ? msg.fromTG.username : msg.originalMessage.from.first_name,\n        type: 'telegram',\n        content: msg.fromTG.content,\n    },\n    PINECONE: {\n        INDEX: msg.allCred.pinecone?.index,\n        API_KEY: msg.allCred.pinecone?.apiKey,\n        ENVIRONMENT: msg.allCred.pinecone?.region,\n        BASE_URL: msg.allCred.pinecone?.url,\n    },\n    NUMBER_OF_ANSWERS_VDB: 6,\n};\n\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -20806,7 +21121,6 @@
         "name": "Prepare Data",
         "func": "msg.allCred = {\n    behaviour: msg.payload[0].behaviour,\n    base: msg.payload[0].systemName,\n    type: msg.payload[0].type,\n    instagram: msg.cred.instagram,\n    openAIkey: msg.cred.openAIkey,\n    pinecone: msg.cred?.pinecone\n}\nconst userIdx = msg.req.query.ipUser;\n\ndelete msg.cred\n\nmsg.payload = {\n    OPENAI_KEY: msg.allCred.openAIkey,\n    CHROMA_LINK: env.get('VECTORDB-CHROMA-HOST-NAME'),\n    BASE_URL: env.get(\"nodered\"),\n    AI_SETTINGS: {\n        ANSWER_AS: msg.allCred?.behaviour.answer_as,\n        TONE: msg.allCred?.behaviour.tone,\n        LANGUAGE: msg.allCred?.behaviour.language,\n        ANSWER_LENGTH: msg.allCred?.behaviour.answer_length,\n        PROMPT_CUSTOM: msg.allCred.behaviour.prompt,\n        OPENAI_MODEL: msg.allCred?.behaviour.model,\n    },\n    DATABASE: {\n        TYPE_BASE: msg.allCred?.type,\n        NAME_BASE: msg.allCred?.base,\n    },\n    chat: {\n        id: userIdx,\n        username: userIdx,\n        type: 'custom',\n        content: msg.fromApp.input_value,\n    },\n    PINECONE: {\n        INDEX: msg.allCred.pinecone?.index,\n        API_KEY: msg.allCred.pinecone?.apiKey,\n        ENVIRONMENT: msg.allCred.pinecone?.region,\n        BASE_URL: msg.allCred.pinecone?.url,\n    },\n    NUMBER_OF_ANSWERS_VDB: 2,\n};\n\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -20828,7 +21142,6 @@
         "name": "chek user",
         "func": "msg.url = env.get(\"nodered\") + `/checkUser`;\nmsg.userId = msg.req.params.userID\n\nmsg.idx = msg.req.query.ipUser\nmsg.payload = {\n    chat_id: msg.req.query.ipUser,\n    ownerId: msg.userId\n}\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -20889,7 +21202,6 @@
         "name": "function 335",
         "func": "// msg.payload = {\n//         message:{ text: msg.payload},\n\n// }\n\nmsg.payload = {\n  outputs: [{\n    outputs: [{\n      outputs: {\n        outputs:\n          { message: msg.payload, type: 'text' }\n      }\n    }]\n  }\n  ]\n}\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -20911,7 +21223,6 @@
         "name": "save/update",
         "func": "if (msg.payload.length > 0) {\n    return [null, msg]\n}\n\nelse {\n    msg.method = \"POST\"\n    msg.url = env.get(\"nodered\") + `/saveUser`;\n    msg.payload = {\n        deleted: false,\n        chat_id: msg.req.query.ipUser.toString(),\n        type: 'custom',\n        ownerId: msg.userId\n\n    }\n\n    return [msg, null]\n}\n\n",
         "outputs": 2,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -20971,7 +21282,6 @@
         "name": "get settings",
         "func": "msg.fromApp = msg.payload\nmsg.userId = msg.req.params.userID\n\nmsg.collection = \"credantials\";\nmsg.payload = {\n    \"ownerId\": msg.userId\n}\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21018,7 +21328,6 @@
         "name": "get settings",
         "func": "msg.cred = msg.payload[0]\n\nmsg.collection = \"knowlegebase\";\n\nmsg.payload = {\n    _id: objectid(msg.cred.chatWidget.id_base)\n}\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21240,7 +21549,6 @@
         "name": "chek user",
         "func": "msg.url = env.get(\"nodered\") + `/checkUser`;\nmsg.userId = msg.req.params.userID\n\nmsg.idx = msg.payload.inputs.userIdx\nmsg.payload = {\n    chat_id: msg.req.query.ipUser,\n    ownerId: msg.userId\n}\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21261,7 +21569,6 @@
         "name": "get settings",
         "func": "msg.fromApp = msg.payload\nmsg.userId = msg.req.params.userID\n\nmsg.collection = \"credantials\";\nmsg.payload = {\n    \"ownerId\": msg.userId\n}\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21332,7 +21639,6 @@
         "name": "save/update",
         "func": "if (msg.payload.length > 0) {\n    return [null, msg]\n}\n\nelse {\n    msg.method = \"POST\"\n    msg.url = env.get(\"nodered\") + `/saveUser`;\n    msg.payload = {\n        deleted: false,\n        chat_id: msg.req.query.ipUser.toString(),\n        type: 'custom',\n        ownerId: msg.userId\n\n    }\n\n    return [msg, null]\n}\n\n",
         "outputs": 2,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21422,7 +21728,6 @@
         "name": "Prepare Data",
         "func": "msg.allCred = {\n    behaviour: msg.payload[0].behaviour,\n    base: msg.payload[0].systemName,\n    type: msg.payload[0].type,\n    instagram: msg.cred.instagram,\n    openAIkey: msg.cred.openAIkey,\n    pinecone: msg.cred?.pinecone\n}\nconst userIdx = msg.req.query.ipUser;\n\ndelete msg.cred\n\nmsg.payload = {\n    OPENAI_KEY: msg.allCred.openAIkey,\n    CHROMA_LINK: env.get('VECTORDB-CHROMA-HOST-NAME'),\n    BASE_URL: env.get(\"nodered\"),\n    AI_SETTINGS: {\n        ANSWER_AS: msg.allCred?.behaviour.answer_as,\n        TONE: msg.allCred?.behaviour.tone,\n        LANGUAGE: msg.allCred?.behaviour.language,\n        ANSWER_LENGTH: msg.allCred?.behaviour.answer_length,\n        PROMPT_CUSTOM: msg.allCred.behaviour.prompt,\n        OPENAI_MODEL: msg.allCred?.behaviour.model,\n    },\n    DATABASE: {\n        TYPE_BASE: msg.allCred?.type,\n        NAME_BASE: msg.allCred?.base,\n    },\n    chat: {\n        id: userIdx,\n        username: userIdx,\n        type: 'custom',\n        content: msg.fromApp.inputs.input,\n    },\n    PINECONE: {\n        INDEX: msg.allCred.pinecone?.index,\n        API_KEY: msg.allCred.pinecone?.apiKey,\n        ENVIRONMENT: msg.allCred.pinecone?.region,\n        BASE_URL: msg.allCred.pinecone?.url,\n    },\n    NUMBER_OF_ANSWERS_VDB: 2,\n};\n\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21457,7 +21762,6 @@
         "name": "function 714",
         "func": "msg.payload = {\n    result:{\n        message: msg.payload,\n    }\n\n}\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -21500,6 +21804,24 @@
         "wires": []
     },
     {
+        "id": "be4fccfe0819718e",
+        "type": "debug",
+        "z": "a734700a3a303c31",
+        "g": "b8ea7f0f97c3cc7a",
+        "name": "debug 982",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 720,
+        "wires": []
+    },
+    {
         "id": "98574d4c5fba3bb0",
         "type": "function",
         "z": "e0d56ec978879320",
@@ -21507,7 +21829,6 @@
         "name": "count users_messages",
         "func": "// msg.fromApp = {\n//     ownerId: '669418d4af23ec1100000030'\n// }\nmsg.fromApp = msg.payload\n\nmsg.payload = {\n    ownerId: msg.fromApp.ownerId\n}\nmsg.collection = 'users_messages'\n\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -22025,7 +22346,6 @@
         "name": "function 393",
         "func": "\nconst totalMessages = msg.payload.total;\n\nconst messengerData = [\n    {\n        \"label\": \"Telegram\",\n        \"value\": msg.payload.telegram.length,\n        \"type\": \"Telegram\",\n        \"color\": \"#1E90FF\",  \n        \"borderColor\": \"#fff\"\n    },\n    {\n        \"label\": \"Messenger\",\n        \"value\": msg.payload.messanger.length,\n        \"type\": \"Messenger\",\n        \"color\": \"#4169E1\", \n        \"borderColor\": \"#fff\"\n    },\n    {\n        \"label\": \"WhatsApp\",\n        \"value\": msg.payload.whatsApp.length,\n        \"type\": \"WhatsApp\",\n        \"color\": \"#00BFFF\",  \n        \"borderColor\": \"#fff\"\n    },\n    {\n        \"label\": \"Instagram\",\n        \"value\": msg.payload.instagram.length,\n        \"type\": \"Instagram\",\n        \"color\": \"#87CEEB\",  \n        \"borderColor\": \"#fff\"\n    },\n    {\n        \"label\": \"Chat Widget\",\n        \"value\": msg.payload.custom.length,\n        \"type\": \"Chat Widget\",\n        \"color\": \"#40E0D0\",  // Бірюзовий\n        \"borderColor\": \"#fff\"\n    }\n]\n\n// Створення графіка\nconst chartData = [\n    {\n        \"label\": 'Total Messages',\n        value: totalMessages,\n        \"type\": \"4-10\",\n        \"color\": \"#4682B4\", \n        \"borderColor\": \"#fff\"\n    },\n    ...messengerData\n];\n\n\n// Оновлення графіка з новими даними\nmsg.payload = chartData;\n\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -22047,7 +22367,6 @@
         "name": "get users",
         "func": "// msg.collection = 'users'\nmsg.collection = 'users_messages'\nmsg.payload = {\n      // deleted: false,\n      ownerId: msg.payload.ownerId\n}\n// msg.payload =[\n    \n//       {  $match:{\n//        deleted:false\n//         }}\n    \n// ]\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -25115,7 +25434,7 @@
             }
         ],
         "x": 1050,
-        "y": 1000,
+        "y": 980,
         "wires": [
             [
                 "275cbdf05e46c9a3",
@@ -25136,7 +25455,7 @@
         "finalize": "",
         "libs": [],
         "x": 1020,
-        "y": 800,
+        "y": 780,
         "wires": [
             [
                 "b0ec054fe555934e"
@@ -25154,7 +25473,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 800,
-        "y": 800,
+        "y": 780,
         "wires": [
             [
                 "41613e5876e17312"
@@ -25173,7 +25492,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1260,
-        "y": 800,
+        "y": 780,
         "wires": [
             [
                 "1752049a603a5fed"
@@ -25189,7 +25508,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1610,
-        "y": 800,
+        "y": 780,
         "wires": []
     },
     {
@@ -25203,7 +25522,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 810,
-        "y": 900,
+        "y": 880,
         "wires": [
             [
                 "04c67fc851753750"
@@ -25229,7 +25548,7 @@
             }
         ],
         "x": 1040,
-        "y": 900,
+        "y": 880,
         "wires": [
             [
                 "b02f6a5a1ac1c840",
@@ -25249,7 +25568,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1280,
-        "y": 860,
+        "y": 840,
         "wires": [
             []
         ]
@@ -25263,7 +25582,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1250,
-        "y": 900,
+        "y": 880,
         "wires": []
     },
     {
@@ -25277,7 +25596,7 @@
         "upload": true,
         "swaggerDoc": "",
         "x": 800,
-        "y": 1000,
+        "y": 980,
         "wires": [
             [
                 "5896fb7f8b8d17f0"
@@ -25294,7 +25613,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1270,
-        "y": 1000,
+        "y": 980,
         "wires": []
     },
     {
@@ -25309,7 +25628,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1300,
-        "y": 960,
+        "y": 940,
         "wires": [
             []
         ]
@@ -25325,7 +25644,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 800,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "985ff1fe3d9177e7"
@@ -25346,7 +25665,7 @@
         "finalize": "",
         "libs": [],
         "x": 1010,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "8f05acabdbf688d6"
@@ -25365,7 +25684,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1180,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "7ac1b5b00a3f1d90"
@@ -25385,7 +25704,7 @@
         "finalize": "",
         "libs": [],
         "x": 1330,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "27da2c2bd16257f9"
@@ -25404,7 +25723,7 @@
         "statusCode": "400",
         "headers": {},
         "x": 1520,
-        "y": 1120,
+        "y": 1100,
         "wires": []
     },
     {
@@ -25429,7 +25748,7 @@
             }
         ],
         "x": 1540,
-        "y": 1060,
+        "y": 1040,
         "wires": [
             [
                 "a83acd0c8f340387",
@@ -25449,7 +25768,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1790,
-        "y": 1020,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -25463,7 +25782,7 @@
         "statusCode": "",
         "headers": {},
         "x": 1770,
-        "y": 1060,
+        "y": 1040,
         "wires": []
     },
     {
@@ -26399,7 +26718,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 840,
-        "y": 860,
+        "y": 840,
         "wires": [
             [
                 "41613e5876e17312"
@@ -27882,9 +28201,8 @@
         "z": "6c6f5bad4ab12247",
         "g": "2781fd37492a9871",
         "name": "check user permissions",
-        "func": "const pageName = msg.check.page_id.replace('%20', ' ');\n\nconst parentPage = msg.menu.map((el) => el.value).includes(pageName);\nconst childPage = msg.menu.filter((e) => e.children.length > 0).flatMap((el) => el.children).map((elem) => elem.value).includes(pageName);\n\nconst createdAt = msg.user.user.createdAt\nconst now = Date.now();\nconst difference = now - createdAt;\n\nconst sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;\nconst isMoreThanSevenDays = difference > sevenDaysInMilliseconds;\n\n\nif (parentPage || childPage || pageName == 'Vectors' || pageName == \"Chat\" || pageName === \"Create Chatbot\" || pageName === \"Subscription\") {\n\n    msg.statusCode = 200;\n    msg.payload = {\n        auth: \"Success\",\n        code: 200,\n        user: {\n            \"menu\": msg.menu,\n            \"permission\": msg.permissions,\n            \"translation\": msg.payload.translation[0],\n            \"info\": msg.user,\n            \"page_id\": msg.check.page_id\n        }\n    }\n\n    if ( msg.user.user?.subscription !== 'active') {\n        const currentDate = new Date();\n        const createdDate = new Date(createdAt);\n        const trialEndDate = new Date(createdDate.getTime() + 7 * 24 * 60 * 60 * 1000);\n\n        // @ts-ignore\n        const timeDifference = trialEndDate - currentDate;\n        const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));\n\n        node.warn(daysLeft);\n\n        msg.payload.user.daysLeft = daysLeft <= 0 ? 0 : daysLeft\n    }\n    if ( isMoreThanSevenDays && msg.user.user?.subscription !== 'active') {\n        msg.payload.user.trialEnded = true\n\n    }\n\n} else {\n    msg.payload = {\n        auth: \"Unautorizate\",\n        code: 401,\n        login_id: msg.menu[0].value + `?pageName=${msg.menu[0].value}`,\n        app_id: msg.check.app_id\n    }\n}\nreturn msg;",
+        "func": "const pageName = msg.check.page_id.replace('%20', ' ');\n\nconst parentPage = msg.menu.map((el) => el.value).includes(pageName);\nconst childPage = msg.menu.filter((e) => e.children.length > 0).flatMap((el) => el.children).map((elem) => elem.value).includes(pageName);\n\nconst createdAt = msg.user.user.createdAt\nconst now = Date.now();\nconst difference = now - createdAt;\n\nconst sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;\nconst isMoreThanSevenDays = difference > sevenDaysInMilliseconds;\n\n\nif (parentPage || childPage || pageName == 'Vectors' || pageName == \"Chat\" || pageName === \"Create Chatbot\" || pageName === \"Subscription\") {\n\n    msg.statusCode = 200;\n    msg.payload = {\n        auth: \"Success\",\n        code: 200,\n        user: {\n            \"menu\": msg.menu,\n            \"permission\": msg.permissions,\n            \"translation\": msg.payload.translation[0],\n            \"info\": msg.user,\n            \"page_id\": msg.check.page_id\n        }\n    }\n\n    if ( msg.user?.subscription !== 'active') {\n        const currentDate = new Date();\n        const createdDate = new Date(createdAt);\n        const trialEndDate = new Date(createdDate.getTime() + 7 * 24 * 60 * 60 * 1000);\n\n        // @ts-ignore\n        const timeDifference = trialEndDate - currentDate;\n        let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));\n\n        node.warn(daysLeft);\n\n        daysLeft = daysLeft <= 0 ? 0 : daysLeft\n        msg.payload.user.daysLeft = daysLeft.toString()\n    }\n    if ( isMoreThanSevenDays && msg.user.user?.subscription !== 'active') {\n        msg.payload.user.trialEnded = true\n    }\n\n} else {\n    msg.payload = {\n        auth: \"Unautorizate\",\n        code: 401,\n        login_id: msg.menu[0].value + `?pageName=${msg.menu[0].value}`,\n        app_id: msg.check.app_id\n    }\n}\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -28046,9 +28364,8 @@
         "z": "6c6f5bad4ab12247",
         "g": "2781fd37492a9871",
         "name": "check jwt",
-        "func": "let jwt = global.get('jsonwebtoken')\nmsg.lang = msg.lang ? msg.req.cookies.lang : msg.req.cookies.lang\n// msg.lang = msg.payload.lang\nmsg.check = msg.payload;\nconst decoded = jwt.verify(msg.payload.token, 'test');\nmsg.payload = decoded\nmsg.fromApp = msg.payload\nmsg.access_token = msg.req.cookies.access_user_token\nreturn msg;",
+        "func": "let jwt = global.get('jsonwebtoken')\nmsg.lang = msg.lang ? msg.req.cookies.lang : msg.req.cookies.lang\n// msg.lang = msg.payload.lang\nmsg.check = msg.payload;\nconst decoded = jwt.verify(msg.payload.token, 'test');\nmsg.payload = decoded\nmsg.fromApp = msg.payload\nmsg.access_token = msg.req.cookies.access_token\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -28057,7 +28374,7 @@
         "y": 560,
         "wires": [
             [
-                "2564f35d3d21c384"
+                "4b68154e4d35afa6"
             ]
         ]
     },
@@ -28119,7 +28436,6 @@
         "name": "check",
         "func": "msg.collection = \"admins\"\nmsg.payload = {\n    // email : msg.fromApp.email,\n    _id: objectid(msg.fromApp.user_id),\n    deleted:false\n}\n\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -28145,7 +28461,6 @@
         "name": "check auth",
         "func": "if (msg.payload.length > 0) {\n    msg.payload = msg.payload[0]\n    msg.user = {\n        auth: \"Success\",\n        code: 200,\n        user: msg.payload\n    }\n    return [msg, null]\n} else {\n    msg.payload = {\n        auth: \"Unautorizate\",\n        code: 401,\n        login_id: msg.check.login_id,\n        app_id: msg.check.app_id\n    }\n    return [null, msg]\n}",
         "outputs": 2,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -30509,21 +30824,6 @@
         "wires": []
     },
     {
-        "id": "2564f35d3d21c384",
-        "type": "subflow:f510f97f1c5410c8",
-        "z": "6c6f5bad4ab12247",
-        "g": "2781fd37492a9871",
-        "name": "",
-        "x": 490,
-        "y": 560,
-        "wires": [
-            [
-                "ccfd73dd6493fe52",
-                "487652ca5fd0d60d"
-            ]
-        ]
-    },
-    {
         "id": "487652ca5fd0d60d",
         "type": "debug",
         "z": "6c6f5bad4ab12247",
@@ -30539,6 +30839,20 @@
         "x": 570,
         "y": 520,
         "wires": []
+    },
+    {
+        "id": "4b68154e4d35afa6",
+        "type": "subflow:6f81704611a8ba6b",
+        "z": "6c6f5bad4ab12247",
+        "g": "2781fd37492a9871",
+        "name": "",
+        "x": 470,
+        "y": 560,
+        "wires": [
+            [
+                "ccfd73dd6493fe52"
+            ]
+        ]
     },
     {
         "id": "530af790511e4f47",
@@ -32229,7 +32543,6 @@
         "name": "req to openAI",
         "func": "if (msg.params.conversationName ==='UbosSupport'){\n    msg.url = `https://aibotnr-5850-658ad621387fb711000001e1.ubos.tech/demoHome1`\n\n    msg.payload = {\n        message: msg.fromUI.message,\n        messages: [\n\n            ...global.get(\"conversation_\" + msg.params.conversationId)\n        ]\n    }\n}\nelse{\nmsg.url =`http://localhost:1880/demoUserChatResponse`\n\nmsg.payload = {\n    email: msg.params.email,\n    baseID: msg.params.baseID,\n    message:msg.fromUI.message,\n    behaviour: msg.params.behaviour,\n    messages: [\n        \n        ...global.get(\"conversation_\" + msg.params.conversationId)\n    ]\n}\n}\nreturn msg;\n",
         "outputs": 1,
-        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
