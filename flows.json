@@ -136,6 +136,14 @@
         "env": []
     },
     {
+        "id": "42b693cddba85396",
+        "type": "tab",
+        "label": "Notifications",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "6a6d2afa5b0c7ec9",
         "type": "subflow",
         "name": "icons",
@@ -1680,27 +1688,6 @@
         "h": 482
     },
     {
-        "id": "f9efa57e6ca4a771",
-        "type": "group",
-        "z": "ec1b4918d501c55a",
-        "name": "ask support",
-        "style": {
-            "stroke": "#92d04f",
-            "fill": "#e3f3d3",
-            "label": true
-        },
-        "nodes": [
-            "5cb69f2ca794c6cc",
-            "bd6e9ef4c0daccf1",
-            "854b49b807f25d22",
-            "8a8216a447707022"
-        ],
-        "x": 754,
-        "y": 1239,
-        "w": 692,
-        "h": 82
-    },
-    {
         "id": "05997551516514ea",
         "type": "group",
         "z": "ec1b4918d501c55a",
@@ -2309,6 +2296,27 @@
         "y": 959,
         "w": 852,
         "h": 222
+    },
+    {
+        "id": "f9efa57e6ca4a771",
+        "type": "group",
+        "z": "42b693cddba85396",
+        "name": "ask support",
+        "style": {
+            "stroke": "#92d04f",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "5cb69f2ca794c6cc",
+            "bd6e9ef4c0daccf1",
+            "854b49b807f25d22",
+            "8a8216a447707022"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 692,
+        "h": 82
     },
     {
         "id": "39ed6d80353d8e55",
@@ -4030,7 +4038,7 @@
         "type": "function",
         "z": "f510f97f1c5410c8",
         "name": "check token",
-        "func": "if (msg.payload.length > 0) {\n    msg.userInfo = msg.payload\n    msg.access_token = msg.access_token ? msg.access_token : msg.req.cookies.access_token\n\n    msg.cookies = {\n        access_token: msg.access_token\n    }\n    msg.url = `https://platform.ubos.tech/api/checkUserToken`\n\n    return [msg, null]\n} else {\n    if (msg.req.url !== '/check_token') {\n        msg.payload = {\n            \"type\": \"error\",\n            \"message\": \"no access\"\n        }\n        msg.statusCode = 200\n    }\n    else {\n        msg.payload = {\n            auth: \"Unautorizate\",\n            code: 401,\n            login_id: 'Login',\n            app_id: msg.fromFlow.app_id\n        }\n    }\n    return [null, msg]\n}\n",
+        "func": "if (msg.payload.length > 0) {\n    msg.userInfo = msg.payload\n    msg.access_token = msg.access_token ? msg.access_token : msg.req.cookies.access_token\n\n    msg.cookies = {\n        access_token: msg.access_token\n    }\n    msg.url = `https://yourBackendURL/endpoint`\n\n    return [msg, null]\n} else {\n    if (msg.req.url !== '/check_token') {\n        msg.payload = {\n            \"type\": \"error\",\n            \"message\": \"no access\"\n        }\n        msg.statusCode = 200\n    }\n    else {\n        msg.payload = {\n            auth: \"Unautorizate\",\n            code: 401,\n            login_id: 'Login',\n            app_id: msg.fromFlow.app_id\n        }\n    }\n    return [null, msg]\n}\n",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -20230,57 +20238,6 @@
         ]
     },
     {
-        "id": "5cb69f2ca794c6cc",
-        "type": "http in",
-        "z": "ec1b4918d501c55a",
-        "g": "f9efa57e6ca4a771",
-        "name": "",
-        "url": "/askSupport",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 870,
-        "y": 1280,
-        "wires": [
-            [
-                "bd6e9ef4c0daccf1"
-            ]
-        ]
-    },
-    {
-        "id": "bd6e9ef4c0daccf1",
-        "type": "function",
-        "z": "ec1b4918d501c55a",
-        "g": "f9efa57e6ca4a771",
-        "name": "to Lark",
-        "func": "msg.payload = { \"email\": msg.payload.email, \"request\": msg.payload.question }\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 1280,
-        "wires": [
-            [
-                "8a8216a447707022"
-            ]
-        ]
-    },
-    {
-        "id": "854b49b807f25d22",
-        "type": "http response",
-        "z": "ec1b4918d501c55a",
-        "g": "f9efa57e6ca4a771",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 1370,
-        "y": 1280,
-        "wires": []
-    },
-    {
         "id": "c9f3c784d4531d17",
         "type": "link call",
         "z": "ec1b4918d501c55a",
@@ -20321,31 +20278,6 @@
         "wires": [
             [
                 "c9f3c784d4531d17"
-            ]
-        ]
-    },
-    {
-        "id": "8a8216a447707022",
-        "type": "http request",
-        "z": "ec1b4918d501c55a",
-        "g": "f9efa57e6ca4a771",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "https://platform.ubos.tech/api/aiBotNotification",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1210,
-        "y": 1280,
-        "wires": [
-            [
-                "854b49b807f25d22"
             ]
         ]
     },
@@ -42343,108 +42275,6 @@
         ]
     },
     {
-        "id": "483bdde045ad7e11",
-        "type": "http in",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "url": "/supportRequest",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 160,
-        "y": 540,
-        "wires": [
-            [
-                "170165fe3d7c5a11"
-            ]
-        ]
-    },
-    {
-        "id": "170165fe3d7c5a11",
-        "type": "debug",
-        "z": "d0e74064b88242f7",
-        "name": "debug 1051",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 330,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "1673731fb21738e2",
-        "type": "subflow:f510f97f1c5410c8",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "x": 330,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f82a281a81d580c8",
-        "type": "function",
-        "z": "d0e74064b88242f7",
-        "name": "req to main",
-        "func": "msg.url =`https://platform.ubos.tech/api/supportRequest`\n// msg.url = `https://platform.eks.ubraine.com/api/contactUS`\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 510,
-        "y": 540,
-        "wires": [
-            [
-                "4d6b7a9aa1fb5fe8",
-                "170165fe3d7c5a11"
-            ]
-        ]
-    },
-    {
-        "id": "4d6b7a9aa1fb5fe8",
-        "type": "http request",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 710,
-        "y": 540,
-        "wires": [
-            [
-                "bf79c5b106074d0b",
-                "170165fe3d7c5a11"
-            ]
-        ]
-    },
-    {
-        "id": "bf79c5b106074d0b",
-        "type": "http response",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 960,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "29d1032d2cf6ae77",
         "type": "http in",
         "z": "54b72545b0798eec",
@@ -42836,6 +42666,187 @@
         "statusType": "auto",
         "x": 820,
         "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5cb69f2ca794c6cc",
+        "type": "http in",
+        "z": "42b693cddba85396",
+        "g": "f9efa57e6ca4a771",
+        "name": "",
+        "url": "/askSupport",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "bd6e9ef4c0daccf1"
+            ]
+        ]
+    },
+    {
+        "id": "bd6e9ef4c0daccf1",
+        "type": "function",
+        "z": "42b693cddba85396",
+        "g": "f9efa57e6ca4a771",
+        "name": "to Lark",
+        "func": "msg.payload = { \"email\": msg.payload.email, \"request\": msg.payload.question }\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "8a8216a447707022"
+            ]
+        ]
+    },
+    {
+        "id": "854b49b807f25d22",
+        "type": "http response",
+        "z": "42b693cddba85396",
+        "g": "f9efa57e6ca4a771",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8a8216a447707022",
+        "type": "http request",
+        "z": "42b693cddba85396",
+        "g": "f9efa57e6ca4a771",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://platform.ubos.tech/api/aiBotNotification",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 490,
+        "y": 80,
+        "wires": [
+            [
+                "854b49b807f25d22"
+            ]
+        ]
+    },
+    {
+        "id": "1673731fb21738e2",
+        "type": "subflow:f510f97f1c5410c8",
+        "z": "42b693cddba85396",
+        "name": "",
+        "x": 330,
+        "y": 200,
+        "wires": [
+            [
+                "f82a281a81d580c8"
+            ]
+        ]
+    },
+    {
+        "id": "483bdde045ad7e11",
+        "type": "http in",
+        "z": "42b693cddba85396",
+        "name": "",
+        "url": "/supportRequest",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "170165fe3d7c5a11",
+                "1673731fb21738e2"
+            ]
+        ]
+    },
+    {
+        "id": "f82a281a81d580c8",
+        "type": "function",
+        "z": "42b693cddba85396",
+        "name": "req to main",
+        "func": "msg.url =`https://platform.ubos.tech/api/supportRequest`\n// msg.url = `https://platform.eks.ubraine.com/api/contactUS`\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 200,
+        "wires": [
+            [
+                "4d6b7a9aa1fb5fe8",
+                "170165fe3d7c5a11"
+            ]
+        ]
+    },
+    {
+        "id": "170165fe3d7c5a11",
+        "type": "debug",
+        "z": "42b693cddba85396",
+        "name": "debug 1051",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 150,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4d6b7a9aa1fb5fe8",
+        "type": "http request",
+        "z": "42b693cddba85396",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 200,
+        "wires": [
+            [
+                "bf79c5b106074d0b",
+                "170165fe3d7c5a11"
+            ]
+        ]
+    },
+    {
+        "id": "bf79c5b106074d0b",
+        "type": "http response",
+        "z": "42b693cddba85396",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 940,
+        "y": 200,
         "wires": []
     }
 ]
