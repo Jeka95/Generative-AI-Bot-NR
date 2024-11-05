@@ -2,5 +2,6 @@
     "7908a755f1520aa7": {
         "user": "${AIBOTDB-MONGO-USER-NAME}",
         "password": "${AIBOTDB-MONGO-PASSWORD}"
-    }
+    },
+    "8a8216a447707022": {}
 }
