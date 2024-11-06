@@ -3,5 +3,10 @@
         "user": "${AIBOTDB-MONGO-USER-NAME}",
         "password": "${AIBOTDB-MONGO-PASSWORD}"
     },
-    "8a8216a447707022": {}
+    "a1b7d34748829f43": {},
+    "4d6b7a9aa1fb5fe8": {},
+    "58f115bc5709e7df": {},
+    "8509dadd0c052fa0": {
+        "token": "6794948250:AAEyT2qOL8wJM7t8tywWBDN1_i8LHtPEZYQ"
+    }
 }

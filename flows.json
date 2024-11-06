@@ -1809,7 +1809,8 @@
             "7475c8d82ee428be",
             "7ee5b8f252c9b852",
             "8d4d810867e5db71",
-            "9fd1f861def7bc21"
+            "9fd1f861def7bc21",
+            "88207e708b5bbd24"
         ],
         "x": 14,
         "y": 2059,
@@ -2298,27 +2299,6 @@
         "h": 222
     },
     {
-        "id": "f9efa57e6ca4a771",
-        "type": "group",
-        "z": "42b693cddba85396",
-        "name": "ask support",
-        "style": {
-            "stroke": "#92d04f",
-            "fill": "#e3f3d3",
-            "label": true
-        },
-        "nodes": [
-            "5cb69f2ca794c6cc",
-            "bd6e9ef4c0daccf1",
-            "854b49b807f25d22",
-            "8a8216a447707022"
-        ],
-        "x": 34,
-        "y": 39,
-        "w": 692,
-        "h": 82
-    },
-    {
         "id": "39ed6d80353d8e55",
         "type": "junction",
         "z": "1599ef12dea20402",
@@ -2356,6 +2336,31 @@
         "id": "92b09c9cd170f8a8",
         "type": "remote-server-collection",
         "host": "${VECTORDB-CHROMA-HOST-NAME}"
+    },
+    {
+        "id": "8509dadd0c052fa0",
+        "type": "telegram bot",
+        "botname": "VoiceTextUbosBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
     },
     {
         "id": "7b7dced66ebb9ed0",
@@ -13045,6 +13050,7 @@
         "name": "create chroma collection",
         "func": "//create collection\nglobal.set(\"otherTechVars\", { isPromptDefault: true });\n\nmsg.nameBase = 'BooksChat';\nmsg.typeBase = 'chroma';\n\nmsg.userId= msg.payload.userId\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nmsg.knowlegebaseId = objectid();\nmsg.systemName = msg.nameBase + msg.knowlegebaseId\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nconst collection = await client.createCollection({ name: msg.systemName });\n\n\nmsg.collection = \"knowlegebase\";\nmsg.payload = {\n    _id: msg.knowlegebaseId,\n    select: true,\n    type: msg.typeBase,\n    name: msg.nameBase,\n    systemName: msg.systemName,\n    deleted: false,\n    updatedAt: Date.now(),\n    ownerID:msg.userId,\n    behaviour: {\n        model: \"gpt-4o\",\n        \"answer_length\": \"Medium\",\n        \"answer_as\": \"Assistant\",\n        \"tone\": \"Informal\",\n        \"language\": \"English\",\n        \"prompt\": `You work at a bookshop. Your goal is to recommend books that we currently have in stock or answer customers' questions. If we don't have something they are looking for, you can recommend alternative titles. Additionally, in all your messages, please recommend the following three bestsellers:\n\nThe Women: A Novel Hardcover - A #1 bestseller on The New York Times, USA Today, Washington Post, and Los Angeles Times! From the celebrated author of The Nightingale and The Four Winds, Kristin Hannah's The Women is at once an intimate portrait of coming of age in a dangerous time and an epic tale of a nation divided. When twenty-year-old nursing student Frances “Frankie” McGrath hears the words \"Women can be heroes,\" it is a revelation. Raised in the sun-drenched, idyllic world of Southern California and sheltered by her conservative parents, she has always prided herself on doing the right thing. But in 1965, the world is changing, and she suddenly dares to imagine a different future for herself. When her brother ships out to serve in Vietnam, she joins the Army Nurse Corps and follows his path.\n\nThe Housemaid Is Watching Paperback - A twisting, pulse-pounding thriller from Freida McFadden, the New York Times bestselling author of The Housemaid and The Coworker. \"You must be our new neighbors!\" Mrs. Lowell gushes and waves across the picket fence. I clutch my daughter's hand and smile back, but the second Mrs. Lowell sees my husband, a strange expression crosses her face. In that moment, I make a promise. We finally have a family home. My past is far, far behind us. And I'll do anything to keep it that way.\n\nLies I Taught in Medical School: How Conventional Medicine Is Making You Sicker and What You Can Do to Save Your Own Life - Modern medicine is lying to you. Discover the true science behind chronic diseases and implement an actionable plan to take control of your health and longevity once and for all. For the first time in history, chronic diseases like diabetes, hypertension, and obesity plague our population on a global scale. From seasoned physician Robert Lufkin, MD, this paradigm-shifting book comprehensively explains the linked cause and exposes the misconceptions prevalent in modern medicine. In Lies I Taught in Medical School, Dr. Lufkin explains that metabolic dysfunction is the common underlying cause of most chronic diseases that has been overlooked for decades, providing the tools needed to address these diseases in ourselves. He draws on expansive, peer-reviewed evidence, proving that standard medical recommendations are killing us.\n\nBooks we currently have in stock:`,\n    }\n};\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -13096,6 +13102,7 @@
         "name": "totaCharacters ",
         "func": "msg.pageContent = `1.How many book genres are there in total?\nWhat is the total number of book genres and subgenres?\nWhat's the approximate number of book genres, including subgenres?\n \nThere are around 50 genres in total — the exact number depends on who you ask. If you take subgenres into account, over on Reedsy Discovery we have 107 different categories, while Amazon has over 16,000!\n \n2. What is the overarching category for books with imaginary plots?\nCan you list the main genres of fiction books?\nWhat are some common fiction book genres?\n \nFiction is the overarching category for books that contain imaginary plots, characters, and settings. Fiction Book Genres are: fantasy, science fiction, dystopian, action & adventure, detective & mystery, thriller & suspense, romance, horror, historical fiction, young adult, children’s fiction, women’s fiction, contemporary fiction,  literary fiction, graphic novels, short story.\n \n \n3. What are the characteristics of fantasy books?\nCan you give examples of books in the fantasy genre?\n \nFantasy - This genre features supernatural, mythological, or magical elements and characters.\n \nFantasy can be further divided into High and Low. In High Fantasy the setting is at the forefront of the plot. Low Fantasy involves magic or the supernatural but is set in our familiar world.\n \nFantasy examples:\n \n● Game of Thrones by George Martin\n \n● The Way of Kings by Brandon Sanderson\n \n4. What defines the science fiction book genre?\nWhat themes and concepts are explored in science fiction?\nCan you explain the difference between hard and soft science fiction?\nWhat are some popular science fiction books?\nWhat makes a book science fiction?\nWhat are some famous science fiction authors?\n \nScience Fiction - In the same vein as Fantasy, Science Fiction is a massive book genre. Science fiction explores futuristic and highly technological societies while dealing with classic themes and concepts while addressing big “what if” questions.\n \nMany readers first think of science fiction with “hard sciences” set in the distant future, such as advanced AI, time travel, and space exploration.\n \nMany books in this genre however deal with the “soft sciences” such as sociology or ecology to speculate about the future of the human race.\n \nScience Fiction examples:\n \n● Dune by Frank Herbert\n \n● The Left Hand of Darkness by Ursula K. Le Guin\n \n5. What defines the dystopian book genre?\nHow do dystopian novels differ from other genres like science fiction?\nCan you explain the characteristics of dystopian novels?\nWhat themes and concepts are commonly explored in dystopian literature?\nCan you give examples of popular dystopian books?\nWho are some famous authors known for writing dystopian novels?\n \nDystopian - Usually, but not always, considered a subgenre of Science Fiction, Dystopian novels have emerged as their own genre in recent years.\n \nThese stories are set in a bleak, grim future often following a tragic event or disaster. The characters then face oppressive governments, technology gone bad, or environmental ruin in pursuit of cultural or social justice.\n \nDystopian examples:\n \n● The Hunger Games by Susanne Collins\n \n● Nineteen Eighty-Four by George Orwell\n \n6. What defines the action and adventure book genre?\nCan you describe the typical plot structure of action and adventure novels?\nHow do action and adventure novels differ from other genres?\nWhat are some common themes explored in action and adventure literature?\nCan you give examples of popular action and adventure books?\nWho are some famous authors known for writing action and adventure novels?\n \nAction & Adventure - Action and adventure novels feature a main character on a quest to achieve an ultimate goal.\n \nThe protagonist encounters a series of high-stakes situations, and, by the end of their journey, they’ve overcome these challenges and undergone a personal transformation.\n \nAction & Adventure examples:\n \n● Life of Pi by Yann Martel\n \n● The Hobbit by J.R.R. Tolkien\n \n7. What defines the detective and mystery book genre?\nCan you describe the typical plot structure of detective and mystery novels?\nHow does this genre differ from others that include mystery elements?\nCan you give examples of popular detective and mystery books?\nWho are some renowned authors known for writing detective and mystery novels?\n \nDetective & Mystery - This genre’s plots revolve around a crime or mystery that must be solved or foiled by the protagonist.\n \nWhile many genres include a mystery or a bit of detective work, this one features the solving of the crime as its main driving force.\n \nMystery and Detective examples:\n \n● The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle\n \n● Murder on the Orient Express by Agatha Christie\n \n8. Could you give examples of popular thriller and suspense books?\nWho are some notable authors known for writing thrillers and suspense novels?\nWhat defines the Thriller & Suspense book genre?\n \nThriller & Suspense - Thriller and Suspense go hand in hand, including scary elements like Horror. However, the objective is to maintain tension until the resolution.\n \nWhile they involve elements similar to the Mystery genre, the protagonist primarily attempts to save their own life, or someone else’s, rather than solving a crime.\n \nThrillers & Suspense Novels examples:\n \n● The Girl with the Dragon Tattoo by Stieg Larsson\n \n● Gone Girl by Gillian Flynn\n \n9. What defines the romance book genre?\nCan you describe the typical structure of romance novels?\nWhat role does love play in the development of romance stories?\nCan you give examples of popular romance books?\nWho are some well-known authors in the romance genre?\n \nRomance -Love serves as the focal point of the plot in this book genre. While other plot elements may be present, the entire story develops the main character’s romantic relationship and usually ends happily.\n \nRomance novels examples:\n \n● The Notebook by Nicholas Sparks\n \n● Jane Eyre by Charlotte Bronte\n \n10. What defines the horror book genre?\nWhat are some common themes explored in horror novels?\nCan you give examples of popular horror books?\nWho are some renowned authors known for writing horror fiction?\n \nHorror - The Horror genre relies on theme, plot, or setting to scare, startle, shock, and wreak discomfort and even revulsion until the hero defeats the threat.\n \nHorror subgenres can vary broadly from more light-hearted Comedy Horror to heady Psychological Horror to the more villain-centric Slasher Horror.\n \nHorror writers, like Stephen King and Dean Kuntz, are experts in eliciting such responses and often include elements from the Thriller, Suspense, or Mystery genres.\n \nHorror Genre examples:\n \n● Carrie by Stephen King\n \n● The Haunting of Hill House by Shirley Jackson\n \n \n11. What defines the historical fiction book genre?\nCan you give examples of popular historical fiction books?\nWho are some notable authors known for writing historical fiction?\n \nHistorical Fiction - This book genre is set in a specific time period, location, or around a specific historic event. The prose provides historically accurate details relevant to the period.\n \nWhile the plot may be based on an actual event, such as the Civil War, the characters and their actions are fictitious.\n \nHistorical Fiction examples:\n \n● All the Light We Cannot See by Anthony Doerr\n \n● One Hundred Years of Solitude by Gabriel Garcia Marquez\n \n12. What is Young Adult fiction?\nExamples of popular Young Adult books?\nWho are famous authors of Young Adult novels?\n \nYoung Adult (YA)  - The Young Adult genre is fiction geared toward readers aged 13 to 17. YA often overlaps other genres, such as Fantasy or Dystopian with a coming-of-age storyline.\n \nYoung Adult genre examples:\n \n● The Fault in Our Stars by John Green\n \n● Harry Potter by J.K. Rowling\n \n13. What is Children’s Fiction?\nCan you give examples of Children’s Fiction books?\nWho are famous authors of Children’s Fiction?\n \nChildren’s Fiction - Whereas Young Adult caters to those 13 and above, Children’s Fiction is for readers aged 13 and below, and many subgenres comprise this category.\n \nChildren’s Fiction examples:\n \n● Goodnight Moon by Margaret Brown\n \n● Charlotte’s Web by E.B. White\n \n14. What is Women’s Fiction?\nCan you give examples of Women’s Fiction books?\nWho are famous authors of Women’s Fiction?\n \nWomen’s Fiction - This book genre obviously targets a female readership and typically reflects upon the shared feminine experience or the growth of the female protagonist. This often pairs well with Contemporary Fiction or Romance.\n \nWomen’s Fiction examples:\n \n● The Joy Luck Club by Amy Tan\n \n● The Help by Kathryn Stockett\n \n15. What is Contemporary Fiction?\nCan you give examples of Contemporary Fiction books?\nWho are famous authors of Contemporary Fiction?\n \nContemporary Fiction - This genre is so broad that it involves almost all genres set in the present.\n \nPlots revolve around a character’s everyday life such as work, politics, relationships, and the struggles of the modern era, but of course with challenges and twists intended to keep readers engaged.\n \nContemporary Fiction examples:\n \n● Eleanor Oliphant is Completely Fine by Gail Honeyman\n \n● A Man Called Ove by Fredrik Backman\n \n \n16. What is Literary Fiction?\nCan you give examples of Literary Fiction books?\nWho are famous authors of Literary Fiction?\n \nLiterary Fiction - Works of Literary Fiction are character-driven and introspective. They evoke deep thought through personal or social commentary on a particular theme.\n \nLiterary Fiction examples:\n \n● Where the Crawdads Sing by Delia Owens\n \n● To Kill A Mockingbird by Harper Lee\n \n \n17. What are Graphic Novels?\nCan you give examples of Graphic Novels?\nWhat types of stories are told in Graphic Novels?\n \nGraphic Novels - Graphic Novels are defined not by their content but by their form. This genre is presented through narrative art with illustrations and typography in a panel layout like that of comic books, but have evolved into their own genre.\n \nThey can cover content as broad as memoirs, historical accounts, and adaptations of other media.\n \nGraphic Novel examples:\n \n● The Boy, the Mole, the Fox, and the Horse by Charlie Mackesy\n \n● The World of Edena by Moebius\n \n \n18. What are Short Stories?\nCan you give examples of Short Story collections?\nWho are famous authors of Short Stories?\n \nShort Story - Collections of short stories, usually sharing a theme or narrative thread are self-explanatory.\n \nShort Story examples:\n \n● Legoland by Gerard Woodward\n \n● The Best Christian Short Stories by Brett Lott\n \n19. What is the overarching category for books based entirely on fact and reality?\nCan you list the main genres of nonfiction books?\nWhat are some common nonfiction book genres?\nNonfiction Book Genres- This is a broad category encompassing a number of nonfiction subgenres. From memoirs and biographies to books to self-help and true crime books, there's a type of nonfiction for every kind of reader.\nWhile storytelling is still vital in these genres—and Jerry constantly promotes using fiction techniques in nonfiction—the books in these categories have events, people, and concepts based entirely on fact and reality.\nNonfiction Book Genres are: memoir & autobiography, biography, history, food & drink, poetry, self-help, true-crime, travel, art & photography, essays, humanities & social sciences, sciences & technology.\n \n20. What is the difference between a memoir and an autobiography?\nCan you give examples of memoirs?\nCan you give examples of autobiographies?\n \nMemoir & Autobiography - These two types of nonfiction books fall under the same genre because, in both cases, the author also serves as the narrator.\n \nThe difference between a memoir and an autobiography is that an autobiography is a chronological account of the life of the narrator, while a memoir uses defining moments in one’s life to buttress a self-help theme.\n \nA popular memoir example is The Glass Castle by Jeannette Walls\n \nAn autobiography example is I Know Why the Caged Bird Sings by Maya Angelou\n \n21. What is a biography?\nCan you give examples of biographies?\nHow do biographies differ from autobiographies?\n \nBiography - Biographies tell the story of the life of a notable person, most often someone well known or anyone whose story teaches valuable life lessons.\n \nThese differ from autobiographies in that they are written in third-person by someone else, rather than by the subject in first-person.\n \nBiography examples:\n \n● Alexander Hamilton by Ron Chernow\n \n● Steve Jobs by Walter Isaacson\n \n22. What is History in books?\nCan you give examples of History books?\nHow do History books educate readers?\n \nHistory - This genre aims to educate and entertain the reader by chronicling a historical event.\n \nHistory examples:\n \n● The Devil in the White City by Erik Larson\n \n● Bury My Heart at Wounded Knee by Dee Brown\n \n \n23. What are Food & Drink books?\nCan you give examples of Food & Drink books?\nHow do Food & Drink books appeal to readers?\n \nFood & Drink - Food and drink is one of nonfiction’s hottest markets as its titles cater to a variety of diets, lifestyles, and cultural cuisines. Photographs often accompany recipes and personal stories for food lovers.\n \nFood & Drink examples:\n \n● Fire and Ice: Classic Nordic Cooking by Darra Goldstein\n \n● Food52 Genius Recipes: 100 Recipes That Will Change the Way You Cook by Kristen Miglore and Amanda Hesser\n \n24. What is Poetry?\nCan you give examples of Poetry books?\nWhat types of poetic expression are found in Poetry books?\n \nPoetry - Often organized into collections or anthologies, this genre includes free verse, rhymed verse, and a variety of other types of poetic expression.\n \nPoetry examples:\n \n● Leaves of Grass by Walt Whitman\n \n● The Wilderness by Sandra Lim\n \n25. What is Self-Help literature?\nCan you give examples of Self-Help books?\nHow do Self-Help books empower readers?\nSelf-Help - This book genre is devoted to empowering readers to realize their potential so they can become the best version of themselves.\n \nSelf-Help examples:\n \n● Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones by James Clear\n \n● The Power of Letting Go: How to drop everything that’s holding you back by John Purkiss  \n \n26. What are True Crime books?\nCan you give examples of True Crime books?\nWhat types of crimes do True Crime books focus on?\n \nTrue Crime - True Crime books examine real crimes and events, usually with alarming detail. Many books in this genre focus on infamous murders, kidnappings, or other felonies.\n \nTrue Crime examples:\n \n● In Cold Blood by Truman Capote\n \n● I’ll Be Gone In the Dark by Michelle McNamara\n \n27. What are Travel books?\nCan you give examples of Travel books?\nWhat information do Travel books typically provide?\n \nTravel - These books take readers all over the world, featuring reviews, budgeting tips, travel hacks, and advice on where to eat and what to see.\n \nTravel examples:\n \n● The Journey Matters by Jonathan Glancey\n \n● Vagabonding by Rolf Potts\n \n28. What are Art & Photography books?\nCan you give examples of Art & Photography books?\nWhat topics do Art & Photography books typically cover?\n \nArt & Photography - This genre is home to books that showcase an artist’s work, a specific style of art, or the history of art.\n \nArt & Photography examples:\n \n● Wonderland by Annie Leibovitz\n \n● On Photography by Susan Sontag\n \n29. What are Essays in literature?\nCan you give examples of Essay collections?\nHow do Essays typically explore personal experiences?\nEssays - This genre often follows a unifying theme. These essays—or speeches transcribed—cover the writer’s personal experiences, usually told in the first person.\n \nEssay examples include:\n \n● A Room of One’s Own by Virginia Woolf\n \n● Slouching Towards Bethlehem by Joan Didion\n \n30. What are Humanities & Social Sciences books?\nCan you give examples of Humanities & Social Sciences books?\nWhat topics do Humanities & Social Sciences books typically cover?\n \nHumanities & Social Sciences - This academic genre explores issues related to social sciences such as psychology, sociology, philosophy, language, religion, or music.\n \nHumanities & Social Sciences examples:\n \n● How You Say It: Why You Talk the Way You Do—and What It Says About You by Katherine D. Kinzler\n \n● On Liberty by John Stuart Mill\n \n31. What are Science & Technology books?\nCan you give examples of Science & Technology books?\nWhat topics do Science & Technology books typically cover?\n \nScience & Technology - Books in this genre delve into current scientific and technological developments from technology such as Artificial Intelligence and coding to medical research.\n \nScience & Technology examples:\n \n● The Premonition: A Pandemic Story by Michael Lewis\n \n● Life’s Edge: The Search for What It Means to Be Alive by Carl Zimmer`\nmsg.totaCharacters = msg.pageContent.length\n\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -13115,6 +13122,7 @@
         "name": "FILES",
         "func": "msg.collection = \"knowledgeObjects\";\nmsg.knowledgeObjectsId = objectid()\nmsg.payload = {\n    _id: msg.knowledgeObjectsId,\n    knowledgeBaseId: objectid(msg.knowlegebaseId),\n    name: 'Books-Data',\n    type: \"Files\",\n    status: \"Source saved\",\n    deleted: false,\n    createdAt: new Date(),\n    totaCharacters: msg.totaCharacters,\n    source: `Books-Data.txt`,\n};\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -13184,6 +13192,7 @@
         "name": "[ ]",
         "func": "\nmsg.array = msg.payload;\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -13207,8 +13216,9 @@
         "type": "function",
         "z": "1599ef12dea20402",
         "name": "create chroma collection",
-        "func": "\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nmsg.tobase = msg.payload\nconst question = msg.payload.questions;\nconst result = msg.payload.answer;\nmsg.emb = msg.payload.embedding;\nmsg.ids = Date.now().toString()\nlet collection2 = await client.getCollection({ name: msg.systemName});\nconst create = await collection2.add({\n    ids: [msg.ids],\n    embeddings: msg.emb,\n    metadatas: [{\n        result: question+ ' ' +result,\n        id: msg.ids,\n        source: `Books-Data.txt`,\n    }],\n    documents: msg.nameBase + '.txt' \n})\n\nmsg.payload = create;\n\nreturn msg;\n",
+        "func": "\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\nmsg.tobase = msg.payload\nconst question = msg.payload.questions;\nconst result = msg.payload.answer;\nmsg.emb = msg.payload.embedding;\nmsg.ids = Date.now().toString()\nlet collection2 = await client.getCollection({ name: msg.systemName});\nconst create = await collection2.add({\n    ids: [msg.ids],\n    embeddings: msg.emb,\n    metadatas: [{\n        result: question+ ' ' +result,\n        id: msg.ids,\n        source: `Books-Data.txt`,\n    }],\n    documents: msg.nameBase + '.txt' \n})\n\nmsg.payload = create;\n\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -14055,6 +14065,59 @@
             ],
             [
                 "b51675cc9c1606b8"
+            ]
+        ]
+    },
+    {
+        "id": "78927f642da27f5d",
+        "type": "http request",
+        "z": "1599ef12dea20402",
+        "name": "get books DB",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://aibotnr-5850-658ad621387fb711000001e1.ubos.tech/books",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1123.142822265625,
+        "y": 2860.571533203125,
+        "wires": [
+            [
+                "fe219f2ebbdc966f"
+            ]
+        ]
+    },
+    {
+        "id": "b6c57c1fb551d718",
+        "type": "inject",
+        "z": "1599ef12dea20402",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 920,
+        "y": 2780,
+        "wires": [
+            [
+                "78927f642da27f5d"
             ]
         ]
     },
@@ -19086,7 +19149,8 @@
         "y": 2180,
         "wires": [
             [
-                "0ba878f4aa8b74c2"
+                "0ba878f4aa8b74c2",
+                "88207e708b5bbd24"
             ]
         ]
     },
@@ -19098,6 +19162,7 @@
         "name": "get users query",
         "func": "msg.collection = \"admins\";\n\nmsg.payload= {\n        deleted:false\n      }\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -19188,8 +19253,9 @@
         "z": "ec1b4918d501c55a",
         "g": "05997551516514ea",
         "name": "function 352",
-        "func": "msg.payload={\n    email:'ubos@ubos.tech'\n}\nreturn msg;",
+        "func": "msg.payload={\n    // email:'ubos@ubos.tech'\n}\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -19210,6 +19276,7 @@
         "name": "function 353",
         "func": "msg.payload={}\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -23673,6 +23740,23 @@
                 "43d0e7b6544dab2c"
             ]
         ]
+    },
+    {
+        "id": "88207e708b5bbd24",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "g": "dd18ce6b7b0587dc",
+        "name": "debug 1056",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 2140,
+        "wires": []
     },
     {
         "id": "62a1ecc38ccba8fc",
@@ -28278,7 +28362,8 @@
         "y": 900,
         "wires": [
             [
-                "b51a9d1f602950a4"
+                "b51a9d1f602950a4",
+                "14a1e4d44036a2aa"
             ]
         ]
     },
@@ -28322,7 +28407,8 @@
         "wires": [
             [
                 "2f58da650cfb5029",
-                "6e3ebeb2ee6ff6e1"
+                "6e3ebeb2ee6ff6e1",
+                "7098cc8df6dbe206"
             ]
         ]
     },
@@ -28372,7 +28458,8 @@
         "y": 1240,
         "wires": [
             [
-                "130c447f33a9e233"
+                "130c447f33a9e233",
+                "2a718b1a5250947c"
             ]
         ]
     },
@@ -29828,7 +29915,8 @@
         "y": 200,
         "wires": [
             [
-                "69fdb1f5dffc5251"
+                "69fdb1f5dffc5251",
+                "bc3f8fc13e477c34"
             ]
         ]
     },
@@ -29962,7 +30050,8 @@
         "y": 80,
         "wires": [
             [
-                "b8fac12a3160b1d5"
+                "b8fac12a3160b1d5",
+                "0506dcee27a391b0"
             ]
         ]
     },
@@ -30100,8 +30189,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 3230,
-        "y": 340,
+        "x": 3250,
+        "y": 320,
         "wires": [
             [
                 "da6fb7ede6bae8b8"
@@ -30127,7 +30216,8 @@
         "wires": [
             [
                 "205768b7199b9958",
-                "324597a50bb4a1b4"
+                "324597a50bb4a1b4",
+                "81d10a51661af77e"
             ]
         ]
     },
@@ -31553,7 +31643,9 @@
         "x": 150,
         "y": 140,
         "wires": [
-            []
+            [
+                "33c548289a7f7fee"
+            ]
         ]
     },
     {
@@ -32908,7 +33000,8 @@
         "y": 680,
         "wires": [
             [
-                "350832f3f89dca13"
+                "350832f3f89dca13",
+                "c6fd5e7e81a16c7f"
             ]
         ]
     },
@@ -32994,7 +33087,8 @@
         "y": 560,
         "wires": [
             [
-                "b0b8ab6a5cf5ad8b"
+                "b0b8ab6a5cf5ad8b",
+                "23a3cc105a706d49"
             ]
         ]
     },
@@ -33847,7 +33941,8 @@
         "y": 1240,
         "wires": [
             [
-                "e2ca953f5b719bf2"
+                "e2ca953f5b719bf2",
+                "c1837b337b8e18a3"
             ]
         ]
     },
@@ -34230,7 +34325,9 @@
         "x": 370,
         "y": 140,
         "wires": [
-            []
+            [
+                "5efebe632028e1b2"
+            ]
         ]
     },
     {
@@ -34254,7 +34351,9 @@
         "x": 370,
         "y": 1240,
         "wires": [
-            []
+            [
+                "3a8b591d8e562b2c"
+            ]
         ]
     },
     {
@@ -34266,7 +34365,9 @@
         "x": 2990,
         "y": 80,
         "wires": [
-            []
+            [
+                "a4bc9c9aec91fa4f"
+            ]
         ]
     },
     {
@@ -34278,7 +34379,9 @@
         "x": 2990,
         "y": 200,
         "wires": [
-            []
+            [
+                "5ed22cb598b40b76"
+            ]
         ]
     },
     {
@@ -34290,7 +34393,9 @@
         "x": 3030,
         "y": 340,
         "wires": [
-            []
+            [
+                "d3fe7d0d69af9bf7"
+            ]
         ]
     },
     {
@@ -34301,7 +34406,9 @@
         "x": 2990,
         "y": 560,
         "wires": [
-            []
+            [
+                "268950703da769f7"
+            ]
         ]
     },
     {
@@ -34312,7 +34419,9 @@
         "x": 3010,
         "y": 680,
         "wires": [
-            []
+            [
+                "6fee29b4baa518bf"
+            ]
         ]
     },
     {
@@ -34324,7 +34433,9 @@
         "x": 2970,
         "y": 900,
         "wires": [
-            []
+            [
+                "0183edb1dbc0902e"
+            ]
         ]
     },
     {
@@ -34336,7 +34447,9 @@
         "x": 2970,
         "y": 1080,
         "wires": [
-            []
+            [
+                "2f58da650cfb5029"
+            ]
         ]
     },
     {
@@ -34348,7 +34461,9 @@
         "x": 2970,
         "y": 1240,
         "wires": [
-            []
+            [
+                "d066c82a9ca7e5d1"
+            ]
         ]
     },
     {
@@ -40579,7 +40694,8 @@
         "y": 660,
         "wires": [
             [
-                "8a16b15f37acbb55"
+                "8a16b15f37acbb55",
+                "6d3dfdc9308a810e"
             ]
         ]
     },
@@ -40626,7 +40742,8 @@
         "y": 480,
         "wires": [
             [
-                "5fbe7da4d2a0d534"
+                "5fbe7da4d2a0d534",
+                "eb8c15fdf416b689"
             ]
         ]
     },
@@ -40673,7 +40790,8 @@
         "y": 840,
         "wires": [
             [
-                "56b91f117f4d9606"
+                "56b91f117f4d9606",
+                "45913c2873b84cf4"
             ]
         ]
     },
@@ -40720,7 +40838,8 @@
         "y": 1040,
         "wires": [
             [
-                "b4505333b6d541ec"
+                "b4505333b6d541ec",
+                "9838d9431e133989"
             ]
         ]
     },
@@ -40767,7 +40886,8 @@
         "y": 1300,
         "wires": [
             [
-                "32c12d359fa726d7"
+                "32c12d359fa726d7",
+                "4ff7da0cc6612ccd"
             ]
         ]
     },
@@ -40814,7 +40934,8 @@
         "y": 240,
         "wires": [
             [
-                "737c5646376a75ee"
+                "737c5646376a75ee",
+                "1e098fb877d74b69"
             ]
         ]
     },
@@ -40944,7 +41065,8 @@
         "y": 60,
         "wires": [
             [
-                "7331884d91a921cb"
+                "7331884d91a921cb",
+                "3dc8c1e564ca593a"
             ]
         ]
     },
@@ -41029,7 +41151,8 @@
         "y": 120,
         "wires": [
             [
-                "c4e1995ef177b360"
+                "c4e1995ef177b360",
+                "269225185a301167"
             ]
         ]
     },
@@ -41113,7 +41236,9 @@
         "x": 190,
         "y": 320,
         "wires": [
-            []
+            [
+                "12b6f44086bf4336"
+            ]
         ]
     },
     {
@@ -41654,7 +41779,9 @@
         "x": 370,
         "y": 60,
         "wires": [
-            []
+            [
+                "1403e6cff8146164"
+            ]
         ]
     },
     {
@@ -41665,7 +41792,9 @@
         "x": 350,
         "y": 120,
         "wires": [
-            []
+            [
+                "1b2e030a5edb73c4"
+            ]
         ]
     },
     {
@@ -41676,7 +41805,9 @@
         "x": 430,
         "y": 240,
         "wires": [
-            []
+            [
+                "3f6d88a4ea79d90a"
+            ]
         ]
     },
     {
@@ -41687,7 +41818,9 @@
         "x": 410,
         "y": 320,
         "wires": [
-            []
+            [
+                "6125a3d1e90c8fda"
+            ]
         ]
     },
     {
@@ -41698,7 +41831,9 @@
         "x": 470,
         "y": 440,
         "wires": [
-            []
+            [
+                "5b98ec6470c59d1c"
+            ]
         ]
     },
     {
@@ -41709,7 +41844,9 @@
         "x": 470,
         "y": 480,
         "wires": [
-            []
+            [
+                "ee0da72580d9242e"
+            ]
         ]
     },
     {
@@ -41720,7 +41857,10 @@
         "x": 390,
         "y": 660,
         "wires": [
-            []
+            [
+                "79d4b0ef41559dbe",
+                "e1dedc42b3b9bce7"
+            ]
         ]
     },
     {
@@ -41731,7 +41871,10 @@
         "x": 390,
         "y": 840,
         "wires": [
-            []
+            [
+                "313ef36b6f66ed73",
+                "21310b16ad8a26c7"
+            ]
         ]
     },
     {
@@ -41742,7 +41885,10 @@
         "x": 410,
         "y": 1040,
         "wires": [
-            []
+            [
+                "4783bc2823102d53",
+                "a4ee0c266c21b10d"
+            ]
         ]
     },
     {
@@ -41753,7 +41899,10 @@
         "x": 450,
         "y": 1300,
         "wires": [
-            []
+            [
+                "4aaffefddf85c007",
+                "500761aedd804a5c"
+            ]
         ]
     },
     {
@@ -42669,91 +42818,15 @@
         "wires": []
     },
     {
-        "id": "5cb69f2ca794c6cc",
-        "type": "http in",
-        "z": "42b693cddba85396",
-        "g": "f9efa57e6ca4a771",
-        "name": "",
-        "url": "/askSupport",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 150,
-        "y": 80,
-        "wires": [
-            [
-                "bd6e9ef4c0daccf1"
-            ]
-        ]
-    },
-    {
-        "id": "bd6e9ef4c0daccf1",
-        "type": "function",
-        "z": "42b693cddba85396",
-        "g": "f9efa57e6ca4a771",
-        "name": "to Lark",
-        "func": "msg.payload = { \"email\": msg.payload.email, \"request\": msg.payload.question }\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 80,
-        "wires": [
-            [
-                "8a8216a447707022"
-            ]
-        ]
-    },
-    {
-        "id": "854b49b807f25d22",
-        "type": "http response",
-        "z": "42b693cddba85396",
-        "g": "f9efa57e6ca4a771",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 650,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "8a8216a447707022",
-        "type": "http request",
-        "z": "42b693cddba85396",
-        "g": "f9efa57e6ca4a771",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "https://platform.ubos.tech/api/aiBotNotification",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 490,
-        "y": 80,
-        "wires": [
-            [
-                "854b49b807f25d22"
-            ]
-        ]
-    },
-    {
         "id": "1673731fb21738e2",
         "type": "subflow:f510f97f1c5410c8",
         "z": "42b693cddba85396",
         "name": "",
         "x": 330,
-        "y": 200,
+        "y": 160,
         "wires": [
             [
-                "f82a281a81d580c8"
+                "854fe7ca5407ebe1"
             ]
         ]
     },
@@ -42767,7 +42840,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 140,
-        "y": 200,
+        "y": 160,
         "wires": [
             [
                 "170165fe3d7c5a11",
@@ -42780,15 +42853,15 @@
         "type": "function",
         "z": "42b693cddba85396",
         "name": "req to main",
-        "func": "msg.url =`https://platform.ubos.tech/api/supportRequest`\n// msg.url = `https://platform.eks.ubraine.com/api/contactUS`\nreturn msg;",
+        "func": "if (msg.payload[0].notificationWebhook) {\n    msg.url = msg.payload[0].notificationWebhook\n    msg.payload = msg.fromFlow\n    return msg;\n}",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 200,
+        "x": 870,
+        "y": 160,
         "wires": [
             [
                 "4d6b7a9aa1fb5fe8",
@@ -42810,7 +42883,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 150,
-        "y": 160,
+        "y": 120,
         "wires": []
     },
     {
@@ -42829,12 +42902,12 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 690,
-        "y": 200,
+        "x": 1070,
+        "y": 160,
         "wires": [
             [
                 "bf79c5b106074d0b",
-                "170165fe3d7c5a11"
+                "5fbd1171abba17d9"
             ]
         ]
     },
@@ -42845,8 +42918,364 @@
         "name": "",
         "statusCode": "200",
         "headers": {},
-        "x": 940,
-        "y": 200,
+        "x": 1320,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0a78a4dd6197d39a",
+        "type": "http in",
+        "z": "42b693cddba85396",
+        "name": "",
+        "url": "/verifyNotificationWebhook",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "4ef70a387fb0a61f",
+                "b0e33ea75e8d0082"
+            ]
+        ]
+    },
+    {
+        "id": "4ef70a387fb0a61f",
+        "type": "debug",
+        "z": "42b693cddba85396",
+        "name": "debug 1057",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 150,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b0e33ea75e8d0082",
+        "type": "subflow:f510f97f1c5410c8",
+        "z": "42b693cddba85396",
+        "name": "",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "040e776a1ffb4fc2"
+            ]
+        ]
+    },
+    {
+        "id": "040e776a1ffb4fc2",
+        "type": "function",
+        "z": "42b693cddba85396",
+        "name": "req to webhook",
+        "func": "msg.url = msg.payload.webhook\nmsg.payload = {\n    \"email\": \"your.email@domain.com\",\n    \"name\": \"Your Name\",\n    \"message\": \"Type your message here\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "58f115bc5709e7df",
+                "4ef70a387fb0a61f"
+            ]
+        ]
+    },
+    {
+        "id": "58f115bc5709e7df",
+        "type": "http request",
+        "z": "42b693cddba85396",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "4ef70a387fb0a61f",
+                "afd031cd8d92ae7b"
+            ]
+        ]
+    },
+    {
+        "id": "2f8c424afd47e532",
+        "type": "http response",
+        "z": "42b693cddba85396",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1310,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "afd031cd8d92ae7b",
+        "type": "function",
+        "z": "42b693cddba85396",
+        "name": "check",
+        "func": "if (msg.statusCode === 200) {\n    msg.query = {\n        ownerId: objectid(msg.userInfo[0]._id)\n    }\n\n    msg.payload = {\n        $set: {\n            notificationWebhook: msg.url\n        }\n    }\n\n    msg.collection = 'superAdminCredentials'\n\n    return [msg, null]\n} else {\n    return [null, msg]\n}\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 930,
+        "y": 320,
+        "wires": [
+            [
+                "f8d9d1b82ab1c86b"
+            ],
+            [
+                "9c9a51ee104f74c7"
+            ]
+        ]
+    },
+    {
+        "id": "9c9a51ee104f74c7",
+        "type": "http response",
+        "z": "42b693cddba85396",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1070,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f8d9d1b82ab1c86b",
+        "type": "link call",
+        "z": "42b693cddba85396",
+        "name": "",
+        "links": [
+            "ffc30c81c1410f7d"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1120,
+        "y": 280,
+        "wires": [
+            [
+                "2f8c424afd47e532"
+            ]
+        ]
+    },
+    {
+        "id": "854fe7ca5407ebe1",
+        "type": "function",
+        "z": "42b693cddba85396",
+        "name": "check",
+        "func": "msg.payload = {\n\n}\n\nmsg.collection = 'superAdminCredentials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "4948137d9df62230"
+            ]
+        ]
+    },
+    {
+        "id": "4948137d9df62230",
+        "type": "link call",
+        "z": "42b693cddba85396",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "f82a281a81d580c8",
+                "170165fe3d7c5a11"
+            ]
+        ]
+    },
+    {
+        "id": "5fbd1171abba17d9",
+        "type": "debug",
+        "z": "42b693cddba85396",
+        "name": "debug 1059",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b209201ee98025e1",
+        "type": "http in",
+        "z": "42b693cddba85396",
+        "name": "",
+        "url": "/test",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 460,
+        "wires": [
+            [
+                "8be697fe5435751d",
+                "06637b1ce6eb5482",
+                "52cee7966ca444d9"
+            ]
+        ]
+    },
+    {
+        "id": "8be697fe5435751d",
+        "type": "debug",
+        "z": "42b693cddba85396",
+        "name": "debug 1060",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 130,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "06637b1ce6eb5482",
+        "type": "function",
+        "z": "42b693cddba85396",
+        "name": "req to main",
+        "func": "msg.payload = {\n    \"chatId\": 387359640,\n    \"type\": \"message\",\n    \"content\": `Name: ${msg.payload.name},\n    email: ${msg.payload.email},\n    message: ${msg.payload.message}`,\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 460,
+        "wires": [
+            [
+                "8be697fe5435751d",
+                "e3afe14450569ea0"
+            ]
+        ]
+    },
+    {
+        "id": "52cee7966ca444d9",
+        "type": "http response",
+        "z": "42b693cddba85396",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 360,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "cf192c1cca7af03f",
+        "type": "debug",
+        "z": "42b693cddba85396",
+        "name": "debug 1061",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e3afe14450569ea0",
+        "type": "telegram sender",
+        "z": "42b693cddba85396",
+        "name": "",
+        "bot": "8509dadd0c052fa0",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c1503683f02887d",
+        "type": "telegram receiver",
+        "z": "42b693cddba85396",
+        "name": "",
+        "bot": "8509dadd0c052fa0",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "483551f5506a7262"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "483551f5506a7262",
+        "type": "debug",
+        "z": "42b693cddba85396",
+        "name": "debug 1062",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 540,
         "wires": []
     }
 ]
