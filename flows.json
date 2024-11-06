@@ -43146,74 +43146,6 @@
         "wires": []
     },
     {
-        "id": "b209201ee98025e1",
-        "type": "http in",
-        "z": "42b693cddba85396",
-        "name": "",
-        "url": "/test",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 80,
-        "y": 460,
-        "wires": [
-            [
-                "8be697fe5435751d",
-                "06637b1ce6eb5482",
-                "52cee7966ca444d9"
-            ]
-        ]
-    },
-    {
-        "id": "8be697fe5435751d",
-        "type": "debug",
-        "z": "42b693cddba85396",
-        "name": "debug 1060",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 130,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "06637b1ce6eb5482",
-        "type": "function",
-        "z": "42b693cddba85396",
-        "name": "req to main",
-        "func": "msg.payload = {\n    \"chatId\": 387359640,\n    \"type\": \"message\",\n    \"content\": `Name: ${msg.payload.name},\n    email: ${msg.payload.email},\n    message: ${msg.payload.message}`,\n}\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 250,
-        "y": 460,
-        "wires": [
-            [
-                "8be697fe5435751d",
-                "e3afe14450569ea0"
-            ]
-        ]
-    },
-    {
-        "id": "52cee7966ca444d9",
-        "type": "http response",
-        "z": "42b693cddba85396",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 360,
-        "y": 380,
-        "wires": []
-    },
-    {
         "id": "cf192c1cca7af03f",
         "type": "debug",
         "z": "42b693cddba85396",
@@ -43228,54 +43160,6 @@
         "statusType": "auto",
         "x": 1070,
         "y": 420,
-        "wires": []
-    },
-    {
-        "id": "e3afe14450569ea0",
-        "type": "telegram sender",
-        "z": "42b693cddba85396",
-        "name": "",
-        "bot": "8509dadd0c052fa0",
-        "haserroroutput": false,
-        "outputs": 1,
-        "x": 490,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4c1503683f02887d",
-        "type": "telegram receiver",
-        "z": "42b693cddba85396",
-        "name": "",
-        "bot": "8509dadd0c052fa0",
-        "saveDataDir": "",
-        "filterCommands": false,
-        "x": 210,
-        "y": 540,
-        "wires": [
-            [
-                "483551f5506a7262"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "483551f5506a7262",
-        "type": "debug",
-        "z": "42b693cddba85396",
-        "name": "debug 1062",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 410,
-        "y": 540,
         "wires": []
     }
 ]
