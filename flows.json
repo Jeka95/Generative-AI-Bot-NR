@@ -42818,98 +42818,6 @@
         ]
     },
     {
-        "id": "96cb9ead71e59466",
-        "type": "http in",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "url": "/contactUS",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 120,
-        "y": 300,
-        "wires": [
-            [
-                "6961d454207079e3",
-                "828c7aa0fb219ba2"
-            ]
-        ]
-    },
-    {
-        "id": "54f7fb9b1ba55b68",
-        "type": "function",
-        "z": "d0e74064b88242f7",
-        "name": "req to main",
-        "func": "msg.url =`https://platform.ubos.tech/api/contactUS`\n// msg.url = `https://platform.eks.ubraine.com/api/contactUS`\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 490,
-        "y": 300,
-        "wires": [
-            [
-                "d963b52c75faf397",
-                "6961d454207079e3"
-            ]
-        ]
-    },
-    {
-        "id": "d963b52c75faf397",
-        "type": "http request",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 690,
-        "y": 300,
-        "wires": [
-            [
-                "f1d72c766dfdb7c1",
-                "6961d454207079e3"
-            ]
-        ]
-    },
-    {
-        "id": "f1d72c766dfdb7c1",
-        "type": "http response",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "statusCode": "200",
-        "headers": {},
-        "x": 940,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "6961d454207079e3",
-        "type": "debug",
-        "z": "d0e74064b88242f7",
-        "name": "debug 956",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 130,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "6d33ecfa7853a544",
         "type": "debug",
         "z": "d0e74064b88242f7",
@@ -43101,19 +43009,6 @@
         "wires": [
             [
                 "77965b45a8e25aa2"
-            ]
-        ]
-    },
-    {
-        "id": "828c7aa0fb219ba2",
-        "type": "subflow:f510f97f1c5410c8",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "x": 330,
-        "y": 300,
-        "wires": [
-            [
-                "54f7fb9b1ba55b68"
             ]
         ]
     },
