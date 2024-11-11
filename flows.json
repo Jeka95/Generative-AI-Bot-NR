@@ -323,7 +323,10 @@
                 "y": 420,
                 "wires": [
                     {
-                        "id": "47b656e147c4b456"
+                        "id": "1ef619b7f39de588"
+                    },
+                    {
+                        "id": "a8fd8f9b8c2d4250"
                     }
                 ]
             }
@@ -334,7 +337,7 @@
                 "y": 380,
                 "wires": [
                     {
-                        "id": "f172dfe9b7339403",
+                        "id": "f14e25d8e02b2bc2",
                         "port": 0
                     }
                 ]
@@ -1900,12 +1903,13 @@
             "32ae7126f231fc84",
             "1c3c643e0525d739",
             "737b5a87e1d9d254",
-            "b40867c157ed17c3"
+            "b40867c157ed17c3",
+            "e6bce3a2a0f44f12"
         ],
         "x": 14,
         "y": 59,
         "w": 1792,
-        "h": 642
+        "h": 662
     },
     {
         "id": "960bfded79413055",
@@ -4072,7 +4076,7 @@
         "type": "function",
         "z": "f510f97f1c5410c8",
         "name": "check token",
-        "func": "if (msg.payload.length > 0) {\n    msg.userInfo = msg.payload\n    msg.access_token = msg.access_token ? msg.access_token : msg.req.cookies.access_token\n\n    msg.cookies = {\n        access_token: msg.access_token\n    }\n    msg.url = `https://yourBackendURL/endpoint`\n\n    return [msg, null]\n} else {\n    if (msg.req.url !== '/check_token') {\n        msg.payload = {\n            \"type\": \"error\",\n            \"message\": \"no access\"\n        }\n        msg.statusCode = 200\n    }\n    else {\n        msg.payload = {\n            auth: \"Unautorizate\",\n            code: 401,\n            login_id: 'Login',\n            app_id: msg.fromFlow.app_id\n        }\n    }\n    return [null, msg]\n}\n",
+        "func": "if (msg.payload.length > 0) {\n    msg.userInfo = msg.payload\n    msg.access_token = msg.access_token ? msg.access_token : msg.req.cookies.access_token\n\n    msg.cookies = {\n        access_token: msg.access_token\n    }\nmsg.url =`https://platform.ubos.tech/api/checkUserToken`\n\n    return [msg, null]\n} else {\n    if (msg.req.url !== '/check_token') {\n        msg.payload = {\n            \"type\": \"error\",\n            \"message\": \"no access\"\n        }\n        msg.statusCode = 200\n    }\n    else {\n        msg.payload = {\n            auth: \"Unautorizate\",\n            code: 401,\n            login_id: 'Login',\n            // app_id: msg.fromFlow.app_id\n        }\n    }\n    return [null, msg]\n}\n",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -4083,10 +4087,12 @@
         "y": 140,
         "wires": [
             [
-                "1dc259d2b7a9a725"
+                "1dc259d2b7a9a725",
+                "c6d48f87b79bb065"
             ],
             [
-                "757440ea15376e3c"
+                "757440ea15376e3c",
+                "6d282f7aa3679f86"
             ]
         ]
     },
@@ -4110,7 +4116,8 @@
         "y": 100,
         "wires": [
             [
-                "f14e25d8e02b2bc2"
+                "f14e25d8e02b2bc2",
+                "170e32c492c4b143"
             ]
         ]
     },
@@ -4119,7 +4126,7 @@
         "type": "function",
         "z": "f510f97f1c5410c8",
         "name": "response check",
-        "func": "if (msg.statusCode === 200) {\n    \n// msg.userInfo = msg.payload\nmsg.payload=msg.fromFlow\n    return [msg, null]\n} else {\n    if (msg.req.url !== '/check_token') {\n        msg.payload = {\n            \"type\": \"error\",\n            \"message\": \"no access\"\n        }\n        msg.statusCode = 200\n    }\n    else {\n        msg.payload = {\n            auth: \"Unautorizate\",\n            code: 401,\n            login_id: 'Login',\n            app_id: msg.fromFlow.app_id\n        }\n    }\n    return [null, msg]\n}",
+        "func": "if (msg.statusCode === 200) {\n    \n// msg.userInfo = msg.payload\nmsg.payload=msg.fromFlow\n    return [msg, null]\n} else {\n    if (msg.req.url !== '/check_token') {\n        msg.payload = {\n            \"type\": \"error\",\n            \"message\": \"no access\"\n        }\n        msg.statusCode = 200\n    }\n    else {\n        msg.payload = {\n            auth: \"Unautorizate\",\n            code: 401,\n            login_id: 'Login',\n            app_id: msg.fromFlow?.app_id\n        }\n    }\n    return [null, msg]\n}",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -4247,11 +4254,12 @@
             "f14e25d8e02b2bc2"
         ],
         "uncaught": false,
-        "x": 190,
+        "x": 170,
         "y": 500,
         "wires": [
             [
-                "66a0cd7310df4f5b"
+                "66a0cd7310df4f5b",
+                "74195ee55ca1288b"
             ]
         ]
     },
@@ -4302,7 +4310,8 @@
         "y": 140,
         "wires": [
             [
-                "cc8ca880d124a8c0"
+                "cc8ca880d124a8c0",
+                "edf93b79b57c0b51"
             ]
         ]
     },
@@ -4327,7 +4336,8 @@
         "y": 140,
         "wires": [
             [
-                "d01c8884e22fcbc7"
+                "d01c8884e22fcbc7",
+                "5a1b3bb4367533a8"
             ]
         ]
     },
@@ -4399,6 +4409,135 @@
         "info": "To integrate our custom authentication, please switch the output node to align with this flow. ",
         "x": 1120,
         "y": 40,
+        "wires": []
+    },
+    {
+        "id": "170e32c492c4b143",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725240",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6d282f7aa3679f86",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725241",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c6d48f87b79bb065",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725242",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5a1b3bb4367533a8",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725244",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "edf93b79b57c0b51",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725245",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 308.3333435058594,
+        "y": 85.13888549804688,
+        "wires": []
+    },
+    {
+        "id": "a8fd8f9b8c2d4250",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725246",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "12e58a50c41d7a83",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725247",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "74195ee55ca1288b",
+        "type": "debug",
+        "z": "f510f97f1c5410c8",
+        "name": "debug 725248",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 540,
         "wires": []
     },
     {
@@ -20498,7 +20637,8 @@
         "y": 640,
         "wires": [
             [
-                "c7ac7152185aff62"
+                "c7ac7152185aff62",
+                "e6bce3a2a0f44f12"
             ]
         ]
     },
@@ -23440,7 +23580,7 @@
         "y": 460,
         "wires": [
             [
-                "3855085e7897319b"
+                "f4bc6327c5a4219c"
             ]
         ],
         "l": false
@@ -23498,32 +23638,18 @@
         "wires": []
     },
     {
-        "id": "3855085e7897319b",
-        "type": "subflow:f510f97f1c5410c8",
-        "z": "ec1b4918d501c55a",
-        "name": "",
-        "x": 2670,
-        "y": 460,
-        "wires": [
-            [
-                "518a1dbbd12cfe8b",
-                "501701612db872ba"
-            ]
-        ]
-    },
-    {
         "id": "518a1dbbd12cfe8b",
         "type": "function",
         "z": "ec1b4918d501c55a",
         "name": "check_",
-        "func": "msg.userInfo=msg.userInfo[0]\nif (msg.userInfo.email != 'null') {\n  msg.collection = \"admins\";\n  msg.email = msg.userInfo.email\n  msg.fromApp = msg.userInfo\n  msg.payload = {\n    email: msg.userInfo.email,\n    deleted: false\n  }\n\n  return [msg, null];\n\n} else {\n\n  msg.payload = {\n    email: false\n  }\n\n  return [null, msg]\n\n}\n",
+        "func": "msg.userInfo=msg.userInfo\nif (msg.userInfo.email != 'null') {\n  msg.collection = \"admins\";\n  msg.email = msg.userInfo.email\n  msg.fromApp = msg.userInfo\n  msg.payload = {\n    email: msg.userInfo.email,\n    deleted: false\n  }\n\n  return [msg, null];\n\n} else {\n\n  msg.payload = {\n    email: false\n  }\n\n  return [null, msg]\n\n}\n",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2820,
+        "x": 2860,
         "y": 460,
         "wires": [
             [
@@ -23548,7 +23674,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2690,
-        "y": 400,
+        "y": 360,
         "wires": []
     },
     {
@@ -23586,7 +23712,7 @@
         "type": "function",
         "z": "ec1b4918d501c55a",
         "name": "function 591",
-        "func": "if (msg.payload.length === 0) {\n    msg.fromDB = msg.payload\n    \n    msg.payload = {\n        name: \"demo\"\n    }\n\n    msg.collection = \"admin_roles\"\n\n    return [msg, null]\n\n} else {\n    let bcrypt = global.get('bcrypt')\n\n    let check = await bcrypt.compare(msg.fromApp.password, msg.payload[0].password);\n\n    if (!check) {\n        msg.statusCode = 401;\n        msg.payload = {\n            data: \"Incorrect email or password\",\n            code: 401\n        }\n    }\n    msg.user = msg.payload[0]\n    msg.payload = {\n        ownerID: msg.payload[0]._id.toString(),\n    }\n    msg.collection = \"knowlegebase\"\n    return [null, msg];\n}",
+        "func": "if (msg.payload.length === 0) {\n    msg.fromDB = msg.payload\n    \n    msg.payload = {\n        name: \"demo\"\n    }\n\n    msg.collection = \"admin_roles\"\n\n    return [msg, null]\n\n} else {\n    // let bcrypt = global.get('bcrypt')\n\n    // let check = await bcrypt.compare(msg.fromApp.password, msg.payload[0].password);\n\n    // if (!check) {\n    //     msg.statusCode = 401;\n    //     msg.payload = {\n    //         data: \"Incorrect email or password\",\n    //         code: 401\n    //     }\n    // }\n    msg.user = msg.payload[0]\n    msg.payload = {\n        ownerID: msg.payload[0]._id.toString(),\n    }\n    msg.collection = \"knowlegebase\"\n    return [null, msg];\n}",
         "outputs": 2,
         "timeout": "",
         "noerr": 0,
@@ -23961,6 +24087,49 @@
         "y": 380,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e6bce3a2a0f44f12",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "g": "dcac2ae9af307c3f",
+        "name": "debug 725243",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "3855085e7897319b",
+        "type": "subflow:f510f97f1c5410c8",
+        "z": "ec1b4918d501c55a",
+        "name": "",
+        "x": 2670,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4bc6327c5a4219c",
+        "type": "subflow:6f81704611a8ba6b",
+        "z": "ec1b4918d501c55a",
+        "name": "",
+        "x": 2710,
+        "y": 460,
+        "wires": [
+            [
+                "518a1dbbd12cfe8b",
+                "501701612db872ba"
+            ]
         ]
     },
     {
@@ -43602,7 +43771,7 @@
         "type": "function",
         "z": "d0e74064b88242f7",
         "name": "check",
-        "func": "msg.payload = msg.payload[0]\n\nif (msg.payload.priceIds.length > 0) {\n    msg.adminCred = msg.payload\n    msg.priceIds = msg.payload.priceIds\n    msg.adminCred.prices = []\n    return [null, msg]\n} else {\n    return [msg, null]\n}",
+        "func": "msg.payload = msg.payload[0]\n\nif (msg.payload?.priceIds?.length > 0) {\n    msg.adminCred = msg.payload\n    msg.priceIds = msg.payload.priceIds\n    msg.adminCred.prices = []\n    return [null, msg]\n} else {\n    return [msg, null]\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
