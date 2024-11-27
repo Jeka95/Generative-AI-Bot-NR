@@ -23465,7 +23465,7 @@
         "fieldType": "msg",
         "format": "css",
         "syntax": "mustache",
-        "template": "@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,200&display=swap');\n\n.container_height>div>div>div>div>div>div>div>div>div>div {\n    height: auto !important;\n    padding-bottom: 60px !important;\n}\n\n.container_home>div>div>div>div>div>div {\n    overflow-y: auto;\n}\n\n.container_home>div>div>div>div>div>div>div {\n    height: 100% !important;\n    padding-bottom: 80px !important;\n}\n\n.container_home>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.container_home {\n    height: calc(100vh - 90px) !important;\n}\n\nsection {\n    overflow: hidden !important;\n}\n\n\nbody {\n    font-family: 'Titillium Web', sans-serif !important;\n\n}\n\n.onboardingModalInfoContainer {\n    transition: 0.5s !important;\n\n}\n\n.onboardingModalInfoContainer:hover {\n    transform: scale(1.04) !important;\n    transition: 0.5s !important;\n}\n\n.header {\n    top: 0px !important;\n    height: 66px !important;\n    padding: 0px !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.menu_section {\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n    height: 100vh !important;\n    padding: 0px !important;\n    left: 0px !important;\n    border-right: 2px solid rgb(241, 243, 244) !important;\n}\n\n.main_section {\n    padding: 0px !important;\n    height: 100vh !important;\n    position: fixed !important;\n    top: 66px !important;\n}\n\n.tab_login>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.tab_login>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.home_btn2 {\n    padding: 9px !important;\n}\n\n.topzero {\n    top: 0 !important;\n}\n\n/* .bp3-overlay-backdrop{\n    z-index: 9999 !important;\n} */\n\n\n.frame_section {\n    height: 100vh !important;\n    position: fixed !important;\n    top: 16px !important;\n}\n\n.scroll_section {\n    height: 100vh !important;\n    top: 66px !important;\n    padding: 0px !important;\n}\n\n.scroll_section2 {\n    height: 100vh !important;\n    top: 74px !important;\n    padding: 0px !important;\n}\n\n.scroll_section1 {\n    height: 100vh !important;\n    top: 84px !important;\n    padding: 0px !important;\n}\n\n.image {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n    height: 75px !important;\n}\n\n\n.menu .active span {\n    color: #2a2f36 !important;\n}\n\n.menu .active {\n    background: #ebf1fb !important;\n}\n\n.menu button:hover {\n    background: #ebf1fb;\n}\n\n.menu span[role=\"img\"] {\n    margin-left: 8px !important;\n    margin-top: 3px !important;\n\n}\n\n.menu .bp3-collapse-body .sub_category {\n    padding: 5px 5px 5px 20px !important;\n}\n\n.menu button {\n    box-shadow: none !important;\n}\n\n.menu span {\n    font-size: 16px !important;\n    font-weight: 400 !important;\n    color: #00000099 !important;\n}\n\n.menu {\n    left: 0px !important;\n    width: 100% !important;\n    padding: 0 !important;\n}\n\n.menu_wrap {\n    position: fixed !important;\n    left: 0px !important;\n    top: 0px !important;\n    height: 100vh !important;\n    /* width: 178.312px!important; */\n    padding: 0px !important;\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n}\n\n.menu button {\n    justify-content: start !important;\n    padding: 5px 10px 5px 15px !important;\n    margin-bottom: 5px !important;\n}\n\n.setting_title {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n\n.setting_text {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.setting_text .bp3-ui-text {\n    font-weight: 500 !important;\n    font-size: 16px !important;\n}\n\n.setting_title .bp3-ui-text {\n    font-weight: 600 !important;\n    font-size: 18px !important;\n}\n\n.telegramList {\n    padding: 10px 20px !important;\n}\n\n.telegramList .custom-wrapper-canvas-list {\n    display: flex;\n    flex-direction: column !important;\n}\n\n.telegramList .custom-wrapper-canvas-list button {\n    display: none !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget {\n    width: 90% !important;\n    position: static !important;\n    border-radius: 8px !important;\n    padding: 0 !important;\n    margin-bottom: 7px;\n    margin-right: auto !important;\n    margin-left: 0 !important;\n    background-color: #cfcfdb !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) {\n    margin-right: 0 !important;\n    margin-left: auto !important;\n    background-color: #e5e5e6 !important;\n}\n\n.telegramList .t--widget-textwidget {\n    width: auto !important;\n    position: static !important;\n    padding: 5px 15px !important;\n    height: 100% !important;\n}\n\n.telegramList .t--widget-textwidget span {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 125%;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) .t--widget-textwidget span {\n    text-align: end;\n}\n\n.telegramWrap {\n    padding: 0 !important;\n}\n\n.container {\n    min-height: 100vh;\n}\n\n.selectedTab {\n    box-shadow: rgb(235, 239, 242) -1px 0px 0px inset, rgb(235, 239, 242) 0px 0px 0px inset, rgb(33, 84, 132) 0px 4px 0px inset !important;\n}\n\n.icon>div>div>div>div>div>div>div {\n    background-position: center right !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: 23px !important;\n}\n\n.title>div>div>div>div>div>div>div>span>span.training_span {\n    color: #215484 !important;\n    font-size: 28px !important;\n    font-weight: 700 !important;\n}\n\n.tabs>div>div>div>div>div>div {\n    font-size: 20px !important;\n    /* text-transform: uppercase!important; */\n    font-weight: 500 !important;\n    border-color: #e5e5e5 !important;\n}\n\n.training_wrap>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: inline-flex !important;\n    justify-content: space-between !important;\n}\n\n.table {\n    font-size: 14px !important;\n    text-transform: lowercase !important;\n    font-weight: 400 !important;\n}\n\n.table>div>div>div>div>div>div {\n    font-size: 14px !important;\n    text-transform: uppercase !important;\n}\n\n.tr>div>div>div>div>div>div>div>div {\n    border-right: none !important;\n}\n\n\n\n.title>div>div>div>div>div>div>div>span>span {\n    font-size: 14px !important;\n    font-weight: 400 !important;\n}\n\n/**/\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    margin-bottom: 20px !important;\n}\n\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    position: initial !important;\n}\n\n.hide {\n    display: none;\n    height: 20px !important;\n}\n\n.activ {\n    display: block;\n    /* height: 270px!important; */\n}\n\n.activ_setup {\n    display: block;\n    /* height: 500px!important; */\n}\n\n.btn_right>div>div>div>div>button>span>svg {\n    transform: rotate(180deg) !important;\n    transition: all 0.5s ease 0s !important;\n}\n\n.btn_left>div>div>div>div>button>span>svg {\n    transform: translateY(0px) !important;\n    transition: none 0s ease 0s !important;\n}\n\n/* За замовчуванням */\n.btn_left>div>div>div>div>button,\n.btn_right>div>div>div>div>button {\n    background-color: #ccc;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n\n}\n\n\n.btn_left>div>div>div>div>button:hover:enabled,\n.btn_right>div>div>div>div>button:hover:enabled {\n    background: #9991 !important;\n    transform: translateY(-5px) !important;\n}\n\n.bp3-input {\n    border-radius: 10px !important;\n}\n\n.select_input button.select-button {\n    border-radius: 10px !important;\n}\n\n.dashboard_text>div>div>div>div>div>div>div {\n    font-size: 32px !important;\n    font-weight: 700 !important;\n}\n\n.t--widget-progresswidget>div>div>div>div {\n    height: 68% !important;\n    border-radius: 10px !important;\n    background: #3ba6ff;\n    overflow: hidden !important;\n\n\n}\n\n.t--widget-progresswidget>div>div>div>div>div {\n    height: 100% !important;\n    background-color: #e5e5e5 !important;\n    color: #059ff2 !important;\n    padding-right: 12px !important;\n    font-size: 20px !important;\n    font-weight: 600 !important;\n    text-align: center !important;\n    padding-top: 2px !important;\n\n\n\n}\n\n.text_cross {\n    text-decoration: line-through !important;\n}\n\n.text_cross span {\n    text-decoration: none !important;\n}\n\n.done {\n    opacity: 0.3 !important;\n}\n\n.scroll_section {\n    overflow-y: hidden !important;\n}\n\n\n.users_tabs {\n    border-radius: 10px !important;\n}\n\n.upload_img .bp3-button {\n    background: #215484 !important;\n    border-radius: 5px !important;\n}\n\n.upload_img .bp3-button:hover,\n.upload_img>div>div>div>div:hover>button,\n.upload_img>div>div>div>div:active>button {\n    background: #123a5e !important;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n}\n\n.text_aisetup {\n    top: 0 px !important;\n}\n\n.text_aisetup>div>div>div>div>div>div>div>span {\n    gap: 5px !important;\n    display: flex !important;\n    width: 100% !important;\n    line-height: 1.2 !important;\n    white-space: normal !important;\n}\n\n.table_vectors .table .td {\n    height: 250px !important;\n}\n\n.table_vectors .table .td>div>div {\n    white-space: initial !important;\n    align-items: baseline !important;\n}\n\n.chatDemo {\n    height: calc(100% - 60px) !important;\n}\n\n.chatContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.chatContainer>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer {\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    /* border-radius: 4px; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n/* .chatContainer:hover { */\n/* box-shadow: none !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n/* } */\n.chatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 10px !important;\n    padding: 0px !important;\n    height: 97% !important;\n}\n\n.chatWrapper>div>div>div>div {\n    border-radius: 10px;\n}\n\n.chatImage>div>div>div>div>div {\n    left: -15%\n}\n\n.chatTitle>div>div>div {\n    left: -6%\n}\n\n.chatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.chatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -8%;\n    cursor: default;\n}\n\n.chatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n/* .supportBtn:hover .header{\n    z-index: 0 !important;\n} */\n\n/* .supportBtn:hover + .header {\n    z-index: -1 !important;\n} */\n\n.cloneTemplateBtn {\n    width: 200px !important;\n    left: calc(75% - 200px) !important;\n    top: 15px !important;\n    z-index: 2 !important;\n}\n\n.Bot_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.Training_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.Personality_button button:nth-child(3) {\n    background: #3b82ff15 !important\n}\n\n.demoEmail {\n    left: 83px !important;\n    top: 2px !important;\n}\n\n.warningSection {\n    width: calc(100% - 45px) !important;\n    left: 6px !important;\n}\n\n.warningText {\n    width: 100% !important;\n}\n\n.selectWithoutCross .cancel-icon {\n    display: none !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---START--- */\n.pseudoInput {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInput input,\n.pseudoInput textarea {\n    background: #f9fafa !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.inputRegular {\n    background-color: #F6F7F8 !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment textarea {\n    background: #edf2f7 !important;\n    border-width: 10px !important;\n    border-color: #edf2f7 !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    border-radius: 10px !important;\n    transition-delay: 999999s;\n    /* prevents the hover from turning on */\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div:hover {\n    cursor: default !important;\n    /* hover off */\n}\n\n.listVectorsText div>div>div>div>div>div>div {\n    padding: 10px !important;\n}\n\n\n\n.tableOfVectors .thead .tr .th:nth-child(1),\n.tableOfVectors .tbody .tr .td:nth-child(1) {\n    width: 45% !important;\n}\n\n.tableOfVectors .thead .tr .th:nth-child(2),\n.tableOfVectors .tbody .tr .td:nth-child(2) {\n    width: 50% !important;\n}\n\n.tableOfVectors .thead .tr .th:last-child,\n.tableOfVectors .tbody .tr .td:last-child {\n    width: 5% !important;\n}\n\n.Text_v_answer div>div>div>div>div>div>div {\n    padding: 10px !important;\n    /* border-radius: 10px !important; */\n}\n\n.modelTestingSelector .cancel-icon,\n.BenchmarkSelector .cancel-icon {\n    display: none !important;\n}\n\n.Enrich_JSONForm .t--jsonformfield-Enriched_data_from_AI {\n    border-radius: 10px !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---FINISH--- */\n\n\n.buttonsTraining>div>div>div>div {\n    border: 1px solid #e8e8e8 !important;\n    border-radius: 9px !important;\n    padding: 0 !important;\n}\n\n.buttonsTraining button {\n    border-color: #e8e8e8 !important;\n}\n\n.btn_translate {\n    position: absolute !important;\n    z-index: 1000000000000 !important;\n    /* left: 1573.66px!important; */\n}\n\n.logout_btn {\n    width: 87px !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: clamp(20px, 1.3vw, 22px) !important;\n}\n\n.loginForm_wrapper>div>div>div>div>div {\n    border-radius: 30px !important\n}\n\n.loginForm_wrapper:before,\n.loginForm_wrapper:after {\n    z-index: -1 !important;\n    position: absolute !important;\n    content: \"\" !important;\n    bottom: 18px !important;\n    left: 10px !important;\n    width: 50% !important;\n    top: 80% !important;\n    max-width: 300px !important;\n    background: #adabab !important;\n    box-shadow: 0 18px 7px #adabab !important;\n    transform: rotate(-3deg) !important;\n    border-radius: 10px !important;\n}\n\n.loginForm_wrapper:after {\n    transform: rotate(3deg) !important;\n    right: 10px !important;\n    left: auto !important;\n}\n\n.supportModal {\n    top: 66px !important;\n    right: 24px !important;\n    border-radius: 10px !important;\n}\n\n.modal_succesfull {\n    border-radius: 10px !important;\n}\n\n.icon_info {\n    width: 61.0918px !important;\n}\n\n.home_btn>div>div>div>div>div>button>span {\n    color: #f9fafa !important;\n}\n\n.demoChatHeader>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.demoChatHeader>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader {\n    width: 100% !important;\n\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 69px !important;\n    padding: 0px !important;\n    height: 89vh !important;\n}\n\n.demoChatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chat_bot {\n    width: 100% !important;\n    border-radius: 0px 0px 10px 10px !important;\n    top: 80px !important;\n    left: 0px !important;\n    border: 1px;\n    background-color: white !important;\n    height: 88% !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n}\n\n.chat_bot>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n}\n\n.chat_bot>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 120px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 120px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.sidebar_chatbotllm>div>div>div>div>div>span>div {\n    border-radius: 6px !important;\n}\n\n.sidebar_chatbot {\n    top: 65px !important;\n    height: 90vh !important;\n}\n\n.sidebar_chatbotllm {\n    padding: 0 !important;\n}\n\n.sidebar_chatbotllm button {\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) img {\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%;\n    background-color: #fff!important;\n    max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) img {\n    /* width: 35px;\n    height: 35px; */\n    /* display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%; */\n    /* background-color: #fff!important; */\n    /* max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n.demoChatImage>div>div>div>div>div {\n    left: -25%\n}\n\n.demoChatTitle>div>div>div {\n    left: -10%\n}\n\n.demoChatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.demoChatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -11%;\n    cursor: default;\n}\n\n.demoChatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n\n.conversationAccordion button {\n    border-radius: 10px !important;\n    background-color: rgb(246 247 248) !important;\n}\n\n/* -----home demo chat------ */\n.chat_bot2 {\n    height: calc(100% - 100px) !important;\n    border-radius: 0px 0px 10px 10px !important;\n    border: 1px;\n    top: 92px !important;\n    /* height: calc(100% - 20px)!important; */\n    background-color: white !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    clip-path: inset(-3px 0px 0px 0px);\n}\n\n.chat_bot2>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot2>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n\n}\n\n.chat_bot2>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 60px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 60px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) img {\n    display: none;\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 50%;\n    background-color: #fff!important;\n    max-height: 50%;\n    padding: 4px!important; */\n\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) img {\n    display: none;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n\n/* .ant-alert-error {\n    display: none !important;\n} */\n\n.Toastify:has(.ant-alert-error) {\n    display: none !important;\n}\n\n.gitLabel {}\n\n.knowleadge {\n    margin-top: 20px !important;\n}\n\n.dbSelect .label-container label {\n    width: fit-content !important;\n    text-align: left !important;\n}\n\n.dbSelect .bp3-control-group {\n    height: 100% !important;\n}\n\n.hover-effect {\n    width: 39px !important;\n    height: 39px !important;\n    border-radius: 360px;\n    background: transparent;\n    transition: filter 0.3s ease-in-out;\n}\n\n.hover-effect:hover {\n    background: rgb(140, 164, 183) !important;\n}\n\n.git_img {\n    top: -4px !important;\n    height: 100% !important;\n    width: 100% !important;\n\n}\n\n.subscriptionInfoBlock {\n    left: 0px !important;\n    top: 0px !important;\n    height: 190px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.subscriptionTitleBlock>div>div>div>div>div>div {\n    height: 100% !important;\n    width: 100% !important;\n    border-radius: 0 0 50% 50% !important;\n    background: rgb(245, 247, 250) !important;\n}\n\n.subscriptionTitleBlock {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n/* .upload_widget>div>div>div>div{\n    display: none!important;\n  } */\n\n.profileText {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.profileText span {\n    padding: 9px !important;\n}\n\n.profile_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.billing_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.profilePageTab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n\n.chatAnimationEffect textarea {\n    border-color: #66afe9 !important;\n    /* box-shadow: 0 0 8px rgba(102, 175, 233, 0.6) !important; */\n    background-color: #f0f8ff !important;\n    outline: none !important;\n    animation: pulse 1.5s infinite;\n}\n\n.chatAnimationEffect textarea {\n    /* width: 100% !important;\n    height: 100px !important; */\n    padding: 10px !important;\n    border: 2px solid #66afe9 !important;\n    border-radius: 4px !important;\n    font-size: 16px !important;\n    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s !important;\n    resize: none !important;\n}\n\n/* .chat_bot2 textarea::selection {\n    background-color: #66afe9 !important;\n    color: white !important;\n} */\n\n@keyframes pulse {\n    0% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n\n    50% {\n        box-shadow: 0 0 10px rgba(102, 175, 233, 0.8);\n    }\n\n    100% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n}\n\n@keyframes firework {\n    0% {\n        transform: translate(var(--x), var(--initialY));\n        width: var(--initialSize);\n        opacity: 1;\n    }\n\n    50% {\n        width: 0.5vmin;\n        opacity: 1;\n    }\n\n    100% {\n        width: var(--finalSize);\n        opacity: 0;\n    }\n}\n\n/* @keyframes fireworkPseudo {\n  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }\n  50% { width: 0.5vmin; opacity: 1; }\n  100% { width: var(--finalSize); opacity: 0; }\n}\n */\n.firework,\n.firework::before,\n.firework::after {\n    --initialSize: 0.5vmin;\n    --finalSize: 45vmin;\n    --particleSize: 0.2vmin;\n    --color1: yellow;\n    --color2: khaki;\n    --color3: white;\n    --color4: lime;\n    --color5: gold;\n    --color6: mediumseagreen;\n    --y: -30vmin;\n    --x: -50%;\n    --initialY: 60vmin;\n    content: \"\";\n    animation: firework 2s infinite;\n    position: absolute;\n    top: 40%;\n    left: 50%;\n    transform: translate(-50%, var(--y));\n    width: var(--initialSize);\n    aspect-ratio: 1;\n    background:\n        /*\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,\n    */\n\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,\n\n        /* bottom right */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,\n\n        /* bottom left */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,\n\n        /* top left */\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,\n\n        /* top right */\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;\n    background-size: var(--initialSize) var(--initialSize);\n    background-repeat: no-repeat;\n}\n\n.firework::before {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */\n    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework::after {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */\n    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework:nth-child(2) {\n    --x: 30vmin;\n}\n\n.firework:nth-child(2),\n.firework:nth-child(2)::before,\n.firework:nth-child(2)::after {\n    --color1: rgb(255, 122, 145);\n    --color2: violet;\n    --color3: fuchsia;\n    --color4: orchid;\n    --color5: rgb(245, 2, 245);\n    --color6: rgb(6, 6, 240);\n    --finalSize: 40vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.25s;\n}\n\n.firework:nth-child(3) {\n    --x: -30vmin;\n    --y: -50vmin;\n}\n\n.firework:nth-child(3),\n.firework:nth-child(3)::before,\n.firework:nth-child(3)::after {\n    --color1: cyan;\n    --color2: rgb(0, 193, 148);\n    --color3: rgb(0, 191, 255);\n    --color4: PaleTurquoise;\n    --color5: SkyBlue;\n    --color6: rgb(0, 255, 110);\n    --finalSize: 35vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.4s;\n}\n\n.fireworkContainer {\n    top: 0 !important;\n    width: 100% !important;\n    height: 100% !important;\n}\n\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n/* body {\n  background: #000;\n  background-image: radial-gradient(circle at top left, #000, #3c4858);\n} */\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n@keyframes showAnimation {\n\n    0%,\n    10% {\n        opacity: 1;\n    }\n\n    90%,\n    100% {\n        opacity: 0;\n    }\n}\n\nbody {\n    background: #000;\n    background-image: radial-gradient(circle at top left, #000, #3c4858);\n}\n\n.containerAnime {\n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n.parallax {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.parallax img {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    width: 100%;\n    height: auto;\n    transform: translateX(-50%) translateZ(0);\n    animation: confetti linear infinite, showAnimation linear infinite;\n}\n\n.parallax img:nth-child(1) {\n    animation-delay: -5s, 0s;\n    animation-duration: 5s, 10s;\n}\n\n.parallax img:nth-child(2) {\n    animation-delay: -10s, 0s;\n    animation-duration: 10s, 10s;\n}\n\n.parallax img:nth-child(3) {\n    animation-delay: -20s, 0s;\n    animation-duration: 20s, 10s;\n}\n\n.parallax img:nth-child(4) {\n    animation-delay: -30s, 0s;\n    animation-duration: 30s, 10s;\n}\n\n.parallax img:nth-child(5) {\n    animation-delay: -35s, 0s;\n    animation-duration: 35s, 10s;\n}\n\n.contactModal {\n    border-radius: 10px !important;\n}\n\n.subscriptionContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: flex !important;\n    flex-direction: row !important;\n    justify-content: center !important;\n}\n\n.subscriptionBlock {\n    position: initial !important;\n    margin-right: 12px !important;\n}\n\n.chatwoot_tab .selectedTab {\n    border-bottom: 1px solid #215484 !important;\n    box-shadow: none !important;\n\n}\n\n.chatwoot_tab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.t--tabid-tab1 {\n    border-bottom: 1px solid lightgray !important;\n}\n\n.t--tabid-tab2 {\n    border-bottom: 1px solid lightgray;\n}\n\n.radioGroupSelector label {\n    font-size: 14px !important;\n}\n\n.radioGroupSelector .bp3-control input:checked~.bp3-control-indicator {\n    background: #215484 !important;\n}\n\n.trainingModal {\n    max-height: 100vh !important;\n    height: 100vh !important;\n    width: 50% !important;\n    max-width: 50% !important;\n    transform: translate3d(50%, 0px, 0px) !important;\n}\n\n.tabsTraining {\n    height: 96% !important;\n    width: 98% !important;\n}\n\n.fullWidthContainer {\n    width: 96% !important;\n}\n\n.separatorWidthContainer {\n    width: 90% !important;\n}\n\n.separatorWidthButton {\n    /* width: 5; */\n    left: 91% !important;\n}",
+        "template": "@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,200&display=swap');\n\n.container_height>div>div>div>div>div>div>div>div>div>div {\n    height: auto !important;\n    padding-bottom: 60px !important;\n}\n\n.container_home>div>div>div>div>div>div {\n    overflow-y: auto;\n}\n\n.container_home>div>div>div>div>div>div>div {\n    height: 100% !important;\n    padding-bottom: 80px !important;\n}\n\n.container_home>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.container_home {\n    height: calc(100vh - 90px) !important;\n}\n\nsection {\n    overflow: hidden !important;\n}\n\n\nbody {\n    font-family: 'Titillium Web', sans-serif !important;\n\n}\n\n.onboardingModalInfoContainer {\n    transition: 0.5s !important;\n\n}\n\n.onboardingModalInfoContainer:hover {\n    transform: scale(1.04) !important;\n    transition: 0.5s !important;\n}\n\n.header {\n    top: 0px !important;\n    height: 66px !important;\n    padding: 0px !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.menu_section {\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n    height: 100vh !important;\n    padding: 0px !important;\n    left: 0px !important;\n    border-right: 2px solid rgb(241, 243, 244) !important;\n}\n\n.main_section {\n    padding: 0px !important;\n    height: 100vh !important;\n    position: fixed !important;\n    top: 66px !important;\n}\n\n.tab_login>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.tab_login>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.home_btn2 {\n    padding: 9px !important;\n}\n\n.topzero {\n    top: 0 !important;\n}\n\n/* .bp3-overlay-backdrop{\n    z-index: 9999 !important;\n} */\n\n\n.frame_section {\n    height: 100vh !important;\n    position: fixed !important;\n    top: 16px !important;\n}\n\n.scroll_section {\n    height: 100vh !important;\n    top: 66px !important;\n    padding: 0px !important;\n}\n\n.scroll_section2 {\n    height: 100vh !important;\n    top: 74px !important;\n    padding: 0px !important;\n}\n\n.scroll_section1 {\n    height: 100vh !important;\n    top: 84px !important;\n    padding: 0px !important;\n}\n\n.image {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n    height: 75px !important;\n}\n\n\n.menu .active span {\n    color: #2a2f36 !important;\n}\n\n.menu .active {\n    background: #ebf1fb !important;\n}\n\n.menu button:hover {\n    background: #ebf1fb;\n}\n\n.menu span[role=\"img\"] {\n    margin-left: 8px !important;\n    margin-top: 3px !important;\n\n}\n\n.menu .bp3-collapse-body .sub_category {\n    padding: 5px 5px 5px 20px !important;\n}\n\n.menu button {\n    box-shadow: none !important;\n}\n\n.menu span {\n    font-size: 16px !important;\n    font-weight: 400 !important;\n    color: #00000099 !important;\n}\n\n.menu {\n    left: 0px !important;\n    width: 100% !important;\n    padding: 0 !important;\n}\n\n.menu_wrap {\n    position: fixed !important;\n    left: 0px !important;\n    top: 0px !important;\n    height: 100vh !important;\n    /* width: 178.312px!important; */\n    padding: 0px !important;\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n}\n\n.menu button {\n    justify-content: start !important;\n    padding: 5px 10px 5px 15px !important;\n    margin-bottom: 5px !important;\n}\n\n.setting_title {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n\n.setting_text {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.setting_text .bp3-ui-text {\n    font-weight: 500 !important;\n    font-size: 16px !important;\n}\n\n.setting_title .bp3-ui-text {\n    font-weight: 600 !important;\n    font-size: 18px !important;\n}\n\n.telegramList {\n    padding: 10px 20px !important;\n}\n\n.telegramList .custom-wrapper-canvas-list {\n    display: flex;\n    flex-direction: column !important;\n}\n\n.telegramList .custom-wrapper-canvas-list button {\n    display: none !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget {\n    width: 90% !important;\n    position: static !important;\n    border-radius: 8px !important;\n    padding: 0 !important;\n    margin-bottom: 7px;\n    margin-right: auto !important;\n    margin-left: 0 !important;\n    background-color: #cfcfdb !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) {\n    margin-right: 0 !important;\n    margin-left: auto !important;\n    background-color: #e5e5e6 !important;\n}\n\n.telegramList .t--widget-textwidget {\n    width: auto !important;\n    position: static !important;\n    padding: 5px 15px !important;\n    height: 100% !important;\n}\n\n.telegramList .t--widget-textwidget span {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 125%;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) .t--widget-textwidget span {\n    text-align: end;\n}\n\n.telegramWrap {\n    padding: 0 !important;\n}\n\n.container {\n    min-height: 100vh;\n}\n\n.selectedTab {\n    box-shadow: rgb(235, 239, 242) -1px 0px 0px inset, rgb(235, 239, 242) 0px 0px 0px inset, rgb(33, 84, 132) 0px 4px 0px inset !important;\n}\n\n.icon>div>div>div>div>div>div>div {\n    background-position: center right !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: 23px !important;\n}\n\n.title>div>div>div>div>div>div>div>span>span.training_span {\n    color: #215484 !important;\n    font-size: 28px !important;\n    font-weight: 700 !important;\n}\n\n.tabs>div>div>div>div>div>div {\n    font-size: 20px !important;\n    /* text-transform: uppercase!important; */\n    font-weight: 500 !important;\n    border-color: #e5e5e5 !important;\n}\n\n.training_wrap>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: inline-flex !important;\n    justify-content: space-between !important;\n}\n\n.table {\n    font-size: 14px !important;\n    text-transform: lowercase !important;\n    font-weight: 400 !important;\n}\n\n.table>div>div>div>div>div>div {\n    font-size: 14px !important;\n    text-transform: uppercase !important;\n}\n\n.tr>div>div>div>div>div>div>div>div {\n    border-right: none !important;\n}\n\n\n\n.title>div>div>div>div>div>div>div>span>span {\n    font-size: 14px !important;\n    font-weight: 400 !important;\n}\n\n/**/\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    margin-bottom: 20px !important;\n}\n\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    position: initial !important;\n}\n\n.hide {\n    display: none;\n    height: 20px !important;\n}\n\n.activ {\n    display: block;\n    /* height: 270px!important; */\n}\n\n.activ_setup {\n    display: block;\n    /* height: 500px!important; */\n}\n\n.btn_right>div>div>div>div>button>span>svg {\n    transform: rotate(180deg) !important;\n    transition: all 0.5s ease 0s !important;\n}\n\n.btn_left>div>div>div>div>button>span>svg {\n    transform: translateY(0px) !important;\n    transition: none 0s ease 0s !important;\n}\n\n/* За замовчуванням */\n.btn_left>div>div>div>div>button,\n.btn_right>div>div>div>div>button {\n    background-color: #ccc;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n\n}\n\n\n.btn_left>div>div>div>div>button:hover:enabled,\n.btn_right>div>div>div>div>button:hover:enabled {\n    background: #9991 !important;\n    transform: translateY(-5px) !important;\n}\n\n.bp3-input {\n    border-radius: 10px !important;\n}\n\n.select_input button.select-button {\n    border-radius: 10px !important;\n}\n\n.dashboard_text>div>div>div>div>div>div>div {\n    font-size: 32px !important;\n    font-weight: 700 !important;\n}\n\n.t--widget-progresswidget>div>div>div>div {\n    height: 68% !important;\n    border-radius: 10px !important;\n    background: #3ba6ff;\n    overflow: hidden !important;\n\n\n}\n\n.t--widget-progresswidget>div>div>div>div>div {\n    height: 100% !important;\n    background-color: #e5e5e5 !important;\n    color: #059ff2 !important;\n    padding-right: 12px !important;\n    font-size: 20px !important;\n    font-weight: 600 !important;\n    text-align: center !important;\n    padding-top: 2px !important;\n\n\n\n}\n\n.text_cross {\n    text-decoration: line-through !important;\n}\n\n.text_cross span {\n    text-decoration: none !important;\n}\n\n.done {\n    opacity: 0.3 !important;\n}\n\n.scroll_section {\n    overflow-y: hidden !important;\n}\n\n\n.users_tabs {\n    border-radius: 10px !important;\n}\n\n.upload_img .bp3-button {\n    background: #215484 !important;\n    border-radius: 5px !important;\n}\n\n.upload_img .bp3-button:hover,\n.upload_img>div>div>div>div:hover>button,\n.upload_img>div>div>div>div:active>button {\n    background: #123a5e !important;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n}\n\n.text_aisetup {\n    top: 0 px !important;\n}\n\n.text_aisetup>div>div>div>div>div>div>div>span {\n    gap: 5px !important;\n    display: flex !important;\n    width: 100% !important;\n    line-height: 1.2 !important;\n    white-space: normal !important;\n}\n\n.table_vectors .table .td {\n    height: 250px !important;\n}\n\n.table_vectors .table .td>div>div {\n    white-space: initial !important;\n    align-items: baseline !important;\n}\n\n.chatDemo {\n    height: calc(100% - 60px) !important;\n}\n\n.chatContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.chatContainer>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer {\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    /* border-radius: 4px; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n/* .chatContainer:hover { */\n/* box-shadow: none !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n/* } */\n.chatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 10px !important;\n    padding: 0px !important;\n    height: 97% !important;\n}\n\n.chatWrapper>div>div>div>div {\n    border-radius: 10px;\n}\n\n.chatImage>div>div>div>div>div {\n    left: -15%\n}\n\n.chatTitle>div>div>div {\n    left: -6%\n}\n\n.chatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.chatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -8%;\n    cursor: default;\n}\n\n.chatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n/* .supportBtn:hover .header{\n    z-index: 0 !important;\n} */\n\n/* .supportBtn:hover + .header {\n    z-index: -1 !important;\n} */\n\n.cloneTemplateBtn {\n    width: 200px !important;\n    left: calc(75% - 200px) !important;\n    top: 15px !important;\n    z-index: 2 !important;\n}\n\n.Bot_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.Training_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.Personality_button button:nth-child(3) {\n    background: #3b82ff15 !important\n}\n\n.demoEmail {\n    left: 83px !important;\n    top: 2px !important;\n}\n\n.warningSection {\n    width: calc(100% - 45px) !important;\n    left: 6px !important;\n}\n\n.warningText {\n    width: 100% !important;\n}\n\n.selectWithoutCross .cancel-icon {\n    display: none !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---START--- */\n.pseudoInput {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInput input,\n.pseudoInput textarea {\n    background: #f9fafa !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.inputRegular {\n    background-color: #F6F7F8 !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment textarea {\n    background: #edf2f7 !important;\n    border-width: 10px !important;\n    border-color: #edf2f7 !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    border-radius: 10px !important;\n    transition-delay: 999999s;\n    /* prevents the hover from turning on */\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div:hover {\n    cursor: default !important;\n    /* hover off */\n}\n\n.listVectorsText div>div>div>div>div>div>div {\n    padding: 10px !important;\n}\n\n\n\n.tableOfVectors .thead .tr .th:nth-child(1),\n.tableOfVectors .tbody .tr .td:nth-child(1) {\n    width: 45% !important;\n}\n\n.tableOfVectors .thead .tr .th:nth-child(2),\n.tableOfVectors .tbody .tr .td:nth-child(2) {\n    width: 50% !important;\n}\n\n.tableOfVectors .thead .tr .th:last-child,\n.tableOfVectors .tbody .tr .td:last-child {\n    width: 5% !important;\n}\n\n.Text_v_answer div>div>div>div>div>div>div {\n    padding: 10px !important;\n    /* border-radius: 10px !important; */\n}\n\n.modelTestingSelector .cancel-icon,\n.BenchmarkSelector .cancel-icon {\n    display: none !important;\n}\n\n.Enrich_JSONForm .t--jsonformfield-Enriched_data_from_AI {\n    border-radius: 10px !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---FINISH--- */\n\n\n.buttonsTraining>div>div>div>div {\n    border: 1px solid #e8e8e8 !important;\n    border-radius: 9px !important;\n    padding: 0 !important;\n}\n\n.buttonsTraining button {\n    border-color: #e8e8e8 !important;\n}\n\n.btn_translate {\n    position: absolute !important;\n    z-index: 1000000000000 !important;\n    /* left: 1573.66px!important; */\n}\n\n.logout_btn {\n    width: 87px !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: clamp(20px, 1.3vw, 22px) !important;\n}\n\n.loginForm_wrapper>div>div>div>div>div {\n    border-radius: 30px !important\n}\n\n.loginForm_wrapper:before,\n.loginForm_wrapper:after {\n    z-index: -1 !important;\n    position: absolute !important;\n    content: \"\" !important;\n    bottom: 18px !important;\n    left: 10px !important;\n    width: 50% !important;\n    top: 80% !important;\n    max-width: 300px !important;\n    background: #adabab !important;\n    box-shadow: 0 18px 7px #adabab !important;\n    transform: rotate(-3deg) !important;\n    border-radius: 10px !important;\n}\n\n.loginForm_wrapper:after {\n    transform: rotate(3deg) !important;\n    right: 10px !important;\n    left: auto !important;\n}\n\n.supportModal {\n    top: 66px !important;\n    right: 24px !important;\n    border-radius: 10px !important;\n}\n\n.modal_succesfull {\n    border-radius: 10px !important;\n}\n\n.icon_info {\n    width: 61.0918px !important;\n}\n\n.home_btn>div>div>div>div>div>button>span {\n    color: #f9fafa !important;\n}\n\n.demoChatHeader>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.demoChatHeader>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader {\n    width: 100% !important;\n\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 69px !important;\n    padding: 0px !important;\n    height: 89vh !important;\n}\n\n.demoChatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chat_bot {\n    width: 100% !important;\n    border-radius: 0px 0px 10px 10px !important;\n    top: 80px !important;\n    left: 0px !important;\n    border: 1px;\n    background-color: white !important;\n    height: 88% !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n}\n\n.chat_bot>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n}\n\n.chat_bot>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 120px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 120px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.sidebar_chatbotllm>div>div>div>div>div>span>div {\n    border-radius: 6px !important;\n}\n\n.sidebar_chatbot {\n    top: 65px !important;\n    height: 90vh !important;\n}\n\n.sidebar_chatbotllm {\n    padding: 0 !important;\n}\n\n.sidebar_chatbotllm button {\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) img {\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%;\n    background-color: #fff!important;\n    max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) img {\n    /* width: 35px;\n    height: 35px; */\n    /* display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%; */\n    /* background-color: #fff!important; */\n    /* max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n.demoChatImage>div>div>div>div>div {\n    left: -25%\n}\n\n.demoChatTitle>div>div>div {\n    left: -10%\n}\n\n.demoChatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.demoChatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -11%;\n    cursor: default;\n}\n\n.demoChatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n\n.conversationAccordion button {\n    border-radius: 10px !important;\n    background-color: rgb(246 247 248) !important;\n}\n\n/* -----home demo chat------ */\n.chat_bot2 {\n    height: calc(100% - 100px) !important;\n    border-radius: 0px 0px 10px 10px !important;\n    border: 1px;\n    top: 92px !important;\n    /* height: calc(100% - 20px)!important; */\n    background-color: white !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    clip-path: inset(-3px 0px 0px 0px);\n}\n\n.chat_bot2>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot2>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n\n}\n\n.chat_bot2>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 60px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 60px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) img {\n    display: none;\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 50%;\n    background-color: #fff!important;\n    max-height: 50%;\n    padding: 4px!important; */\n\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) img {\n    display: none;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n\n/* .ant-alert-error {\n    display: none !important;\n} */\n\n.Toastify:has(.ant-alert-error) {\n    display: none !important;\n}\n\n.gitLabel {}\n\n.knowleadge {\n    margin-top: 20px !important;\n}\n\n.dbSelect .label-container label {\n    width: fit-content !important;\n    text-align: left !important;\n}\n\n.dbSelect .bp3-control-group {\n    height: 100% !important;\n}\n\n.hover-effect {\n    width: 39px !important;\n    height: 39px !important;\n    border-radius: 360px;\n    background: transparent;\n    transition: filter 0.3s ease-in-out;\n}\n\n.hover-effect:hover {\n    background: rgb(140, 164, 183) !important;\n}\n\n.git_img {\n    top: -4px !important;\n    height: 100% !important;\n    width: 100% !important;\n\n}\n\n.subscriptionInfoBlock {\n    left: 0px !important;\n    top: 0px !important;\n    height: 190px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.subscriptionTitleBlock>div>div>div>div>div>div {\n    height: 100% !important;\n    width: 100% !important;\n    border-radius: 0 0 50% 50% !important;\n    background: rgb(245, 247, 250) !important;\n}\n\n.subscriptionTitleBlock {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n/* .upload_widget>div>div>div>div{\n    display: none!important;\n  } */\n\n.profileText {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.profileText span {\n    padding: 9px !important;\n}\n\n.profile_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.billing_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.profilePageTab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n\n.chatAnimationEffect textarea {\n    border-color: #66afe9 !important;\n    /* box-shadow: 0 0 8px rgba(102, 175, 233, 0.6) !important; */\n    background-color: #f0f8ff !important;\n    outline: none !important;\n    animation: pulse 1.5s infinite;\n}\n\n.chatAnimationEffect textarea {\n    /* width: 100% !important;\n    height: 100px !important; */\n    padding: 10px !important;\n    border: 2px solid #66afe9 !important;\n    border-radius: 4px !important;\n    font-size: 16px !important;\n    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s !important;\n    resize: none !important;\n}\n\n/* .chat_bot2 textarea::selection {\n    background-color: #66afe9 !important;\n    color: white !important;\n} */\n\n@keyframes pulse {\n    0% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n\n    50% {\n        box-shadow: 0 0 10px rgba(102, 175, 233, 0.8);\n    }\n\n    100% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n}\n\n@keyframes firework {\n    0% {\n        transform: translate(var(--x), var(--initialY));\n        width: var(--initialSize);\n        opacity: 1;\n    }\n\n    50% {\n        width: 0.5vmin;\n        opacity: 1;\n    }\n\n    100% {\n        width: var(--finalSize);\n        opacity: 0;\n    }\n}\n\n/* @keyframes fireworkPseudo {\n  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }\n  50% { width: 0.5vmin; opacity: 1; }\n  100% { width: var(--finalSize); opacity: 0; }\n}\n */\n.firework,\n.firework::before,\n.firework::after {\n    --initialSize: 0.5vmin;\n    --finalSize: 45vmin;\n    --particleSize: 0.2vmin;\n    --color1: yellow;\n    --color2: khaki;\n    --color3: white;\n    --color4: lime;\n    --color5: gold;\n    --color6: mediumseagreen;\n    --y: -30vmin;\n    --x: -50%;\n    --initialY: 60vmin;\n    content: \"\";\n    animation: firework 2s infinite;\n    position: absolute;\n    top: 40%;\n    left: 50%;\n    transform: translate(-50%, var(--y));\n    width: var(--initialSize);\n    aspect-ratio: 1;\n    background:\n        /*\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,\n    */\n\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,\n\n        /* bottom right */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,\n\n        /* bottom left */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,\n\n        /* top left */\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,\n\n        /* top right */\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;\n    background-size: var(--initialSize) var(--initialSize);\n    background-repeat: no-repeat;\n}\n\n.firework::before {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */\n    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework::after {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */\n    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework:nth-child(2) {\n    --x: 30vmin;\n}\n\n.firework:nth-child(2),\n.firework:nth-child(2)::before,\n.firework:nth-child(2)::after {\n    --color1: rgb(255, 122, 145);\n    --color2: violet;\n    --color3: fuchsia;\n    --color4: orchid;\n    --color5: rgb(245, 2, 245);\n    --color6: rgb(6, 6, 240);\n    --finalSize: 40vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.25s;\n}\n\n.firework:nth-child(3) {\n    --x: -30vmin;\n    --y: -50vmin;\n}\n\n.firework:nth-child(3),\n.firework:nth-child(3)::before,\n.firework:nth-child(3)::after {\n    --color1: cyan;\n    --color2: rgb(0, 193, 148);\n    --color3: rgb(0, 191, 255);\n    --color4: PaleTurquoise;\n    --color5: SkyBlue;\n    --color6: rgb(0, 255, 110);\n    --finalSize: 35vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.4s;\n}\n\n.fireworkContainer {\n    top: 0 !important;\n    width: 100% !important;\n    height: 100% !important;\n}\n\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n/* body {\n  background: #000;\n  background-image: radial-gradient(circle at top left, #000, #3c4858);\n} */\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n@keyframes showAnimation {\n\n    0%,\n    10% {\n        opacity: 1;\n    }\n\n    90%,\n    100% {\n        opacity: 0;\n    }\n}\n\nbody {\n    background: #000;\n    background-image: radial-gradient(circle at top left, #000, #3c4858);\n}\n\n.containerAnime {\n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n.parallax {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.parallax img {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    width: 100%;\n    height: auto;\n    transform: translateX(-50%) translateZ(0);\n    animation: confetti linear infinite, showAnimation linear infinite;\n}\n\n.parallax img:nth-child(1) {\n    animation-delay: -5s, 0s;\n    animation-duration: 5s, 10s;\n}\n\n.parallax img:nth-child(2) {\n    animation-delay: -10s, 0s;\n    animation-duration: 10s, 10s;\n}\n\n.parallax img:nth-child(3) {\n    animation-delay: -20s, 0s;\n    animation-duration: 20s, 10s;\n}\n\n.parallax img:nth-child(4) {\n    animation-delay: -30s, 0s;\n    animation-duration: 30s, 10s;\n}\n\n.parallax img:nth-child(5) {\n    animation-delay: -35s, 0s;\n    animation-duration: 35s, 10s;\n}\n\n.contactModal {\n    border-radius: 10px !important;\n}\n\n.subscriptionContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: flex !important;\n    flex-direction: row !important;\n    justify-content: center !important;\n}\n\n.subscriptionBlock {\n    position: initial !important;\n    margin-right: 12px !important;\n}\n\n.chatwoot_tab .selectedTab {\n    border-bottom: 1px solid #215484 !important;\n    box-shadow: none !important;\n\n}\n\n.chatwoot_tab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.t--tabid-tab1 {\n    border-bottom: 1px solid lightgray !important;\n}\n\n.t--tabid-tab2 {\n    border-bottom: 1px solid lightgray;\n}\n\n.radioGroupSelector label {\n    font-size: 14px !important;\n}\n\n.radioGroupSelector .bp3-control input:checked~.bp3-control-indicator {\n    background: #215484 !important;\n}\n\n.trainingModal {\n    max-height: 100vh !important;\n    height: 100vh !important;\n    width: 50% !important;\n    max-width: 50% !important;\n    transform: translate3d(50%, 0px, 0px) !important;\n}\n\n.tabsTraining {\n    height: 96% !important;\n    width: 98% !important;\n}\n\n.fullWidthContainer {\n    width: 96% !important;\n}\n\n.separatorWidthContainer {\n    width: 90% !important;\n}\n\n.separatorWidthButton {\n    /* width: 5; */\n    left: 91% !important;\n}\n\n.trainingModalButton{\n    width: 150px !important;\n    left: calc(100% - 175px) !important;\n}",
         "output": "str",
         "x": 280,
         "y": 140,
@@ -23501,8 +23501,8 @@
         "method": "post",
         "upload": true,
         "swaggerDoc": "",
-        "x": 170,
-        "y": 720,
+        "x": 110,
+        "y": 800,
         "wires": [
             [
                 "154c1ec4695e3350",
@@ -23523,8 +23523,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 760,
+        "x": 760,
+        "y": 840,
         "wires": []
     },
     {
@@ -23534,8 +23534,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 590,
-        "y": 800,
+        "x": 530,
+        "y": 880,
         "wires": []
     },
     {
@@ -23543,7 +23543,7 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "check file type",
-        "func": "msg.fromApp = msg.req.query\nconst fileName = msg.req.files[0].originalname;\n\nconst fileExtension = fileName.split('.').pop().toLowerCase();\n\nif (fileExtension === \"docx\") {\n    return [msg, null, null];\n} else if (fileExtension === \"txt\") {\n    return [null, msg, null];\n} else if (fileExtension === \"pdf\") {\n    return [null, null, msg];\n} else {\n\n    msg.payload = `Unsupported file type: ${fileExtension}`;\n    return [null, null, null];\n}\n",
+        "func": "msg.fromApp = msg.req.query\nconst fileName = msg.req.files[0].originalname;\n\nconst fileExtension = fileName.split('.').pop().toLowerCase();  // get file extension\n\nif (fileExtension === \"docx\") {\n    return [msg, null, null, null];\n} else if (fileExtension === \"txt\") {\n    return [null, msg, null, null];\n} else if (fileExtension === \"pdf\") {\n    return [null, null, msg, null];\n} else {\n\n    msg.payload = `Unsupported file type: ${fileExtension}`;\n    return [null, null, null, msg];\n}\n",
         "outputs": 4,
         "timeout": 0,
         "noerr": 0,
@@ -23567,11 +23567,12 @@
                 "module": "mammoth"
             }
         ],
-        "x": 400,
-        "y": 720,
+        "x": 340,
+        "y": 800,
         "wires": [
             [
-                "e4555a77a57592f6"
+                "e4555a77a57592f6",
+                "7a9a21b47329dd0b"
             ],
             [
                 "113a6b3b20b83160",
@@ -23582,7 +23583,8 @@
                 "4661d25a6c6874b7"
             ],
             [
-                "434d386b09adc8d1"
+                "434d386b09adc8d1",
+                "4661d25a6c6874b7"
             ]
         ]
     },
@@ -23615,8 +23617,8 @@
                 "module": "mammoth"
             }
         ],
-        "x": 590,
-        "y": 680,
+        "x": 530,
+        "y": 760,
         "wires": [
             [
                 "96a6c5a9035fec61",
@@ -23677,8 +23679,8 @@
                 "module": "iconv-lite"
             }
         ],
-        "x": 590,
-        "y": 720,
+        "x": 530,
+        "y": 800,
         "wires": [
             [
                 "369ee3d812d00649",
@@ -23699,8 +23701,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 800,
+        "x": 760,
+        "y": 880,
         "wires": []
     },
     {
@@ -23716,8 +23718,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 720,
+        "x": 760,
+        "y": 800,
         "wires": []
     },
     {
@@ -23737,8 +23739,8 @@
                 "module": "pdf-parse"
             }
         ],
-        "x": 590,
-        "y": 760,
+        "x": 530,
+        "y": 840,
         "wires": [
             [
                 "1cc06c86d0e6bd3f",
@@ -23759,8 +23761,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 840,
+        "x": 760,
+        "y": 920,
         "wires": []
     },
     {
@@ -23776,8 +23778,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 180,
-        "y": 680,
+        "x": 120,
+        "y": 760,
         "wires": []
     },
     {
@@ -23793,8 +23795,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 780,
+        "x": 340,
+        "y": 860,
         "wires": []
     },
     {
@@ -23802,19 +23804,25 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "req  to separate",
-        "func": "msg.payload = {\n    splitRule: msg.fromApp?.splitRule,\n    separator: msg.fromApp?.separator,\n    token: msg.fromApp?.token,\n    text: msg.payload.text,\n    source: msg.payload.filename,\n    type: msg.fromApp?.type\n}\nif (msg.fromApp?.type === 'QA') {\n    msg.payload.splitRule = 'token',\n    msg.payload.token = 700\n}\nmsg.url = `http://localhost:1880/splitFile`\n\nreturn msg;",
+        "func": "const fileNameWithoutExtension = msg.payload?.filename?.substring(0, msg.payload?.filename?.lastIndexOf('.')); // get file name\nmsg.fileId = objectid()\nmsg.payload = {\n    splitRule: msg.fromApp?.splitRule,\n    separator: msg.fromApp?.separator,\n    token: msg.fromApp?.token,\n    source: msg.payload.filename,\n    type: msg.fromApp?.type,\n    db: msg.fromApp.db,\n    name: fileNameWithoutExtension,    \n    text: msg.payload.text,\n    fileId: msg.fileId\n}\nif (msg.fromApp?.type === 'QA') {\n    msg.payload.splitRule = 'token',\n    msg.payload.token = 700\n}\nmsg.url = `http://localhost:1880/splitFile`\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [],
-        "x": 820,
-        "y": 680,
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 760,
+        "y": 760,
         "wires": [
             [
+                "45c6c7b63616ad21",
                 "5e1d124eca6a5be1",
-                "45c6c7b63616ad21"
+                "7f6c091209ac1ce0"
             ]
         ]
     },
@@ -23835,9 +23843,11 @@
         "senderr": false,
         "headers": [],
         "x": 1010,
-        "y": 680,
+        "y": 760,
         "wires": [
-            []
+            [
+                "9afb7e033f23eaf8"
+            ]
         ]
     },
     {
@@ -23853,8 +23863,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 760,
+        "x": 960,
+        "y": 840,
         "wires": []
     },
     {
@@ -23862,7 +23872,7 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "split   text content",
-        "func": "msg.fromApp = msg.payload\nlet splitRule = msg.payload.splitRule;\nlet text = msg.payload.text || \"\";\nlet separator = msg.payload.separator;\nlet token = parseInt(msg.payload.token, 10) || 0;\ntext = text.replace(/<\\/?[^>]+(>|$)/g, \"\");\n\n// Дефолтне значення для separator, якщо він порожній\nif (splitRule === \"separator\" && separator === \"\") {\n    separator = \"\\n\";\n}\n\nlet result = [];\n\n// Обробка залежно від splitRule\nif (splitRule === \"separator\" && separator) {\n    // Поділ за заданим розділювачем\n    result = text.split(separator);\n} else if (splitRule === \"token\" && token > 0) {\n    // Поділ за кількістю символів, зберігаючи цілі речення\n    let sentences = text.match(/[^.!?]+[.!?]*/g) || []; // Розбиваємо на речення\n    let chunk = \"\";\n\n    sentences.forEach(sentence => {\n        if ((chunk + sentence).length <= token) {\n            chunk += sentence;\n        } else {\n            result.push(chunk.trim());\n            chunk = sentence;\n        }\n    });\n    if (chunk) {\n        result.push(chunk.trim());\n    }\n} else {\n    // Якщо правила не визначені, повертаємо весь текст\n    result = [text];\n}\n\n// Видалення порожніх частин\nresult = result.filter(part => part.trim() !== \"\");\n\n// Повертаємо результат\nmsg.fromApp.parts = result;\n\nreturn msg;\n",
+        "func": "msg.fromApp = msg.payload\nlet splitRule = msg.payload.splitRule;\nlet text = msg.payload.text || \"\";\nlet separator = msg.payload.separator;\nlet token = parseInt(msg.payload.token, 10) || 0;\ntext = text.replace(/<\\/?[^>]+(>|$)/g, \"\");\n\n// Дефолтне значення для separator, якщо він порожній\nif (splitRule === \"separator\" && separator === \"\") {\n    separator = \"\\n\";\n}\n\nlet result = [];\n\n// Обробка залежно від splitRule\nif (splitRule === \"separator\" && separator) {\n    // Поділ за заданим розділювачем\n    result = text.split(separator);\n} else if (splitRule === \"token\" && token > 0) {\n    // Поділ за кількістю символів, зберігаючи цілі речення\n    let sentences = text.match(/[^.!?]+[.!?]*/g) || []; // Розбиваємо на речення\n    let chunk = \"\";\n\n    sentences.forEach(sentence => {\n        if ((chunk + sentence).length <= token) {\n            chunk += sentence;\n        } else {\n            result.push(chunk.trim());\n            chunk = sentence;\n        }\n    });\n    if (chunk) {\n        result.push(chunk.trim());\n    }\n} else {\n    // Якщо правила не визначені, повертаємо весь текст\n    result = [text];\n}\n\n// Видалення порожніх частин\nresult = result.filter(part => part.trim() !== \"\");\n\n// Повертаємо результат\nmsg.fromApp.text = result;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -23874,7 +23884,7 @@
                 "module": "objectid"
             }
         ],
-        "x": 360,
+        "x": 300,
         "y": 1120,
         "wires": [
             [
@@ -23892,7 +23902,7 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 150,
+        "x": 90,
         "y": 1120,
         "wires": [
             [
@@ -23914,7 +23924,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
+        "x": 300,
         "y": 1080,
         "wires": []
     },
@@ -23925,7 +23935,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 890,
+        "x": 850,
         "y": 1120,
         "wires": []
     },
@@ -23936,8 +23946,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1170,
-        "y": 720,
+        "x": 1230,
+        "y": 760,
         "wires": []
     },
     {
@@ -23956,8 +23966,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 550,
-        "y": 940,
+        "x": 500,
+        "y": 1000,
         "wires": [
             [
                 "8fe4a38a38eed066",
@@ -23970,7 +23980,7 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "",
-        "func": "msg.fromApp = msg.payload;\nmsg.url = msg.payload.url.trim();\n\nreturn msg;\n",
+        "func": "msg.fromApp = msg.payload;\nmsg.url = msg.payload.url.trim();\nmsg.fileId = objectid()\nmsg.fromApp.fileId = msg.fileId\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -23982,8 +23992,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 380,
-        "y": 940,
+        "x": 330,
+        "y": 1000,
         "wires": [
             [
                 "b98be63d39513063"
@@ -23995,7 +24005,7 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "Scrape",
-        "func": "const { JSDOM } = jsdom;\n\nconst html = msg.payload;\n\nconst dom = new JSDOM(`${html}`);\ndom.window.document.querySelectorAll('style').forEach(link => {\n    link.remove();\n});\ndom.window.document.querySelectorAll('script').forEach(link => {\n    link.remove();\n});\nconst document = dom.window.document;\nconst pageText = document.body.textContent;\nmsg.text = pageText;\n\n\nlet table = dom.window.document.querySelector('table');\n\nlet ckeckTable = table?.textContent ? true : false;\n\n\nif (ckeckTable) {\n    const headers = Array.from(table.querySelectorAll('tr:first-child th, tr:first-child td')).map(td => {\n        const text = td.textContent.trim();\n        return text !== \"\" ? text : undefined;\n    }).filter(Boolean);\n\n    const rows = Array.from(table.querySelectorAll('tr:not(:first-child)'));\n    const tableData = rows.map(row => {\n        const rowData = Array.from(row.querySelectorAll('td')).map(td => td.textContent.trim());\n        return Object.fromEntries(headers.map((header, index) => [header, rowData[index]]));\n    });\n\n    let tables = JSON.stringify(tableData);\n\n    msg.pageContent = pageText + '\\n\\n' + tables;\n} else {\n    msg.pageContent = pageText;\n}\n\nmsg.payload = {\n    text: msg.pageContent,\n    splitRule: msg.fromApp.splitRule,\n    separator: msg.fromApp.separator,\n    token: msg.fromApp.token,\n}\n\nmsg.url = `http://localhost:1880/splitFile`\nreturn msg;\n",
+        "func": "const { JSDOM } = jsdom;\n\nconst html = msg.payload;\n\nconst dom = new JSDOM(`${html}`);\ndom.window.document.querySelectorAll('style').forEach(link => {\n    link.remove();\n});\ndom.window.document.querySelectorAll('script').forEach(link => {\n    link.remove();\n});\nconst document = dom.window.document;\nconst pageText = document.body.textContent;\nmsg.text = pageText;\n\n\nlet table = dom.window.document.querySelector('table');\n\nlet ckeckTable = table?.textContent ? true : false;\n\n\nif (ckeckTable) {\n    const headers = Array.from(table.querySelectorAll('tr:first-child th, tr:first-child td')).map(td => {\n        const text = td.textContent.trim();\n        return text !== \"\" ? text : undefined;\n    }).filter(Boolean);\n\n    const rows = Array.from(table.querySelectorAll('tr:not(:first-child)'));\n    const tableData = rows.map(row => {\n        const rowData = Array.from(row.querySelectorAll('td')).map(td => td.textContent.trim());\n        return Object.fromEntries(headers.map((header, index) => [header, rowData[index]]));\n    });\n\n    let tables = JSON.stringify(tableData);\n\n    msg.pageContent = pageText + '\\n\\n' + tables;\n} else {\n    msg.pageContent = pageText;\n}\n\nmsg.fromApp.text = msg.pageContent\nmsg.totaCharacters = msg.fromApp.text.length\nmsg.url = `http://localhost:1880/splitFile`\nmsg.payload = msg.fromApp\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -24007,12 +24017,13 @@
                 "module": "jsdom"
             }
         ],
-        "x": 720,
-        "y": 940,
+        "x": 670,
+        "y": 1000,
         "wires": [
             [
                 "d691e7e538fa4630",
-                "a1a1020178feaffd"
+                "a1a1020178feaffd",
+                "a0f6dc08a5cd5a8e"
             ]
         ]
     },
@@ -24029,8 +24040,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 900,
+        "x": 620,
+        "y": 960,
         "wires": []
     },
     {
@@ -24042,8 +24053,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 170,
-        "y": 940,
+        "x": 120,
+        "y": 1000,
         "wires": [
             [
                 "a9e8afa2fe527ed0",
@@ -24068,8 +24079,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 890,
-        "y": 940,
+        "x": 840,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -24087,8 +24098,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 910,
-        "y": 900,
+        "x": 860,
+        "y": 960,
         "wires": []
     },
     {
@@ -24098,8 +24109,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 370,
-        "y": 900,
+        "x": 330,
+        "y": 960,
         "wires": []
     },
     {
@@ -24115,8 +24126,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 200,
-        "y": 980,
+        "x": 120,
+        "y": 960,
         "wires": []
     },
     {
@@ -24129,7 +24140,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 130,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "b3e9f31806384f34",
@@ -24142,7 +24153,7 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "function 769",
-        "func": "msg.fromApp=msg.payload\nmsg.parts = msg.payload.parts\nreturn msg;\n",
+        "func": "msg.fromApp=msg.payload\nmsg.parts = msg.payload.text\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -24155,12 +24166,12 @@
             }
         ],
         "x": 350,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "d1846c5dd67268bf",
                 "244fe3efea9c039b",
-                "409f2e78adef13cc"
+                "68f0f95a7c886bab"
             ]
         ]
     },
@@ -24177,8 +24188,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 1160,
+        "x": 160,
+        "y": 1200,
         "wires": []
     },
     {
@@ -24188,8 +24199,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 590,
-        "y": 1160,
+        "x": 550,
+        "y": 1200,
         "wires": []
     },
     {
@@ -24197,14 +24208,14 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "function 770",
-        "func": "if (msg.fromApp.type === 'QA') {\n    msg.url = `http://localhost:1880/generateQuestion`\n}\nmsg.payload=msg.fromApp\nreturn msg;",
+        "func": "if (msg.fromApp.type === 'QA') {\n    msg.url = `http://localhost:1880/generateQuestion`\n\n} else {\n\n    msg.url = `http://localhost:1880/saveVectorToDB`\n\n}\n\nmsg.payload = msg.fromApp\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
+        "x": 510,
         "y": 1120,
         "wires": [
             [
@@ -24217,7 +24228,7 @@
         "type": "function",
         "z": "59883da62491b05f",
         "name": "function 771",
-        "func": "msg.openAIkey = `sk-`\nmsg.qaData =[]\nreturn msg;\n",
+        "func": "msg.openAIkey =msg.payload[0].openAIkey\nmsg.qaData =[]\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -24229,8 +24240,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 270,
-        "y": 1280,
+        "x": 290,
+        "y": 1360,
         "wires": [
             [
                 "a5a23c38bfe3f5be"
@@ -24248,11 +24259,12 @@
         "resetValue": "value-null",
         "array": "parts",
         "arrayType": "msg",
-        "x": 480,
-        "y": 1280,
+        "x": 500,
+        "y": 1360,
         "wires": [
             [
-                "4cf3dee03243b501"
+                "4cf3dee03243b501",
+                "94e8410bdc9056b3"
             ],
             [
                 "8f1325d68408bad4"
@@ -24275,8 +24287,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 870,
-        "y": 1380,
+        "x": 890,
+        "y": 1460,
         "wires": [
             [
                 "a5a23c38bfe3f5be",
@@ -24296,8 +24308,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 1380,
+        "x": 330,
+        "y": 1460,
         "wires": [
             [
                 "320feb0de90ec161"
@@ -24321,8 +24333,8 @@
                 "module": "objectid"
             }
         ],
-        "x": 700,
-        "y": 1380,
+        "x": 720,
+        "y": 1460,
         "wires": [
             [
                 "c494b0e3b714124b",
@@ -24343,8 +24355,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1010,
-        "y": 1320,
+        "x": 1100,
+        "y": 1460,
         "wires": []
     },
     {
@@ -24363,8 +24375,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 510,
-        "y": 1380,
+        "x": 530,
+        "y": 1460,
         "wires": [
             [
                 "d072fafc5fbdcd27",
@@ -24385,8 +24397,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 1440,
+        "x": 700,
+        "y": 1500,
         "wires": []
     },
     {
@@ -24402,8 +24414,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 1420,
+        "x": 920,
+        "y": 1500,
         "wires": []
     },
     {
@@ -24422,7 +24434,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 750,
+        "x": 690,
         "y": 1120,
         "wires": [
             [
@@ -24443,8 +24455,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 1240,
+        "x": 700,
+        "y": 1300,
         "wires": []
     },
     {
@@ -24464,13 +24476,1259 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 150,
-        "y": 1380,
+        "x": 170,
+        "y": 1460,
         "wires": [
             [
                 "396aeec14186fa0b"
             ]
         ]
+    },
+    {
+        "id": "b3b0a1b561d8be6e",
+        "type": "http in",
+        "z": "59883da62491b05f",
+        "name": "",
+        "url": "/saveQA",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 1600,
+        "wires": [
+            [
+                "363d610230204c3e",
+                "d750fd9e722a90f8"
+            ]
+        ]
+    },
+    {
+        "id": "363d610230204c3e",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725345",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "d750fd9e722a90f8",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "prepare",
+        "func": "msg.url = `http://localhost:1880/saveVectorToDB`\nmsg.payload.text = msg.payload.text.map(item => `${item.question} ${item.answer}`);\nmsg.totaCharacters = msg.payload.text.reduce((sum, str) => sum + str.length, 0);\nmsg.fileId = objectid()\nmsg.payload.fileId = msg.fileId\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 280,
+        "y": 1600,
+        "wires": [
+            [
+                "363d610230204c3e",
+                "1a5b608d84ec0c53",
+                "fbedd3f16c0788a6"
+            ]
+        ]
+    },
+    {
+        "id": "1a5b608d84ec0c53",
+        "type": "http request",
+        "z": "59883da62491b05f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 1600,
+        "wires": [
+            [
+                "432721adcaaf354b"
+            ]
+        ]
+    },
+    {
+        "id": "432721adcaaf354b",
+        "type": "http response",
+        "z": "59883da62491b05f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 610,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "75e1538559e1cce8",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "get knowlegebase",
+        "func": "msg.fromApp = msg.payload\nmsg.collection = \"knowlegebase\"\n\nmsg.payload = [\n    {\n        $match: {\n            _id: objectid(msg.payload.db)\n        }\n    },\n    {\n        $lookup: {\n            from: \"credantials\", // The target collection to join\n            localField: \"ownerID\", // Field in knowlegebase to match\n            foreignField: \"ownerId\", // Field in credantials to match\n            as: \"credentialsData\" // Name of the output array field\n        }\n    },\n    {\n        $unwind: \"$credentialsData\" // Flatten the joined array\n    },\n    {\n        $project: {\n            _id: 1,\n            type: 1,\n            systemName: 1,\n            ownerID: 1,\n            openAIkey: \"$credentialsData.openAIkey\" // Include the `openAIkey` field\n        }\n    }\n]\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 370,
+        "y": 1760,
+        "wires": [
+            [
+                "60d49cd282db60fb"
+            ]
+        ]
+    },
+    {
+        "id": "1ef213c7a71f37f9",
+        "type": "http in",
+        "z": "59883da62491b05f",
+        "name": "",
+        "url": "/saveVectorToDB",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 1760,
+        "wires": [
+            [
+                "75e1538559e1cce8",
+                "429c599bd05809f2",
+                "b8ec719e91978549"
+            ]
+        ]
+    },
+    {
+        "id": "4af91f13c2411ef2",
+        "type": "array-loop",
+        "z": "59883da62491b05f",
+        "name": "",
+        "key": "amount",
+        "keyType": "msg",
+        "reset": false,
+        "resetValue": "value-null",
+        "array": "textToVector",
+        "arrayType": "msg",
+        "x": 1070,
+        "y": 1760,
+        "wires": [
+            [
+                "ade27f64c6d9abf2"
+            ],
+            [
+                "25104ff7b0ca1dba"
+            ]
+        ]
+    },
+    {
+        "id": "429c599bd05809f2",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725346",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 120,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "44f3c05b736eeb99",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "create chroma collection",
+        "func": "\nconst { ChromaClient } = chromadb;\nconst { OpenAIEmbeddingFunction } = chromadb;\nconst embedder = new OpenAIEmbeddingFunction({ openai_api_key: msg.OPENAI_API_KEY })\nconst client = new ChromaClient({ path: env.get('VECTORDB-CHROMA-HOST-NAME') });\n\nconst result = msg.input;\nconst source = msg.fromApp.source;\n\nmsg.emb = msg.payload.data[0].embedding\n\nlet collection2 = await client.getCollection({ name: msg.dbData.systemName })\nconst create = await collection2.add({\n    ids: [msg.ids],\n    embeddings: msg.emb,\n    metadatas: [{\n        result,\n        id: msg.ids,\n        source,\n    }],\n    documents: msg.fromApp.source\n})\n\nmsg.payload = create\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "chromadb",
+                "module": "chromadb"
+            },
+            {
+                "var": "openai",
+                "module": "openai"
+            }
+        ],
+        "x": 1030,
+        "y": 1900,
+        "wires": [
+            [
+                "4af91f13c2411ef2",
+                "da3df876a60513e7"
+            ]
+        ]
+    },
+    {
+        "id": "7c7b1dab519ad25c",
+        "type": "http request",
+        "z": "59883da62491b05f",
+        "name": "PINECONE",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1170,
+        "y": 1820,
+        "wires": [
+            [
+                "4af91f13c2411ef2",
+                "6022a5db507ae364"
+            ]
+        ]
+    },
+    {
+        "id": "ade27f64c6d9abf2",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "post",
+        "func": "msg.collection = \"knowledgeObjects\"\n\nmsg.query = { \"_id\": objectid(msg.fromApp.fileId) }\nmsg.payload = {\n    $set: {\n        status: \"Success\"\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 930,
+        "y": 1680,
+        "wires": [
+            [
+                "044bc83b315e1c6d"
+            ]
+        ]
+    },
+    {
+        "id": "092d013a46d6e8bf",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "create vector",
+        "func": "msg.input = msg.payload;\n\nmsg.ids = Date.now().toString();\n\nmsg.url = 'https://api.openai.com/v1/embeddings'\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": `Bearer ${msg.OPENAI_API_KEY}`\n}\n\nmsg.payload = {\n    \"input\": msg.input,\n    \"model\": \"text-embedding-ada-002\"\n}\nif (msg.dbData.type === \"chroma\") {\n\n    return [null, msg]\n} else {\n\n    return [msg, null]\n}\n",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 1840,
+        "wires": [
+            [
+                "bad2c3d1a6f6d424",
+                "e58d739e85f758af"
+            ],
+            [
+                "e58d739e85f758af",
+                "85a352dfc3d3e840"
+            ]
+        ]
+    },
+    {
+        "id": "85a352dfc3d3e840",
+        "type": "http request",
+        "z": "59883da62491b05f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 1900,
+        "wires": [
+            [
+                "44f3c05b736eeb99",
+                "9e859a0db217b85c"
+            ]
+        ]
+    },
+    {
+        "id": "da3df876a60513e7",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725347",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "a5049ed50c1e8ab0",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "pinecone",
+        "func": "const vector = msg.payload.data[0].embedding\nmsg.vector = msg.payload.data[0].embedding\n\nconst question = msg.input;\nconst result = msg.input;\nconst source = msg.old.source;\n\nmsg.url = `${msg.old.pinecone.url}/vectors/upsert`;\n// msg.url = `https://atest-ddebbcd.svc.aped-4627-b74a.pinecone.io/vectors/upsert`\n\nmsg.headers = {\n    'Api-Key': msg.old.pinecone.apiKey,\n    'Content-Type': 'application/json'\n}\n\nmsg.ids = Date.now().toString();\n\nmsg.payload = {\n    namespace: msg.old.pinecone.index,\n    vectors: [{\n        id: msg.ids,\n        pinecone: true,\n        values: vector,\n        metadata: {\n            result,\n            source,\n        }\n    }]\n};\n\n// msg.PINECONE_API_KEY = global.get(\"pinecone\").PINECONE_API;\n// msg.PINECONE_ENVIRONMENT = global.get(\"pinecone\").PINECONE_ENV;\n// msg.PINECONE_BASE_URL = global.get(\"pinecone\").PINECONE_URL;\n// msg.PINECONE_BASE_URL = global.get(\"pinecone\").PINECONE_INDEX;\n\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 1000,
+        "y": 1820,
+        "wires": [
+            [
+                "7c7b1dab519ad25c",
+                "caacb51c44ea4d8a"
+            ]
+        ]
+    },
+    {
+        "id": "6022a5db507ae364",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725348",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "044bc83b315e1c6d",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "fa4ed93594894b39"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1080,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bad2c3d1a6f6d424",
+        "type": "http request",
+        "z": "59883da62491b05f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 1820,
+        "wires": [
+            [
+                "a5049ed50c1e8ab0"
+            ]
+        ]
+    },
+    {
+        "id": "e58d739e85f758af",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725349",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "9e859a0db217b85c",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725350",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "caacb51c44ea4d8a",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725351",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "e33d3bfa366944b1",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "post",
+        "func": "msg.collection = \"knowlegebase\"\n\nmsg.payload = {\n        _id: objectid(\"67472df1f85690140000001a\")\n    }\nmsg.sort={\n    updatedAt: -1 \n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 590,
+        "y": 2260,
+        "wires": [
+            [
+                "d6e5602cf2804425"
+            ]
+        ]
+    },
+    {
+        "id": "d6e5602cf2804425",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 730,
+        "y": 2260,
+        "wires": [
+            [
+                "c3785d3788fe3862"
+            ]
+        ]
+    },
+    {
+        "id": "84f628fb537a9e02",
+        "type": "inject",
+        "z": "59883da62491b05f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 2260,
+        "wires": [
+            [
+                "e33d3bfa366944b1"
+            ]
+        ]
+    },
+    {
+        "id": "c3785d3788fe3862",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725352",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "94e8410bdc9056b3",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "function 774",
+        "func": "msg.payload={\n    text: msg.qaData,\n    db: msg.fromApp.db\n}\nmsg.url = `http://localhost:1880/saveVectorToDB`\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1340,
+        "wires": [
+            [
+                "cb29560c7ff55aca"
+            ]
+        ]
+    },
+    {
+        "id": "cb29560c7ff55aca",
+        "type": "http request",
+        "z": "59883da62491b05f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 850,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a9a21b47329dd0b",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725353",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "204c52265396c984",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "post",
+        "func": "msg.collection = \"credantials\"\n\nmsg.payload = {\n        ownerId:\"6746f30af85690140000000f\"\n    }\nmsg.sort={\n    updatedAt: -1 \n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 590,
+        "y": 2320,
+        "wires": [
+            [
+                "468e5dfd77e4016d"
+            ]
+        ]
+    },
+    {
+        "id": "468e5dfd77e4016d",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 730,
+        "y": 2320,
+        "wires": [
+            [
+                "28062569aff83f56"
+            ]
+        ]
+    },
+    {
+        "id": "28062569aff83f56",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725354",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "23b99a02cdc9334e",
+        "type": "inject",
+        "z": "59883da62491b05f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 2320,
+        "wires": [
+            [
+                "204c52265396c984"
+            ]
+        ]
+    },
+    {
+        "id": "60d49cd282db60fb",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "291a63c07f888ca6"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 570,
+        "y": 1760,
+        "wires": [
+            [
+                "4d45b66179b7d979",
+                "199120b75cc4b85b"
+            ]
+        ]
+    },
+    {
+        "id": "4d45b66179b7d979",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725355",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "68f0f95a7c886bab",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "get knowlegebase",
+        "func": "// msg.fromApp = msg.payload\nmsg.collection = \"knowlegebase\"\n\nmsg.payload = [\n    {\n        $match: {\n            _id: objectid(msg.fromApp.db)\n        }\n    },\n    {\n        $lookup: {\n            from: \"credantials\", // The target collection to join\n            localField: \"ownerID\", // Field in knowlegebase to match\n            foreignField: \"ownerId\", // Field in credantials to match\n            as: \"credentialsData\" // Name of the output array field\n        }\n    },\n    {\n        $unwind: \"$credentialsData\" // Flatten the joined array\n    },\n    {\n        $project: {\n            _id: 1,\n            type: 1,\n            systemName: 1,\n            ownerID: 1,\n            openAIkey: \"$credentialsData.openAIkey\" // Include the `openAIkey` field\n        }\n    }\n]\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 590,
+        "y": 1240,
+        "wires": [
+            [
+                "f4763f6df0db31f7"
+            ]
+        ]
+    },
+    {
+        "id": "f4763f6df0db31f7",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "291a63c07f888ca6"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 810,
+        "y": 1240,
+        "wires": [
+            [
+                "409f2e78adef13cc"
+            ]
+        ]
+    },
+    {
+        "id": "b8ec719e91978549",
+        "type": "http response",
+        "z": "59883da62491b05f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 350,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "199120b75cc4b85b",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "get knowlegebase",
+        "func": "msg.textToVector = msg.fromApp.text\n\nmsg.OPENAI_API_KEY =msg.payload[0].openAIkey\n\nmsg.dbData = msg.payload[0]\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 810,
+        "y": 1760,
+        "wires": [
+            [
+                "4af91f13c2411ef2"
+            ]
+        ]
+    },
+    {
+        "id": "7f6c091209ac1ce0",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "save file",
+        "func": "msg.payload = {\n    _id: msg.fileId,\n    knowledgeBaseId: objectid(msg.payload.db),\n    type: msg.payload.type,\n    name: msg.payload.fileNameWithoutExtension,\n    status: \"Pending\",\n    deleted: false,\n    createdAt: new Date(),\n    source: msg.payload.source,\n    totaCharacters:msg.payload.text.length\n};\n\nmsg.collection = \"knowledgeObjects\";\n\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 920,
+        "y": 720,
+        "wires": [
+            [
+                "96d109dc27f106d0"
+            ]
+        ]
+    },
+    {
+        "id": "96d109dc27f106d0",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "f0d2d9a1f1ccb03e"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1090,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a0f6dc08a5cd5a8e",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "save file",
+        "func": "msg.payload = {\n    _id: msg.fileId,\n    knowledgeBaseId: objectid(msg.fromApp.db),\n    type: 'website',\n    name: msg.fromApp.url,\n    status: \"Pending\",\n    deleted: false,\n    createdAt: new Date(),\n    source: msg.fromApp.url,\n    totaCharacters:msg.totaCharacters\n};\n\nmsg.collection = \"knowledgeObjects\";\n\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 480,
+        "y": 1040,
+        "wires": [
+            [
+                "e18c132ed9c68789"
+            ]
+        ]
+    },
+    {
+        "id": "e18c132ed9c68789",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "f0d2d9a1f1ccb03e"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 650,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbedd3f16c0788a6",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "save file",
+        "func": "msg.payload = {\n    _id: msg.fileId,\n    knowledgeBaseId: objectid(msg.payload.db),\n    type: 'qa',\n    name: msg.payload.name,\n    status: \"Pending\",\n    deleted: false,\n    createdAt: new Date(),\n    source: msg.payload.name,\n    totaCharacters: msg.totaCharacters\n};\n\nmsg.collection = \"knowledgeObjects\";\n\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 400,
+        "y": 1660,
+        "wires": [
+            [
+                "eb431c71439074d4"
+            ]
+        ]
+    },
+    {
+        "id": "eb431c71439074d4",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "f0d2d9a1f1ccb03e"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 570,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98aed628ad279039",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "prepare",
+        "func": "msg.url = `http://localhost:1880/splitFile`\nmsg.fileId = objectid()\nmsg.payload.fileId = msg.fileId\nmsg.totaCharacters = msg.payload.text.lenght\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 360,
+        "y": 2020,
+        "wires": [
+            [
+                "34a89c3ed6b2680f",
+                "ef20ddf458b6c06b",
+                "1f5b037765e5f792"
+            ]
+        ]
+    },
+    {
+        "id": "14e0d351a12aead0",
+        "type": "http in",
+        "z": "59883da62491b05f",
+        "name": "",
+        "url": "/saveManualText",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 2020,
+        "wires": [
+            [
+                "34a89c3ed6b2680f",
+                "98aed628ad279039"
+            ]
+        ]
+    },
+    {
+        "id": "34a89c3ed6b2680f",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725356",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "ef20ddf458b6c06b",
+        "type": "http request",
+        "z": "59883da62491b05f",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 2020,
+        "wires": [
+            [
+                "b26cce94a37503a1"
+            ]
+        ]
+    },
+    {
+        "id": "1f5b037765e5f792",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "save file",
+        "func": "msg.payload = {\n    _id: msg.fileId,\n    knowledgeBaseId: objectid(msg.payload.db),\n    type: 'text',\n    name: msg.payload.source,\n    status: \"Pending\",\n    deleted: false,\n    createdAt: new Date(),\n    source: msg.payload.source,\n    totaCharacters:msg.totaCharacters\n};\n\nmsg.collection = \"knowledgeObjects\";\n\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 480,
+        "y": 2080,
+        "wires": [
+            [
+                "f497b89e7dec7dff"
+            ]
+        ]
+    },
+    {
+        "id": "b26cce94a37503a1",
+        "type": "http response",
+        "z": "59883da62491b05f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "f497b89e7dec7dff",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "f0d2d9a1f1ccb03e"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 650,
+        "y": 2080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25104ff7b0ca1dba",
+        "type": "delay",
+        "z": "59883da62491b05f",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "300",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 495,
+        "y": 1840,
+        "wires": [
+            [
+                "092d013a46d6e8bf"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "8bb702b08491a35d",
+        "type": "subflow:f510f97f1c5410c8",
+        "z": "59883da62491b05f",
+        "name": "",
+        "x": 410,
+        "y": 2140,
+        "wires": [
+            [
+                "8b424f973afaabaf"
+            ]
+        ]
+    },
+    {
+        "id": "1e93d78345c05e1f",
+        "type": "http in",
+        "z": "59883da62491b05f",
+        "name": "",
+        "url": "/getKnowlegeBaseObjects",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 2140,
+        "wires": [
+            [
+                "8bb702b08491a35d",
+                "d2d08749be9d497a"
+            ]
+        ]
+    },
+    {
+        "id": "8b424f973afaabaf",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "to mongoDB select",
+        "func": "msg.collection = \"knowledgeObjects\";\n\nmsg.payload = {\n    deleted: false,\n    knowledgeBaseId: objectid(msg.payload.id)\n    };\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 515,
+        "y": 2140,
+        "wires": [
+            [
+                "5853811f2bf427be"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "5853811f2bf427be",
+        "type": "link call",
+        "z": "59883da62491b05f",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 630,
+        "y": 2140,
+        "wires": [
+            [
+                "8988ea063ec431b2",
+                "5dd9c8ba9c3935d0"
+            ]
+        ]
+    },
+    {
+        "id": "8988ea063ec431b2",
+        "type": "function",
+        "z": "59883da62491b05f",
+        "name": "sort result",
+        "func": "msg.payload = msg.payload.map((e) => {\n    return {\n        \"Document name\": e?.source,\n        \"Status\": e?.status,\n        \"Type\": e?.type?.toLowerCase(),\n        \"Created\": moment(e?.createdAt).format(\"YYYY-MM-DD HH:mm:ss\"),\n        \"Characters\": e?.totaCharacters\n    }\n})\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "moment",
+                "module": "moment"
+            }
+        ],
+        "x": 800,
+        "y": 2140,
+        "wires": [
+            [
+                "dce91574ed4ff63f",
+                "5dd9c8ba9c3935d0"
+            ]
+        ]
+    },
+    {
+        "id": "5dd9c8ba9c3935d0",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725358",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 2180,
+        "wires": []
+    },
+    {
+        "id": "dce91574ed4ff63f",
+        "type": "http response",
+        "z": "59883da62491b05f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 950,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "d2d08749be9d497a",
+        "type": "debug",
+        "z": "59883da62491b05f",
+        "name": "debug 725359",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 2180,
+        "wires": []
     },
     {
         "id": "450ee90cc69e0643",
@@ -24842,6 +26100,7 @@
         "name": "reset Vectors",
         "func": "msg.collection = \"knowledgeObjects\"\n\nmsg.query = {\n    _id: objectid(msg.oldPayload.id)\n}\nmsg.payload ={\n    $set:{\n        status:\"Learned\"\n    }\n}\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -25469,6 +26728,7 @@
         "name": "function 374",
         "func": "msg.openAIkey = msg.payload.openAIkey\n\nmsg._id = objectid(msg.payload._id);\nmsg.typeBase = msg.payload.typeBase.replace(/\\\\\"/g, '');\nmsg.nameBase = msg.payload.nameBase.replace(/\\\\\"/g, '');\nmsg.array = msg.payload.text;\nmsg.old = msg.payload;\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -25739,6 +26999,7 @@
         "name": "create vector",
         "func": "msg.OPENAI_API_KEY = msg.payload.openAIkey\nmsg.url = 'https://api.openai.com/v1/embeddings'\nmsg.openAIkey = msg.payload.openAIkey\nmsg.old=msg.payload\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": `Bearer ${msg.OPENAI_API_KEY}`\n}\nmsg.tobase = msg.payload;\nmsg.input = `${msg.payload.question }, ${msg.payload.result}`\nmsg.typeBase = msg.payload.typeBase;\n\nmsg.payload = {\n    \"input\": msg.input,\n    \"model\": \"text-embedding-ada-002\"\n}\n\nif (msg.typeBase === \"chroma\") {\n    return [null, msg]\n} else {\n    return [msg, null]\n}\n\n\n\n",
         "outputs": 2,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -25762,6 +27023,7 @@
         "name": "pinecone",
         "func": "const vector = msg.payload.data[0].embedding;\nmsg.vector = msg.payload.data[0].embedding;\nconst question = msg.tobase.question + ' '+ msg.tobase.question;\nconst result = msg.tobase.question + ' ' + msg.tobase.result;\nconst url = msg.tobase.name;\nconst source = msg.tobase.source;\n\nmsg.url = `${msg.old.pinecone.url}/vectors/upsert`;\n\nmsg.headers = {\n    'Api-Key': msg.old.pinecone.apiKey,\n    'Content-Type': 'application/json'\n}\n\nmsg.ids = msg.tobase.id;\nmsg.payload = {\n    namespace: msg.old.pinecone.index,\n    vectors: [{\n        id: msg.ids,\n        pinecone: true,\n        values: vector,\n        metadata: {\n            result,\n            source,\n        }\n    }],\n};\n\n// msg.PINECONE_API_KEY = global.get(\"pinecone\").PINECONE_API;\n// msg.PINECONE_ENVIRONMENT = global.get(\"pinecone\").PINECONE_ENV;\n// msg.PINECONE_BASE_URL = global.get(\"pinecone\").PINECONE_URL;\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -26098,9 +27360,9 @@
         "z": "5eea3f963330a3b2",
         "g": "59a37d35368d13ea",
         "name": "",
-        "statusCode": "",
+        "statusCode": "200",
         "headers": {},
-        "x": 3510,
+        "x": 3520,
         "y": 80,
         "wires": []
     },
@@ -27145,6 +28407,7 @@
         "name": "LINK",
         "func": "msg.url = msg.oldPayloadforlink.link;\nmsg.contentPayload.source = msg.contentPayload.link;\n\nmsg.payload = {\n    _id: objectid(),\n    knowledgeBaseId: objectid(msg.oldPayloadforlink.id),\n    // url: msg.url,\n    type: \"Link\",\n    name: msg.oldPayloadforlink.name,\n    status: \"Source saved\",\n    deleted: false,\n    createdAt: new Date(),\n    source: msg.contentPayload.source,\n};\n\nreturn msg\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -27987,6 +29250,7 @@
         "name": "function 633",
         "func": "msg.payload = msg.payload.map((e) => {\n\n    return {\n        ...e,\n        label: e.name,\n        value: e._id\n    }\n})\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -28266,6 +29530,7 @@
         "name": "FILES",
         "func": "if (msg.exist) {\n\n    msg.query = {\n        _id: msg.id\n    }\n\n    msg.payload = {\n        knowledgeBaseId: objectid(msg.contentPayload.id),\n        name: msg.contentPayload.name,\n        type: \"Files\",\n        status: \"Source saved\",\n        deleted: false,\n        createdAt: new Date(),\n        totaCharacters: msg.totaCharacters,\n        source: msg.contentPayload.fileName + '.txt'\n\n    };\n\n} else {\n    msg.id = objectid()\n\n    msg.query = {\n        _id: msg.id\n    }\n\n    msg.payload = {\n        knowledgeBaseId: objectid(msg.contentPayload.id),\n        name: msg.contentPayload.name,\n        type: \"FAQ\",\n        status: \"Source saved\",\n        deleted: false,\n        createdAt: new Date(),\n        totaCharacters: msg.totaCharacters,\n        source: msg.contentPayload.fileName + '.txt'\n    }\n}\n\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -28886,6 +30151,7 @@
         "name": "to mongoDB select",
         "func": "msg.collection = \"knowledgeObjects\";\n\nmsg.payload = {\n    deleted: false,\n    knowledgeBaseId: objectid(msg.payload.id)\n    };\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -29477,8 +30743,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 330,
-        "y": 2680,
+        "x": 310,
+        "y": 2760,
         "wires": []
     },
     {
@@ -31096,8 +32362,8 @@
                 "module": "openai"
             }
         ],
-        "x": 1010,
-        "y": 3000,
+        "x": 290,
+        "y": 3040,
         "wires": [
             [
                 "f47be84781ef3443"
@@ -31125,7 +32391,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 880,
+        "x": 100,
         "y": 3040,
         "wires": [
             [
@@ -31146,8 +32412,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1250,
-        "y": 2960,
+        "x": 490,
+        "y": 3040,
         "wires": []
     },
     {
