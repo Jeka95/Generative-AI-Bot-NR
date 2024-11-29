@@ -278,7 +278,7 @@
                         "id": "a8fd8f9b8c2d4250"
                     },
                     {
-                        "id": "47b656e147c4b456"
+                        "id": "1ef619b7f39de588"
                     }
                 ]
             }
@@ -289,7 +289,7 @@
                 "y": 380,
                 "wires": [
                     {
-                        "id": "f172dfe9b7339403",
+                        "id": "f14e25d8e02b2bc2",
                         "port": 0
                     }
                 ]
@@ -467,7 +467,8 @@
             "91421f5072a49a41",
             "b15dc483cc8d8a22",
             "f2ac9b10aea6f843",
-            "131081386239c7d6"
+            "131081386239c7d6",
+            "fbd544ed51a9a662"
         ],
         "x": 14,
         "y": 739,
@@ -1646,7 +1647,9 @@
             "1c3c643e0525d739",
             "737b5a87e1d9d254",
             "b40867c157ed17c3",
-            "e6bce3a2a0f44f12"
+            "e6bce3a2a0f44f12",
+            "572fb12a91b4153e",
+            "4fe0f9fef302c3ea"
         ],
         "x": 14,
         "y": 59,
@@ -12234,7 +12237,8 @@
         "wires": [
             [
                 "b9d54b46ffc85603",
-                "bf43b4aa07ce0c38"
+                "bf43b4aa07ce0c38",
+                "fbd544ed51a9a662"
             ]
         ]
     },
@@ -17616,7 +17620,8 @@
         "y": 560,
         "wires": [
             [
-                "9bb68d2f662c20b7"
+                "9bb68d2f662c20b7",
+                "572fb12a91b4153e"
             ]
         ]
     },
@@ -17665,7 +17670,8 @@
         "y": 560,
         "wires": [
             [
-                "86a677d6277a5b60"
+                "86a677d6277a5b60",
+                "4fe0f9fef302c3ea"
             ]
         ]
     },
@@ -17686,7 +17692,8 @@
         "wires": [
             [
                 "fbfb7593f56a95ae",
-                "b7e8d622aeb0db7a"
+                "b7e8d622aeb0db7a",
+                "bab426780ffba263"
             ]
         ]
     },
@@ -17718,7 +17725,7 @@
         "z": "ec1b4918d501c55a",
         "g": "dcac2ae9af307c3f",
         "name": "debug 937",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18873,6 +18880,76 @@
         "statusType": "auto",
         "x": 1340,
         "y": 3520,
+        "wires": []
+    },
+    {
+        "id": "fbd544ed51a9a662",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "g": "8fe2d5db2cf482e3",
+        "name": "debug 725374",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "572fb12a91b4153e",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "g": "dcac2ae9af307c3f",
+        "name": "debug 725375",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4fe0f9fef302c3ea",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "g": "dcac2ae9af307c3f",
+        "name": "debug 725376",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "bab426780ffba263",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "name": "debug 725377",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1041.5873413085938,
+        "y": 504.28570556640625,
         "wires": []
     },
     {
@@ -29451,75 +29528,6 @@
         "l": false
     },
     {
-        "id": "15c136a6b330afa1",
-        "type": "inject",
-        "z": "5eea3f963330a3b2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 3240,
-        "wires": [
-            [
-                "3f64e3a4718d1e8e"
-            ]
-        ]
-    },
-    {
-        "id": "3f64e3a4718d1e8e",
-        "type": "function",
-        "z": "5eea3f963330a3b2",
-        "name": "function 715",
-        "func": "msg.payload={\n    _id: objectid('6696297b9bcc39110000017a')\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "objectid",
-                "module": "objectid"
-            }
-        ],
-        "x": 350,
-        "y": 3200,
-        "wires": [
-            [
-                "1977369d48444cc0"
-            ]
-        ]
-    },
-    {
-        "id": "1977369d48444cc0",
-        "type": "mongodb out",
-        "z": "5eea3f963330a3b2",
-        "mongodb": "7908a755f1520aa7",
-        "name": "",
-        "collection": "knowledgeObjects",
-        "payonly": false,
-        "upsert": false,
-        "multi": false,
-        "operation": "delete",
-        "x": 800,
-        "y": 3180,
-        "wires": []
-    },
-    {
         "id": "33c548289a7f7fee",
         "type": "subflow:f510f97f1c5410c8",
         "z": "5eea3f963330a3b2",
@@ -30075,7 +30083,7 @@
         "type": "function",
         "z": "5eea3f963330a3b2",
         "name": "function 724",
-        "func": "msg.payload={\n   source:'manual-1722327001797'\n}\nmsg.collection='knowledgeObjects'\nreturn msg;",
+        "func": "msg.payload={\n   // source:'manual-1722327001797'\n}\nmsg.collection='knowledgeObjects'\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -40826,7 +40834,8 @@
                 "7dbe48c8337d1358"
             ],
             [
-                "807b44165f8e4ebf"
+                "807b44165f8e4ebf",
+                "5840ae2b804f9df9"
             ]
         ]
     },
@@ -41353,7 +41362,7 @@
         "z": "12a11c0265b7f65d",
         "g": "4d782f5823ca218f",
         "name": "get users",
-        "func": "msg.collection = 'credantials';\n// msg.collection = 'users_messages'\nmsg.payload = {\n    // \"chat_id\": \"spring-forest-895\",\n    \"ownerId\": \"673b333c1ff07f0017bcfe57\"\n};\nmsg.sort = {\n    _id: -1\n}\nreturn msg;\n",
+        "func": "msg.collection = 'credantials';\n// msg.collection = 'users_messages'\nmsg.payload = {\n    // \"chat_id\": \"spring-forest-895\",\n    \"ownerId\": msg.chatData.ubosChat[0].ownerId\n};\nmsg.sort = {\n    _id: -1\n}\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -41394,7 +41403,7 @@
         "z": "12a11c0265b7f65d",
         "g": "4d782f5823ca218f",
         "name": "function 760",
-        "func": "msg.chatData.ubosChat = msg.chatData.ubosChat.map((e) => {\n    return {\n        ...e,\n        account_id: msg.payload[0].ubosChat.account_id,\n    }\n})\n\nmsg.payload=msg.chatData\nreturn msg;",
+        "func": "msg.chatData.ubosChat = msg.chatData.ubosChat.map((e) => {\n    return {\n        ...e,\n        account_id: msg.payload[0].ubosChat.account_id,\n        user_id: msg.payload[0].ubosChat.user_id\n    }\n})\n\nmsg.payload=msg.chatData\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -41437,6 +41446,23 @@
         "statusType": "auto",
         "x": 1120,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "5840ae2b804f9df9",
+        "type": "debug",
+        "z": "12a11c0265b7f65d",
+        "name": "debug 725378",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 420,
         "wires": []
     },
     {
@@ -43394,7 +43420,8 @@
         "y": 1120,
         "wires": [
             [
-                "eb1c74e95454d0da"
+                "eb1c74e95454d0da",
+                "8a21c427e113afb3"
             ]
         ]
     },
@@ -43427,7 +43454,7 @@
         "type": "function",
         "z": "ecae8b959e0389f0",
         "name": "create user",
-        "func": "msg.fromApp = msg.payload\nmsg.url = `${env.get('chatwoot_url')}/platform/api/v1/users/3/login`\n\nmsg.headers = {\n    'api_access_token': env.get('chatwoot_token'),\n    'conten-type': 'application/json; charset=utf-8'\n}\nreturn msg;\n",
+        "func": "msg.fromApp = msg.payload\nmsg.url = `${env.get('chatwoot_url')}/platform/api/v1/users/${msg.payload.user_id}/login`\n\nmsg.headers = {\n    'api_access_token': env.get('chatwoot_token'),\n    'conten-type': 'application/json; charset=utf-8'\n}\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -43556,6 +43583,23 @@
         "statusType": "auto",
         "x": 880,
         "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8a21c427e113afb3",
+        "type": "debug",
+        "z": "ecae8b959e0389f0",
+        "name": "debug 725379",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 1080,
         "wires": []
     },
     {
@@ -45495,7 +45539,7 @@
         "type": "function",
         "z": "bc3ab39adfbaf836",
         "name": "to mongoDB select",
-        "func": "msg.collection = \"knowledgeObjects\";\n\nmsg.payload = {\n    deleted: false,\n    knowledgeBaseId: objectid(msg.payload.id)\n    };\n\nreturn msg;\n",
+        "func": "msg.collection = \"knowledgeObjects\";\n\nmsg.payload = {\n    deleted: {$ne:true},\n    knowledgeBaseId: objectid(msg.payload.id)\n    };\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -45540,7 +45584,7 @@
         "type": "function",
         "z": "bc3ab39adfbaf836",
         "name": "sort result",
-        "func": "msg.payload = msg.payload.map((e) => {\n    return {\n        \"Document name\": e?.source,\n        \"Status\": e?.status,\n        \"Type\": e?.type?.toLowerCase(),\n        \"Created\": moment(e?.createdAt).format(\"YYYY-MM-DD HH:mm:ss\"),\n        \"Characters\": e?.totaCharacters,\n        \"_id\":e._id\n    }\n})\n\nreturn msg;\n",
+        "func": "// msg.payload = msg.payload.map((e) => {\n//     return {\n//         \"Document name\": e?.source ? e?.source : e.vectors[0]?.metadata?.source,\n//         \"Status\": e?.status,\n//         \"Type\": e?.type?.toLowerCase(),\n//         \"Created\": moment(e?.createdAt).format(\"YYYY-MM-DD HH:mm:ss\"),\n//         \"Characters\": e?.totaCharacters,\n//         \"_id\": e._id\n//     }\n// })\nlet result = [];\n\nmsg.payload.forEach((e) => {\n    // Якщо є vectors, додаємо кожен елемент як окремий об'єкт\n    if (Array.isArray(e.vectors) && e.vectors.length > 0) {\n        e.vectors.forEach((vector) => {\n            result.push({\n                \"Document name\": vector?.metadata?.source || \"Unknown\",\n                \"Status\": e?.status,\n                \"Type\": e?.type?.toLowerCase(),\n                \"Created\": moment(e?.createdAt).format(\"YYYY-MM-DD HH:mm:ss\"),\n                \"Characters\": e?.totalCharacters || 'no data',\n                \"_id\": e._id\n            });\n        });\n    } else {\n        // Якщо vectors немає, додаємо об'єкт на основі самого запису\n        result.push({\n            \"Document name\": e?.source || \"Unknown\",\n            \"Status\": e?.status,\n            \"Type\": e?.type?.toLowerCase(),\n            \"Created\": moment(e?.createdAt).format(\"YYYY-MM-DD HH:mm:ss\"),\n            \"Characters\": e?.totalCharacters || 'no data',\n            \"_id\": e._id\n        });\n    }\n});\n\nmsg.payload = result;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -45566,7 +45610,7 @@
         "type": "debug",
         "z": "bc3ab39adfbaf836",
         "name": "debug 725358",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -46111,6 +46155,75 @@
         "statusType": "auto",
         "x": 360,
         "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "3f64e3a4718d1e8e",
+        "type": "function",
+        "z": "bc3ab39adfbaf836",
+        "name": "function 715",
+        "func": "msg.query = {\n    status: \"Error\",\n    type: \"Manual\",\n    name: \"manual\"\n}\n\nmsg.payload = {\n    $set: {\n        status: 'Success'\n    }\n}\n\nmsg.collection = \"knowlegebase\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 530,
+        "y": 2140,
+        "wires": [
+            [
+                "1977369d48444cc0"
+            ]
+        ]
+    },
+    {
+        "id": "15c136a6b330afa1",
+        "type": "inject",
+        "z": "bc3ab39adfbaf836",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 2180,
+        "wires": [
+            [
+                "3f64e3a4718d1e8e"
+            ]
+        ]
+    },
+    {
+        "id": "1977369d48444cc0",
+        "type": "mongodb out",
+        "z": "bc3ab39adfbaf836",
+        "mongodb": "7908a755f1520aa7",
+        "name": "",
+        "collection": "knowledgeObjects",
+        "payonly": false,
+        "upsert": false,
+        "multi": true,
+        "operation": "update",
+        "x": 980,
+        "y": 2120,
         "wires": []
     }
 ]
