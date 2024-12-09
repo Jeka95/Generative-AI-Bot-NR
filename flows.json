@@ -278,7 +278,7 @@
                         "id": "a8fd8f9b8c2d4250"
                     },
                     {
-                        "id": "47b656e147c4b456"
+                        "id": "1ef619b7f39de588"
                     }
                 ]
             }
@@ -289,7 +289,7 @@
                 "y": 380,
                 "wires": [
                     {
-                        "id": "f172dfe9b7339403",
+                        "id": "f14e25d8e02b2bc2",
                         "port": 0
                     }
                 ]
@@ -508,7 +508,8 @@
             "b15dc483cc8d8a22",
             "f2ac9b10aea6f843",
             "131081386239c7d6",
-            "fbd544ed51a9a662"
+            "fbd544ed51a9a662",
+            "07e243910ec1ea20"
         ],
         "x": 14,
         "y": 739,
@@ -12785,8 +12786,9 @@
         "z": "ec1b4918d501c55a",
         "g": "8fe2d5db2cf482e3",
         "name": "",
-        "func": "msg.collection = \"admin_roles\";\n\nlet crud = {\n    \"canCreate\": false,\n    \"canRead\": false,\n    \"canEdit\": false,\n    \"canRemove\": false\n}\n\nmsg.payload.options.map(e => {\n    if (e == \"C\") {\n        crud.canCreate = true\n    }\n    else if (e == \"R\") {\n        crud.canRead = true\n    }\n    else if (e == \"U\") {\n        crud.canEdit = true\n    } else if (e == \"D\") {\n        crud.canRemove = true\n    }\n})\n\n\nlet modules = msg.payload.moduleName.map((name, index)=> {\n    return {\n        \"name\": name,\n        \"value\": msg.payload.moduleValue[index]\n    }\n\n})\n\nlet preparedModules\n = modules.map(item => {\n    return{\n        module: item.name,\n        moduleId: objectid(item.value),\n        ...crud\n    }\n})\n\nmsg.query={\n    \"_id\":objectid(msg.payload._id)\n}\n\nmsg.payload={\n    $push: {\n        permissions: {\n            $each: [...preparedModules]\n        }\n    }\n}\n\nreturn msg;",
+        "func": "msg.collection = \"admin_roles\";\n\nlet crud = {\n    \"canCreate\": false,\n    \"canRead\": false,\n    \"canEdit\": false,\n    \"canRemove\": false\n}\n\nmsg.payload.options.map(e => {\n    if (e == \"C\") {\n        crud.canCreate = true\n    }\n    else if (e == \"R\") {\n        crud.canRead = true\n    }\n    else if (e == \"U\") {\n        crud.canEdit = true\n    } else if (e == \"D\") {\n        crud.canRemove = true\n    }\n})\n\n\nlet modules = msg.payload.moduleName.map((name, index)=> {\n    return {\n        \"name\": name,\n        \"value\": msg.payload.moduleValue[index]\n    }\n\n})\n\nlet preparedModules\n = modules.map(item => {\n    return{\n        module: item.name,\n        moduleId: objectid(item.value),\n        ...crud\n    }\n})\nmsg.payload={\n    _id: objectid('66960ef77f75100011a3c156')\n}\nmsg.query={\n    \"_id\":objectid(msg.payload._id)\n}\n\nmsg.payload={\n    $push: {\n        permissions: {\n            $each: [...preparedModules]\n        }\n    }\n}\n\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -12801,7 +12803,8 @@
         "wires": [
             [
                 "7afc084f0a948b5a",
-                "2b4e43c8b1cacb9e"
+                "2b4e43c8b1cacb9e",
+                "07e243910ec1ea20"
             ]
         ]
     },
@@ -12857,7 +12860,8 @@
         "y": 780,
         "wires": [
             [
-                "b2f141fc6471eb75"
+                "b2f141fc6471eb75",
+                "07e243910ec1ea20"
             ]
         ]
     },
@@ -12977,8 +12981,9 @@
         "z": "ec1b4918d501c55a",
         "g": "8fe2d5db2cf482e3",
         "name": "",
-        "func": "msg.collection = \"admin_roles\";\n\nmsg.query = {\n   \"_id\": objectid(msg.payload._id)\n};\n\nconst deleteModulesId = msg.payload.moduleId.map(i => objectid(i));\n\nmsg.payload = {\n    $pull: {\n        permissions: {\n            moduleId: {\n                $in: deleteModulesId\n            }\n        }\n    }\n}\n\n// msg.payload = {\n//     $pull: {\n//         \"permissions\": {\n//             \"moduleId\": objectid(msg.payload.moduleId)\n//         }\n//     }\n// }\nreturn msg;",
+        "func": "msg.collection = \"admin_roles\";\nmsg.payload._id= objectid('66960ef77f75100011a3c156')\n\nmsg.query = {\n   \"_id\": objectid(msg.payload._id)\n};\n\nconst deleteModulesId = msg.payload.moduleId.map(i => objectid(i));\n\nmsg.payload = {\n    $pull: {\n        permissions: {\n            moduleId: {\n                $in: deleteModulesId\n            }\n        }\n    }\n}\n\n// msg.payload = {\n//     $pull: {\n//         \"permissions\": {\n//             \"moduleId\": objectid(msg.payload.moduleId)\n//         }\n//     }\n// }\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -13136,7 +13141,8 @@
         "y": 840,
         "wires": [
             [
-                "5d085d014a99310c"
+                "5d085d014a99310c",
+                "07e243910ec1ea20"
             ]
         ]
     },
@@ -18836,7 +18842,7 @@
         "type": "function",
         "z": "ec1b4918d501c55a",
         "name": "to Lark",
-        "func": "\n    msg.payload = { \"email\": 'msg.email', message: 'User login Ai Bot' }\n    msg.url =`http://localhost:1880/supportRequest`\n    return msg;\n",
+        "func": "\n    msg.payload = { \"email\": msg.email, message: 'User login Ai Bot' }\n    msg.url =`http://localhost:1880/supportRequest`\n    return msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -19709,6 +19715,24 @@
                 "757229e7cf87b934"
             ]
         ]
+    },
+    {
+        "id": "07e243910ec1ea20",
+        "type": "debug",
+        "z": "ec1b4918d501c55a",
+        "g": "8fe2d5db2cf482e3",
+        "name": "debug 725396",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1060,
+        "wires": []
     },
     {
         "id": "62a1ecc38ccba8fc",
@@ -33469,10 +33493,12 @@
         "type": "subflow:f510f97f1c5410c8",
         "z": "42b693cddba85396",
         "name": "",
-        "x": 330,
-        "y": 220,
+        "x": 350,
+        "y": 160,
         "wires": [
-            []
+            [
+                "854fe7ca5407ebe1"
+            ]
         ]
     },
     {
@@ -33489,7 +33515,7 @@
         "wires": [
             [
                 "170165fe3d7c5a11",
-                "854fe7ca5407ebe1"
+                "1673731fb21738e2"
             ]
         ]
     },
@@ -33734,7 +33760,7 @@
         "type": "function",
         "z": "42b693cddba85396",
         "name": "check",
-        "func": "msg.fromFlow = msg.payload\nmsg.payload = {\n\n}\n\nmsg.collection = 'superAdminCredentials'\n\nreturn msg",
+        "func": "// msg.fromFlow = msg.payload\nmsg.payload = {\n\n}\n\nmsg.collection = 'superAdminCredentials'\n\nreturn msg",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
