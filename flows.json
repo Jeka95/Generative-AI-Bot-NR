@@ -278,7 +278,7 @@
                         "id": "a8fd8f9b8c2d4250"
                     },
                     {
-                        "id": "47b656e147c4b456"
+                        "id": "1ef619b7f39de588"
                     }
                 ]
             }
@@ -289,7 +289,7 @@
                 "y": 380,
                 "wires": [
                     {
-                        "id": "f172dfe9b7339403",
+                        "id": "f14e25d8e02b2bc2",
                         "port": 0
                     }
                 ]
@@ -25354,7 +25354,7 @@
         "type": "function",
         "z": "feddeb63279e750e",
         "name": "sort result",
-        "func": "function hasMessengerField(ob) {\n    const messengerFields = ['telegram', 'whatsapp', 'instagram', 'messenger','chatWidget'];\n\n    for (let field of messengerFields) {\n        if (ob[field] && Object.keys(ob[field]).length > 0) {\n            return true;\n        }\n    }\n    return false;\n}\nmsg.payload ={hasBot: hasMessengerField(msg.payload[0])}\nreturn msg\n",
+        "func": "// function hasMessengerField(ob) {\n//     const messengerFields = ['telegram', 'whatsapp', 'instagram', 'messenger','chatWidget'];\n\n//     for (let field of messengerFields) {\n//         if (ob[field] && Object.keys(ob[field]).length > 0) {\n//             return true;\n//         }\n//     }\n//     return false;\n// }\n// msg.payload ={hasBot: hasMessengerField(msg.payload[0])}\n// return msg\nfunction hasMessengerField(ob) {\n    const messengerFields = ['telegram', 'whatsapp', 'instagram', 'messenger', 'chatWidget'];\n\n    if (ob && typeof ob === 'object') {\n        for (let field of messengerFields) {\n            if (ob[field] && Object.keys(ob[field]).length > 0) {\n                return true;\n            }\n        }\n    }\n    return false;\n}\n\n// Check if msg.payload is an array and has an element at index 0\nif (Array.isArray(msg.payload) && msg.payload.length > 0) {\n    msg.payload = { hasBot: hasMessengerField(msg.payload[0]) };\n} else if (msg.payload && typeof msg.payload === 'object') {\n    // If msg.payload is not an array, we can directly check it\n    msg.payload = { hasBot: hasMessengerField(msg.payload) };\n} else {\n    msg.payload = { hasBot: false }; // Default value if msg.payload is not properly structured\n}\n\nreturn msg; // Ensure msg is returned in all cases\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -29418,6 +29418,184 @@
         "wires": []
     },
     {
+        "id": "a62e4870363c3681",
+        "type": "function",
+        "z": "deb1db7d76e2893f",
+        "name": "get settings",
+        "func": "\n\nmsg.collection = \"credantials\";\nmsg.payload = {\n    \"ownerId\": '67577d2756cdc616000000bd'\n    }\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 710,
+        "y": 40,
+        "wires": [
+            [
+                "d69079453a9dd557"
+            ]
+        ]
+    },
+    {
+        "id": "d69079453a9dd557",
+        "type": "link call",
+        "z": "deb1db7d76e2893f",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 835,
+        "y": 40,
+        "wires": [
+            [
+                "835f3664d491fdd8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "8106bedeea7796ab",
+        "type": "function",
+        "z": "deb1db7d76e2893f",
+        "name": "get settings",
+        "func": "\nmsg.collection = \"knowlegebase\";\n\nmsg.payload = {\n    \"ownerId\": '67577d2756cdc616000000bd'\n}\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 1170,
+        "y": 40,
+        "wires": [
+            [
+                "23a43a3c78acf8e8"
+            ]
+        ]
+    },
+    {
+        "id": "23a43a3c78acf8e8",
+        "type": "link call",
+        "z": "deb1db7d76e2893f",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1285,
+        "y": 40,
+        "wires": [
+            [
+                "b1986aded4a123c3"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "4b856c261cc37ec3",
+        "type": "inject",
+        "z": "deb1db7d76e2893f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 540,
+        "y": 40,
+        "wires": [
+            [
+                "a62e4870363c3681"
+            ]
+        ]
+    },
+    {
+        "id": "dcf76494b6c5a1ca",
+        "type": "inject",
+        "z": "deb1db7d76e2893f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1000,
+        "y": 40,
+        "wires": [
+            [
+                "8106bedeea7796ab"
+            ]
+        ]
+    },
+    {
+        "id": "835f3664d491fdd8",
+        "type": "debug",
+        "z": "deb1db7d76e2893f",
+        "name": "debug 725397",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b1986aded4a123c3",
+        "type": "debug",
+        "z": "deb1db7d76e2893f",
+        "name": "debug 725398",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 60,
+        "wires": []
+    },
+    {
         "id": "07e013fe64a9c3bc",
         "type": "http in",
         "z": "2ad58cd7a4117e03",
@@ -30708,7 +30886,7 @@
         "z": "d0e74064b88242f7",
         "name": "",
         "method": "POST",
-        "ret": "obj",
+        "ret": "txt",
         "paytoqs": "ignore",
         "url": "",
         "tls": "",
@@ -30854,6 +31032,7 @@
         "name": "updare user",
         "func": "msg.collection = \"admins\";\nmsg.email= msg.payload.email;\nmsg.query ={\n        \"_id\": objectid(msg.payload._id)\n};\n\n\nmsg.payload={\n        $set:{\n                \"reasonCancelDescription\": msg.payload.description,\n                \"subscriptionType\":\"Free Trial\"              \n        },\n        $unset:{\n                subscription:\"\"   \n        }\n}\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -31008,7 +31187,7 @@
         "type": "function",
         "z": "d0e74064b88242f7",
         "name": "req to main",
-        "func": "msg.query = {\n    email: 'dev@ubos.tech'\n}\n// msg.payload = {\n//     $set: {\n//         subscription: 'active',\n//         'subscriptionType': 'Pro',\n//         subscriptionCreatedAt: Date.now()\n//     }\n// }\nmsg.payload = {\n    $unset: {\n        subscription: '',\n        'subscriptionType': '',\n        subscriptionCreatedAt:''\n    }\n}\nmsg.collection = \"admins\";\n\nreturn msg;",
+        "func": "msg.query = {\n    email: ''\n}\nmsg.payload = {\n    $set: {\n        subscription: 'active',\n        'subscriptionType': 'Pro',\n        subscriptionCreatedAt: Date.now()\n    }\n}\n// msg.payload = {\n//     $unset: {\n//         subscription: '',\n//         'subscriptionType': '',\n//         subscriptionCreatedAt:''\n//     }\n// }\nmsg.collection = \"admins\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -31854,186 +32033,6 @@
         "statusType": "auto",
         "x": 1350,
         "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "d0109d745d389ad9",
-        "type": "http request",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "query",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1050,
-        "y": 1120,
-        "wires": [
-            [
-                "d721dd2791ec4099"
-            ]
-        ]
-    },
-    {
-        "id": "d721dd2791ec4099",
-        "type": "debug",
-        "z": "d0e74064b88242f7",
-        "name": "debug 1071",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1270,
-        "y": 1120,
-        "wires": []
-    },
-    {
-        "id": "5612196e68d335ca",
-        "type": "function",
-        "z": "d0e74064b88242f7",
-        "name": "req ",
-        "func": "\nmsg.url = `https://api.stripe.com/v1/products/prod_QU9tghswQks5cA`\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": 'Bearer sk_test_51MmBBjH1Ta6us8T1el5z00SpFT08x92MqSIm5wiv5menzbvKMVoFMAj9Am0FguTIGVjmRqhLomDkqZJLe8ukJulj00s1Om9j2T'\n}\nmsg.payload = {}\n\nreturn msg",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 850,
-        "y": 1120,
-        "wires": [
-            [
-                "d0109d745d389ad9"
-            ]
-        ]
-    },
-    {
-        "id": "2c65f1c8adf2dcce",
-        "type": "inject",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 660,
-        "y": 1120,
-        "wires": [
-            [
-                "5612196e68d335ca"
-            ]
-        ]
-    },
-    {
-        "id": "18ee8b90c112d425",
-        "type": "function",
-        "z": "d0e74064b88242f7",
-        "name": "req ",
-        "func": "\nmsg.url = `https://api.stripe.com/v1/prices/price_1PdBa8H1Ta6us8T1hKy91dUd`\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": 'Bearer sk_test_51MmBBjH1Ta6us8T1el5z00SpFT08x92MqSIm5wiv5menzbvKMVoFMAj9Am0FguTIGVjmRqhLomDkqZJLe8ukJulj00s1Om9j2T'\n}\nmsg.payload = {}\n\nreturn msg",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 810,
-        "y": 1200,
-        "wires": [
-            [
-                "7cb64565fa4eed09"
-            ]
-        ]
-    },
-    {
-        "id": "2fe8f41fdfb2d73b",
-        "type": "inject",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 660,
-        "y": 1200,
-        "wires": [
-            [
-                "18ee8b90c112d425"
-            ]
-        ]
-    },
-    {
-        "id": "7cb64565fa4eed09",
-        "type": "http request",
-        "z": "d0e74064b88242f7",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "query",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1030,
-        "y": 1200,
-        "wires": [
-            [
-                "357a6b77723609a8"
-            ]
-        ]
-    },
-    {
-        "id": "357a6b77723609a8",
-        "type": "debug",
-        "z": "d0e74064b88242f7",
-        "name": "debug 1072",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1210,
-        "y": 1200,
         "wires": []
     },
     {
@@ -33308,7 +33307,7 @@
         "type": "function",
         "z": "54b72545b0798eec",
         "name": "update user",
-        "func": "msg.collection = \"admins\"\n\nmsg.query = {\n    \"email\": \"dev@ubos.tech\"\n};\n\nmsg.payload = {\n    $set: {\n        \"subscription\": \"active\",\n        \"subscriptionType\": \"Pro\", \n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nreturn msg;",
+        "func": "msg.collection = \"admins\"\n\nmsg.query = {\n    \"email\": \"\"\n};\n\nmsg.payload = {\n    $set: {\n        \"subscription\": \"active\",\n        \"subscriptionType\": \"Pro\", \n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -33486,6 +33485,95 @@
         "statusType": "auto",
         "x": 800,
         "y": 380,
+        "wires": []
+    },
+    {
+        "id": "941320150f23d92d",
+        "type": "function",
+        "z": "54b72545b0798eec",
+        "name": "update user",
+        "func": "\n\nmsg.collection = \"admins\";\nmsg.payload = {\n    email: \" \",\n    // deleted: false\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 330,
+        "y": 520,
+        "wires": [
+            [
+                "4e22e5d89d65a64d"
+            ]
+        ]
+    },
+    {
+        "id": "1ee4d64d788be5b4",
+        "type": "inject",
+        "z": "54b72545b0798eec",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "941320150f23d92d"
+            ]
+        ]
+    },
+    {
+        "id": "4e22e5d89d65a64d",
+        "type": "link call",
+        "z": "54b72545b0798eec",
+        "name": "",
+        "links": [
+            "62a1ecc38ccba8fc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 530,
+        "y": 520,
+        "wires": [
+            [
+                "05b099d2216ab38b"
+            ]
+        ]
+    },
+    {
+        "id": "05b099d2216ab38b",
+        "type": "debug",
+        "z": "54b72545b0798eec",
+        "name": "tfrom db",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 520,
         "wires": []
     },
     {
@@ -47413,87 +47501,5 @@
         "x": 830,
         "y": 2640,
         "wires": []
-    },
-    {
-        "id": "1bb2c5175202057d",
-        "type": "function",
-        "z": "5eea3f963330a3b2",
-        "name": ">",
-        "func": "msg.query = {\n    _id: objectid(\"67471a1ef856901400000017\")\n}\nmsg.collection = \"knowlegebase\";\n\nmsg.payload = {\n    $set: {\n        behaviour: {\n            prompt: \"msg.payload.prompt\",\n            model: \"gpt-3.5-turbo\",\n            answer_length: \"msg.payload.answer_length_onboarding\",\n            answer_as: \"msg.payload.answer_as\",\n            tone: \"msg.payload.tone\",\n            language: \"msg.payload.language\",\n        }\n    }\n}\n\nreturn msg",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "objectid",
-                "module": "objectid"
-            }
-        ],
-        "x": 3590,
-        "y": 660,
-        "wires": [
-            [
-                "08d4b458a6b97ac2",
-                "669479746dd37e56"
-            ]
-        ]
-    },
-    {
-        "id": "08d4b458a6b97ac2",
-        "type": "link call",
-        "z": "5eea3f963330a3b2",
-        "name": "",
-        "links": [
-            "fa4ed93594894b39"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 3780,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "669479746dd37e56",
-        "type": "http response",
-        "z": "5eea3f963330a3b2",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 3750,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "64a019ebc2ad25e4",
-        "type": "inject",
-        "z": "5eea3f963330a3b2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 3440,
-        "y": 620,
-        "wires": [
-            [
-                "1bb2c5175202057d"
-            ]
-        ]
     }
 ]
