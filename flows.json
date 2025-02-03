@@ -26702,7 +26702,7 @@
         "type": "function",
         "z": "89d469e7329bee96",
         "name": "set ",
-        "func": "// msg.fromApp = msg.payload\n\nmsg.query = {\n    ownerId: '66e824381b5a731700000054'\n}\n\nmsg.payload = {\n    $unset: {\n        \"ubosChat\": '',\n    }\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "func": "// msg.fromApp = msg.payload\n\nmsg.query = {\n    ownerId: ''\n}\n\nmsg.payload = {\n    $unset: {\n        \"ubosChat\": '',\n    }\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -26976,7 +26976,8 @@
         "y": 1760,
         "wires": [
             [
-                "7c52e65a09cf1c43"
+                "7c52e65a09cf1c43",
+                "e7b0d99d006345af"
             ]
         ]
     },
@@ -26990,7 +26991,8 @@
         "wires": [
             [
                 "bb6d784854615f33",
-                "3c304770f9cfab81"
+                "3c304770f9cfab81",
+                "90f2d9c3b2eea6a8"
             ]
         ]
     },
@@ -27892,7 +27894,7 @@
         "type": "function",
         "z": "89d469e7329bee96",
         "name": "send to vector db",
-        "func": "msg.baseID = objectid();\nmsg.payload={\n    baseID: msg.baseID,\n    product: msg.productsTiny,\n    openAI: msg.cred.openAIkey\n}\nmsg.url=`https://nodered-2909-673cbc3f847a7811000000b8.llmtracegcp.ubos.tech/saveProductToDB`\nreturn msg;",
+        "func": "msg.baseID = objectid();\nmsg.payload={\n    baseID: msg.baseID,\n    product: msg.productsTiny,\n    openAI: msg.cred.openAIkey\n}\nmsg.url=`https://nodered-9884-67a0b36a978bd0110000014b.bicimoto-agent.ubos.tech/saveProductToDB`\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -28106,6 +28108,189 @@
         "statusType": "auto",
         "x": 1400,
         "y": 2740,
+        "wires": []
+    },
+    {
+        "id": "e7b0d99d006345af",
+        "type": "debug",
+        "z": "89d469e7329bee96",
+        "name": "debug 94",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "90f2d9c3b2eea6a8",
+        "type": "debug",
+        "z": "89d469e7329bee96",
+        "name": "debug 95",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "aafc26ed446d6bf2",
+        "type": "function",
+        "z": "89d469e7329bee96",
+        "name": "set ",
+        "func": "msg.query = {\n    ownerId: ''\n}\n\nmsg.payload = {\n    $set: {\n        \"agents.orderManager.productBaseId\":''\n    }\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 2980,
+        "wires": [
+            [
+                "6f8d8c022c29cee2"
+            ]
+        ]
+    },
+    {
+        "id": "6f8d8c022c29cee2",
+        "type": "link call",
+        "z": "89d469e7329bee96",
+        "name": "",
+        "links": [
+            "c376fe5b44b98a93"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1380,
+        "y": 2980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6c646471ba6e348",
+        "type": "inject",
+        "z": "89d469e7329bee96",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 980,
+        "y": 2960,
+        "wires": [
+            [
+                "aafc26ed446d6bf2"
+            ]
+        ]
+    },
+    {
+        "id": "2905ab08793e6f8c",
+        "type": "function",
+        "z": "89d469e7329bee96",
+        "name": "set ",
+        "func": "msg.payload = {\n    ownerId: ''\n}\n\n// msg.payload = {\n//     // $set: {\n//         // \"agents.orderManager.productBaseId\":''\n//     // }\n// }\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 3080,
+        "wires": [
+            [
+                "6af93830029724f7"
+            ]
+        ]
+    },
+    {
+        "id": "6af93830029724f7",
+        "type": "link call",
+        "z": "89d469e7329bee96",
+        "name": "",
+        "links": [
+            "df948caf6ccf8ebc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 910,
+        "y": 3080,
+        "wires": [
+            [
+                "bbf73038ff73b001"
+            ]
+        ]
+    },
+    {
+        "id": "e00a25fda790a4ba",
+        "type": "inject",
+        "z": "89d469e7329bee96",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 3060,
+        "wires": [
+            [
+                "2905ab08793e6f8c"
+            ]
+        ]
+    },
+    {
+        "id": "bbf73038ff73b001",
+        "type": "debug",
+        "z": "89d469e7329bee96",
+        "name": "next page",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 3100,
         "wires": []
     },
     {
@@ -33126,7 +33311,7 @@
         "z": "c5623fb1491ce07d",
         "g": "7de8271173bd77e0",
         "name": "check if agent",
-        "func": "function getConnectedAgentsData(channel, webhookData) {\n    const { agents } = webhookData;\n    const result = [];\n\n    for (const agentName in agents) {\n        const agent = agents[agentName];\n\n        // Перевіряємо, чи канал підключений до агента\n        if (agent.channels.includes(channel)) {\n            const integration = agent.integration ? webhookData[agent.integration] : null;\n            const keys = integration\n                ? Object.keys(integration).reduce((acc, key) => {\n                    if (typeof integration[key] === \"string\") {\n                        acc[key] = integration[key];\n                    }\n                    return acc;\n                }, {})\n                : {};\n\n            result.push({\n                agentType: agentName,\n                integrationType: agent.integration || null,\n                integrationKeys: keys,\n                actions: agent.actions,\n                openAI: msg.preparedData?.OPENAI_KEY,\n                userObject: msg.preparedData?.chat, // Порожній об'єкт для користувача\n                ownerId: msg.cred.ownerId,\n                channel: msg.type,\n                accountID: msg.messageData?.account?.id,\n                userPrompt: msg.preparedData?.AI_SETTINGS?.PROMPT_CUSTOM\n\n            });\n        }\n    }\n    return result;\n}\n\n// Використання:\nconst webhookData = msg.cred;\nconst channel = msg.type;\nconst connectedAgentsData = getConnectedAgentsData(channel, webhookData);\n\nif (connectedAgentsData.length > 0) {\n    node.warn(\"Підключені агенти:\");\n    node.warn(JSON.stringify(connectedAgentsData, null, 2));\n    // Логіка для роботи з агентами\n    msg.url = `https://nodered-2909-673cbc3f847a7811000000b8.llmtracegcp.ubos.tech/eCommerse`\n    msg.payload = connectedAgentsData\n    return [null, msg];\n} else {\n    msg.payload = msg.preparedData\n    node.warn(`Для каналу ${channel} агенти не знайдені, використовуємо RAG.`);\n    return [msg, null];\n}\n\n",
+        "func": "function getConnectedAgentsData(channel, webhookData) {\n    const { agents } = webhookData;\n    const result = [];\n\n    for (const agentName in agents) {\n        const agent = agents[agentName];\n\n        // Перевіряємо, чи канал підключений до агента\n        if (agent.channels.includes(channel)) {\n            const integration = agent.integration ? webhookData[agent.integration] : null;\n            const keys = integration\n                ? Object.keys(integration).reduce((acc, key) => {\n                    if (typeof integration[key] === \"string\") {\n                        acc[key] = integration[key];\n                    }\n                    return acc;\n                }, {})\n                : {};\n\n            result.push({\n                agentType: agentName,\n                productBaseId: agent.productBaseId || null,\n                integrationType: agent.integration || null,\n                integrationKeys: keys,\n                actions: agent.actions,\n                openAI: msg.preparedData?.OPENAI_KEY,\n                userObject: msg.preparedData?.chat, // Порожній об'єкт для користувача\n                ownerId: msg.cred.ownerId,\n                channel: msg.type,\n                accountID: msg.messageData?.account?.id,\n                userPrompt: msg.preparedData?.AI_SETTINGS?.PROMPT_CUSTOM\n\n            });\n        }\n    }\n    return result;\n}\n\n// Використання:\nconst webhookData = msg.cred;\nconst channel = msg.type;\nconst connectedAgentsData = getConnectedAgentsData(channel, webhookData);\n\nif (connectedAgentsData.length > 0) {\n    node.warn(\"Підключені агенти:\");\n    node.warn(JSON.stringify(connectedAgentsData, null, 2));\n    // Логіка для роботи з агентами\n    // msg.url=`https://nodered-9884-67a0b36a978bd0110000014b.bicimoto-agent.ubos.tech/eCommerse`\n    msg.url = `https://nodered-2909-673cbc3f847a7811000000b8.llmtracegcp.ubos.tech/eCommerse`\n    msg.payload = connectedAgentsData\n    return [null, msg];\n} else {\n    msg.payload = msg.preparedData\n    node.warn(`Для каналу ${channel} агенти не знайдені, використовуємо RAG.`);\n    return [msg, null];\n}\n\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -33799,7 +33984,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "req to main",
-        "func": "msg.query = {\n    email: 'user_bot@ubos.tech'\n}\nmsg.payload = {\n    $set: {\n        subscription: 'active',\n        'subscriptionType': 'Pro',\n        subscriptionId:\"sub_1QklhVH1Ta6us8T1DW26Mk5y\",\n        subscriptionCreatedAt: Date.now()\n    }\n}\n// msg.payload = {\n//     $unset: {\n//         subscription: '',\n//         'subscriptionType': '',\n//         subscriptionCreatedAt:''\n//     }\n// }\nmsg.collection = \"admins\";\n\nreturn msg;",
+        "func": "msg.query = {\n    email: ''\n}\nmsg.payload = {\n    $set: {\n        subscription: 'active',\n        'subscriptionType': 'Pro',\n        subscriptionId:\"\",\n        subscriptionCreatedAt: Date.now()\n    }\n}\n// msg.payload = {\n//     $unset: {\n//         subscription: '',\n//         'subscriptionType': '',\n//         subscriptionCreatedAt:''\n//     }\n// }\nmsg.collection = \"admins\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -38546,6 +38731,118 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "8ccc29e1286b0305",
+        "type": "function",
+        "z": "3830a28648a5315a",
+        "name": "create user",
+        "func": "// msg.fromApp = msg.payload\nmsg.url = `${env.get('chatwoot_url')}/platform/api/v1/users/5/login`\n\nmsg.headers = {\n    'api_access_token': env.get('chatwoot_token'),\n    'conten-type': 'application/json; charset=utf-8'\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1120,
+        "wires": [
+            [
+                "4a6b77141204d080",
+                "3759afbe6869dd48"
+            ]
+        ]
+    },
+    {
+        "id": "07549f3fa80a2ef4",
+        "type": "http in",
+        "z": "3830a28648a5315a",
+        "name": "",
+        "url": "/SSOLink",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1120,
+        "wires": [
+            [
+                "8ccc29e1286b0305",
+                "3759afbe6869dd48"
+            ]
+        ]
+    },
+    {
+        "id": "4a6b77141204d080",
+        "type": "http request",
+        "z": "3830a28648a5315a",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 490,
+        "y": 1120,
+        "wires": [
+            [
+                "40bd9b96a640f84c",
+                "3759afbe6869dd48"
+            ]
+        ]
+    },
+    {
+        "id": "40bd9b96a640f84c",
+        "type": "function",
+        "z": "3830a28648a5315a",
+        "name": "function 808",
+        "func": "msg.payload = msg.payload.url \nmsg.headers={\n    \"Location\":msg.payload\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1120,
+        "wires": [
+            [
+                "0a1df6a12245ceb7",
+                "3759afbe6869dd48"
+            ]
+        ]
+    },
+    {
+        "id": "0a1df6a12245ceb7",
+        "type": "http response",
+        "z": "3830a28648a5315a",
+        "name": "",
+        "statusCode": "302",
+        "headers": {},
+        "x": 860,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "3759afbe6869dd48",
+        "type": "debug",
+        "z": "3830a28648a5315a",
+        "name": "debug 96",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 1180,
+        "wires": []
     },
     {
         "id": "8fe01fd8434fef6a",
