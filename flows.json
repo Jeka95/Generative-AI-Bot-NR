@@ -34762,7 +34762,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "function 582",
-        "func": "msg.url = `https://api.stripe.com/v1/checkout/sessions?customer=${msg.userInfo[0]._id}&line_items[0][price]=${msg.fromFlow.id}&line_items[0][quantity]=1&allow_promotion_codes=true&success_url=${msg.fromFlow.uiURL}/Subscription&mode=subscription&metadata[proBotSubscription]=true`\n\nmsg.payload = {}\n\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": msg.stripe_token\n}\nreturn msg;",
+        "func": "msg.url = `https://api.stripe.com/v1/checkout/sessions?customer=${msg.payload.data[0].id}&line_items[0][price]=${msg.fromFlow.id}&line_items[0][quantity]=1&allow_promotion_codes=true&success_url=${msg.fromFlow.uiURL}/Subscription&mode=subscription&metadata[proBotSubscription]=true`\n\nmsg.payload = {}\n\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": msg.stripe_token\n}\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
