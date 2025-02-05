@@ -2577,6 +2577,26 @@
         "verboselogging": false
     },
     {
+        "id": "172e96c2f2eff321",
+        "type": "email-transport",
+        "name": "gmail",
+        "host": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "authType": "login",
+        "proxy": ""
+    },
+    {
+        "id": "8811753462c44796",
+        "type": "email-transport",
+        "name": "gmail",
+        "host": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "authType": "login",
+        "proxy": ""
+    },
+    {
         "id": "c9b6f8d93e90bb91",
         "type": "function",
         "z": "6d85db2ec7cfc7c8",
@@ -21035,7 +21055,7 @@
         "z": "d6b86848684f460c",
         "g": "e4401f7ac9a1d276",
         "name": "check user permissions",
-        "func": "const pageName = msg.fromFlow.page_id.replace('%20', ' ');\n\nconst parentPage = msg.menu.map((el) => el.value).includes(pageName);\nconst childPage = msg.menu.filter((e) => e.children.length > 0).flatMap((el) => el.children).map((elem) => elem.value).includes(pageName);\n\nconst createdAt = msg.user.user.createdAt\nconst now = Date.now();\nconst difference = now - createdAt;\n\nconst sevenDaysInMilliseconds = 3 * 24 * 60 * 60 * 1000;\nconst isMoreThanSevenDays = difference > sevenDaysInMilliseconds;\nmsg.user.user.mainRole = msg.mainUser[0]?.role ? msg.mainUser[0]?.role : msg.user.user.role\nif (parentPage || childPage || pageName == 'Vectors' || pageName == \"Chat\" || pageName === \"Create Chatbot\" || pageName === \"Subscription\" || pageName ===\"Book a%20call\") {\n\n    msg.statusCode = 200;\n    msg.payload = {\n        auth: \"Success\",\n        code: 200,\n        user: {\n            \"menu\": msg.menu,\n            \"permission\": msg.permissions,\n            \"translation\": msg.payload.translation[0],\n            \"info\": msg.user,\n            \"page_id\": msg.fromFlow.page_id\n        }\n    }\n\n    if (msg.user?.user?.subscription !== 'active') {\n        const currentDate = new Date();\n        const createdDate = new Date(createdAt);\n        const trialEndDate = new Date(createdDate.getTime() + 3 * 24 * 60 * 60 * 1000);\n\n        // @ts-ignore\n        const timeDifference = trialEndDate - currentDate;\n        let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));\n\n\n\n        daysLeft = daysLeft <= 0 ? 0 : daysLeft\n        msg.payload.user.daysLeft = daysLeft.toString()\n    }\n    if (isMoreThanSevenDays && msg.user?.user?.subscription !== 'active') {\n        msg.payload.user.trialEnded = true\n    }\n\n} else {\n    msg.payload = {\n        auth: \"Unautorizate\",\n        code: 401,\n        login_id: msg.menu[0].value + `?pageName=${msg.menu[0].value}`,\n        app_id: msg.fromFlow.app_id\n    }\n}\nreturn msg;\n// const pageName = msg.check.page_id.replace('%20', ' ');\n\n// const parentPage = msg.menu.map((el) => el.value).includes(pageName);\n// const childPage = msg.menu.filter((e) => e.children.length > 0).flatMap((el) => el.children).map((elem) => elem.value).includes(pageName);\n\n// const createdAt = msg.user.user.createdAt\n// const now = Date.now();\n// const difference = now - createdAt;\n\n// const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;\n// const isMoreThanSevenDays = difference > sevenDaysInMilliseconds;\n\n\n// if (parentPage || childPage || pageName == 'Vectors' || pageName == \"Chat\" || pageName === \"Create Chatbot\" || pageName === \"Subscription\") {\n\n//     msg.statusCode = 200;\n//     msg.payload = {\n//         auth: \"Success\",\n//         code: 200,\n//         user: {\n//             \"menu\": msg.menu,\n//             \"permission\": msg.permissions,\n//             \"translation\": msg.payload.translation[0],\n//             \"info\": msg.user,\n//             \"page_id\": msg.check.page_id\n//         }\n//     }\n\n//     if ( msg.user?.subscription !== 'active') {\n//         const currentDate = new Date();\n//         const createdDate = new Date(createdAt);\n//         const trialEndDate = new Date(createdDate.getTime() + 7 * 24 * 60 * 60 * 1000);\n\n//         // @ts-ignore\n//         const timeDifference = trialEndDate - currentDate;\n//         let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));\n\n//         node.warn(daysLeft);\n\n//         daysLeft = daysLeft <= 0 ? 0 : daysLeft\n//         msg.payload.user.daysLeft = daysLeft.toString()\n//     }\n//     if ( isMoreThanSevenDays && msg.user.user?.subscription !== 'active') {\n//         msg.payload.user.trialEnded = true\n//     }\n\n// } else {\n//     msg.payload = {\n//         auth: \"Unautorizate\",\n//         code: 401,\n//         login_id: msg.menu[0].value + `?pageName=${msg.menu[0].value}`,\n//         app_id: msg.check.app_id\n//     }\n// }\n// return msg;",
+        "func": "const pageName = msg.fromFlow.page_id.replace('%20', ' ');\n\nconst parentPage = msg.menu.map((el) => el.value).includes(pageName);\nconst childPage = msg.menu.filter((e) => e.children.length > 0).flatMap((el) => el.children).map((elem) => elem.value).includes(pageName);\n\nconst createdAt = msg.user.user.createdAt\nconst now = Date.now();\nconst difference = now - createdAt;\n\nconst sevenDaysInMilliseconds = 3 * 24 * 60 * 60 * 1000;\nconst isMoreThanSevenDays = difference > sevenDaysInMilliseconds;\nmsg.user.user.mainRole = msg.mainUser[0]?.role ? msg.mainUser[0]?.role : msg.user.user.role;\n\n// msg.user.user.mainRole = 'demo'\nif (parentPage || childPage || pageName == 'Vectors' || pageName == \"Chat\" || pageName === \"Create Chatbot\" || pageName === \"Subscription\" || pageName ===\"Book a%20call\") {\n\n    msg.statusCode = 200;\n    msg.payload = {\n        auth: \"Success\",\n        code: 200,\n        user: {\n            \"menu\": msg.menu,\n            \"permission\": msg.permissions,\n            \"translation\": msg.payload.translation[0],\n            \"info\": msg.user,\n            \"page_id\": msg.fromFlow.page_id\n        }\n    }\n\n    if (msg.user?.user?.subscription !== 'active') {\n        const currentDate = new Date();\n        const createdDate = new Date(createdAt);\n        const trialEndDate = new Date(createdDate.getTime() + 3 * 24 * 60 * 60 * 1000);\n\n        // @ts-ignore\n        const timeDifference = trialEndDate - currentDate;\n        let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));\n\n\n\n        daysLeft = daysLeft <= 0 ? 0 : daysLeft\n        msg.payload.user.daysLeft = daysLeft.toString()\n    }\n    if (isMoreThanSevenDays && msg.user?.user?.subscription !== 'active') {\n        msg.payload.user.trialEnded = true\n    }\n\n} else {\n    msg.payload = {\n        auth: \"Unautorizate\",\n        code: 401,\n        login_id: msg.menu[0].value + `?pageName=${msg.menu[0].value}`,\n        app_id: msg.fromFlow.app_id\n    }\n}\nreturn msg;\n// const pageName = msg.check.page_id.replace('%20', ' ');\n\n// const parentPage = msg.menu.map((el) => el.value).includes(pageName);\n// const childPage = msg.menu.filter((e) => e.children.length > 0).flatMap((el) => el.children).map((elem) => elem.value).includes(pageName);\n\n// const createdAt = msg.user.user.createdAt\n// const now = Date.now();\n// const difference = now - createdAt;\n\n// const sevenDaysInMilliseconds = 7 * 24 * 60 * 60 * 1000;\n// const isMoreThanSevenDays = difference > sevenDaysInMilliseconds;\n\n\n// if (parentPage || childPage || pageName == 'Vectors' || pageName == \"Chat\" || pageName === \"Create Chatbot\" || pageName === \"Subscription\") {\n\n//     msg.statusCode = 200;\n//     msg.payload = {\n//         auth: \"Success\",\n//         code: 200,\n//         user: {\n//             \"menu\": msg.menu,\n//             \"permission\": msg.permissions,\n//             \"translation\": msg.payload.translation[0],\n//             \"info\": msg.user,\n//             \"page_id\": msg.check.page_id\n//         }\n//     }\n\n//     if ( msg.user?.subscription !== 'active') {\n//         const currentDate = new Date();\n//         const createdDate = new Date(createdAt);\n//         const trialEndDate = new Date(createdDate.getTime() + 7 * 24 * 60 * 60 * 1000);\n\n//         // @ts-ignore\n//         const timeDifference = trialEndDate - currentDate;\n//         let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));\n\n//         node.warn(daysLeft);\n\n//         daysLeft = daysLeft <= 0 ? 0 : daysLeft\n//         msg.payload.user.daysLeft = daysLeft.toString()\n//     }\n//     if ( isMoreThanSevenDays && msg.user.user?.subscription !== 'active') {\n//         msg.payload.user.trialEnded = true\n//     }\n\n// } else {\n//     msg.payload = {\n//         auth: \"Unautorizate\",\n//         code: 401,\n//         login_id: msg.menu[0].value + `?pageName=${msg.menu[0].value}`,\n//         app_id: msg.check.app_id\n//     }\n// }\n// return msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -24072,7 +24092,7 @@
         "fieldType": "msg",
         "format": "css",
         "syntax": "mustache",
-        "template": "@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,200&display=swap');\n\n.container_height>div>div>div>div>div>div>div>div>div>div {\n    height: auto !important;\n    padding-bottom: 60px !important;\n}\n\n.container_home>div>div>div>div>div>div {\n    overflow-y: auto;\n}\n\n.container_home>div>div>div>div>div>div>div {\n    height: 100% !important;\n    padding-bottom: 80px !important;\n}\n\n.container_home>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.container_home {\n    height: calc(100vh - 90px) !important;\n}\n\nsection {\n    overflow: hidden !important;\n}\n\n\nbody {\n    font-family: 'Titillium Web', sans-serif !important;\n\n}\n\n.onboardingModalInfoContainer {\n    transition: 0.5s !important;\n\n}\n\n.onboardingModalInfoContainer:hover {\n    transform: scale(1.04) !important;\n    transition: 0.5s !important;\n}\n\n.header {\n    top: 0px !important;\n    height: 66px !important;\n    padding: 0px !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.menu_section {\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n    height: 100vh !important;\n    padding: 0px !important;\n    left: 0px !important;\n    border-right: 2px solid rgb(241, 243, 244) !important;\n}\n\n.main_section {\n    padding: 0px !important;\n    height: 100vh !important;\n    position: fixed !important;\n    top: 66px !important;\n}\n\n.tab_login>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.tab_login>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.home_btn2 {\n    padding: 9px !important;\n}\n\n.topzero {\n    top: 0 !important;\n}\n\n/* .bp3-overlay-backdrop{\n    z-index: 9999 !important;\n} */\n\n\n.frame_section {\n    height: 100vh !important;\n    position: fixed !important;\n    top: 16px !important;\n}\n\n.scroll_section {\n    height: 100vh !important;\n    top: 66px !important;\n    padding: 0px !important;\n}\n\n.scroll_section2 {\n    height: 100vh !important;\n    top: 74px !important;\n    padding: 0px !important;\n}\n\n.scroll_section1 {\n    height: 100vh !important;\n    top: 6px !important;\n    padding: 0px !important;\n}\n\n.image {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n    height: 75px !important;\n}\n\n\n.menu .active span {\n    color: #2a2f36 !important;\n}\n\n.menu .active {\n    background: #ebf1fb !important;\n}\n\n.menu button:hover {\n    background: #ebf1fb;\n}\n\n.menu span[role=\"img\"] {\n    margin-left: 8px !important;\n    margin-top: 3px !important;\n\n}\n\n.menu .bp3-collapse-body .sub_category {\n    padding: 5px 5px 5px 20px !important;\n}\n\n.menu button {\n    box-shadow: none !important;\n}\n\n.menu span {\n    font-size: 16px !important;\n    font-weight: 400 !important;\n    color: #00000099 !important;\n}\n\n.menu {\n    left: 0px !important;\n    width: 100% !important;\n    padding: 0 !important;\n}\n\n.menu_wrap {\n    position: fixed !important;\n    left: 0px !important;\n    top: 0px !important;\n    height: 100vh !important;\n    /* width: 178.312px!important; */\n    padding: 0px !important;\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n}\n\n.menu_wrap>div>div>div>div>div>div>div>div>div>div {\n    height: 100vh !important;\n}\n\n.upgradeButton {\n    height: 40px !important;\n    top: 12px !important;\n    width: 98% !important;\n    left: 1px !important;\n}\n\n.brandText {\n    padding: 0 !important;\n    top: 54px !important;\n    width: 98% !important;\n    left: 2px !important;\n}\n\n.linkedinIcon {\n    width: 20px !important;\n    left: 1px !important;\n}\n\n.upgradeMenuContainer {\n    width: 98% !important;\n    height: 100px !important;\n    top: calc(100% - 110px) !important;\n    left: 1px !important;\n}\n\n.menu button {\n    justify-content: start !important;\n    padding: 5px 10px 5px 15px !important;\n    margin-bottom: 5px !important;\n}\n\n.setting_title {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n\n.setting_text {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.setting_text .bp3-ui-text {\n    font-weight: 500 !important;\n    font-size: 16px !important;\n}\n\n.setting_title .bp3-ui-text {\n    font-weight: 600 !important;\n    font-size: 18px !important;\n}\n\n.telegramList {\n    padding: 10px 20px !important;\n}\n\n.telegramList .custom-wrapper-canvas-list {\n    display: flex;\n    flex-direction: column !important;\n}\n\n.telegramList .custom-wrapper-canvas-list button {\n    display: none !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget {\n    width: 90% !important;\n    position: static !important;\n    border-radius: 8px !important;\n    padding: 0 !important;\n    margin-bottom: 7px;\n    margin-right: auto !important;\n    margin-left: 0 !important;\n    background-color: #cfcfdb !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) {\n    margin-right: 0 !important;\n    margin-left: auto !important;\n    background-color: #e5e5e6 !important;\n}\n\n.telegramList .t--widget-textwidget {\n    width: auto !important;\n    position: static !important;\n    padding: 5px 15px !important;\n    height: 100% !important;\n}\n\n.telegramList .t--widget-textwidget span {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 125%;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) .t--widget-textwidget span {\n    text-align: end;\n}\n\n.telegramWrap {\n    padding: 0 !important;\n}\n\n.container {\n    min-height: 100vh;\n}\n\n.selectedTab {\n    box-shadow: rgb(235, 239, 242) -1px 0px 0px inset, rgb(235, 239, 242) 0px 0px 0px inset, rgb(33, 84, 132) 0px 4px 0px inset !important;\n}\n\n.icon>div>div>div>div>div>div>div {\n    background-position: center right !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: 23px !important;\n}\n\n.title>div>div>div>div>div>div>div>span>span.training_span {\n    color: #215484 !important;\n    font-size: 28px !important;\n    font-weight: 700 !important;\n}\n\n.tabs>div>div>div>div>div>div {\n    font-size: 20px !important;\n    /* text-transform: uppercase!important; */\n    font-weight: 500 !important;\n    border-color: #e5e5e5 !important;\n}\n\n.training_wrap>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: inline-flex !important;\n    justify-content: space-between !important;\n}\n\n.table {\n    font-size: 14px !important;\n    text-transform: lowercase !important;\n    font-weight: 400 !important;\n}\n\n.table>div>div>div>div>div>div {\n    font-size: 14px !important;\n    text-transform: uppercase !important;\n}\n\n.tr>div>div>div>div>div>div>div>div {\n    border-right: none !important;\n}\n\n\n\n.title>div>div>div>div>div>div>div>span>span {\n    font-size: 14px !important;\n    font-weight: 400 !important;\n}\n\n/**/\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    margin-bottom: 20px !important;\n}\n\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    position: initial !important;\n}\n\n.hide {\n    display: none;\n    height: 20px !important;\n}\n\n.activ {\n    display: block;\n    /* height: 270px!important; */\n}\n\n.activ_setup {\n    display: block;\n    /* height: 500px!important; */\n}\n\n.btn_right>div>div>div>div>button>span>svg {\n    transform: rotate(180deg) !important;\n    transition: all 0.5s ease 0s !important;\n}\n\n.btn_left>div>div>div>div>button>span>svg {\n    transform: translateY(0px) !important;\n    transition: none 0s ease 0s !important;\n}\n\n/* За замовчуванням */\n.btn_left>div>div>div>div>button,\n.btn_right>div>div>div>div>button {\n    background-color: #ccc;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n\n}\n\n\n.btn_left>div>div>div>div>button:hover:enabled,\n.btn_right>div>div>div>div>button:hover:enabled {\n    background: #9991 !important;\n    transform: translateY(-5px) !important;\n}\n\n.bp3-input {\n    border-radius: 10px !important;\n}\n\n.select_input button.select-button {\n    border-radius: 10px !important;\n}\n\n.dashboard_text>div>div>div>div>div>div>div {\n    font-size: 32px !important;\n    font-weight: 700 !important;\n}\n\n.t--widget-progresswidget>div>div>div>div {\n    height: 68% !important;\n    border-radius: 10px !important;\n    background: #3ba6ff;\n    overflow: hidden !important;\n\n\n}\n\n.t--widget-progresswidget>div>div>div>div>div {\n    height: 100% !important;\n    background-color: #e5e5e5 !important;\n    color: #059ff2 !important;\n    padding-right: 12px !important;\n    font-size: 20px !important;\n    font-weight: 600 !important;\n    text-align: center !important;\n    padding-top: 2px !important;\n\n\n\n}\n\n.text_cross {\n    text-decoration: line-through !important;\n}\n\n.text_cross span {\n    text-decoration: none !important;\n}\n\n.done {\n    opacity: 0.3 !important;\n}\n\n.scroll_section {\n    overflow-y: hidden !important;\n}\n\n\n.users_tabs {\n    border-radius: 10px !important;\n}\n\n.upload_img .bp3-button {\n    background: #215484 !important;\n    border-radius: 5px !important;\n}\n\n.upload_img .bp3-button:hover,\n.upload_img>div>div>div>div:hover>button,\n.upload_img>div>div>div>div:active>button {\n    background: #123a5e !important;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n}\n\n.text_aisetup {\n    top: 0 px !important;\n}\n\n.text_aisetup>div>div>div>div>div>div>div>span {\n    gap: 5px !important;\n    display: flex !important;\n    width: 100% !important;\n    line-height: 1.2 !important;\n    white-space: normal !important;\n}\n\n/* .table_vectors .table .td {\n    height: 250px !important;\n} */\n\n.table_vectors .table .td>div>div {\n    white-space: initial !important;\n    align-items: baseline !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"cell\"]:first-child {\n    width: 90% !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"cell\"]:nth-child(2) {\n    width: 10% !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"columnheader\"]:first-child {\n    width: 90% !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"columnheader\"]:nth-child(2) {\n    width: 10% !important;\n}\n\n.chatDemo {\n    height: calc(100% - 60px) !important;\n}\n\n.chatContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.chatContainer>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer {\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    /* border-radius: 4px; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n/* .chatContainer:hover { */\n/* box-shadow: none !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n/* } */\n.chatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 10px !important;\n    padding: 0px !important;\n    height: 97% !important;\n}\n\n.chatWrapper>div>div>div>div {\n    border-radius: 10px;\n}\n\n.chatImage>div>div>div>div>div {\n    left: -15%\n}\n\n.chatTitle>div>div>div {\n    left: -6%\n}\n\n.chatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.chatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -8%;\n    cursor: default;\n}\n\n.chatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n/* .supportBtn:hover .header{\n    z-index: 0 !important;\n} */\n\n/* .supportBtn:hover + .header {\n    z-index: -1 !important;\n} */\n\n.cloneTemplateBtn {\n    width: 200px !important;\n    left: calc(75% - 200px) !important;\n    top: 15px !important;\n    z-index: 2 !important;\n}\n\n.Bot_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.Training_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.Personality_button button:nth-child(3) {\n    background: #3b82ff15 !important\n}\n\n.demoEmail {\n    left: 83px !important;\n    top: 2px !important;\n}\n\n.warningSection {\n    width: calc(100% - 45px) !important;\n    left: 6px !important;\n}\n\n.warningText {\n    width: 100% !important;\n}\n\n.selectWithoutCross .cancel-icon {\n    display: none !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---START--- */\n.pseudoInput {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInput input,\n.pseudoInput textarea {\n    background: #f9fafa !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.inputRegular {\n    background-color: #F6F7F8 !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment textarea {\n    background: #edf2f7 !important;\n    border-width: 10px !important;\n    border-color: #edf2f7 !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    border-radius: 10px !important;\n    transition-delay: 999999s;\n    /* prevents the hover from turning on */\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div:hover {\n    cursor: default !important;\n    /* hover off */\n}\n\n.listVectorsText div>div>div>div>div>div>div {\n    padding: 10px !important;\n}\n\n\n\n.tableOfVectors .thead .tr .th:nth-child(1),\n.tableOfVectors .tbody .tr .td:nth-child(1) {\n    width: 45% !important;\n}\n\n.tableOfVectors .thead .tr .th:nth-child(2),\n.tableOfVectors .tbody .tr .td:nth-child(2) {\n    width: 50% !important;\n}\n\n.tableOfVectors .thead .tr .th:last-child,\n.tableOfVectors .tbody .tr .td:last-child {\n    width: 5% !important;\n}\n\n.Text_v_answer div>div>div>div>div>div>div {\n    padding: 10px !important;\n    /* border-radius: 10px !important; */\n}\n\n.modelTestingSelector .cancel-icon,\n.BenchmarkSelector .cancel-icon {\n    display: none !important;\n}\n\n.Enrich_JSONForm .t--jsonformfield-Enriched_data_from_AI {\n    border-radius: 10px !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---FINISH--- */\n\n\n.buttonsTraining>div>div>div>div {\n    border: 1px solid #e8e8e8 !important;\n    border-radius: 9px !important;\n    padding: 0 !important;\n}\n\n.buttonsTraining button {\n    border-color: #e8e8e8 !important;\n}\n\n.btn_translate {\n    position: absolute !important;\n    z-index: 1000000000000 !important;\n    /* left: 1573.66px!important; */\n}\n\n.logout_btn {\n    width: 87px !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: clamp(20px, 1.3vw, 22px) !important;\n}\n\n.loginForm_wrapper>div>div>div>div>div {\n    border-radius: 30px !important\n}\n\n.loginForm_wrapper:before,\n.loginForm_wrapper:after {\n    z-index: -1 !important;\n    position: absolute !important;\n    content: \"\" !important;\n    bottom: 18px !important;\n    left: 10px !important;\n    width: 50% !important;\n    top: 80% !important;\n    max-width: 300px !important;\n    background: #adabab !important;\n    box-shadow: 0 18px 7px #adabab !important;\n    transform: rotate(-3deg) !important;\n    border-radius: 10px !important;\n}\n\n.loginForm_wrapper:after {\n    transform: rotate(3deg) !important;\n    right: 10px !important;\n    left: auto !important;\n}\n\n.supportModal {\n    top: 66px !important;\n    right: 24px !important;\n    border-radius: 10px !important;\n}\n\n.modal_succesfull {\n    border-radius: 10px !important;\n}\n\n.icon_info {\n    width: 61.0918px !important;\n}\n\n.home_btn>div>div>div>div>div>button>span {\n    color: #f9fafa !important;\n}\n\n.demoChatHeader>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.demoChatHeader>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader {\n    width: 100% !important;\n\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, rgba(86, 157, 246, 0.9893207282913166) 0%, rgba(126, 185, 232, 0.829656862745098) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 69px !important;\n    padding: 0px !important;\n    height: 89vh !important;\n}\n\n.demoChatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chat_bot {\n    width: 100% !important;\n    border-radius: 0px 0px 10px 10px !important;\n    top: 80px !important;\n    left: 0px !important;\n    border: 1px;\n    background-color: white !important;\n    height: 88% !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n}\n\n.chat_bot>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n}\n\n.chat_bot>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 120px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 120px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.sidebar_chatbotllm>div>div>div>div>div>span>div {\n    border-radius: 6px !important;\n}\n\n.sidebar_chatbot {\n    top: 65px !important;\n    height: 90vh !important;\n}\n\n.sidebar_chatbotllm {\n    padding: 0 !important;\n}\n\n.sidebar_chatbotllm button {\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) img {\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%;\n    background-color: #fff!important;\n    max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) img {\n    /* width: 35px;\n    height: 35px; */\n    /* display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%; */\n    /* background-color: #fff!important; */\n    /* max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n.demoChatImage>div>div>div>div>div {\n    left: -25%\n}\n\n.demoChatTitle>div>div>div {\n    left: -10%\n}\n\n.demoChatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.demoChatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -11%;\n    cursor: default;\n}\n\n.demoChatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n\n.conversationAccordion button {\n    border-radius: 10px !important;\n    background-color: rgb(246 247 248) !important;\n}\n\n/* -----home demo chat------ */\n.chat_bot2 {\n    height: calc(100% - 100px) !important;\n    border-radius: 0px 0px 10px 10px !important;\n    border: 1px;\n    top: 92px !important;\n    /* height: calc(100% - 20px)!important; */\n    background-color: white !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    clip-path: inset(-3px 0px 0px 0px);\n}\n\n.chat_bot2>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot2>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n\n}\n\n.chat_bot2>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 60px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 60px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) img {\n    display: none;\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 50%;\n    background-color: #fff!important;\n    max-height: 50%;\n    padding: 4px!important; */\n\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) img {\n    display: none;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n\n/* .ant-alert-error {\n    display: none !important;\n} */\n\n.Toastify:has(.ant-alert-error) {\n    display: none !important;\n}\n\n.gitLabel {}\n\n.knowleadge {\n    margin-top: 20px !important;\n}\n\n.dbSelect .label-container label {\n    width: fit-content !important;\n    text-align: left !important;\n}\n\n.dbSelect .bp3-control-group {\n    height: 100% !important;\n}\n\n.hover-effect {\n    width: 39px !important;\n    height: 39px !important;\n    border-radius: 360px;\n    background: transparent;\n    transition: filter 0.3s ease-in-out;\n}\n\n.hover-effect:hover {\n    background: rgb(140, 164, 183) !important;\n}\n\n.git_img {\n    top: -4px !important;\n    height: 100% !important;\n    width: 100% !important;\n\n}\n\n.subscriptionInfoBlock {\n    left: 0px !important;\n    top: 0px !important;\n    height: 190px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.subscriptionTitleBlock>div>div>div>div>div>div {\n    height: 100% !important;\n    width: 100% !important;\n    border-radius: 0 0 50% 50% !important;\n    background: rgb(245, 247, 250) !important;\n}\n\n.subscriptionTitleBlock {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n/* .upload_widget>div>div>div>div{\n    display: none!important;\n  } */\n\n.profileText {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.profileText span {\n    padding: 9px !important;\n}\n\n.profile_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.billing_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.profilePageTab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n\n.chatAnimationEffect textarea {\n    border-color: #66afe9 !important;\n    /* box-shadow: 0 0 8px rgba(102, 175, 233, 0.6) !important; */\n    background-color: #f0f8ff !important;\n    outline: none !important;\n    animation: pulse 1.5s infinite;\n}\n\n.chatAnimationEffect textarea {\n    /* width: 100% !important;\n    height: 100px !important; */\n    padding: 10px !important;\n    border: 2px solid #66afe9 !important;\n    border-radius: 4px !important;\n    font-size: 16px !important;\n    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s !important;\n    resize: none !important;\n}\n\n/* .chat_bot2 textarea::selection {\n    background-color: #66afe9 !important;\n    color: white !important;\n} */\n\n@keyframes pulse {\n    0% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n\n    50% {\n        box-shadow: 0 0 10px rgba(102, 175, 233, 0.8);\n    }\n\n    100% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n}\n\n@keyframes firework {\n    0% {\n        transform: translate(var(--x), var(--initialY));\n        width: var(--initialSize);\n        opacity: 1;\n    }\n\n    50% {\n        width: 0.5vmin;\n        opacity: 1;\n    }\n\n    100% {\n        width: var(--finalSize);\n        opacity: 0;\n    }\n}\n\n/* @keyframes fireworkPseudo {\n  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }\n  50% { width: 0.5vmin; opacity: 1; }\n  100% { width: var(--finalSize); opacity: 0; }\n}\n */\n.firework,\n.firework::before,\n.firework::after {\n    --initialSize: 0.5vmin;\n    --finalSize: 45vmin;\n    --particleSize: 0.2vmin;\n    --color1: yellow;\n    --color2: khaki;\n    --color3: white;\n    --color4: lime;\n    --color5: gold;\n    --color6: mediumseagreen;\n    --y: -30vmin;\n    --x: -50%;\n    --initialY: 60vmin;\n    content: \"\";\n    animation: firework 2s infinite;\n    position: absolute;\n    top: 40%;\n    left: 50%;\n    transform: translate(-50%, var(--y));\n    width: var(--initialSize);\n    aspect-ratio: 1;\n    background:\n        /*\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,\n    */\n\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,\n\n        /* bottom right */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,\n\n        /* bottom left */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,\n\n        /* top left */\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,\n\n        /* top right */\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;\n    background-size: var(--initialSize) var(--initialSize);\n    background-repeat: no-repeat;\n}\n\n.firework::before {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */\n    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework::after {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */\n    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework:nth-child(2) {\n    --x: 30vmin;\n}\n\n.firework:nth-child(2),\n.firework:nth-child(2)::before,\n.firework:nth-child(2)::after {\n    --color1: rgb(255, 122, 145);\n    --color2: violet;\n    --color3: fuchsia;\n    --color4: orchid;\n    --color5: rgb(245, 2, 245);\n    --color6: rgb(6, 6, 240);\n    --finalSize: 40vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.25s;\n}\n\n.firework:nth-child(3) {\n    --x: -30vmin;\n    --y: -50vmin;\n}\n\n.firework:nth-child(3),\n.firework:nth-child(3)::before,\n.firework:nth-child(3)::after {\n    --color1: cyan;\n    --color2: rgb(0, 193, 148);\n    --color3: rgb(0, 191, 255);\n    --color4: PaleTurquoise;\n    --color5: SkyBlue;\n    --color6: rgb(0, 255, 110);\n    --finalSize: 35vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.4s;\n}\n\n.fireworkContainer {\n    top: 0 !important;\n    width: 100% !important;\n    height: 100% !important;\n}\n\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n/* body {\n  background: #000;\n  background-image: radial-gradient(circle at top left, #000, #3c4858);\n} */\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n@keyframes showAnimation {\n\n    0%,\n    10% {\n        opacity: 1;\n    }\n\n    90%,\n    100% {\n        opacity: 0;\n    }\n}\n\nbody {\n    background: #000;\n    background-image: radial-gradient(circle at top left, #000, #3c4858);\n}\n\n.containerAnime {\n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n.parallax {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.parallax img {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    width: 100%;\n    height: auto;\n    transform: translateX(-50%) translateZ(0);\n    animation: confetti linear infinite, showAnimation linear infinite;\n}\n\n.parallax img:nth-child(1) {\n    animation-delay: -5s, 0s;\n    animation-duration: 5s, 10s;\n}\n\n.parallax img:nth-child(2) {\n    animation-delay: -10s, 0s;\n    animation-duration: 10s, 10s;\n}\n\n.parallax img:nth-child(3) {\n    animation-delay: -20s, 0s;\n    animation-duration: 20s, 10s;\n}\n\n.parallax img:nth-child(4) {\n    animation-delay: -30s, 0s;\n    animation-duration: 30s, 10s;\n}\n\n.parallax img:nth-child(5) {\n    animation-delay: -35s, 0s;\n    animation-duration: 35s, 10s;\n}\n\n.contactModal {\n    border-radius: 10px !important;\n}\n\n.subscriptionContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: flex !important;\n    flex-direction: row !important;\n    justify-content: center !important;\n}\n\n.subscriptionBlock {\n    position: initial !important;\n    margin-right: 12px !important;\n}\n\n.chatwoot_tab .selectedTab {\n    border-bottom: 1px solid #215484 !important;\n    box-shadow: none !important;\n\n}\n\n.chatwoot_tab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.t--tabid-tab1 {\n    border-bottom: 1px solid lightgray !important;\n}\n\n.t--tabid-tab2 {\n    border-bottom: 1px solid lightgray;\n}\n\n.radioGroupSelector label {\n    font-size: 14px !important;\n}\n\n.radioGroupSelector>div>div>div>div>div {\n    justify-content: flex-start !important;\n}\n\n.radioGroupSelector .bp3-control input:checked~.bp3-control-indicator {\n    background: #215484 !important;\n}\n\n.trainingModal {\n    max-height: 100vh !important;\n    height: 100vh !important;\n    width: 50% !important;\n    max-width: 50% !important;\n    transform: translate3d(50%, 0px, 0px) !important;\n}\n\n.tabsTraining {\n    height: 96% !important;\n    width: 98% !important;\n}\n\n.fullWidthContainer {\n    width: 96% !important;\n}\n\n.separatorWidthContainer {\n    width: 90% !important;\n}\n\n.separatorWidthButton {\n    /* width: 5; */\n    left: 91% !important;\n}\n\n.trainingModalButton {\n    width: 150px !important;\n    left: calc(100% - 175px) !important;\n}\n\n.headerMenuButton button {\n    justify-content: flex-end !important;\n}\n\n.tabWithOutBorder>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.radioGroupIntegrationSelector label {\n    font-size: 18px !important;\n}\n\n.radioGroupIntegrationSelector>div>div>div>div>div {\n    justify-content: flex-start !important;\n}\n\n.radioGroupIntegrationSelector .bp3-control input:checked~.bp3-control-indicator {\n    background: #215484 !important;\n}\n\n\n.filterRadioGroup .bp3-control .bp3-control-indicator {\n    font-size: 1px !important;\n    margin: 0 !important;\n    margin-top: 5px !important;\n    /* background: rgb(82 82 82 / 75%) !important; */\n    box-shadow: none !important;\n    /* border: 1px solid rgb(82 82 82 / 75%) !important; */\n    width: calc(100% + 23px) !important;\n}\n\n.filterRadioGroup .bp3-control input:checked~.bp3-control-indicator {\n    background: rgb(59, 130, 255) !important;\n    box-shadow: none !important;\n    border: 1px solid rgb(59, 130, 255) !important;\n    width: calc(100% + 20px) !important;\n}\n\n.filterRadioGroup .bp3-control input:checked~.bp3-control-indicator {\n    background: rgb(59, 130, 255) !important;\n    box-shadow: none !important;\n    border: 1px solid rgb(59, 130, 255) !important;\n    width: calc(100% + 20px) !important;\n}\n\n.filterRadioGroup .bp3-control {\n    flex-direction: column-reverse !important;\n    padding: 0px 10px !important;\n    justify-content: flex-start !important;\n    border: none !important;\n}\n\n.filterRadioGroup>div>div>div>div>div {\n    flex-direction: column-reverse !important;\n    align-content: flex-start !important;\n    flex-wrap: wrap !important;\n}\n\n.filterRadioGroup label {\n    margin: 0 !important;\n    font-size: 18px !important;\n}\n\n.infoContainer>div>div>div>div>div {\n    border-radius: 5px !important;\n}\n\n.testtrainingModal>div>div>div>div>div>div>div>div {\n    height: 96vh !important;\n}\n\n.customWidgetCall {\n    height: 100% !important;\n}\n\n.customWidgetCall iframe {\n    border-width: 0 !important;\n}\n\n.testtrainingModal>div>div>div>div>div {\n    height: 99vh !important;\n}\n\n.testtrainingModal {\n    max-height: 100vh !important;\n    height: 100vh !important;\n    width: 80% !important;\n    max-width: 80% !important;\n    transform: translate3d(20%, 0px, 0px) !important;\n}\n\n.customWidgetCalendlly {\n    height: 100% !important;\n    border-width: 0 !important;\n}\n\n.customWidgetCalendlly iframe {\n    border-width: 0 !important;\n}\n\n\n\n.chatWrapperHome>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatWrapperHome {\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    border-radius: 10px;\n    /* top: 10px !important; */\n    /* padding: 0px !important; */\n    height: 58% !important;\n}\n\n.chatWrapperHome>div>div>div>div {\n    border-radius: 10px;\n}\n\n.googleDocModal .t--widget-iframewidget {\n    width: 99% !important;\n    height: 99% !important;\n}\n\n.googleDocModal>div>div>div>div>Div {\n    height: 99% !important;\n}\n\n.agentSwitch span {\n    background: #215484 !important;\n    border: 1px solid #215484 !important;\n}",
+        "template": "@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,200&display=swap');\n\n.container_height>div>div>div>div>div>div>div>div>div>div {\n    height: auto !important;\n    padding-bottom: 60px !important;\n}\n\n.container_home>div>div>div>div>div>div {\n    overflow-y: auto;\n}\n\n.container_home>div>div>div>div>div>div>div {\n    height: 100% !important;\n    padding-bottom: 80px !important;\n}\n\n.container_home>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.container_home {\n    height: calc(100vh - 90px) !important;\n}\n\nsection {\n    overflow: hidden !important;\n}\n\n\nbody {\n    font-family: 'Titillium Web', sans-serif !important;\n\n}\n\n.onboardingModalInfoContainer {\n    transition: 0.5s !important;\n\n}\n\n.onboardingModalInfoContainer:hover {\n    transform: scale(1.04) !important;\n    transition: 0.5s !important;\n}\n\n.header {\n    top: 0px !important;\n    height: 66px !important;\n    padding: 0px !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.menu_section {\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n    height: 100vh !important;\n    padding: 0px !important;\n    left: 0px !important;\n    border-right: 2px solid rgb(241, 243, 244) !important;\n}\n\n.main_section {\n    padding: 0px !important;\n    height: 100vh !important;\n    position: fixed !important;\n    top: 66px !important;\n}\n\n.tab_login>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.tab_login>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div>div {\n    background: transparent !important;\n}\n\n.tab_cred>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.home_btn2 {\n    padding: 9px !important;\n}\n\n.topzero {\n    top: 0 !important;\n}\n\n/* .bp3-overlay-backdrop{\n    z-index: 9999 !important;\n} */\n\n\n.frame_section {\n    height: 100vh !important;\n    position: fixed !important;\n    top: 16px !important;\n}\n\n.scroll_section {\n    height: 100vh !important;\n    top: 66px !important;\n    padding: 0px !important;\n}\n\n.scroll_section2 {\n    height: 100vh !important;\n    top: 74px !important;\n    padding: 0px !important;\n}\n\n.scroll_section1 {\n    height: 100vh !important;\n    top: 6px !important;\n    padding: 0px !important;\n}\n\n.image {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n    height: 75px !important;\n}\n\n\n.menu .active span {\n    color: #2a2f36 !important;\n}\n\n.menu .active {\n    background: #ebf1fb !important;\n}\n\n.menu button:hover {\n    background: #ebf1fb;\n}\n\n.menu span[role=\"img\"] {\n    margin-left: 8px !important;\n    margin-top: 3px !important;\n\n}\n\n.menu .bp3-collapse-body .sub_category {\n    padding: 5px 5px 5px 20px !important;\n}\n\n.menu button {\n    box-shadow: none !important;\n}\n\n.menu span {\n    font-size: 16px !important;\n    font-weight: 400 !important;\n    color: #00000099 !important;\n}\n\n.menu {\n    left: 0px !important;\n    width: 100% !important;\n    padding: 0 !important;\n}\n\n.menu_wrap {\n    position: fixed !important;\n    left: 0px !important;\n    top: 0px !important;\n    height: 100vh !important;\n    /* width: 178.312px!important; */\n    padding: 0px !important;\n    box-shadow: rgba(0, 0, 0, 0.25) 1px 2px 3px !important;\n}\n\n.menu_wrap>div>div>div>div>div>div>div>div>div>div {\n    height: 100vh !important;\n}\n\n.upgradeButton {\n    height: 40px !important;\n    top: 12px !important;\n    width: 98% !important;\n    left: 1px !important;\n}\n\n.brandText {\n    padding: 0 !important;\n    top: 54px !important;\n    width: 98% !important;\n    left: 2px !important;\n}\n\n.linkedinIcon {\n    width: 20px !important;\n    left: 1px !important;\n}\n\n.upgradeMenuContainer {\n    width: 98% !important;\n    height: 100px !important;\n    top: calc(100% - 110px) !important;\n    left: 1px !important;\n}\n\n.menu button {\n    justify-content: start !important;\n    padding: 5px 10px 5px 15px !important;\n    margin-bottom: 5px !important;\n}\n\n.setting_title {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n\n.setting_text {\n    padding: 4px 14px !important;\n    left: 0px !important;\n    width: 100% !important;\n    border-bottom: 2px solid rgb(241, 243, 244) !important;\n}\n\n.setting_text .bp3-ui-text {\n    font-weight: 500 !important;\n    font-size: 16px !important;\n}\n\n.setting_title .bp3-ui-text {\n    font-weight: 600 !important;\n    font-size: 18px !important;\n}\n\n.telegramList {\n    padding: 10px 20px !important;\n}\n\n.telegramList .custom-wrapper-canvas-list {\n    display: flex;\n    flex-direction: column !important;\n}\n\n.telegramList .custom-wrapper-canvas-list button {\n    display: none !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget {\n    width: 90% !important;\n    position: static !important;\n    border-radius: 8px !important;\n    padding: 0 !important;\n    margin-bottom: 7px;\n    margin-right: auto !important;\n    margin-left: 0 !important;\n    background-color: #cfcfdb !important;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) {\n    margin-right: 0 !important;\n    margin-left: auto !important;\n    background-color: #e5e5e6 !important;\n}\n\n.telegramList .t--widget-textwidget {\n    width: auto !important;\n    position: static !important;\n    padding: 5px 15px !important;\n    height: 100% !important;\n}\n\n.telegramList .t--widget-textwidget span {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 125%;\n}\n\n.telegramList .custom-wrapper-canvas-list .t--widget-containerwidget:nth-of-type(odd) .t--widget-textwidget span {\n    text-align: end;\n}\n\n.telegramWrap {\n    padding: 0 !important;\n}\n\n.container {\n    min-height: 100vh;\n}\n\n.selectedTab {\n    box-shadow: rgb(235, 239, 242) -1px 0px 0px inset, rgb(235, 239, 242) 0px 0px 0px inset, rgb(33, 84, 132) 0px 4px 0px inset !important;\n}\n\n.icon>div>div>div>div>div>div>div {\n    background-position: center right !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: 23px !important;\n}\n\n.title>div>div>div>div>div>div>div>span>span.training_span {\n    color: #215484 !important;\n    font-size: 28px !important;\n    font-weight: 700 !important;\n}\n\n.tabs>div>div>div>div>div>div {\n    font-size: 20px !important;\n    /* text-transform: uppercase!important; */\n    font-weight: 500 !important;\n    border-color: #e5e5e5 !important;\n}\n\n.training_wrap>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: inline-flex !important;\n    justify-content: space-between !important;\n}\n\n.table {\n    font-size: 14px !important;\n    text-transform: lowercase !important;\n    font-weight: 400 !important;\n}\n\n.table>div>div>div>div>div>div {\n    font-size: 14px !important;\n    text-transform: uppercase !important;\n}\n\n.tr>div>div>div>div>div>div>div>div {\n    border-right: none !important;\n}\n\n\n\n.title>div>div>div>div>div>div>div>span>span {\n    font-size: 14px !important;\n    font-weight: 400 !important;\n}\n\n/**/\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    margin-bottom: 20px !important;\n}\n\n.main>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    position: initial !important;\n}\n\n.hide {\n    display: none;\n    height: 20px !important;\n}\n\n.activ {\n    display: block;\n    /* height: 270px!important; */\n}\n\n.activ_setup {\n    display: block;\n    /* height: 500px!important; */\n}\n\n.btn_right>div>div>div>div>button>span>svg {\n    transform: rotate(180deg) !important;\n    transition: all 0.5s ease 0s !important;\n}\n\n.btn_left>div>div>div>div>button>span>svg {\n    transform: translateY(0px) !important;\n    transition: none 0s ease 0s !important;\n}\n\n/* За замовчуванням */\n.btn_left>div>div>div>div>button,\n.btn_right>div>div>div>div>button {\n    background-color: #ccc;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n\n}\n\n\n.btn_left>div>div>div>div>button:hover:enabled,\n.btn_right>div>div>div>div>button:hover:enabled {\n    background: #9991 !important;\n    transform: translateY(-5px) !important;\n}\n\n.bp3-input {\n    border-radius: 10px !important;\n}\n\n.select_input button.select-button {\n    border-radius: 10px !important;\n}\n\n.dashboard_text>div>div>div>div>div>div>div {\n    font-size: 32px !important;\n    font-weight: 700 !important;\n}\n\n.t--widget-progresswidget>div>div>div>div {\n    height: 68% !important;\n    border-radius: 10px !important;\n    background: #3ba6ff;\n    overflow: hidden !important;\n\n\n}\n\n.t--widget-progresswidget>div>div>div>div>div {\n    height: 100% !important;\n    background-color: #e5e5e5 !important;\n    color: #059ff2 !important;\n    padding-right: 12px !important;\n    font-size: 20px !important;\n    font-weight: 600 !important;\n    text-align: center !important;\n    padding-top: 2px !important;\n\n\n\n}\n\n.text_cross {\n    text-decoration: line-through !important;\n}\n\n.text_cross span {\n    text-decoration: none !important;\n}\n\n.done {\n    opacity: 0.3 !important;\n}\n\n.scroll_section {\n    overflow-y: hidden !important;\n}\n\n\n.users_tabs {\n    border-radius: 10px !important;\n}\n\n.upload_img .bp3-button {\n    background: #215484 !important;\n    border-radius: 5px !important;\n}\n\n.upload_img .bp3-button:hover,\n.upload_img>div>div>div>div:hover>button,\n.upload_img>div>div>div>div:active>button {\n    background: #123a5e !important;\n    transition: background-color 0.3s ease, transform 0.3s ease !important;\n}\n\n.text_aisetup {\n    top: 0 px !important;\n}\n\n.text_aisetup>div>div>div>div>div>div>div>span {\n    gap: 5px !important;\n    display: flex !important;\n    width: 100% !important;\n    line-height: 1.2 !important;\n    white-space: normal !important;\n}\n\n/* .table_vectors .table .td {\n    height: 250px !important;\n} */\n\n.table_vectors .table .td>div>div {\n    white-space: initial !important;\n    align-items: baseline !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"cell\"]:first-child {\n    width: 90% !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"cell\"]:nth-child(2) {\n    width: 10% !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"columnheader\"]:first-child {\n    width: 90% !important;\n}\n\n.table_vectors .table div[role=\"row\"]>div[role=\"columnheader\"]:nth-child(2) {\n    width: 10% !important;\n}\n\n.chatDemo {\n    height: calc(100% - 60px) !important;\n}\n\n.chatContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n    /* background: linear-gradient(90deg, rgba(33, 84, 132, 1) 0%, rgba(86, 157, 246, 0.8) 35%, rgba(255, 255, 255, 1) 100%); */\n}\n\n\n.chatContainer>div>div>div>div>div>div {\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.chatContainer>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatContainer {\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    /* border-radius: 4px; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n}\n\n\n/* .chatContainer:hover { */\n/* box-shadow: none !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n/* box-shadow: rgba(0, 0, 0, 0.5) 0px -1px 3px !important; */\n/* } */\n.chatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 10px !important;\n    padding: 0px !important;\n    height: 97% !important;\n}\n\n.chatWrapper>div>div>div>div {\n    border-radius: 10px;\n}\n\n.chatImage>div>div>div>div>div {\n    left: -15%\n}\n\n.chatTitle>div>div>div {\n    left: -6%\n}\n\n.chatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.chatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -8%;\n    cursor: default;\n}\n\n.chatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n/* .supportBtn:hover .header{\n    z-index: 0 !important;\n} */\n\n/* .supportBtn:hover + .header {\n    z-index: -1 !important;\n} */\n\n.cloneTemplateBtn {\n    width: 200px !important;\n    left: calc(75% - 200px) !important;\n    top: 15px !important;\n    z-index: 2 !important;\n}\n\n.Bot_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.Training_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.Personality_button button:nth-child(3) {\n    background: #3b82ff15 !important\n}\n\n.demoEmail {\n    left: 83px !important;\n    top: 2px !important;\n}\n\n.warningSection {\n    width: calc(100% - 45px) !important;\n    left: 6px !important;\n}\n\n.warningText {\n    width: 100% !important;\n}\n\n.selectWithoutCross .cancel-icon {\n    display: none !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---START--- */\n.pseudoInput {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInput input,\n.pseudoInput textarea {\n    background: #f9fafa !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.inputRegular {\n    background-color: #F6F7F8 !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment {\n    background: none !important;\n    border-radius: 10px !important;\n}\n\n.pseudoInputEnrichment textarea {\n    background: #edf2f7 !important;\n    border-width: 10px !important;\n    border-color: #edf2f7 !important;\n    border-radius: 10px !important;\n    color: #2E3D49 !important;\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    border-radius: 10px !important;\n    transition-delay: 999999s;\n    /* prevents the hover from turning on */\n}\n\n.listVectors div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div>div:hover {\n    cursor: default !important;\n    /* hover off */\n}\n\n.listVectorsText div>div>div>div>div>div>div {\n    padding: 10px !important;\n}\n\n\n\n.tableOfVectors .thead .tr .th:nth-child(1),\n.tableOfVectors .tbody .tr .td:nth-child(1) {\n    width: 45% !important;\n}\n\n.tableOfVectors .thead .tr .th:nth-child(2),\n.tableOfVectors .tbody .tr .td:nth-child(2) {\n    width: 50% !important;\n}\n\n.tableOfVectors .thead .tr .th:last-child,\n.tableOfVectors .tbody .tr .td:last-child {\n    width: 5% !important;\n}\n\n.Text_v_answer div>div>div>div>div>div>div {\n    padding: 10px !important;\n    /* border-radius: 10px !important; */\n}\n\n.modelTestingSelector .cancel-icon,\n.BenchmarkSelector .cancel-icon {\n    display: none !important;\n}\n\n.Enrich_JSONForm .t--jsonformfield-Enriched_data_from_AI {\n    border-radius: 10px !important;\n}\n\n/* DB Benchmark & ModelTesting pages ---FINISH--- */\n\n\n.buttonsTraining>div>div>div>div {\n    border: 1px solid #e8e8e8 !important;\n    border-radius: 9px !important;\n    padding: 0 !important;\n}\n\n.buttonsTraining button {\n    border-color: #e8e8e8 !important;\n}\n\n.btn_translate {\n    position: absolute !important;\n    z-index: 1000000000000 !important;\n    /* left: 1573.66px!important; */\n}\n\n.logout_btn {\n    width: 87px !important;\n}\n\n.title>div>div>div>div>div>div>div span {\n    font-size: clamp(20px, 1.3vw, 22px) !important;\n}\n\n.loginForm_wrapper>div>div>div>div>div {\n    border-radius: 30px !important\n}\n\n.loginForm_wrapper:before,\n.loginForm_wrapper:after {\n    z-index: -1 !important;\n    position: absolute !important;\n    content: \"\" !important;\n    bottom: 18px !important;\n    left: 10px !important;\n    width: 50% !important;\n    top: 80% !important;\n    max-width: 300px !important;\n    background: #adabab !important;\n    box-shadow: 0 18px 7px #adabab !important;\n    transform: rotate(-3deg) !important;\n    border-radius: 10px !important;\n}\n\n.loginForm_wrapper:after {\n    transform: rotate(3deg) !important;\n    right: 10px !important;\n    left: auto !important;\n}\n\n.supportModal {\n    top: 66px !important;\n    right: 24px !important;\n    border-radius: 10px !important;\n}\n\n.modal_succesfull {\n    border-radius: 10px !important;\n}\n\n.icon_info {\n    width: 61.0918px !important;\n}\n\n.home_btn>div>div>div>div>div>button>span {\n    color: #f9fafa !important;\n}\n\n.demoChatHeader>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n\n.demoChatHeader>div>div>div>div>div>div {\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader>div>div>div>div>div>div>div {\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatHeader>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.demoChatHeader>div>div>div>div {\n    border-radius: 6px !important;\n}\n\n.demoChatHeader {\n    width: 100% !important;\n\n    top: 0px !important;\n    left: 0px !important;\n    position: relative;\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n    border-radius: 10px 10px 0 0;\n    background: rgb(86, 157, 246);\n    background: linear-gradient(90deg, #2654AB 0%, rgb(43 112 196 / 80%) 35%, rgba(255, 255, 255, 1) 100%);\n}\n\n.demoChatWrapper {\n    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important;\n    border-radius: 10px;\n    top: 69px !important;\n    padding: 0px !important;\n    height: 89vh !important;\n}\n\n.demoChatWrapper>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chat_bot {\n    width: 100% !important;\n    border-radius: 0px 0px 10px 10px !important;\n    top: 80px !important;\n    left: 0px !important;\n    border: 1px;\n    background-color: white !important;\n    height: 88% !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n}\n\n.chat_bot>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n}\n\n.chat_bot>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 120px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 120px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.sidebar_chatbotllm>div>div>div>div>div>span>div {\n    border-radius: 6px !important;\n}\n\n.sidebar_chatbot {\n    top: 65px !important;\n    height: 90vh !important;\n}\n\n.sidebar_chatbotllm {\n    padding: 0 !important;\n}\n\n.sidebar_chatbotllm button {\n    border-radius: 10px !important;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) img {\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%;\n    background-color: #fff!important;\n    max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) img {\n    /* width: 35px;\n    height: 35px; */\n    /* display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 100%; */\n    /* background-color: #fff!important; */\n    /* max-height: 100%;\n    padding:6px!important; */\n    display: none;\n}\n\n\n.chat_bot>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n.demoChatImage>div>div>div>div>div {\n    left: -25%\n}\n\n.demoChatTitle>div>div>div {\n    left: -10%\n}\n\n.demoChatButton>div>div>div>div>div:hover>button,\n.chatButton>div>div>div>div>div:active>button {\n    background-color: transparent !important;\n}\n\n.demoChatButton>div>div>div>div>div>button {\n    top: 0px;\n    left: -11%;\n    cursor: default;\n}\n\n.demoChatButton>div>div>div>div>div {\n    cursor: default;\n}\n\n\n.conversationAccordion button {\n    border-radius: 10px !important;\n    background-color: rgb(246 247 248) !important;\n}\n\n/* -----home demo chat------ */\n.chat_bot2 {\n    height: calc(100% - 100px) !important;\n    border-radius: 0px 0px 10px 10px !important;\n    border: 1px;\n    top: 92px !important;\n    /* height: calc(100% - 20px)!important; */\n    background-color: white !important;\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px !important; */\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    clip-path: inset(-3px 0px 0px 0px);\n}\n\n.chat_bot2>div>div>div>div>div {\n    background-color: white !important;\n    box-shadow: none !important;\n}\n\n.chat_bot2>div>div>div>div>form {\n    background-color: white !important;\n    padding: 0;\n    padding-top: 0.5rem;\n    justify-content: space-between;\n    gap: 8px;\n\n}\n\n.chat_bot2>div>div>div>div>form>textarea {\n    background-color: white !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) {\n    background-color: rgb(246 247 248) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-left: 10px !important;\n    margin-right: 60px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) {\n    background-color: rgb(209 231 241 / 15%) !important;\n    margin-bottom: 5px !important;\n    margin-top: 5px !important;\n    margin-right: 10px !important;\n    margin-left: 60px !important;\n    padding: 10px !important;\n    border-radius: 10px !important;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) img {\n    display: none;\n    /* content: url(\"data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 17 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8817 11.255L14.0684 12.6617L11.2551 11.255L14.0684 9.84839L16.8817 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M14.0683 12.6617C13.5453 13.7063 12.7419 14.5847 11.748 15.1986C10.7541 15.8125 9.60898 16.1376 8.44079 16.1376C7.2726 16.1376 6.12746 15.8125 5.13357 15.1986C4.13969 14.5847 3.33628 13.7063 2.81329 12.6617L5.62662 11.2551C5.88803 11.7776 6.28974 12.217 6.78678 12.5241C7.28381 12.8312 7.85653 12.9939 8.44079 12.9939C9.02505 12.9939 9.59777 12.8312 10.0948 12.5241C10.5918 12.217 10.9936 11.7776 11.255 11.2551L14.0683 12.6617Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62665 11.255L2.81332 12.6617L0 11.255L2.81332 9.84839L5.62665 11.255Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8816 11.2551C16.8824 11.2613 16.8824 11.2676 16.8816 11.2738C16.5443 13.2675 15.5119 15.0773 13.9674 16.3824C12.423 17.6875 10.4662 18.4036 8.4442 18.4036C6.42216 18.4036 4.46544 17.6875 2.92098 16.3824C1.37652 15.0773 0.344097 13.2675 0.0067749 11.2738C0.00757591 11.2676 0.00757591 11.2613 0.0067749 11.2551L2.8201 12.6617C3.34309 13.7063 4.14649 14.5847 5.14038 15.1986C6.13427 15.8125 7.27941 16.1376 8.4476 16.1376C9.61579 16.1376 10.7609 15.8125 11.7548 15.1986C12.7487 14.5847 13.5521 13.7063 14.0751 12.6617L16.8816 11.2551Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M14.0684 2.81334V8.44169L11.2551 7.03333V1.40668L14.0684 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M16.8817 1.40666L14.0684 2.81332L11.2551 1.40666L14.0684 0L16.8817 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M16.8817 1.40668V7.03333L14.0684 8.44169V2.81334L16.8817 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3Cpath d='M5.62665 1.40666L2.81332 2.81332L0 1.40666L2.81332 0L5.62665 1.40666Z' fill='%2366CBE2'%3E%3C/path%3E%3Cpath d='M2.81332 2.81334V8.44169L0 7.03333V1.40668L2.81332 2.81334Z' fill='%2341B1E5'%3E%3C/path%3E%3Cpath d='M5.62662 1.40668V7.03333L2.81329 8.44169V2.81334L5.62662 1.40668Z' fill='%235279BC'%3E%3C/path%3E%3C/svg%3E\");\n    width: 35px;\n    height: 35px;\n\n    display: inline-block;\n    vertical-align: middle;\n    margin-right: 5px;\n    object-fit: contain;\n    max-width: 50%;\n    background-color: #fff!important;\n    max-height: 50%;\n    padding: 4px!important; */\n\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) img {\n    display: none;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(odd) div {\n    font-size: 14px;\n}\n\n.chat_bot2>div>div>div>div>div>div:nth-child(even) div {\n    font-size: 14px;\n}\n\n\n/* .ant-alert-error {\n    display: none !important;\n} */\n\n.Toastify:has(.ant-alert-error) {\n    display: none !important;\n}\n\n.gitLabel {}\n\n.knowleadge {\n    margin-top: 20px !important;\n}\n\n.dbSelect .label-container label {\n    width: fit-content !important;\n    text-align: left !important;\n}\n\n.dbSelect .bp3-control-group {\n    height: 100% !important;\n}\n\n.hover-effect {\n    width: 39px !important;\n    height: 39px !important;\n    border-radius: 360px;\n    background: transparent;\n    transition: filter 0.3s ease-in-out;\n}\n\n.hover-effect:hover {\n    background: rgb(140, 164, 183) !important;\n}\n\n.git_img {\n    top: -4px !important;\n    height: 100% !important;\n    width: 100% !important;\n\n}\n\n.subscriptionInfoBlock {\n    left: 0px !important;\n    top: 0px !important;\n    height: 190px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.subscriptionTitleBlock>div>div>div>div>div>div {\n    height: 100% !important;\n    width: 100% !important;\n    border-radius: 0 0 50% 50% !important;\n    background: rgb(245, 247, 250) !important;\n}\n\n.subscriptionTitleBlock {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n/* .upload_widget>div>div>div>div{\n    display: none!important;\n  } */\n\n.profileText {\n    left: 0px !important;\n    top: 0px !important;\n    width: 100% !important;\n    padding: 0px !important;\n}\n\n.profileText span {\n    padding: 9px !important;\n}\n\n.profile_button button:nth-child(1) {\n    background: #3b82ff15 !important\n}\n\n.billing_button button:nth-child(2) {\n    background: #3b82ff15 !important\n}\n\n.profilePageTab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n\n.chatAnimationEffect textarea {\n    border-color: #66afe9 !important;\n    /* box-shadow: 0 0 8px rgba(102, 175, 233, 0.6) !important; */\n    background-color: #f0f8ff !important;\n    outline: none !important;\n    animation: pulse 1.5s infinite;\n}\n\n.chatAnimationEffect textarea {\n    /* width: 100% !important;\n    height: 100px !important; */\n    padding: 10px !important;\n    border: 2px solid #66afe9 !important;\n    border-radius: 4px !important;\n    font-size: 16px !important;\n    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s !important;\n    resize: none !important;\n}\n\n/* .chat_bot2 textarea::selection {\n    background-color: #66afe9 !important;\n    color: white !important;\n} */\n\n@keyframes pulse {\n    0% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n\n    50% {\n        box-shadow: 0 0 10px rgba(102, 175, 233, 0.8);\n    }\n\n    100% {\n        box-shadow: 0 0 1px rgba(102, 175, 233, 0.6);\n    }\n}\n\n@keyframes firework {\n    0% {\n        transform: translate(var(--x), var(--initialY));\n        width: var(--initialSize);\n        opacity: 1;\n    }\n\n    50% {\n        width: 0.5vmin;\n        opacity: 1;\n    }\n\n    100% {\n        width: var(--finalSize);\n        opacity: 0;\n    }\n}\n\n/* @keyframes fireworkPseudo {\n  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }\n  50% { width: 0.5vmin; opacity: 1; }\n  100% { width: var(--finalSize); opacity: 0; }\n}\n */\n.firework,\n.firework::before,\n.firework::after {\n    --initialSize: 0.5vmin;\n    --finalSize: 45vmin;\n    --particleSize: 0.2vmin;\n    --color1: yellow;\n    --color2: khaki;\n    --color3: white;\n    --color4: lime;\n    --color5: gold;\n    --color6: mediumseagreen;\n    --y: -30vmin;\n    --x: -50%;\n    --initialY: 60vmin;\n    content: \"\";\n    animation: firework 2s infinite;\n    position: absolute;\n    top: 40%;\n    left: 50%;\n    transform: translate(-50%, var(--y));\n    width: var(--initialSize);\n    aspect-ratio: 1;\n    background:\n        /*\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,\n    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,\n    */\n\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,\n\n        /* bottom right */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,\n\n        /* bottom left */\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,\n\n        /* top left */\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,\n        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,\n        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,\n        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,\n        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,\n        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,\n\n        /* top right */\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,\n        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;\n    background-size: var(--initialSize) var(--initialSize);\n    background-repeat: no-repeat;\n}\n\n.firework::before {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */\n    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework::after {\n    --x: -50%;\n    --y: -50%;\n    --initialY: -50%;\n    /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */\n    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);\n    /*   animation: fireworkPseudo 2s infinite; */\n}\n\n.firework:nth-child(2) {\n    --x: 30vmin;\n}\n\n.firework:nth-child(2),\n.firework:nth-child(2)::before,\n.firework:nth-child(2)::after {\n    --color1: rgb(255, 122, 145);\n    --color2: violet;\n    --color3: fuchsia;\n    --color4: orchid;\n    --color5: rgb(245, 2, 245);\n    --color6: rgb(6, 6, 240);\n    --finalSize: 40vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.25s;\n}\n\n.firework:nth-child(3) {\n    --x: -30vmin;\n    --y: -50vmin;\n}\n\n.firework:nth-child(3),\n.firework:nth-child(3)::before,\n.firework:nth-child(3)::after {\n    --color1: cyan;\n    --color2: rgb(0, 193, 148);\n    --color3: rgb(0, 191, 255);\n    --color4: PaleTurquoise;\n    --color5: SkyBlue;\n    --color6: rgb(0, 255, 110);\n    --finalSize: 35vmin;\n    left: 40%;\n    top: 50%;\n    animation-delay: -0.4s;\n}\n\n.fireworkContainer {\n    top: 0 !important;\n    width: 100% !important;\n    height: 100% !important;\n}\n\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n/* body {\n  background: #000;\n  background-image: radial-gradient(circle at top left, #000, #3c4858);\n} */\n@keyframes confetti {\n    0% {\n        top: 100%;\n    }\n\n    100% {\n        top: -100%;\n    }\n}\n\n@keyframes showAnimation {\n\n    0%,\n    10% {\n        opacity: 1;\n    }\n\n    90%,\n    100% {\n        opacity: 0;\n    }\n}\n\nbody {\n    background: #000;\n    background-image: radial-gradient(circle at top left, #000, #3c4858);\n}\n\n.containerAnime {\n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n.parallax {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.parallax img {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    width: 100%;\n    height: auto;\n    transform: translateX(-50%) translateZ(0);\n    animation: confetti linear infinite, showAnimation linear infinite;\n}\n\n.parallax img:nth-child(1) {\n    animation-delay: -5s, 0s;\n    animation-duration: 5s, 10s;\n}\n\n.parallax img:nth-child(2) {\n    animation-delay: -10s, 0s;\n    animation-duration: 10s, 10s;\n}\n\n.parallax img:nth-child(3) {\n    animation-delay: -20s, 0s;\n    animation-duration: 20s, 10s;\n}\n\n.parallax img:nth-child(4) {\n    animation-delay: -30s, 0s;\n    animation-duration: 30s, 10s;\n}\n\n.parallax img:nth-child(5) {\n    animation-delay: -35s, 0s;\n    animation-duration: 35s, 10s;\n}\n\n.contactModal {\n    border-radius: 10px !important;\n}\n\n.subscriptionContainer>div>div>div>div>div>div>div>div>div>div>div>div>div {\n    display: flex !important;\n    flex-direction: row !important;\n    justify-content: center !important;\n}\n\n.subscriptionBlock {\n    position: initial !important;\n    margin-right: 12px !important;\n}\n\n.chatwoot_tab .selectedTab {\n    border-bottom: 1px solid #215484 !important;\n    box-shadow: none !important;\n\n}\n\n.chatwoot_tab>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.t--tabid-tab1 {\n    border-bottom: 1px solid lightgray !important;\n}\n\n.t--tabid-tab2 {\n    border-bottom: 1px solid lightgray;\n}\n\n.radioGroupSelector label {\n    font-size: 14px !important;\n}\n\n.radioGroupSelector>div>div>div>div>div {\n    justify-content: flex-start !important;\n}\n\n.radioGroupSelector .bp3-control input:checked~.bp3-control-indicator {\n    background: #215484 !important;\n}\n\n.trainingModal {\n    max-height: 100vh !important;\n    height: 100vh !important;\n    width: 50% !important;\n    max-width: 50% !important;\n    transform: translate3d(50%, 0px, 0px) !important;\n}\n\n.tabsTraining {\n    height: 96% !important;\n    width: 98% !important;\n}\n\n.fullWidthContainer {\n    width: 96% !important;\n}\n\n.separatorWidthContainer {\n    width: 90% !important;\n}\n\n.separatorWidthButton {\n    /* width: 5; */\n    left: 91% !important;\n}\n\n.trainingModalButton {\n    width: 150px !important;\n    left: calc(100% - 175px) !important;\n}\n\n.headerMenuButton button {\n    justify-content: flex-end !important;\n}\n\n.tabWithOutBorder>div>div>div>div {\n    box-shadow: none !important;\n}\n\n.radioGroupIntegrationSelector label {\n    font-size: 18px !important;\n}\n\n.radioGroupIntegrationSelector>div>div>div>div>div {\n    justify-content: flex-start !important;\n}\n\n.radioGroupIntegrationSelector .bp3-control input:checked~.bp3-control-indicator {\n    background: #215484 !important;\n}\n\n\n.filterRadioGroup .bp3-control .bp3-control-indicator {\n    font-size: 1px !important;\n    margin: 0 !important;\n    margin-top: 5px !important;\n    /* background: rgb(82 82 82 / 75%) !important; */\n    box-shadow: none !important;\n    /* border: 1px solid rgb(82 82 82 / 75%) !important; */\n    width: calc(100% + 23px) !important;\n}\n\n.filterRadioGroup .bp3-control input:checked~.bp3-control-indicator {\n    background: rgb(59, 130, 255) !important;\n    box-shadow: none !important;\n    border: 1px solid rgb(59, 130, 255) !important;\n    width: calc(100% + 20px) !important;\n}\n\n.filterRadioGroup .bp3-control input:checked~.bp3-control-indicator {\n    background: rgb(59, 130, 255) !important;\n    box-shadow: none !important;\n    border: 1px solid rgb(59, 130, 255) !important;\n    width: calc(100% + 20px) !important;\n}\n\n.filterRadioGroup .bp3-control {\n    flex-direction: column-reverse !important;\n    padding: 0px 10px !important;\n    justify-content: flex-start !important;\n    border: none !important;\n}\n\n.filterRadioGroup>div>div>div>div>div {\n    flex-direction: column-reverse !important;\n    align-content: flex-start !important;\n    flex-wrap: wrap !important;\n}\n\n.filterRadioGroup label {\n    margin: 0 !important;\n    font-size: 18px !important;\n}\n\n.infoContainer>div>div>div>div>div {\n    border-radius: 5px !important;\n}\n\n.testtrainingModal>div>div>div>div>div>div>div>div {\n    height: 96vh !important;\n}\n\n.customWidgetCall {\n    height: 100% !important;\n}\n\n.customWidgetCall iframe {\n    border-width: 0 !important;\n}\n\n.testtrainingModal>div>div>div>div>div {\n    height: 99vh !important;\n}\n\n.testtrainingModal {\n    max-height: 100vh !important;\n    height: 100vh !important;\n    width: 80% !important;\n    max-width: 80% !important;\n    transform: translate3d(20%, 0px, 0px) !important;\n}\n\n.customWidgetCalendlly {\n    height: 100% !important;\n    border-width: 0 !important;\n}\n\n.customWidgetCalendlly iframe {\n    border-width: 0 !important;\n}\n\n\n\n.chatWrapperHome>div>div>div>div>div>div>div>div>div>div {\n    height: 100% !important;\n}\n\n.chatWrapperHome {\n    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px !important; */\n    border-radius: 10px;\n    /* top: 10px !important; */\n    /* padding: 0px !important; */\n    height: 90% !important;\n}\n\n.chatWrapperHome>div>div>div>div {\n    border-radius: 10px;\n}\n\n.googleDocModal .t--widget-iframewidget {\n    width: 99% !important;\n    height: 99% !important;\n}\n\n.googleDocModal>div>div>div>div>Div {\n    height: 99% !important;\n}\n\n.agentSwitch span {\n    background: #215484 !important;\n    border: 1px solid #215484 !important;\n}\n\n.displayNone {\n    display: none !important;\n}",
         "output": "str",
         "x": 280,
         "y": 140,
@@ -28214,7 +28234,7 @@
         "type": "function",
         "z": "89d469e7329bee96",
         "name": "set ",
-        "func": "msg.payload = {\n    ownerId: ''\n}\n\n// msg.payload = {\n//     // $set: {\n//         // \"agents.orderManager.productBaseId\":''\n//     // }\n// }\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "func": "msg.payload = {\n   \"agents.orderManager.productBaseId\":{$exists:true}\n}\n\n// msg.payload = {\n//     // $set: {\n//         // \"agents.orderManager.productBaseId\":''\n//     // }\n// }\n\nmsg.collection = 'credantials'\n\nreturn msg",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -33724,7 +33744,7 @@
         "finalize": "",
         "libs": [],
         "x": 550,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "a2bb362acd3c4a07"
@@ -33741,7 +33761,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 140,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "3638bebe2adbd2d8"
@@ -33765,7 +33785,7 @@
         "senderr": false,
         "headers": [],
         "x": 750,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "d53a7c675e5f00af"
@@ -33780,7 +33800,7 @@
         "statusCode": "",
         "headers": {},
         "x": 990,
-        "y": 100,
+        "y": 60,
         "wires": []
     },
     {
@@ -33793,7 +33813,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 200,
+        "y": 120,
         "wires": [
             [
                 "a773ba121eaa8e0c"
@@ -33805,7 +33825,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "req to main",
-        "func": "msg.query = {\n    email: msg.payload.email\n}\nmsg.payload = {\n    $set: {\n        subscription: 'active',\n        'subscriptionType': msg.payload.type,\n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nmsg.collection = \"admins\";\n\nreturn msg;",
+        "func": "msg.query = {\n    email: msg.payload.email\n}\nmsg.payload = {\n    $set: {\n        \"сhatbotStatus\": \"on\",\n        subscription: 'active',\n        'subscriptionType': msg.payload.type,\n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nmsg.collection = \"admins\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -33813,7 +33833,7 @@
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 200,
+        "y": 120,
         "wires": [
             [
                 "4a2e37d0d44d5053"
@@ -33831,7 +33851,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 600,
-        "y": 200,
+        "y": 120,
         "wires": [
             []
         ]
@@ -33846,7 +33866,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "63aa655840ad3c58",
@@ -33859,7 +33879,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "updare user",
-        "func": "msg.collection = \"admins\";\nmsg.email = msg.payload.email;\nmsg.query = {\n        \"_id\": objectid(msg.payload._id)\n};\n\nmsg.payload = {\n        $set: {\n                \"reasonCancelDescription\": msg.payload.description,\n                \"subscriptionType\": \"Free Trial\"\n        },\n        $unset: {\n                subscription: \"\"\n        }\n};\n\nreturn msg;",
+        "func": "msg.collection = \"admins\";\nmsg.email = msg.payload.email;\nmsg.query = {\n        \"_id\": objectid(msg.payload._id)\n};\n\nmsg.payload = {\n        $set: {\n                \"сhatbotStatus\": \"off\",\n                \"reasonCancelDescription\": msg.payload.description,\n                \"subscriptionType\": \"Free Trial\"\n        },\n        $unset: {\n                subscription: \"\"\n        }\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -33872,11 +33892,12 @@
             }
         ],
         "x": 490,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "2ba6edebc4c8978b",
-                "bf67f1738ca43772"
+                "bf67f1738ca43772",
+                "a5dec18a80024cae"
             ]
         ]
     },
@@ -33891,7 +33912,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 680,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "b291e6bbdb701afb"
@@ -33906,7 +33927,7 @@
         "statusCode": "200",
         "headers": {},
         "x": 1520,
-        "y": 440,
+        "y": 380,
         "wires": []
     },
     {
@@ -33926,7 +33947,7 @@
         "senderr": false,
         "headers": [],
         "x": 1350,
-        "y": 460,
+        "y": 400,
         "wires": [
             [
                 "09fac83044a38c94"
@@ -33946,7 +33967,7 @@
         "finalize": "",
         "libs": [],
         "x": 1130,
-        "y": 460,
+        "y": 400,
         "wires": [
             [
                 "f0bc247234d42218"
@@ -33959,7 +33980,7 @@
         "z": "8e28b03506d3f6e2",
         "name": "",
         "x": 370,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "cda14fc6efad4836"
@@ -33972,7 +33993,7 @@
         "z": "8e28b03506d3f6e2",
         "name": "",
         "x": 350,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "f826a6e294e92419"
@@ -35171,7 +35192,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "function 731",
-        "func": "\nmsg.stripe_token =  msg.payload[0].stripeApiKey\n\n \n// msg.url = `https://api.stripe.com/v1/checkout/sessions?customer=${msg.payload.id}&mode=setup&success_url=https://aibotui-6856-656f07128ab32b12000001b8.ubos.tech/Subscription?branch=main&payment_method_types[]=card&metadata[botProsubscription=true]`\nmsg.url = `https://api.stripe.com/v1/customers/${msg.userInfo[0]._id}`\n\nmsg.payload = {}\n\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": msg.stripe_token\n}\nreturn msg;",
+        "func": "msg.stripe_token = msg.payload[0].stripeApiKey;\n\nmsg.url = `https://api.stripe.com/v1/customers/search?query=email:\"${msg.userInfo[0].email}\"`;\n\nmsg.payload = {};\n\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": `${msg.stripe_token}`\n};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -35191,7 +35212,7 @@
         "type": "http request",
         "z": "8e28b03506d3f6e2",
         "name": "",
-        "method": "POST",
+        "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
         "url": "",
@@ -35206,6 +35227,7 @@
         "y": 1560,
         "wires": [
             [
+                "a87f99c8fc4bc387",
                 "12ebabd2dc4c9554"
             ]
         ],
@@ -35351,7 +35373,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "function 735",
-        "func": "if (msg.payload.data.object?.metadata?.proBotSubscription) {\n    msg.customer = msg.payload.data.object.customer;\n    msg.subscription = msg.payload.data.object.subscription;\n    return msg;\n}",
+        "func": "if (msg.payload.data.object?.metadata?.proBotSubscription) {\n    msg.email = msg.payload.data.object.customer_details.email;\n    msg.customer = msg.payload.data.object.customer;\n    msg.subscription = msg.payload.data.object.subscription;\n    return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -35362,7 +35384,8 @@
         "y": 2200,
         "wires": [
             [
-                "b4dacdad40c1fca3"
+                "b4dacdad40c1fca3",
+                "43c6c28f715e52e4"
             ]
         ]
     },
@@ -35371,7 +35394,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "req to main",
-        "func": "msg.query = {\n    _id: objectid(msg.customer)\n}\nmsg.payload = {\n    $set: {\n        subscription: 'active',\n        subscriptionId: msg.payload.data.object.subscription,\n        subscriptionType: 'Pro',\n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nmsg.collection = \"admins\";\n\nreturn msg;",
+        "func": "msg.query = {\n    email: msg.email\n}\nmsg.payload = {\n    $set: {\n        \"сhatbotStatus\": \"on\",\n        subscription: 'active',\n        subscriptionId: msg.payload.data.object.subscription,\n        subscriptionType: 'Pro',\n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nmsg.collection = \"admins\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -35387,7 +35410,8 @@
         "y": 2200,
         "wires": [
             [
-                "6f4809c4967422f4"
+                "6f4809c4967422f4",
+                "dc017eb0bc580339"
             ]
         ]
     },
@@ -35397,14 +35421,16 @@
         "z": "8e28b03506d3f6e2",
         "name": "",
         "links": [
-            "c376fe5b44b98a93"
+            "d32400d69e4bfdfc"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 820,
+        "x": 830,
         "y": 2200,
         "wires": [
-            []
+            [
+                "1d94bde3aabed76c"
+            ]
         ]
     },
     {
@@ -35510,7 +35536,7 @@
             }
         ],
         "x": 850,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "b09aea6a43ace7cc",
@@ -35529,7 +35555,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 1010,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "b1af958396858d60"
@@ -35541,7 +35567,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "req ",
-        "func": "msg.url = `https://api.stripe.com/v1/subscriptions/${msg.fromFlow?.subscriptionId}`;\n\nmsg.headers = {\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Authorization\": msg.payload[0].stripeApiKey\n};\n\nmsg.payload = {};\n\nreturn msg;",
+        "func": "if (msg.payload.length >= 0) {\n    msg.url = `https://api.stripe.com/v1/subscriptions/${msg.fromFlow?.subscriptionId}`;\n\n    msg.headers = {\n        \"Content-Type\": \"application/x-www-form-urlencoded\",\n        \"Authorization\": msg.payload[0].stripeApiKey\n    };\n\n    msg.payload = {};\n\n    return msg;\n}",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -35549,7 +35575,7 @@
         "finalize": "",
         "libs": [],
         "x": 1170,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "34313f82c5a2a053",
@@ -35574,7 +35600,7 @@
         "senderr": false,
         "headers": [],
         "x": 1330,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "09fac83044a38c94",
@@ -35596,7 +35622,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 360,
-        "y": 380,
+        "y": 320,
         "wires": []
     },
     {
@@ -35612,8 +35638,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 480,
+        "x": 640,
+        "y": 320,
         "wires": []
     },
     {
@@ -35630,7 +35656,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 920,
-        "y": 340,
+        "y": 320,
         "wires": []
     },
     {
@@ -35647,7 +35673,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1260,
-        "y": 360,
+        "y": 300,
         "wires": []
     },
     {
@@ -35664,7 +35690,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1420,
-        "y": 380,
+        "y": 320,
         "wires": []
     },
     {
@@ -35888,6 +35914,320 @@
         "statusType": "auto",
         "x": 1020,
         "y": 2480,
+        "wires": []
+    },
+    {
+        "id": "a5dec18a80024cae",
+        "type": "delay",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 615,
+        "y": 420,
+        "wires": [
+            [
+                "0eb116cd9049bb1d",
+                "5a8f13866cdbaf06"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "0eb116cd9049bb1d",
+        "type": "http response",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 790,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5a8f13866cdbaf06",
+        "type": "function",
+        "z": "8e28b03506d3f6e2",
+        "name": "send email",
+        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Service Suspension Due to Unpaid Invoice</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Service Suspension Due to Unpaid Invoice</h2>\n        <p>Dear client,</p>\n        <p>We hope this message finds you well.</p>\n        <p>We would like to inform you that the operation of your bots has been temporarily suspended due to an outstanding unpaid invoice. To restore the service, please proceed with the payment at your earliest convenience.</p>\n        <p>If you have already made the payment, kindly disregard this message. Otherwise, we kindly request you to settle the outstanding amount to avoid further interruptions.</p>\n        <p>If you need any assistance or have questions regarding your payment, please feel free to contact us.</p>\n        <p>Thank you for your attention to this matter.</p>\n        <p>Best regards,<br>Prem digital</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = \"Service Suspension Due to Unpaid Invoice\";\nmsg.headers = { \"Content-Type\": \"text/html\" };\nmsg.email = { to: [msg.email] };\nmsg.email.from = \"no-reply@hellou.ai\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 480,
+        "wires": [
+            [
+                "177ff6d640bc978e"
+            ]
+        ]
+    },
+    {
+        "id": "177ff6d640bc978e",
+        "type": "email-send",
+        "z": "8e28b03506d3f6e2",
+        "transport": "8811753462c44796",
+        "from": "",
+        "to": "",
+        "cc": "",
+        "bcc": "",
+        "subject": "Service Suspension Due to Unpaid Invoice",
+        "contentType": "html",
+        "priority": "normal",
+        "name": "",
+        "x": 790,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2d882ba67aeb0a1",
+        "type": "http in",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "url": "/activateSubscription",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "ac9290c37aac605a",
+                "8a748d452b72f970"
+            ]
+        ]
+    },
+    {
+        "id": "ac9290c37aac605a",
+        "type": "subflow:80fb2b9342ac297f",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "6c1d2d6d037e94a5"
+            ]
+        ]
+    },
+    {
+        "id": "8a748d452b72f970",
+        "type": "debug",
+        "z": "8e28b03506d3f6e2",
+        "name": "debug 95",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6c1d2d6d037e94a5",
+        "type": "function",
+        "z": "8e28b03506d3f6e2",
+        "name": "updare user",
+        "func": "msg.collection = \"admins\";\nmsg.email = msg.payload.email;\n\nmsg.query = {\n        \"_id\": objectid(msg.payload._id)\n};\n\nmsg.payload = {\n        $set: {\n                \"сhatbotStatus\": \"on\",\n                subscription: 'active',\n                'subscriptionType': 'pro',\n                subscriptionCreatedAt: Date.now()\n        }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 490,
+        "y": 220,
+        "wires": [
+            [
+                "e1f41fd1ccbf4402",
+                "6c3bab49507a2e6a"
+            ]
+        ]
+    },
+    {
+        "id": "e1f41fd1ccbf4402",
+        "type": "link call",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "links": [
+            "c376fe5b44b98a93"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 680,
+        "y": 220,
+        "wires": [
+            [
+                "be50d7ada22abe28"
+            ]
+        ]
+    },
+    {
+        "id": "6c3bab49507a2e6a",
+        "type": "debug",
+        "z": "8e28b03506d3f6e2",
+        "name": "debug 96",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "be50d7ada22abe28",
+        "type": "delay",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 825,
+        "y": 220,
+        "wires": [
+            [
+                "1643e2390168e041",
+                "e6b1583adabe6577"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1643e2390168e041",
+        "type": "http response",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 950,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e6b1583adabe6577",
+        "type": "function",
+        "z": "8e28b03506d3f6e2",
+        "name": "send email",
+        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Your Bots Are Now Active</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Your Bots Are Now Active</h2>\n        <p>Dear client,</p>\n        <p>We are pleased to inform you that the operation of your bots has been successfully activated.</p>\n        <p>If you have any questions or need further assistance, please feel free to reach out to us.</p>\n        <p>Thank you for choosing our services.</p>\n        <p>Best regards,<br>Prem digital</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = \"Your Bots Are Now Active\";\nmsg.headers = { \"Content-Type\": \"text/html\" };\nmsg.email = { to: [msg.email] };\n// msg.email.from = \"no-reply@hellou.ai\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 280,
+        "wires": [
+            [
+                "c180a0bd932bb371"
+            ]
+        ]
+    },
+    {
+        "id": "c180a0bd932bb371",
+        "type": "email-send",
+        "z": "8e28b03506d3f6e2",
+        "transport": "8811753462c44796",
+        "from": "",
+        "to": "",
+        "cc": "",
+        "bcc": "",
+        "subject": "Your Bots Are Now Active",
+        "contentType": "html",
+        "priority": "normal",
+        "name": "",
+        "x": 1070,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43c6c28f715e52e4",
+        "type": "debug",
+        "z": "8e28b03506d3f6e2",
+        "name": "debug 97",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "dc017eb0bc580339",
+        "type": "debug",
+        "z": "8e28b03506d3f6e2",
+        "name": "debug 98",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "1d94bde3aabed76c",
+        "type": "debug",
+        "z": "8e28b03506d3f6e2",
+        "name": "debug 99",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 932.857177734375,
+        "y": 2145.71435546875,
         "wires": []
     },
     {
