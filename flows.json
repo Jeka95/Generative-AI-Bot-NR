@@ -36848,7 +36848,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
+        "x": 590,
         "y": 1080,
         "wires": [
             [
@@ -37240,6 +37240,71 @@
         "statusType": "auto",
         "x": 720,
         "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "585f9fcd82bfeeaf",
+        "type": "http in",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "url": "/stripePaymentSuccess",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 1640,
+        "wires": [
+            [
+                "2e42aacae0fba409",
+                "71e45f516047ccf5"
+            ]
+        ]
+    },
+    {
+        "id": "2e42aacae0fba409",
+        "type": "function",
+        "z": "8e28b03506d3f6e2",
+        "name": "req to main",
+        "func": "msg.query = {\n    role: 'admin'\n}\nmsg.payload = {\n    $set: {\n        \"сhatbotStatus\": \"on\",\n        subscription: 'active',\n        'subscriptionType': 'White Label',\n        subscriptionCreatedAt: Date.now()\n    }\n}\n\nmsg.collection = \"admins\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1640,
+        "wires": [
+            [
+                "983c19e75e2808f5"
+            ]
+        ]
+    },
+    {
+        "id": "983c19e75e2808f5",
+        "type": "link call",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "links": [
+            "d32400d69e4bfdfc"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 630,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71e45f516047ccf5",
+        "type": "http response",
+        "z": "8e28b03506d3f6e2",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 370,
+        "y": 1680,
         "wires": []
     },
     {
