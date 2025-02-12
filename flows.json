@@ -2596,89 +2596,9 @@
         "name": ""
     },
     {
-        "id": "f168eeb2f9b6dc07",
-        "type": "mongodb",
-        "hostname": "${VIDEOAIDB-MONGO-HOST-NAME}",
-        "topology": "direct",
-        "connectOptions": "authSource=admin",
-        "port": "27017",
-        "db": "${VIDEOAIDB-MONGO-DB-NAME}",
-        "name": ""
-    },
-    {
         "id": "92b09c9cd170f8a8",
         "type": "remote-server-collection",
         "host": "${VECTORDB-CHROMA-HOST-NAME}"
-    },
-    {
-        "id": "8509dadd0c052fa0",
-        "type": "telegram bot",
-        "botname": "VoiceTextUbosBot",
-        "usernames": "",
-        "chatids": "",
-        "baseapiurl": "",
-        "updatemode": "polling",
-        "pollinterval": "300",
-        "usesocks": false,
-        "sockshost": "",
-        "socksprotocol": "socks5",
-        "socksport": "6667",
-        "socksusername": "anonymous",
-        "sockspassword": "",
-        "bothost": "",
-        "botpath": "",
-        "localbotport": "8443",
-        "publicbotport": "8443",
-        "privatekey": "",
-        "certificate": "",
-        "useselfsignedcertificate": false,
-        "sslterminated": false,
-        "verboselogging": false
-    },
-    {
-        "id": "4b07803a52e468f5",
-        "type": "telegram bot",
-        "botname": "{global.get('telegram').BOT_NAME}",
-        "usernames": "",
-        "chatids": "",
-        "baseapiurl": "",
-        "updatemode": "polling",
-        "pollinterval": "300",
-        "usesocks": false,
-        "sockshost": "",
-        "socksprotocol": "socks5",
-        "socksport": "6667",
-        "socksusername": "anonymous",
-        "sockspassword": "",
-        "bothost": "",
-        "botpath": "",
-        "localbotport": "8443",
-        "publicbotport": "8443",
-        "privatekey": "",
-        "certificate": "",
-        "useselfsignedcertificate": false,
-        "sslterminated": false,
-        "verboselogging": false
-    },
-    {
-        "id": "172e96c2f2eff321",
-        "type": "email-transport",
-        "name": "gmail",
-        "host": "smtp.gmail.com",
-        "port": "465",
-        "secure": true,
-        "authType": "login",
-        "proxy": ""
-    },
-    {
-        "id": "8811753462c44796",
-        "type": "email-transport",
-        "name": "gmail",
-        "host": "smtp.gmail.com",
-        "port": "465",
-        "secure": true,
-        "authType": "login",
-        "proxy": ""
     },
     {
         "id": "c9b6f8d93e90bb91",
@@ -36663,7 +36583,7 @@
         "type": "function",
         "z": "8e28b03506d3f6e2",
         "name": "send email",
-        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Service Suspension Due to Unpaid Invoice</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Service Suspension Due to Unpaid Invoice</h2>\n        <p>Dear client,</p>\n        <p>We hope this message finds you well.</p>\n        <p>We would like to inform you that the operation of your bots has been temporarily suspended due to an outstanding unpaid invoice. To restore the service, please proceed with the payment at your earliest convenience.</p>\n        <p>If you have already made the payment, kindly disregard this message. Otherwise, we kindly request you to settle the outstanding amount to avoid further interruptions.</p>\n        <p>If you need any assistance or have questions regarding your payment, please feel free to contact us.</p>\n        <p>Thank you for your attention to this matter.</p>\n        <p>Best regards,<br>${msg.globalCred.companyName}</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = \"Service Suspension Due to Unpaid Invoice\";\nmsg.headers = { \"Content-Type\": \"text/html\" };\n\n\n\n\n// let nodemailer = global.get('nodemailer');\nlet transporter = nodemailer.createTransport({\n    service: 'gmail',\n    auth: {\n        user: msg.globalCred.companyEmail,\n        pass: msg.globalCred.googleAppPassword\n    }\n});\n\nlet mailOptions = {\n    from: msg.globalCred.companyEmail,\n    to: msg.email,\n    subject: msg.topic,\n    html: msg.payload\n};\n\ntransporter.sendMail(mailOptions, function(error, info){\n    if (error) {\n        node.error(error);\n    } else {\n        msg.payload = info.response;\n        node.send(msg);\n    }\n});\n\nreturn null;",
+        "func": "if (msg.globalCred.googleAppPassword) {\n    msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Service Suspension Due to Unpaid Invoice</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Service Suspension Due to Unpaid Invoice</h2>\n        <p>Dear client,</p>\n        <p>We hope this message finds you well.</p>\n        <p>We would like to inform you that the operation of your bots has been temporarily suspended due to an outstanding unpaid invoice. To restore the service, please proceed with the payment at your earliest convenience.</p>\n        <p>If you have already made the payment, kindly disregard this message. Otherwise, we kindly request you to settle the outstanding amount to avoid further interruptions.</p>\n        <p>If you need any assistance or have questions regarding your payment, please feel free to contact us.</p>\n        <p>Thank you for your attention to this matter.</p>\n        <p>Best regards,<br>${msg.globalCred.companyName}</p>\n    </div>\n</body>\n</html>\n`;\n\n    msg.topic = \"Service Suspension Due to Unpaid Invoice\";\n    msg.headers = { \"Content-Type\": \"text/html\" };\n\n\n\n\n    // let nodemailer = global.get('nodemailer');\n    let transporter = nodemailer.createTransport({\n        service: 'gmail',\n        auth: {\n            user: msg.globalCred.companyEmail,\n            pass: msg.globalCred.googleAppPassword\n        }\n    });\n\n    let mailOptions = {\n        from: msg.globalCred.companyEmail,\n        to: msg.email,\n        subject: msg.topic,\n        html: msg.payload\n    };\n\n    transporter.sendMail(mailOptions, function (error, info) {\n        if (error) {\n            node.error(error);\n        } else {\n            msg.payload = info.response;\n            node.send(msg);\n        }\n    });\n\n    return null;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -36676,25 +36596,6 @@
             }
         ],
         "x": 1030,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "177ff6d640bc978e",
-        "type": "email-send",
-        "z": "8e28b03506d3f6e2",
-        "transport": "8811753462c44796",
-        "from": "",
-        "to": "",
-        "cc": "",
-        "bcc": "",
-        "subject": "Service Suspension Due to Unpaid Invoice",
-        "contentType": "html",
-        "priority": "normal",
-        "name": "",
-        "x": 1330,
         "y": 460,
         "wires": [
             []
@@ -36812,25 +36713,6 @@
             }
         ],
         "x": 1070,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c180a0bd932bb371",
-        "type": "email-send",
-        "z": "8e28b03506d3f6e2",
-        "transport": "8811753462c44796",
-        "from": "",
-        "to": "",
-        "cc": "",
-        "bcc": "",
-        "subject": "Your Bots Are Now Active",
-        "contentType": "html",
-        "priority": "normal",
-        "name": "",
-        "x": 1270,
         "y": 260,
         "wires": [
             []
