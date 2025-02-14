@@ -29657,7 +29657,7 @@
         "type": "function",
         "z": "978a652ce4efa841",
         "name": "set webhook",
-        "func": "msg.fromApp = msg.payload;\nmsg.url = `https://aibotv3-nr-3147-6746db2ccc7268110000010e.aibotdevlarge.ubos.tech/api/6746f30af85690140000000f`\nmsg.payload = {\n    \"id\": \"sdvt123456\",\n    \"message\": \"Your webhook is successfully connected! 🎉\",\n    \"userName\": \"Alex\"\n};\n\nreturn msg;",
+        "func": "msg.fromApp = msg.payload;\nmsg.url = `https://aibotv3-nr-3189-6798ae30978bd0110000008d.hellou.ubos.tech/api/67af293cb02c1717000000a6`\nmsg.payload = {\n    \"id\": \"sdvt123івса456\",\n    \"message\": \"Гаєм Гаєм? як далі?\",\n    \"userName\": \"Alex\"\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
