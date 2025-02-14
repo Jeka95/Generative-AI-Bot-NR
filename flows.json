@@ -725,7 +725,8 @@
             "35f938f34cde871c",
             "14d71247d69f1e49",
             "22c390e1ef033dc2",
-            "2dde3db695c3bd7b"
+            "2dde3db695c3bd7b",
+            "f5f54f7993d1e989"
         ],
         "x": 1334,
         "y": 719,
@@ -22972,7 +22973,7 @@
         "z": "03c90c9549e285da",
         "g": "f15848c2b1260164",
         "name": "function 809",
-        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Welcome to ${msg.globalCred.companyName}</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Welcome to ${msg.globalCred.companyName}!</h2>\n        <p>Thank you for registering on our platform.</p>\n        <p><strong>Email:</strong> ${msg.user.email}</p>\n        <p><strong>Password:</strong> ${msg.password}</p>\n        <p>You can log in using the button below:</p>\n        <a class=\"button\" href=\"${msg.globalCred.chatDashboardURL}\" target=\"_blank\">Log in to ${msg.globalCred.companyName}</a>\n        <p class=\"footer\">If you didn't register, please ignore this email.</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = `Welcome to ${msg.globalCred.companyName}`;\nmsg.headers = { \"Content-Type\": \"text/html\" };\n\nlet transporter = nodemailer.createTransport({\n    service: 'gmail',\n    auth: {\n        user: msg.globalCred.companyEmail,\n        pass: msg.globalCred.googleAppPassword\n    }\n});\n\nlet mailOptions = {\n    from: msg.globalCred.companyEmail,\n    to: msg.user.email,\n    subject: msg.topic,\n    html: msg.payload\n};\n\ntransporter.sendMail(mailOptions, function (error, info) {\n    if (error) {\n        node.error(error);\n    } else {\n        msg.payload = info.response;\n        node.send(msg);\n    }\n});\n\nreturn null;\n\n",
+        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Welcome to ${msg.globalCred.companyName}</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Welcome to ${msg.globalCred.companyName}!</h2>\n        <p>Thank you for registering on our platform.</p>\n        <p><strong>Email:</strong> ${msg.user.email}</p>\n        <p><strong>Password:</strong> ${msg.password}</p>\n        <p>You can log in using the button below:</p>\n        <a class=\"button\" href=\"${msg.globalCred.chatDashboardURL}\" target=\"_blank\">Log in to ${msg.globalCred.companyName}</a>\n        <p class=\"footer\">If you didn't register, please ignore this email.</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = `Welcome to ${msg.globalCred.companyName}`;\nmsg.headers = { \"Content-Type\": \"text/html\" };\n\nlet transporter = nodemailer.createTransport({\n    host: msg.globalCred.host, // SMTP сервер\n    port: 465, // 465 (SSL) або 587 (TLS)\n    secure: true, // true для 465, false для 587\n    auth: {\n        user: msg.globalCred.companyEmail, // Email-адреса, з якої надсилаємо\n        pass: msg.globalCred.emailPassword// Пароль від поштової скриньки \n    }\n});\n\nlet mailOptions = {\n    from: msg.globalCred.companyEmail,\n    to: msg.user.email,\n    subject: msg.topic,\n    html: msg.payload\n};\n\ntransporter.sendMail(mailOptions, function (error, info) {\n    if (error) {\n        node.error(error);\n    } else {\n        msg.payload = info.response;\n        node.send(msg);\n    }\n});\n\nreturn null;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -22987,7 +22988,9 @@
         "x": 3290,
         "y": 840,
         "wires": [
-            []
+            [
+                "f5f54f7993d1e989"
+            ]
         ]
     },
     {
@@ -23579,6 +23582,83 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "36600be20bba810b",
+        "type": "inject",
+        "z": "03c90c9549e285da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3520,
+        "y": 1040,
+        "wires": [
+            [
+                "70e03f9b4b2bc426"
+            ]
+        ]
+    },
+    {
+        "id": "70e03f9b4b2bc426",
+        "type": "subflow:2dc3d2afd3f8228d",
+        "z": "03c90c9549e285da",
+        "name": "",
+        "x": 3520,
+        "y": 960,
+        "wires": [
+            [
+                "7329cc36aba68742"
+            ]
+        ]
+    },
+    {
+        "id": "7329cc36aba68742",
+        "type": "debug",
+        "z": "03c90c9549e285da",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3720,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "f5f54f7993d1e989",
+        "type": "debug",
+        "z": "03c90c9549e285da",
+        "g": "f15848c2b1260164",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3320,
+        "y": 800,
+        "wires": []
     },
     {
         "id": "3f57ffa92909b72f",
@@ -29657,7 +29737,7 @@
         "type": "function",
         "z": "978a652ce4efa841",
         "name": "set webhook",
-        "func": "msg.fromApp = msg.payload;\nmsg.url = `https://aibotv3-nr-3189-6798ae30978bd0110000008d.hellou.ubos.tech/api/67af293cb02c1717000000a6`\nmsg.payload = {\n    \"id\": \"sdvt123івса456\",\n    \"message\": \"Гаєм Гаєм? як далі?\",\n    \"userName\": \"Alex\"\n};\n\nreturn msg;",
+        "func": "msg.fromApp = msg.payload;\nmsg.url = `https://aibotv3-nr-9687-658ad621387fb711000001e1.ubos.tech/api/6696420a9bcc391100000196`\nmsg.payload = {\n    \"id\": \"sdvt123івса456\",\n    \"message\": \"Гаєм Гаєм? як далі?\",\n    \"userName\": \"Alex\"\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -37630,7 +37710,7 @@
         "type": "function",
         "z": "3637928543b0f4e6",
         "name": "send email",
-        "func": "if (msg.globalCred.googleAppPassword) {\n    msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Service Suspension Due to Unpaid Invoice</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Service Suspension Due to Unpaid Invoice</h2>\n        <p>Dear client,</p>\n        <p>We hope this message finds you well.</p>\n        <p>We would like to inform you that the operation of your bots has been temporarily suspended due to an outstanding unpaid invoice. To restore the service, please proceed with the payment at your earliest convenience.</p>\n        <p>If you have already made the payment, kindly disregard this message. Otherwise, we kindly request you to settle the outstanding amount to avoid further interruptions.</p>\n        <p>If you need any assistance or have questions regarding your payment, please feel free to contact us.</p>\n        <p>Thank you for your attention to this matter.</p>\n        <p>Best regards,<br>${msg.globalCred.companyName}</p>\n    </div>\n</body>\n</html>\n`;\n\n    msg.topic = \"Service Suspension Due to Unpaid Invoice\";\n    msg.headers = { \"Content-Type\": \"text/html\" };\n\n\n\n\n    // let nodemailer = global.get('nodemailer');\n    let transporter = nodemailer.createTransport({\n        service: 'gmail',\n        auth: {\n            user: msg.globalCred.companyEmail,\n            pass: msg.globalCred.googleAppPassword\n        }\n    });\n\n    let mailOptions = {\n        from: msg.globalCred.companyEmail,\n        to: msg.email,\n        subject: msg.topic,\n        html: msg.payload\n    };\n\n    transporter.sendMail(mailOptions, function (error, info) {\n        if (error) {\n            node.error(error);\n        } else {\n            msg.payload = info.response;\n            node.send(msg);\n        }\n    });\n\n    return null;\n}",
+        "func": "\n    msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Service Suspension Due to Unpaid Invoice</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Service Suspension Due to Unpaid Invoice</h2>\n        <p>Dear client,</p>\n        <p>We hope this message finds you well.</p>\n        <p>We would like to inform you that the operation of your bots has been temporarily suspended due to an outstanding unpaid invoice. To restore the service, please proceed with the payment at your earliest convenience.</p>\n        <p>If you have already made the payment, kindly disregard this message. Otherwise, we kindly request you to settle the outstanding amount to avoid further interruptions.</p>\n        <p>If you need any assistance or have questions regarding your payment, please feel free to contact us.</p>\n        <p>Thank you for your attention to this matter.</p>\n        <p>Best regards,<br>${msg.globalCred.companyName}</p>\n    </div>\n</body>\n</html>\n`;\n\n    msg.topic = \"Service Suspension Due to Unpaid Invoice\";\n    msg.headers = { \"Content-Type\": \"text/html\" };\n\n    let transporter = nodemailer.createTransport({\n        host: msg.globalCred.host, // SMTP сервер\n        port: 465, // 465 (SSL) або 587 (TLS)\n        secure: true, // true для 465, false для 587\n        auth: {\n            user: msg.globalCred.companyEmail, // Email-адреса, з якої надсилаємо\n            pass: msg.globalCred.emailPassword\n        }\n    });\n\n    let mailOptions = {\n        from: msg.globalCred.companyEmail,\n        to: msg.fromFlow.email,\n        subject: msg.topic,\n        html: msg.payload\n    };\n\n    transporter.sendMail(mailOptions, function (error, info) {\n        if (error) {\n            node.error(error);\n        } else {\n            msg.payload = info.response;\n            node.send(msg);\n        }\n    });\n\n    return null;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -37747,7 +37827,7 @@
         "type": "function",
         "z": "3637928543b0f4e6",
         "name": "send email",
-        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Your Bots Are Now Active</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Your Bots Are Now Active</h2>\n        <p>Dear client,</p>\n        <p>We are pleased to inform you that the operation of your bots has been successfully activated.</p>\n        <p>If you have any questions or need further assistance, please feel free to reach out to us.</p>\n        <p>Thank you for choosing our services.</p>\n        <p>Best regards,<br>${msg.globalCred.companyName}</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = \"Your Bots Are Now Active\";\nmsg.headers = { \"Content-Type\": \"text/html\" };\n// msg.email = { to: [msg.email] };\n\n\nlet transporter = nodemailer.createTransport({\n    service: 'gmail',\n    auth: {\n        user: msg.globalCred.companyEmail,\n        pass: msg.globalCred.googleAppPassword\n    }\n});\n\nlet mailOptions = {\n    from: msg.globalCred.companyEmail,\n    to: msg.email,\n    subject: msg.topic,\n    html: msg.payload\n};\n\ntransporter.sendMail(mailOptions, function(error, info){\n    if (error) {\n        node.error(error);\n    } else {\n        msg.payload = info.response;\n        node.send(msg);\n    }\n});\n\nreturn null;\n\n",
+        "func": "msg.payload = `\n<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Your Bots Are Now Active</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f4f4f4;\n            padding: 20px;\n            text-align: center;\n        }\n        .container {\n            background-color: #ffffff;\n            padding: 20px;\n            border-radius: 10px;\n            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);\n            max-width: 500px;\n            margin: 0 auto;\n        }\n        h2 {\n            color: #333;\n        }\n        p {\n            color: #555;\n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button {\n            display: inline-block;\n            background-color: rgb(3, 46, 214);\n            color: white !important;\n            padding: 12px 20px;\n            text-decoration: none;\n            border-radius: 5px;\n            font-weight: bold;\n            margin-top: 20px;\n        }\n        .footer {\n            font-size: 12px;\n            color: #999;\n            margin-top: 20px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Your Bots Are Now Active</h2>\n        <p>Dear client,</p>\n        <p>We are pleased to inform you that the operation of your bots has been successfully activated.</p>\n        <p>If you have any questions or need further assistance, please feel free to reach out to us.</p>\n        <p>Thank you for choosing our services.</p>\n        <p>Best regards,<br>${msg.globalCred.companyName}</p>\n    </div>\n</body>\n</html>\n`;\n\nmsg.topic = \"Your Bots Are Now Active\";\nmsg.headers = { \"Content-Type\": \"text/html\" };\n// msg.email = { to: [msg.email] };\n\nlet transporter = nodemailer.createTransport({\n    host: msg.globalCred.host, // SMTP сервер\n    port: 465, // 465 (SSL) або 587 (TLS)\n    secure: true, // true для 465, false для 587\n    auth: {\n        user: msg.globalCred.companyEmail, // Email-адреса, з якої надсилаємо\n        pass: msg.globalCred.emailPassword\n    }\n});\n\nlet mailOptions = {\n    from: msg.globalCred.companyEmail,\n    to: msg.fromFlow.email,\n    subject: msg.topic,\n    html: msg.payload\n};\n\ntransporter.sendMail(mailOptions, function (error, info) {\n    if (error) {\n        node.error(error);\n    } else {\n        msg.payload = info.response;\n        node.send(msg);\n    }\n});\n\nreturn null;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -37894,7 +37974,8 @@
         "y": 260,
         "wires": [
             [
-                "544a3f903e5e3b4e"
+                "544a3f903e5e3b4e",
+                "92b7936dcaed3369"
             ]
         ]
     },
@@ -37907,7 +37988,8 @@
         "y": 460,
         "wires": [
             [
-                "24cc7c9e065e8abb"
+                "24cc7c9e065e8abb",
+                "2bc70f653ddb3a8b"
             ]
         ]
     },
@@ -38234,6 +38316,40 @@
         "headers": {},
         "x": 370,
         "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "2bc70f653ddb3a8b",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "92b7936dcaed3369",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1086,
+        "y": 213,
         "wires": []
     },
     {
