@@ -2495,7 +2495,8 @@
             "55f7dc5339f394e6",
             "7d6d7f2af5c9cf4e",
             "fd11a95e2f6e1701",
-            "54786ff961aa66f2"
+            "54786ff961aa66f2",
+            "809345e5e3e0ace3"
         ],
         "x": 54,
         "y": 1439,
@@ -28376,7 +28377,8 @@
         "y": 1860,
         "wires": [
             [
-                "a560e15e9e3d8047"
+                "a560e15e9e3d8047",
+                "d0b8ddc33705b935"
             ]
         ]
     },
@@ -29916,6 +29918,578 @@
         "statusType": "auto",
         "x": 1080,
         "y": 3200,
+        "wires": []
+    },
+    {
+        "id": "e280a427cd63f65e",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "get actions",
+        "func": "msg.url = msg.payload.url.trim()\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 4100,
+        "wires": [
+            [
+                "eaf2e00524217a7d",
+                "dae142914735d9e7"
+            ]
+        ]
+    },
+    {
+        "id": "29c15c670b7d8459",
+        "type": "http in",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "url": "/getActionList",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 4100,
+        "wires": [
+            [
+                "f97e229ff5bd48a0"
+            ]
+        ]
+    },
+    {
+        "id": "eaf2e00524217a7d",
+        "type": "http request",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 610,
+        "y": 4100,
+        "wires": [
+            [
+                "392f5da1b2d9204c",
+                "dae142914735d9e7"
+            ]
+        ]
+    },
+    {
+        "id": "392f5da1b2d9204c",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "check res",
+        "func": "if (msg.statusCode === 200) {\n    msg.actions = msg.payload;\n    msg.payload={\n        message: \"Data received successfully\",\n        actions: msg.actions.actionInfo\n    }\n    return msg;\n}else{\n    msg.payload = {\n        message: \"Something went wrong\"\n    }\n    return  msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 4100,
+        "wires": [
+            [
+                "41d039e640d04a34"
+            ]
+        ]
+    },
+    {
+        "id": "41d039e640d04a34",
+        "type": "http response",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 4100,
+        "wires": []
+    },
+    {
+        "id": "7b05bc7aa089373c",
+        "type": "link call",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "links": [
+            "16c7b9116fb6eeb4"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1140,
+        "y": 4000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f97e229ff5bd48a0",
+        "type": "subflow:5f2f25b5d53bc976",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "x": 310,
+        "y": 4100,
+        "wires": [
+            [
+                "e280a427cd63f65e"
+            ]
+        ]
+    },
+    {
+        "id": "7cd273f09aa06381",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "save",
+        "func": "msg.collection = 'credantials';\n\nmsg.query = {\n    ownerId: msg.userInfo[0]._id.toString()\n};\n\nmsg.payload = {\n    $set: {\n        \"api.callback\": msg.fromApp.apiCallback,\n        \"api.knowledge_baseName\": msg.fromApp.knowledge_baseName,\n        \"api.knowledge_baseType\": msg.fromApp.knowledge_baseType,\n        \"api.id_base\": msg.fromApp.id_base\n    }\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 4000,
+        "wires": [
+            [
+                "7b05bc7aa089373c"
+            ]
+        ]
+    },
+    {
+        "id": "dae142914735d9e7",
+        "type": "debug",
+        "z": "978a652ce4efa841",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 3980,
+        "wires": []
+    },
+    {
+        "id": "ab3567a7f340ebc1",
+        "type": "http in",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "url": "/getCustomAgent",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 4180,
+        "wires": [
+            [
+                "73536c0256bdf6e6"
+            ]
+        ]
+    },
+    {
+        "id": "9344ebb3b8058852",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "function 817",
+        "func": "msg.payload = {\n    ownerId:msg.userInfo[0]._id.toString()\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 4180,
+        "wires": [
+            [
+                "31eac1ce1cf8e36a"
+            ]
+        ]
+    },
+    {
+        "id": "ab2790b4d98eacd8",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "function 818",
+        "func": "msg.payload =  Object.values(msg.payload[0]?.agents).filter(item => item.subType === \"customAgent\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 4180,
+        "wires": [
+            [
+                "f3218bfc91e004e8"
+            ]
+        ]
+    },
+    {
+        "id": "31eac1ce1cf8e36a",
+        "type": "link call",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "links": [
+            "6c1aea0fff8ff1c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 690,
+        "y": 4180,
+        "wires": [
+            [
+                "ab2790b4d98eacd8"
+            ]
+        ]
+    },
+    {
+        "id": "f3218bfc91e004e8",
+        "type": "http response",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1010,
+        "y": 4180,
+        "wires": []
+    },
+    {
+        "id": "78a21e6d12b3e228",
+        "type": "http in",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "url": "/saveCustomAgent",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 4360,
+        "wires": [
+            [
+                "acfc143131d2fa04"
+            ]
+        ]
+    },
+    {
+        "id": "acfc143131d2fa04",
+        "type": "subflow:5f2f25b5d53bc976",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "x": 410,
+        "y": 4360,
+        "wires": [
+            [
+                "a317e1daaf9c871a",
+                "ab341da59d659b7d"
+            ]
+        ]
+    },
+    {
+        "id": "a317e1daaf9c871a",
+        "type": "http response",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 4400,
+        "wires": []
+    },
+    {
+        "id": "ab341da59d659b7d",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "set ",
+        "func": "msg.query = {\n    ownerId: msg.userInfo[0]._id.toString()\n}\n\nmsg.payload = {\n    $set: {\n        [`agents.${msg.payload.type}.integration`]: msg.payload.name,\n        [`agents.${msg.payload.type}.actions`]: msg.fromFlow.selectedActions,\n        [`agents.${msg.payload.type}.channels`]: msg.fromFlow.channels,\n        [`agents.${msg.payload.type}.fullActions`]: msg.fromFlow.actions,\n        [`agents.${msg.payload.type}.actionURL`]: msg.fromFlow.actionURL,\n        [`agents.${msg.payload.type}.mainURL`]: msg.fromFlow.mainURL,\n        [`agents.${msg.payload.type}.subType`]: 'customAgent',\n        [`agents.${msg.payload.type}.type`]: msg.fromFlow.type\n    }\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 4360,
+        "wires": [
+            [
+                "77dadee44b6bab67",
+                "7b0bc832d05efa8c"
+            ]
+        ]
+    },
+    {
+        "id": "77dadee44b6bab67",
+        "type": "link call",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "links": [
+            "16c7b9116fb6eeb4"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 800,
+        "y": 4360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0b8ddc33705b935",
+        "type": "debug",
+        "z": "978a652ce4efa841",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "73536c0256bdf6e6",
+        "type": "subflow:5f2f25b5d53bc976",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "x": 370,
+        "y": 4180,
+        "wires": [
+            [
+                "9344ebb3b8058852"
+            ]
+        ]
+    },
+    {
+        "id": "7b0bc832d05efa8c",
+        "type": "debug",
+        "z": "978a652ce4efa841",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 4300,
+        "wires": []
+    },
+    {
+        "id": "c0c51f235cd7733e",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "function 819",
+        "func": "msg.payload = {\n    ownerId:'6746f30af85690140000000f'\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 4240,
+        "wires": [
+            [
+                "77c5b0a0cbb83ec0"
+            ]
+        ]
+    },
+    {
+        "id": "77c5b0a0cbb83ec0",
+        "type": "link call",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "links": [
+            "6c1aea0fff8ff1c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 590,
+        "y": 4240,
+        "wires": [
+            [
+                "d1150b6aced4ed03"
+            ]
+        ]
+    },
+    {
+        "id": "5920dd9fa0634d73",
+        "type": "inject",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 4240,
+        "wires": [
+            [
+                "c0c51f235cd7733e"
+            ]
+        ]
+    },
+    {
+        "id": "22a7d31c64cd2f7f",
+        "type": "debug",
+        "z": "978a652ce4efa841",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 4240,
+        "wires": []
+    },
+    {
+        "id": "d1150b6aced4ed03",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "function 820",
+        "func": "msg.payload =  Object.values(msg.payload[0]?.agents).filter(item => item.subType === \"customAgent\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 4240,
+        "wires": [
+            [
+                "22a7d31c64cd2f7f"
+            ]
+        ]
+    },
+    {
+        "id": "4604c415b8851093",
+        "type": "http in",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "url": "/deleteCustomAgent",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 4520,
+        "wires": [
+            [
+                "16ce5117824f2393"
+            ]
+        ]
+    },
+    {
+        "id": "16ce5117824f2393",
+        "type": "subflow:5f2f25b5d53bc976",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "x": 430,
+        "y": 4520,
+        "wires": [
+            [
+                "7355d8f0978fdeee",
+                "a6b6d7aafe57367a"
+            ]
+        ]
+    },
+    {
+        "id": "7355d8f0978fdeee",
+        "type": "http response",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 4560,
+        "wires": []
+    },
+    {
+        "id": "a6b6d7aafe57367a",
+        "type": "function",
+        "z": "978a652ce4efa841",
+        "name": "set ",
+        "func": "msg.query = {\n    ownerId: msg.userInfo[0]._id.toString()\n}\n\nmsg.payload = {\n    $unset: {\n        [`agents.${msg.payload.type}`]: ''\n    }\n}\n\nmsg.collection = 'credantials'\n\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 4520,
+        "wires": [
+            [
+                "a9e4ba0d2d8200b5",
+                "e01440312bc5f962"
+            ]
+        ]
+    },
+    {
+        "id": "a9e4ba0d2d8200b5",
+        "type": "link call",
+        "z": "978a652ce4efa841",
+        "name": "",
+        "links": [
+            "16c7b9116fb6eeb4"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 820,
+        "y": 4520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e01440312bc5f962",
+        "type": "debug",
+        "z": "978a652ce4efa841",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 4460,
         "wires": []
     },
     {
@@ -35015,7 +35589,7 @@
         "wires": [
             [
                 "2aff40697cdb7b06",
-                "3dea1162fc1d675c"
+                "809345e5e3e0ace3"
             ]
         ]
     },
@@ -35756,6 +36330,27 @@
         "x": 140,
         "y": 1660,
         "wires": []
+    },
+    {
+        "id": "809345e5e3e0ace3",
+        "type": "function",
+        "z": "63a390b7b7e11353",
+        "g": "0df8de295f691def",
+        "name": "function 816",
+        "func": "if (msg.statusCode === 200) {\n\n}\nelse {\n    msg.payload = `Desculpe, no momento não consigo responder. Por favor, tente novamente em 5 minutos.`\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 1580,
+        "wires": [
+            [
+                "3dea1162fc1d675c"
+            ]
+        ]
     },
     {
         "id": "68fa1de8a3ee633c",
@@ -37610,6 +38205,7 @@
         "id": "012462a752b59236",
         "type": "http in",
         "z": "3637928543b0f4e6",
+        "d": true,
         "name": "",
         "url": "/webhook_invoice_payment_failed",
         "method": "post",
@@ -38350,6 +38946,228 @@
         "statusType": "auto",
         "x": 1086,
         "y": 213,
+        "wires": []
+    },
+    {
+        "id": "ce2bc7205964a8ed",
+        "type": "http response",
+        "z": "3637928543b0f4e6",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 430,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "981f21c11ee4bb57",
+        "type": "function",
+        "z": "3637928543b0f4e6",
+        "name": "check subscription",
+        "func": "if (msg.payload?.data?.object?.items?.data[0]?.subscription && msg.payload.data.object.status==='past due') {\n    msg.customer = msg.payload.data.object.customer;\n    msg.subscription = msg.payload.data.object.subscription;\n    msg.email = msg.payload.data.object.customer_email;\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2600,
+        "wires": [
+            [
+                "559cdc5ca77e975a",
+                "39cb0fd7dc2017e5"
+            ]
+        ]
+    },
+    {
+        "id": "995f3ea6bcfa3819",
+        "type": "function",
+        "z": "3637928543b0f4e6",
+        "name": "cancel sub",
+        "func": "if (msg.payload.length > 0) {\n\n    msg.query = {\n        _id: objectid(msg.payload[0]._id)\n    };\n\n    msg.payload = {\n        $set: {\n            \"reasonCancelDescription\": 'stripe payment failed',\n            \"subscriptionType\": \"Free Trial\"\n        },\n        $unset: {\n            subscription: \"\"\n        }\n    };\n\n    msg.collection = \"admins\";\n\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 950,
+        "y": 2600,
+        "wires": [
+            [
+                "98ccbd219f899436",
+                "3aec0fac5b7d6288"
+            ]
+        ]
+    },
+    {
+        "id": "98ccbd219f899436",
+        "type": "link call",
+        "z": "3637928543b0f4e6",
+        "name": "",
+        "links": [
+            "74a7d1bc75871831"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1120,
+        "y": 2600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4860ccf46b351527",
+        "type": "http in",
+        "z": "3637928543b0f4e6",
+        "name": "",
+        "url": "/webhook_invoice_payment_failed",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 2600,
+        "wires": [
+            [
+                "ce2bc7205964a8ed",
+                "4aa8c3a70e304739"
+            ]
+        ]
+    },
+    {
+        "id": "559cdc5ca77e975a",
+        "type": "function",
+        "z": "3637928543b0f4e6",
+        "name": "find user",
+        "func": "msg.payload = {\n    subscriptionId: msg.subscription\n};\n\nmsg.collection = \"admins\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "objectid",
+                "module": "objectid"
+            }
+        ],
+        "x": 640,
+        "y": 2600,
+        "wires": [
+            [
+                "654c572f889425cf",
+                "5d19e9178ed17d61"
+            ]
+        ]
+    },
+    {
+        "id": "654c572f889425cf",
+        "type": "link call",
+        "z": "3637928543b0f4e6",
+        "name": "",
+        "links": [
+            "6c1aea0fff8ff1c5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 790,
+        "y": 2600,
+        "wires": [
+            [
+                "995f3ea6bcfa3819",
+                "a33312d55b57e2ab"
+            ]
+        ]
+    },
+    {
+        "id": "4aa8c3a70e304739",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "39cb0fd7dc2017e5",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "5d19e9178ed17d61",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 2520,
+        "wires": []
+    },
+    {
+        "id": "a33312d55b57e2ab",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "3aec0fac5b7d6288",
+        "type": "debug",
+        "z": "3637928543b0f4e6",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 2560,
         "wires": []
     },
     {
