@@ -6,7 +6,7 @@
         "node-red-contrib-fs": "1.4.1",
         "node-red-contrib-loop-processing": "0.5.1",
         "node-red-contrib-pdfparse": "1.0.6",
-        "@martip/node-red-xlsx": "1.0.2",
+        "@martip/node-red-xlsx": "1.0.2"
     },
     "node-red": {
         "settings": {
